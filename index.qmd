@@ -1,9 +1,11 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+Hello and welcome to Christy’s page on Remote Sensing. This page is an online learning diary for CASA Remotely Sensing Cities and Environments 25/26. This website contains a record of week-by-week learnings, including summary of key concepts, practical applications, academic literature and relevant web sources reviews as well as reflections and discussions on learnt concepts and techniques.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+## Abput me ... 
+
+Christy Choi is currently a master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) in MSc Urban Spatial Science. She holds a bachelor’s degree in BSc Planning and Real Estate from the University of Manchester from 2022-2025.
 
 ```{r}
-1 + 1
+
 ```
