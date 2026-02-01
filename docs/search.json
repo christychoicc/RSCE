@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "RSCE",
+    "title": "Remotely Sensing Cities and Environments",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Preface\nHello and welcome to Christy’s page on Remote Sensing. This page is an online learning diary for CASA Remotely Sensing Cities and Environments 25/26. This website contains a record of week-by-week learnings, including summary of key concepts, practical applications, academic literature and relevant web sources reviews as well as reflections and discussions on learnt concepts and techniques.",
     "crumbs": [
       "Preface"
     ]
@@ -37,6 +37,26 @@
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "index.html#abput-me",
+    "href": "index.html#abput-me",
+    "title": "Remotely Sensing Cities and Environments",
+    "section": "Abput me …",
+    "text": "Abput me …\nChristy Choi is currently a master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) in MSc Urban Spatial Science. She holds a bachelor’s degree in BSc Planning and Real Estate from the University of Manchester from 2022-2025.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Remotely Sensing Cities and Environments",
+    "section": "About me …",
+    "text": "About me …\nChristy Choi is currently a master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) in MSc Urban Spatial Science. She holds a bachelor’s degree in BSc Planning and Real Estate from the University of Manchester from 2022-2025.",
+    "crumbs": [
+      "Preface"
     ]
   }
 ]
