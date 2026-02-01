@@ -14,7 +14,7 @@
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "1.1 1.1. Summary\nRemote sensing is not only satellite imagery but a system that allows us to obtain EO data through acquiring information from a distance using sensors on platforms. This section introduces types of sensors and resolutions of remote sensing data. The following study area of Lisbon will demonstrate a workflow of analysing Earth Observations (EO) data processed through QGIS and SNAP.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -57,6 +57,16 @@
     "text": "About me …\nI am currently a master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) reading MSc, Urban Spatial Science. I holds a bachelor’s degree in BSc, Planning and Real Estate from the University of Manchester in 2022-2025.",
     "crumbs": [
       "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html#summary",
+    "href": "intro.html#summary",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1.1 1.1.1. Types of Sensor\nPassive Sensors detect energy emitted or reflected from the object by the sun. They mainly operate in the visible, infrared, thermal infrared, and microwave bands of the electromagnetic spectrum, mostly used to measure surface temperature, vegetation properties and other physical attributes. However, passive sensors cannot penetrate dense cloud cover, limiting areas with higher cloud rates.\nActive Sensors emits energy and collect data based on changes in the return signal. Most active sensors have higher capabilities to penetrate atmospheric conditions. For example, the Synthetic Aperture Radar (SAR), has the ability to “see through cloud” as it operates with comparably longer wavelengths, allowing data collections during night hours. This allows them to be less dependent on sunlight which better handles atmospheric constraints.\nOverall, observations are shaped by the electromagnetic spectrum and its interactions between radiation, atmosphere, and Earth’s surface, where raditaion can be absorbed, transmitted, or scattered (Tempfli et al., 2009).\n\n\n\n\n\n\nPassive Sensor (Source: NASA EARTHDATA)\n\n\n\n\n\n\n\nActive Sensor (Source: NASA EARTHDATA)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   }
 ]
