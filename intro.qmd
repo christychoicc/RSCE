@@ -2,9 +2,9 @@
 
 Remote sensing is not only satellite imagery but a system that allows us to obtain EO data through acquiring information from a distance using sensors on platforms. This section introduces types of sensors and resolutions of remote sensing data. The following study area of Lisbon will demonstrate a workflow of analysing Earth Observations (EO) data processed through QGIS and SNAP.
 
-## 1.1. Summary 
+## Summary 
 
-### 1.1.1. Types of Sensor
+### Types of Sensor
 
 **Passive Sensors** detect energy emitted or reflected from the object by the sun. They mainly operate in the visible, infrared, thermal infrared, and microwave bands of the electromagnetic spectrum, mostly used to measure surface temperature, vegetation properties and other physical attributes. However, passive sensors cannot penetrate dense cloud cover, limiting areas with higher cloud rates.
 
