@@ -30,6 +30,10 @@ Overall, observations are shaped by the electromagnetic spectrum and its interac
 ![Atmospheric Pentration, Sentinel](images/w1_images/atmosphericpentration_sentinel.png){alt="Fig name"}
 :::
 
+$$
+Brightness=0.3037(B2) + 0.2793(B3)+\begin{split}0.4743(B4)+0.5585(B8)+\begin{split}0.5082(B11)+0.1863(B12)\end{split}
+$$
+
 ::: {#CHUNKNAME layout-ncol="2"}
 ![Lisboa in August 2025 (Sentinel)](images/w1_images/tasseledcaps_sentinel.png)
 
