@@ -47,9 +47,9 @@ $$
 $$
 
 ::: {#CHUNKNAME layout-ncol="2"}
-![Lisboa in August 2025 (Sentinel)](images/w1_images/tasseledcaps_sentinel.png)
+![Lisboa in August 2025 (Sentinel, Tasseled Cap Transformed)](images/w1_images/tasseledcaps_sentinel.png)
 
-![Lisboa in December 2025 (Sentinel)](images/w1_images/tasseledcaps_sentinel_1229.png)
+![Lisboa in December 2025 (Sentinel, Tasseled Cap Transformed)](images/w1_images/tasseledcaps_sentinel_1229.png)
 :::
 
 ::: {layout-ncol="1"}
