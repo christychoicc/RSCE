@@ -1,6 +1,6 @@
 # Introduction
 
-Remote sensing is not only satellite imagery but a system that allows us to obtain EO data through acquiring information from a distance using sensors on platforms. This section introduces types of sensors and resolutions of remote sensing data. The following study area of Lisbon will demonstrate a workflow of analysing Earth Observations (EO) data processed through QGIS and SNAP.
+Remote sensing is not only satellite imagery but a system that allows us to obtain EO data through acquiring information from a distance using sensors on platforms. This section introduces types of sensors and resolutions of remote sensing data. The following study area of Lisboa, Portugal will demonstrate a workflow of analysing Earth Observations (EO) data processed through QGIS and SNAP.
 
 ## Summary 
 
@@ -20,7 +20,7 @@ Overall, observations are shaped by the electromagnetic spectrum and its interac
 
 ### Spatial Resolution
 
-### Pre-processing - SNAP
+### Study Area: Lisboa, Portugal - SNAP Pre-Process
 
 ::: {#Sentinel_Colour layout-ncol="3"}
 ![True Natural Colour, Sentinel ](images/w1_images/truenaturalcolour_sentinel.png)
@@ -30,7 +30,7 @@ Overall, observations are shaped by the electromagnetic spectrum and its interac
 ![Atmospheric Pentration, Sentinel](images/w1_images/atmosphericpentration_sentinel.png){alt="Fig name"}
 :::
 
-### Tasseled Caps
+#### Tasseled Caps
 
 Maths Band Equations:
 
