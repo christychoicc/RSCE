@@ -18,11 +18,25 @@ Overall, observations are shaped by the electromagnetic spectrum and its interac
 ![Active Sensor (Source: NASA EARTHDATA)](images/w1_images/active-instrument-illustration.png){#reference}
 :::
 
-### Spatial Resolution
+### Types of Resolution
+
+#### Spatial Resolution
+
+The size of the raster grid cell per pixel, where it can range from centimetres to kilometres (e.g. 20cm, 30m or 1km)
+
+#### Spectral Resolution
+
+Visible part of the electromagnetic spectrum is composed of red, green and blue wavelengths. Multispectral sensors measure reflection at multiple wavelength bands to create spectral signatures, which such patterns of reflectance across the spectrum helps distinguish different surface features. However, observations are often constrained to atmospheric windows (e.g. cloud cover) which absorbs radiation.
+
+#### Temporal Resolution
+
+The time it revisits
+
+#### Radiometric Resolution
 
 ### Study Area: Lisboa, Portugal
 
-Pre-processing in SNAP
+Pre-processing in SNAP, used both Sentinel and Landsat.
 
 ::: {#Sentinel_Colour layout-ncol="3"}
 ![True Natural Colour, Sentinel](images/w1_images/truenaturalcolour_sentinel.png)
@@ -62,6 +76,10 @@ $$
 
 ::: {layout-ncol="1"}
 ![Spectral Reflectance of Sentinel (A, B) and Landsat (C, D)](images/w1_images/final_spectral_reflectance_image.png)
+:::
+
+::: {layout-ncol="1"}
+![Spectral Bands of Sentinel 2 and Landsat 7 8](images/w1_images/Spectral-bands-of-Sentinel-2-and-Landsat-7-8-Spectral-signatures-of-vegetation-soil.png){alt="Spectral Reflectance of Sentinel (A, B) and Landsat (C, D)"}
 :::
 
 ## Application
