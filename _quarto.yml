@@ -9,15 +9,25 @@ book:
   title: "CASA0023 Remotely Sensing Cities and Environments Learning Diary"
   author: "Christy Choi"
   date: "2/1/2026"
+  
   navbar:
     logo: images/casa_logo.jpg
     collapse: true
     collapse-below: lg
     background: light
-    #reader-mode: true
     search: true
     right:
       - icon: github
+        href: "https://github.com/christychoicc/RSCE"
+    
+    sidebar:
+    title: "CASA0023"
+    style: floating
+    reader-mode: true
+
+  repo-url: "https://github.com/christychoicc/RSCE"
+  repo-actions: [edit, issue]
+
   chapters:
     - index.qmd
     - intro.qmd
@@ -30,8 +40,12 @@ bibliography: references.bib
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      #- cosmo
+      #- brand
+      light: [cosmo, flatly]
+      dark: [cosmo, darkly]
+    code-link: true
+    
   pdf:
     documentclass: scrreprt
 
