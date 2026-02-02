@@ -2,9 +2,29 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Remotely Sensing Cities and Environments Portfolio",
+    "title": "CASA0023 Remotely Sensing Cities and Environments Learning Diary",
     "section": "",
     "text": "Preface\nHello and welcome to Christy’s page on Remote Sensing. This page is an online learning diary for CASA Remotely Sensing Cities and Environments 25/26. This website contains a record of her week-by-week learnings, including summary of key concepts, practical applications, reviews on academic literature and relevant web sources, as well as reflections and discussions on learnt concepts and techniques.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "CASA0023 Remotely Sensing Cities and Environments Learning Diary",
+    "section": "About me,",
+    "text": "About me,\nShe is a current master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) reading MSc, Urban Spatial Science. She holds a bachelor’s degree in BSc, Planning and Real Estate from the University of Manchester (2022-2025).\nEmail: chi.choi.25@ucl.ac.uk\nGithub: christychoicc",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#in-this-learning-diary",
+    "href": "index.html#in-this-learning-diary",
+    "title": "CASA0023 Remotely Sensing Cities and Environments Learning Diary",
+    "section": "In this Learning Diary,",
+    "text": "In this Learning Diary,\nEach chapter will be covering contents taught in the corresponding week:\n\nIntroduction\n\nGetting started with remote sensing, introductions, sensors, spatial resolutions and practical pre-processing\n\nSensor",
     "crumbs": [
       "Preface"
     ]
@@ -17,46 +37,6 @@
     "text": "1.1 Summary\nRemote sensing is not only satellite imagery but a system that allows us to obtain EO data through acquiring information from a distance using sensors on platforms. This section introduces types of sensors and resolutions of remote sensing data. The following study area of Lisboa, Portugal will demonstrate a workflow of analysing Earth Observations (EO) data processed through QGIS and SNAP.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
-    ]
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "index.html#abput-me",
-    "href": "index.html#abput-me",
-    "title": "Remotely Sensing Cities and Environments",
-    "section": "Abput me …",
-    "text": "Abput me …\nChristy Choi is currently a master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) in MSc Urban Spatial Science. She holds a bachelor’s degree in BSc Planning and Real Estate from the University of Manchester from 2022-2025.",
-    "crumbs": [
-      "Preface"
-    ]
-  },
-  {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "Remotely Sensing Cities and Environments Portfolio",
-    "section": "About me,",
-    "text": "About me,\nShe is a current master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) reading MSc, Urban Spatial Science. She holds a bachelor’s degree in BSc, Planning and Real Estate from the University of Manchester (2022-2025).\nEmail: chi.choi.25@ucl.ac.uk\nGithub: christychoicc",
-    "crumbs": [
-      "Preface"
     ]
   },
   {
@@ -90,16 +70,6 @@
     ]
   },
   {
-    "objectID": "index.html#in-this-learning-diary",
-    "href": "index.html#in-this-learning-diary",
-    "title": "Remotely Sensing Cities and Environments Portfolio",
-    "section": "In this Learning Diary,",
-    "text": "In this Learning Diary,\nEach chapter will be covering contents taught in the corresponding week:\n\nIntroduction\n\nGetting started with remote sensing, introductions, sensors, spatial resolutions and practical pre-processing\n\nSensor",
-    "crumbs": [
-      "Preface"
-    ]
-  },
-  {
     "objectID": "intro.html#references",
     "href": "intro.html#references",
     "title": "1  Introduction",
@@ -107,6 +77,16 @@
     "text": "1.4 References\nSentinel Data Source:\nhttps://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/auth?client_id=sh-5f8b630b-b083-49ed-b340-b8f01ecb81c4&redirect_uri=https%3A%2F%2Fbrowser.dataspace.copernicus.eu%2F%3Fzoom%3D5%26lat%3D50.16282%26lng%3D20.78613%26demSource3D%3D%2522MAPZEN%2522%26cloudCoverage%3D30%26dateMode%3DSINGLE&state=26c991f3-8c5e-487e-b23d-d5fe36fbabb7&response_mode=fragment&response_type=code&scope=openid&nonce=c67a4727-3008-4473-8b84-0a9304c87ce3&code_challenge=ZGmOypxnXCivN18EjxS722lF4SDVSsskdcUb_zktYp4&code_challenge_method=S256",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
     ]
   }
 ]
