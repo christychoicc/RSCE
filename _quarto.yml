@@ -1,9 +1,12 @@
 project:
   type: book
   output-dir: docs
+  resources: 
+  - slides/
+  - images/
 
 book:
-  title: "Remotely Sensing Cities and Environments Portfolio"
+  title: "Remotely Sensing Cities and Environments Learning Diary"
   author: "Christy Choi"
   date: "2/1/2026"
   chapters:

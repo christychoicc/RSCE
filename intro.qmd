@@ -30,6 +30,22 @@ Overall, observations are shaped by the electromagnetic spectrum and its interac
 ![Atmospheric Pentration, Sentinel](images/w1_images/atmosphericpentration_sentinel.png){alt="Fig name"}
 :::
 
+::: {#CHUNKNAME layout-ncol="2"}
+![Lisboa in August 2025 (Sentinel)](images/w1_images/tasseledcaps_sentinel.png)
+
+![Lisboa in December 2025 (Sentinel)](images/w1_images/tasseledcaps_sentinel_1229.png)
+:::
+
+::: {layout-ncol="1"}
+![Spectral Reflectance of Sentinel (A, B) and Landsat (C, D)](images/w1_images/final_spectral_reflectance_image.png)
+:::
+
 ## Application
 
 ## Reflection
+
+## References
+
+Sentinel Data Source:
+
+<https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/auth?client_id=sh-5f8b630b-b083-49ed-b340-b8f01ecb81c4&redirect_uri=https%3A%2F%2Fbrowser.dataspace.copernicus.eu%2F%3Fzoom%3D5%26lat%3D50.16282%26lng%3D20.78613%26demSource3D%3D%2522MAPZEN%2522%26cloudCoverage%3D30%26dateMode%3DSINGLE&state=26c991f3-8c5e-487e-b23d-d5fe36fbabb7&response_mode=fragment&response_type=code&scope=openid&nonce=c67a4727-3008-4473-8b84-0a9304c87ce3&code_challenge=ZGmOypxnXCivN18EjxS722lF4SDVSsskdcUb_zktYp4&code_challenge_method=S256>
