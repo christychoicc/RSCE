@@ -20,7 +20,9 @@ Overall, observations are shaped by the electromagnetic spectrum and its interac
 
 ### Spatial Resolution
 
-### Study Area: Lisboa, Portugal - SNAP Pre-Process
+### Study Area: Lisboa, Portugal 
+
+Pre-processing in SNAP
 
 ::: {#Sentinel_Colour layout-ncol="3"}
 ![True Natural Colour, Sentinel ](images/w1_images/truenaturalcolour_sentinel.png)
