@@ -53,8 +53,8 @@
     "objectID": "index.html#about-me",
     "href": "index.html#about-me",
     "title": "Remotely Sensing Cities and Environments Portfolio",
-    "section": "About me …",
-    "text": "About me …\nI am currently a master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) reading MSc, Urban Spatial Science. I holds a bachelor’s degree in BSc, Planning and Real Estate from the University of Manchester in 2022-2025.",
+    "section": "About me,",
+    "text": "About me,\nShe is a current master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) reading MSc, Urban Spatial Science. She holds a bachelor’s degree in BSc, Planning and Real Estate from the University of Manchester (2022-2025).\nEmail: chi.choi.25@ucl.ac.uk\nGithub: christychoicc",
     "crumbs": [
       "Preface"
     ]
@@ -87,6 +87,16 @@
     "text": "1.3 Reflection",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#in-this-learning-diary",
+    "href": "index.html#in-this-learning-diary",
+    "title": "Remotely Sensing Cities and Environments Portfolio",
+    "section": "In this Learning Diary,",
+    "text": "In this Learning Diary,\nEach chapter will be covering contents taught in the corresponding week:\n\nIntroduction\n\nGetting started with remote sensing, introductions, sensors, spatial resolutions and practical pre-processing\n\nSensor",
+    "crumbs": [
+      "Preface"
     ]
   }
 ]
