@@ -13,7 +13,23 @@ Remote sensing is not only satellite imagery but a system that allows us to obta
 Overall, observations are shaped by the electromagnetic spectrum and its interactions between radiation, atmosphere, and Earth’s surface, where raditaion can be absorbed, transmitted, or scattered (Tempfli *et al.*, 2009).
 
 ::: {#Fig_Passive_Active_Sensors layout-ncol="2"}
-![Passive Sensor (Source: NASA EARTHDATA)](images/passive-instrument-illustration.png)
+![Passive Sensor (Source: NASA EARTHDATA)](images/w1_images/passive-instrument-illustration.png)
 
-![Active Sensor (Source: NASA EARTHDATA)](images/active-instrument-illustration.png){#reference}
+![Active Sensor (Source: NASA EARTHDATA)](images/w1_images/active-instrument-illustration.png){#reference}
 :::
+
+### Spatial Resolution
+
+### Pre-processing - SNAP
+
+::: {#Sentinel_Colour layout-ncol="3"}
+![True Natural Colour, Sentinel ](images/w1_images/truenaturalcolour_sentinel.png)
+
+![False Colour Composite, Sentinel](images/w1_images/falsecolourcomposite_sentinel.png){alt="Fig name"}
+
+![Atmospheric Pentration, Sentinel](images/w1_images/atmosphericpentration_sentinel.png){alt="Fig name"}
+:::
+
+## Application
+
+## Reflection
