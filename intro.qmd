@@ -30,8 +30,20 @@ Overall, observations are shaped by the electromagnetic spectrum and its interac
 ![Atmospheric Pentration, Sentinel](images/w1_images/atmosphericpentration_sentinel.png){alt="Fig name"}
 :::
 
+### Tasseled Caps
+
+Maths Band Equations:
+
 $$
-Brightness=0.3037(B2) + 0.2793(B3)+ \begin{split}\\0.4743(B4)+0.5585(B8)+\\0.5082(B11)+0.1863(B12)\end{split}
+\begin{split}Brightness=0.3037(B2) + 0.2793(B3)+\\0.4743(B4)+0.5585(B8)+\\0.5082(B11)+0.1863(B12)\end{split}
+$$
+
+$$
+\begin{split}Greeness=-0.2848(B2)-0.2435(B3)\\-0.5436(B4)+0.7243(B8)+\\0.0840(B11)-0.1800(B12)\end{split}
+$$
+
+$$
+\begin{split}Wetness=0.1509(B2)+0.1973(B3)\\+0.3279(B4)+0.3406(B8)\\-0.7112(B11)-0.4572(B12)\end{split}
 $$
 
 ::: {#CHUNKNAME layout-ncol="2"}
