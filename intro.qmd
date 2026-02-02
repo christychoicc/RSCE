@@ -30,8 +30,6 @@ Visible part of the electromagnetic spectrum is composed of red, green and blue 
 
 #### Temporal Resolution
 
-The time it revisits
-
 #### Radiometric Resolution
 
 ### Study Area: Lisboa, Portugal
