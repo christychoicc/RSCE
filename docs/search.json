@@ -64,7 +64,7 @@
     "href": "intro.html#summary",
     "title": "1  Introduction",
     "section": "",
-    "text": "1.1.1 Types of Sensor\nPassive Sensors detect energy emitted or reflected from the object by the sun. They mainly operate in the visible, infrared, thermal infrared, and microwave bands of the electromagnetic spectrum, mostly used to measure surface temperature, vegetation properties and other physical attributes. However, passive sensors cannot penetrate dense cloud cover, limiting areas with higher cloud rates.\nActive Sensors emits energy and collect data based on changes in the return signal. Most active sensors have higher capabilities to penetrate atmospheric conditions. For example, the Synthetic Aperture Radar (SAR), has the ability to “see through cloud” as it operates with comparably longer wavelengths, allowing data collections during night hours. This allows them to be less dependent on sunlight which better handles atmospheric constraints.\nOverall, observations are shaped by the electromagnetic spectrum and its interactions between radiation, atmosphere, and Earth’s surface, where raditaion can be absorbed, transmitted, or scattered (Tempfli et al., 2009).\n\n\n\n\n\n\nPassive Sensor (Source: NASA EARTHDATA)\n\n\n\n\n\n\n\nActive Sensor (Source: NASA EARTHDATA)\n\n\n\n\n\n\n\n1.1.2 Spatial Resolution\n\n\n1.1.3 Pre-processing - SNAP\n\n\n\n\n\n\nTrue Natural Colour, Sentinel\n\n\n\n\n\n\n\nFalse Colour Composite, Sentinel\n\n\n\n\n\n\n\nAtmospheric Pentration, Sentinel",
+    "text": "1.1.1 Types of Sensor\nPassive Sensors detect energy emitted or reflected from the object by the sun. They mainly operate in the visible, infrared, thermal infrared, and microwave bands of the electromagnetic spectrum, mostly used to measure surface temperature, vegetation properties and other physical attributes. However, passive sensors cannot penetrate dense cloud cover, limiting areas with higher cloud rates.\nActive Sensors emits energy and collect data based on changes in the return signal. Most active sensors have higher capabilities to penetrate atmospheric conditions. For example, the Synthetic Aperture Radar (SAR), has the ability to “see through cloud” as it operates with comparably longer wavelengths, allowing data collections during night hours. This allows them to be less dependent on sunlight which better handles atmospheric constraints.\nOverall, observations are shaped by the electromagnetic spectrum and its interactions between radiation, atmosphere, and Earth’s surface, where raditaion can be absorbed, transmitted, or scattered (Tempfli et al., 2009).\n\n\n\n\n\n\nPassive Sensor (Source: NASA EARTHDATA)\n\n\n\n\n\n\n\nActive Sensor (Source: NASA EARTHDATA)\n\n\n\n\n\n\n\n1.1.2 Spatial Resolution\n\n\n1.1.3 Pre-processing - SNAP\n\n\n\n\n\n\nTrue Natural Colour, Sentinel\n\n\n\n\n\n\n\nFalse Colour Composite, Sentinel\n\n\n\n\n\n\n\nAtmospheric Pentration, Sentinel\n\n\n\n\n\n\n\n\n\n\n\nLisboa in August 2025 (Sentinel)\n\n\n\n\n\n\n\nLisboa in December 2025 (Sentinel)\n\n\n\n\n\n\n\n\n\n\n\nSpectral Reflectance of Sentinel (A, B) and Landsat (C, D)",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -97,6 +97,16 @@
     "text": "In this Learning Diary,\nEach chapter will be covering contents taught in the corresponding week:\n\nIntroduction\n\nGetting started with remote sensing, introductions, sensors, spatial resolutions and practical pre-processing\n\nSensor",
     "crumbs": [
       "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html#references",
+    "href": "intro.html#references",
+    "title": "1  Introduction",
+    "section": "1.4 References",
+    "text": "1.4 References\nSentinel Data Source:\nhttps://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/auth?client_id=sh-5f8b630b-b083-49ed-b340-b8f01ecb81c4&redirect_uri=https%3A%2F%2Fbrowser.dataspace.copernicus.eu%2F%3Fzoom%3D5%26lat%3D50.16282%26lng%3D20.78613%26demSource3D%3D%2522MAPZEN%2522%26cloudCoverage%3D30%26dateMode%3DSINGLE&state=26c991f3-8c5e-487e-b23d-d5fe36fbabb7&response_mode=fragment&response_type=code&scope=openid&nonce=c67a4727-3008-4473-8b84-0a9304c87ce3&code_challenge=ZGmOypxnXCivN18EjxS722lF4SDVSsskdcUb_zktYp4&code_challenge_method=S256",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   }
 ]
