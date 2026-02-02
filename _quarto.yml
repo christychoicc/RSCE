@@ -15,9 +15,11 @@ book:
     collapse-below: lg
     background: light
     search: true
+    reader-mode: true
     right:
       - icon: github
         href: "https://github.com/christychoicc/RSCE"
+
   chapters:
     - index.qmd
     - intro.qmd
@@ -30,8 +32,12 @@ bibliography: references.bib
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      #- cosmo
+      #- brand
+      light: [cosmo, flatly]
+      dark: [cosmo, darkly]
+    code-link: true
+    
   pdf:
     documentclass: scrreprt
 
