@@ -48,7 +48,7 @@ The ability of a sensor to identify and discriminate between subtle differences 
 
 ### Study Area: Lisboa, Portugal
 
-Satellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed with SNAP.
+Satellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed with SNAP. Selecting the RGB-image it gives the **True Natural Color**. **False Colour Composite** bands combination of B8, B4 and B3 highlights healthy and unhealthy vegetation, with denser vegetation visualised as red and urban areas as white. **Atmospheric Pentration** ... (reference: <https://gisgeography.com/sentinel-2-bands-combinations/>)
 
 ::: {#Sentinel_Colour layout-ncol="3"}
 ![True Natural Colour, Sentinel](images/w1_images/truenaturalcolour_sentinel.png)
@@ -66,7 +66,7 @@ Satellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed w
 
 #### Tasseled Caps
 
-Maths Band Equations:
+Applied the following Maths Band Equations:
 
 $$
 \begin{split}Brightness=0.3037(B2) + 0.2793(B3)+\\0.4743(B4)+0.5585(B8)+\\0.5082(B11)+0.1863(B12)\end{split}
@@ -79,6 +79,8 @@ $$
 $$
 \begin{split}Wetness=0.1509(B2)+0.1973(B3)\\+0.3279(B4)+0.3406(B8)\\-0.7112(B11)-0.4572(B12)\end{split}
 $$
+
+Comparing two Sentinel-2 tasseled cap transformed imagery that is adjusted for brightness, greenness and wetness of August and December 2025,
 
 ::: {layout-ncol="2"}
 ![Lisboa in August 2025 (Sentinel, Tasseled Cap Transformed)](images/w1_images/tasseledcaps_sentinel.png)
