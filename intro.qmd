@@ -1,6 +1,6 @@
 # Introduction
 
-Remote sensing is not only satellite imagery but a system that allows us to obtain EO data through acquiring information from a distance using sensors on platforms. This section introduces types of sensors and resolutions of remote sensing data. The following study area of Lisboa, Portugal will demonstrate a workflow of analysing Earth Observations (EO) data processed through QGIS and SNAP.
+Remote sensing is not only satellite imagery but a system that allows us to obtain EO data through acquiring information from a distance using sensors on platforms. This section introduces types of sensors and resolutions of remote sensing data. The following study area of Lisboa, Portugal will demonstrate a workflow of analysing Earth Observations (EO) data processed through SNAP and R.
 
 ## Summary
 
@@ -10,7 +10,7 @@ Remote sensing is not only satellite imagery but a system that allows us to obta
 
 **Active Sensors** emits energy and collect data based on changes in the return signal. Most active sensors have higher capabilities to penetrate atmospheric conditions. For example, the Synthetic Aperture Radar (SAR), has the ability to "see through cloud" as it operates with comparably longer wavelengths, allowing data collections during night hours. This allows them to be less dependent on sunlight which better handles atmospheric constraints.
 
-Overall, observations are shaped by the electromagnetic spectrum and its interactions between radiation, atmosphere, and Earth’s surface, where raditaion can be absorbed, transmitted, or scattered (Tempfli *et al.*, 2009).
+Overall, observations are shaped by the electromagnetic spectrum and its interactions between radiation, atmosphere, and Earth’s surface, where radiation can be absorbed, transmitted, or scattered (Tempfli *et al.*, 2009). To mitigate atmospheric scattering in imagery, atmospheric correction can be applied to remove these effects.
 
 ::: {#Fig_Passive_Active_Sensors layout-ncol="2"}
 ![Passive Sensor (Source: NASA EARTHDATA)](images/w1_images/passive-instrument-illustration.png)
@@ -22,19 +22,33 @@ Overall, observations are shaped by the electromagnetic spectrum and its interac
 
 #### Spatial Resolution
 
-The size of the raster grid cell per pixel, where it can range from centimetres to kilometres (e.g. 20cm, 30m or 1km)
+The size of the raster grid cell per pixel, where it can range from metres to kilometres. The spatial resolution scale varies depending on specific observation and reasearch suitability, ranging from highest/finest resolution at 10m for buildings to the lowest/coarse at 100km for a global scale (NASA EARTHDATA).
 
 #### Spectral Resolution
 
-Visible part of the electromagnetic spectrum is composed of red, green and blue wavelengths. Multispectral sensors measure reflection at multiple wavelength bands to create spectral signatures, which such patterns of reflectance across the spectrum helps distinguish different surface features. However, observations are often constrained to atmospheric windows (e.g. cloud cover) which absorbs radiation.
+Visible part of the electromagnetic spectrum is composed of red, green and blue wavelengths. Multi-spectral sensors measure reflection at multiple wavelength bands to create spectral signatures, which such patterns of reflectence across the spectrum helps distinguish different surface features. However, observations are often constrained to atmospheric windows (e.g. cloud cover) which absorbs radiation.
+
+::: {#Electromagnetic Spectrum and Satellite Sensor layout-ncol="1"}
+![Imagery Satellite Sensor's Electromagnetic Spectrum Capture Range (Source: ESRI https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/)](images/w1_images/electromagnetic_spectrum.png){alt="Spectral Reflectence of Sentinel (A, B) and Landsat (C, D)"}
+:::
 
 #### Temporal Resolution
 
+The frequency of a sensor's revisit in capturing the same observation area. The temporal resolution measurement period can vary from 1 to 16 days depending on the platform (NASA EARTHDATA <https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution>).
+
 #### Radiometric Resolution
+
+The ability of a sensor to identify and discriminate between subtle differences in energy in each pixel.
+
+::: {#CHUNKNAME layout-ncol="2"}
+![Remote Sensing Resolutions (Source: NASA EARTHDATA) <https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution>](images/w1_images/remote-sensing-resolutions.png)
+:::
+
+## Application
 
 ### Study Area: Lisboa, Portugal
 
-Pre-processing in SNAP, used both Sentinel and Landsat.
+Satellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed with SNAP.
 
 ::: {#Sentinel_Colour layout-ncol="3"}
 ![True Natural Colour, Sentinel](images/w1_images/truenaturalcolour_sentinel.png)
@@ -44,7 +58,7 @@ Pre-processing in SNAP, used both Sentinel and Landsat.
 ![Atmospheric Pentration, Sentinel](images/w1_images/atmosphericpentration_sentinel.png)
 :::
 
-::: {#CHUNKNAME layout-ncol="2"}
+::: {#Scatterplot layout-ncol="2"}
 ![Sentinel Band 4 and Band 8 Scatterplot](images/w1_images/b4b8_scatterplot_sentinel.png)
 
 ![Landsat Band 4 and Band 5 Scatterplot](images/w1_images/b4b5scatterplot_landsat.png)
@@ -73,14 +87,12 @@ $$
 :::
 
 ::: {layout-ncol="1"}
-![Spectral Reflectance of Sentinel (A, B) and Landsat (C, D)](images/w1_images/final_spectral_reflectance_image.png)
+![Spectral Reflectence of Sentinel (A, B) and Landsat (C, D)](images/w1_images/final_spectral_reflectance_image.png)
 :::
 
 ::: {layout-ncol="1"}
-![Spectral Bands of Sentinel 2 and Landsat 7 8](images/w1_images/Spectral-bands-of-Sentinel-2-and-Landsat-7-8-Spectral-signatures-of-vegetation-soil.png){alt="Spectral Reflectance of Sentinel (A, B) and Landsat (C, D)"}
+![Comparison of Sentinel 2 and Landsat 7 and 8 Spectral Bands (https://www.usgs.gov/centers/eros/science/usgs-eros-archive-sentinel-2-comparison-sentinel-2-and-landsat)](images/w1_images/dmidS2LS7Comparison.png){alt="Spectral Reflectence of Sentinel (A, B) and Landsat (C, D)"}
 :::
-
-## Application
 
 ## Reflection
 

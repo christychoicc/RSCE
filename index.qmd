@@ -1,10 +1,10 @@
 # Preface {.unnumbered}
 
-Hello and welcome to Christy’s page on Remote Sensing. This page is an online learning diary for CASA Remotely Sensing Cities and Environments 25/26. This website contains a record of her week-by-week learnings, including summary of key concepts, practical applications, reviews on academic literature and relevant web sources, as well as reflections and discussions on learnt concepts and techniques.
+Hello and welcome to Christy’s page on Remote Sensing. This page is an online learning diary for CASA Remotely Sensing Cities and Environments 25/26. This website contains a record of her week-by-week learning, including summary of key concepts, practical applications, reviews on academic literature and relevant web sources, as well as reflections and discussions on learnt concepts and techniques.
 
-## About me, 
+## About me,
 
-She is a current master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) reading MSc, Urban Spatial Science. She holds a bachelor’s degree in BSc, Planning and Real Estate from the University of Manchester (2022-2025).
+She is a current master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) reading MSc, Urban Spatial Science. She holds a bachelor’s degree in BSc, Planning and Real Estate from the University of Manchester in 2022-2025.
 
 Email: chi.choi.25\@ucl.ac.uk
 
