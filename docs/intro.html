@@ -404,7 +404,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w1_images/passive-instrument-illustration.png" class="img-fluid figure-img"></p>
-<figcaption>Passive Sensor (Source: <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/passive-instruments#:~:text=Unlike%20active%20instruments%2C%20which%20emit,emitted%20from%20the%20natural%20environment.&amp;text=Credit%3A%20NASA%20Earthdata.,in%20NASA%20Earth%20science%20data">NASA EARTHDATA</a></figcaption>
+<figcaption>Passive Sensor (Source: <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/passive-instruments#:~:text=Unlike%20active%20instruments%2C%20which%20emit,emitted%20from%20the%20natural%20environment.&amp;text=Credit%3A%20NASA%20Earthdata.,in%20NASA%20Earth%20science%20data">NASA EARTHDATA</a>)</figcaption>
 </figure>
 </div>
 </div>
@@ -431,9 +431,13 @@ window.Quarto = {
 <div id="CHUNKNAME" class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/"><img src="images/w1_images/electromagnetic_spectrum.png" class="img-fluid figure-img" alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"></a></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/"><img src="images/w1_images/electromagnetic_spectrum.png" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"></a></p>
+</figure>
+</div>
 <figcaption>Electromagnetic Spectrum and Satellite Sensor Capture Range (Source: [ESRI](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/))</figcaption>
 </figure>
 </div>
@@ -534,7 +538,7 @@ window.Quarto = {
 <caption>Tasseled Cap Functions (Source: <a href="https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/tasseled-cap-function.htm#ESRI_SECTION1_6B9B732A91344B8782F925E4BE4ACA4F">ArcGIS Pro</a>)</caption>
 <thead>
 <tr class="header">
-<th>Tasseled Cap Transformation Bands</th>
+<th>Tasseled Cap Transformation</th>
 <th>Physical Associations</th>
 </tr>
 </thead>
@@ -565,7 +569,7 @@ window.Quarto = {
 </tbody>
 </table>
 <p>The below two Sentinel-2 tasseled cap transformed imagery is adjusted for brightness, greenness and wetness between August and December 2025. Although there is no obvious land cover change, the comparisons have visualized some subtle hue changes within certain areas. Blue, red and pink areas of built up urban infrastructure (road networks, airport, coastal piers) and waters remained unchanged, while brown areas depicts the built up urban features. Greenness is distinguished by lighter blue and greens, highlighting areas with higher moisture and humibidity. Overall, vegetation coverage appears equivalent in both seasons</p>
-<p>Despite Lisboa’s Mediterranean climate, there is no fluctuation of seasonal vegetation coverage change. One interesting feature to look at is the Parque Florestal de Monsanto large urban forest, where the vegetation coverage has a very subtle brightness difference between August and December. With a high density of vegetation, the overlay of greenness and wetness detections also indicates consistent moisture levels across seasons. Moving beyond the subtle variations in the visual interpretations, spectral reflectance across different bands will be looked at next.</p>
+<p>Despite Lisboa’s Mediterranean climate, there is no fluctuation of seasonal vegetation coverage change. One interesting feature to look at is the Parque Florestal de Monsanto large urban forest, where the vegetation coverage has a very subtle brightness difference between August and December. With a high density of vegetation, the overlay of greenness and wetness detections also visualize moisture levels across time. Moving beyond the subtle variations in the visual interpretations, spectral reflectance across different bands will be looked at next.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -586,6 +590,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
+<p>Spectral reflectance across bands showed distinct differences for each land cover type. Both sensors are found similar results for identifying the spectral behaviours between each land cover, while Landsat has a comparably higher mean reflectance across all bands. Both NIR bands are noted most significant for distinguishing vegetated and non-vegetated surfaces. Greenspace have been noted with the lowest reflectance, while bare earth has the highest reflectance.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -598,6 +603,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
+<p>Sentinel-2 and Landsat have very similar spectral bands, where key differences are their spatial and temporal resolution. Sentinel-2 has a comparably finer spatial resolution and higher revisit frequency, giving advantages of higher details and regular monitoring of dynamic changes. Despite, their spectral similarity allows cross-validation analysis when there are limitations of cloud coverage or data availability on one platform, enabling higher flexibility multi-temporal studies.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -615,6 +621,7 @@ window.Quarto = {
 </section>
 <section id="reflection" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">1.3</span> Reflection</h2>
+<p>Beyond capturing Earth’s surface imagery, EO data functions as a powerful measurement tool. This has shifted my perspective from viewing satellite imagery primarily as visual reference material to recognizing it as a quantitative measurement instrument. Interpretation varies significantly depending on band selection, resampling methods, and processing techniques. EO has demonstrated potential for efficiently mapping vast areas for monitoring and early prediction, but this requires careful consideration of cloud coverage, noise, and systematic biases. Lisboa has been a strong study area, as it display features of coastal conditions where atmospheric effects influence satellite reflectance and interpretation. The analysis demonstrated the strength of multispectral signatures, where urban and greenspace land uses can be distinguished through spectral characteristics. Therefore, further understanding atmospheric correction and scattering effects is essential, as cloud coverage and particles redirect radiation, which weakens surface sensing and reducing data quality.</p>
 </section>
 <section id="references" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="references"><span class="header-section-number">1.4</span> References</h2>
