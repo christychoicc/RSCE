@@ -106,7 +106,9 @@ $$
 
 : Tasseled Cap Functions (Source: [ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/tasseled-cap-function.htm#ESRI_SECTION1_6B9B732A91344B8782F925E4BE4ACA4F))
 
-The below two Sentinel-2 tasseled cap transformed imagery is adjusted for brightness, greenness and wetness between August and December 2025. Although there is no obvious land cover change, the comparisons have visualized subtle hue changes.
+The below two Sentinel-2 tasseled cap transformed imagery is adjusted for brightness, greenness and wetness between August and December 2025. Although there is no obvious land cover change, the comparisons have visualized some subtle hue changes within certain areas. Blue, red and pink areas of built up urban infrastructure (road networks, airport, coastal piers) and waters remained unchanged, while brown areas depicts the built up urban features. Greenness is distinguished by lighter blue and greens, highlighting areas with higher moisture and humibidity. Overall, vegetation coverage appears equivalent in both seasons
+
+Despite Lisboa's Mediterranean climate, there is no fluctuation of seasonal vegetation coverage change. One interesting feature to look at is the Parque Florestal de Monsanto large urban forest, where the vegetation coverage has a very subtle brightness difference between August and December. With a high density of vegetation, the overlay of greenness and wetness detections also indicates consistent moisture levels across seasons. Moving beyond the subtle variations in the visual interpretations, spectral reflectance across different bands will be looked at next.
 
 ::: {layout-ncol="2"}
 ![Lisboa in August 2025 (Sentinel, Tasseled Cap Transformed)](images/w1_images/tasseledcaps_sentinel.png)
