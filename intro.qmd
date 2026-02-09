@@ -132,8 +132,6 @@ Sentinel-2 and Landsat have very similar spectral bands,
 
 Beyond capturing Earth's surface imagery, EO data functions as a powerful measurement tool. This has shifted my perspective from viewing satellite imagery primarily as visual reference material to recognizing it as a quantitative measurement instrument. Interpretation varies significantly depending on band selection, resampling methods, and processing techniques. EO has demonstrated potential for efficiently mapping vast areas for monitoring and early prediction, but this requires careful consideration of cloud coverage, noise, and systematic biases. Lisboa has been a strong study area, as it display features of coastal conditions where atmospheric effects influence satellite reflectance and interpretation. The analysis demonstrated the strength of multispectral signatures, where urban and greenspace land uses can be distinguished through spectral characteristics. Therefore, further understanding atmospheric correction and scattering effects is essential, as cloud coverage and particles redirect radiation, which weakens surface sensing and reducing data quality.
 
-**(Word count: 358)**
-
 ## References
 
 Sentinel Data Source:
