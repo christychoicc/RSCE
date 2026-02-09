@@ -122,7 +122,7 @@ Spectral reflectance across bands showed distinct differences for each land cove
 ![Spectral Reflectence of Sentinel (A, B) and Landsat (C, D)](images/w1_images/final_spectral_reflectance_image.png)
 :::
 
-Sentinel-2 and Landsat have very similar spectral bands,
+Sentinel-2 and Landsat have very similar spectral bands, where key differences are their spatial and temporal resolution. Sentinel-2 has a comparably finer spatial resolution and higher revisit frequency, giving advantages of higher details and regular monitoring of dynamic changes. Despite, their spectral similarity allows cross-validation analysis when there are limitations of cloud coverage or data availability on one platform, enabling higher flexibility multi-temporal studies.
 
 ::: {layout-ncol="1"}
 ![Spectral Reflectence Bands of Sentinel-2 and Landsat (Source: [USGS 2019](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-sentinel-2-comparison-sentinel-2-and-landsat))](images/w1_images/dmidS2LS7Comparison.png)
