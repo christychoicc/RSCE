@@ -404,7 +404,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w1_images/passive-instrument-illustration.png" class="img-fluid figure-img"></p>
-<figcaption>Passive Sensor (Source: NASA EARTHDATA)</figcaption>
+<figcaption>Passive Sensor (Source: <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/passive-instruments#:~:text=Unlike%20active%20instruments%2C%20which%20emit,emitted%20from%20the%20natural%20environment.&amp;text=Credit%3A%20NASA%20Earthdata.,in%20NASA%20Earth%20science%20data">NASA EARTHDATA</a></figcaption>
 </figure>
 </div>
 </div>
@@ -412,7 +412,7 @@ window.Quarto = {
 <div id="reference" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/w1_images/active-instrument-illustration.png" class="img-fluid figure-img"></p>
-<figcaption>Active Sensor (Source: NASA EARTHDATA)</figcaption>
+<figcaption>Active Sensor (Source: <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/active-instruments#:~:text=Active%20instruments%20send%20out%20a,the%20atmosphere%20under%20most%20conditions">NASA EARTHDATA</a>)</figcaption>
 </figure>
 </div>
 </div>
@@ -428,7 +428,18 @@ window.Quarto = {
 <section id="spectral-resolution" class="level4" data-number="1.1.2.2">
 <h4 data-number="1.1.2.2" class="anchored" data-anchor-id="spectral-resolution"><span class="header-section-number">1.1.2.2</span> Spectral Resolution</h4>
 <p>Visible part of the electromagnetic spectrum is composed of red, green and blue wavelengths. Multi-spectral sensors measure reflection at multiple wavelength bands to create spectral signatures, which such patterns of reflectence across the spectrum helps distinguish different surface features. However, observations are often constrained to atmospheric windows (e.g.&nbsp;cloud cover) which absorbs radiation.</p>
-<p>::: {#Electromagnetic Spectrum and Satellite Sensor layout-ncol=“1”} <img src="images/w1_images/electromagnetic_spectrum.png" class="img-fluid" alt="Spectral Reflectence of Sentinel (A, B) and Landsat (C, D)"> :::</p>
+<div id="CHUNKNAME" class="quarto-layout-panel" data-layout-ncol="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/"><img src="images/w1_images/electromagnetic_spectrum.png" class="img-fluid figure-img" alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"></a></p>
+<figcaption>Electromagnetic Spectrum and Satellite Sensor Capture Range (Source: [ESRI](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/))</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="temporal-resolution" class="level4" data-number="1.1.2.3">
 <h4 data-number="1.1.2.3" class="anchored" data-anchor-id="temporal-resolution"><span class="header-section-number">1.1.2.3</span> Temporal Resolution</h4>
@@ -437,13 +448,13 @@ window.Quarto = {
 <section id="radiometric-resolution" class="level4" data-number="1.1.2.4">
 <h4 data-number="1.1.2.4" class="anchored" data-anchor-id="radiometric-resolution"><span class="header-section-number">1.1.2.4</span> Radiometric Resolution</h4>
 <p>The ability of a sensor to identify and discriminate between subtle differences in energy in each pixel.</p>
-<div id="CHUNKNAME" class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w1_images/remote-sensing-resolutions.png" class="img-fluid figure-img"></p>
-<figcaption>Remote Sensing Resolutions (Source: NASA EARTHDATA) <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution" class="uri">https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution</a></figcaption>
+<figcaption>Remote Sensing Resolutions (Source: <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution">NASA EARTHDATA</a>)</figcaption>
 </figure>
 </div>
 </div>
@@ -456,7 +467,7 @@ window.Quarto = {
 <h2 data-number="1.2" class="anchored" data-anchor-id="application"><span class="header-section-number">1.2</span> Application</h2>
 <section id="study-area-lisboa-portugal" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="study-area-lisboa-portugal"><span class="header-section-number">1.2.1</span> Study Area: Lisboa, Portugal</h3>
-<p>Satellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed with SNAP. Selecting the RGB-image it gives the <strong>True Natural Color</strong>. <strong>False Colour Composite</strong> bands combination of B8, B4 and B3 highlights healthy and unhealthy vegetation, with denser vegetation visualised as red and urban areas as white. <strong>Atmospheric Pentration</strong> … (reference: <a href="https://gisgeography.com/sentinel-2-bands-combinations/" class="uri">https://gisgeography.com/sentinel-2-bands-combinations/</a>)</p>
+<p>Satellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed with SNAP. Selecting the RGB-image it gives the <strong>True Natural Color</strong> combination of B4, B3 and B2. <strong>False Colour Composite</strong> of B8, B4 and B3 highlights healthy and unhealthy vegetation, with denser vegetation visualised as red and urban areas as white. <strong>Atmospheric Penetration</strong> of B12, B11 and B8A composites with no visible bands to penetrate atmospheric particles, highlighting vegetation in blue and urban areas as gray, cyan or purple. More can be found at <a href="https://gisgeography.com/sentinel-2-bands-combinations/">Sentinel 2 Bands and Combinations</a>.</p>
 <div id="Sentinel_Colour" class="quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
@@ -479,12 +490,13 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w1_images/atmosphericpentration_sentinel.png" class="img-fluid figure-img"></p>
-<figcaption>Atmospheric Pentration, Sentinel</figcaption>
+<figcaption>Atmospheric Penetration, Sentinel</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
+<p>The scatter plots of Sentinel-2 (B4, B8) and Landsat (B4, B5) showed the spectral relationship between Red and Near-infrared spectral feature space. Both pixel distribution showed low values of NIR absorption for water , low red and high NIR values for vegetation and correlated red and NIR values increases for urban areas, characterizing the land cover composition of Lisboa.</p>
 <div id="Scatterplot" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -507,17 +519,53 @@ window.Quarto = {
 </div>
 <section id="tasseled-caps" class="level4" data-number="1.2.1.1">
 <h4 data-number="1.2.1.1" class="anchored" data-anchor-id="tasseled-caps"><span class="header-section-number">1.2.1.1</span> Tasseled Caps</h4>
-<p>Applied the following Maths Band Equations:</p>
+<p>Different combinations of multi-spectral bands to examine relationship between the bands, to highlight physical land features. It is commonly used to evaluate <strong>brightness</strong>, <strong>greenness</strong> and <strong>wetness</strong> for monitor vegetation growth cycles, soil and urban development ( reference - <a href="https://support.esri.com/en-us/gis-dictionary/tasseled-cap-transformation" class="uri">https://support.esri.com/en-us/gis-dictionary/tasseled-cap-transformation</a>).</p>
+<p>Applied Maths Band Equations:</p>
 <p><span class="math display">\[
 \begin{split}Brightness=0.3037(B2) + 0.2793(B3)+\\0.4743(B4)+0.5585(B8)+\\0.5082(B11)+0.1863(B12)\end{split}
 \]</span></p>
 <p><span class="math display">\[
-\begin{split}Greeness=-0.2848(B2)-0.2435(B3)\\-0.5436(B4)+0.7243(B8)+\\0.0840(B11)-0.1800(B12)\end{split}
+\begin{split}Greenness=-0.2848(B2)-0.2435(B3)\\-0.5436(B4)+0.7243(B8)+\\0.0840(B11)-0.1800(B12)\end{split}
 \]</span></p>
 <p><span class="math display">\[
 \begin{split}Wetness=0.1509(B2)+0.1973(B3)\\+0.3279(B4)+0.3406(B8)\\-0.7112(B11)-0.4572(B12)\end{split}
 \]</span></p>
-<p>Comparing two Sentinel-2 tasseled cap transformed imagery that is adjusted for brightness, greenness and wetness of August and December 2025,</p>
+<table class="caption-top table">
+<caption>Tasseled Cap Functions (Source: <a href="https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/tasseled-cap-function.htm#ESRI_SECTION1_6B9B732A91344B8782F925E4BE4ACA4F">ArcGIS Pro</a>)</caption>
+<thead>
+<tr class="header">
+<th>Tasseled Cap Transformation Bands</th>
+<th>Physical Associations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Brightness</td>
+<td><ul>
+<li><p>Bare earth soil</p></li>
+<li><p>Built up surfaces</p></li>
+<li><p>Natural features (concrete, asphalt, gravel, rock outcrops…)</p></li>
+<li><p>Bright materials</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Greenness</td>
+<td><ul>
+<li>Green vegetation</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Wetness</td>
+<td><ul>
+<li><p>Moisture</p></li>
+<li><p>Soil moisture</p></li>
+<li><p>Water</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p>The below two Sentinel-2 tasseled cap transformed imagery is adjusted for brightness, greenness and wetness between August and December 2025. Although there is no obvious land cover change, the comparisons have visualized some subtle hue changes within certain areas. Blue, red and pink areas of built up urban infrastructure (road networks, airport, coastal piers) and waters remained unchanged, while brown areas depicts the built up urban features. Greenness is distinguished by lighter blue and greens, highlighting areas with higher moisture and humibidity. Overall, vegetation coverage appears equivalent in both seasons</p>
+<p>Despite Lisboa’s Mediterranean climate, there is no fluctuation of seasonal vegetation coverage change. One interesting feature to look at is the Parque Florestal de Monsanto large urban forest, where the vegetation coverage has a very subtle brightness difference between August and December. With a high density of vegetation, the overlay of greenness and wetness detections also indicates consistent moisture levels across seasons. Moving beyond the subtle variations in the visual interpretations, spectral reflectance across different bands will be looked at next.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -556,7 +604,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w1_images/dmidS2LS7Comparison.png" class="img-fluid figure-img"></p>
-<figcaption>Comparison of Sentinel 2 and Landsat 7 and 8 Spectral Bands (https://www.usgs.gov/centers/eros/science/usgs-eros-archive-sentinel-2-comparison-sentinel-2-and-landsat)</figcaption>
+<figcaption>Spectral Reflectence Bands of Sentinel-2 and Landsat (Source: <a href="https://www.usgs.gov/centers/eros/science/usgs-eros-archive-sentinel-2-comparison-sentinel-2-and-landsat">USGS 2019</a>)</figcaption>
 </figure>
 </div>
 </div>
