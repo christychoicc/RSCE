@@ -68,7 +68,7 @@ The scatter plots of Sentinel-2 (B4, B8) and Landsat (B4, B5) showed the spectra
 
 #### Tasseled Caps
 
-Different combinations of multi-spectral bands to examine relationship between the bands, to highlight physical land features. It is commonly used to evaluate **brightness**, **greenness** and **wetness**.
+Different combinations of multi-spectral bands to examine relationship between the bands, to highlight physical land features. It is commonly used to evaluate **brightness**, **greenness** and **wetness** for monitor vegetation growth cycles, soil and urban development ( reference - <https://support.esri.com/en-us/gis-dictionary/tasseled-cap-transformation>).
 
 Applied Maths Band Equations:
 
@@ -84,7 +84,29 @@ $$
 \begin{split}Wetness=0.1509(B2)+0.1973(B3)\\+0.3279(B4)+0.3406(B8)\\-0.7112(B11)-0.4572(B12)\end{split}
 $$
 
-Comparing two Sentinel-2 tasseled cap transformed imagery that is adjusted for brightness, greenness and wetness between August and December 2025. Although there is no obvious land cover change, the ... have showed the
++-----------------------------------+--------------------------------------------------------------------+
+| Tasseled Cap Transformation Bands | Physical Associations                                              |
++===================================+====================================================================+
+| Brightness                        | -   Bare earth soil                                                |
+|                                   |                                                                    |
+|                                   | -   Built up surfaces                                              |
+|                                   |                                                                    |
+|                                   | -   Natural features (concrete, asphalt, gravel, rock outcrops...) |
+|                                   |                                                                    |
+|                                   | -   Bright materials                                               |
++-----------------------------------+--------------------------------------------------------------------+
+| Greenness                         | -   Green vegetation                                               |
++-----------------------------------+--------------------------------------------------------------------+
+| Wetness                           | -   Moisture                                                       |
+|                                   |                                                                    |
+|                                   | -   Soil moisture                                                  |
+|                                   |                                                                    |
+|                                   | -   Water                                                          |
++-----------------------------------+--------------------------------------------------------------------+
+
+: Tasseled Cap Functions (Source: [ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/tasseled-cap-function.htm#ESRI_SECTION1_6B9B732A91344B8782F925E4BE4ACA4F))
+
+The below two Sentinel-2 tasseled cap transformed imagery is adjusted for brightness, greenness and wetness between August and December 2025. Although there is no obvious land cover change, the comparisons have visualized subtle hue changes.
 
 ::: {layout-ncol="2"}
 ![Lisboa in August 2025 (Sentinel, Tasseled Cap Transformed)](images/w1_images/tasseledcaps_sentinel.png)
