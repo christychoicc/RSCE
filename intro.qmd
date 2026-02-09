@@ -13,7 +13,7 @@ Remote sensing is not only satellite imagery but a system that allows us to obta
 Overall, observations are shaped by the electromagnetic spectrum and its interactions between radiation, atmosphere, and Earth’s surface, where radiation can be absorbed, transmitted, or scattered (Tempfli *et al.*, 2009). To mitigate atmospheric scattering in imagery, atmospheric correction can be applied to remove these effects.
 
 ::: {#Fig_Passive_Active_Sensors layout-ncol="2"}
-![Passive Sensor (Source: [NASA EARTHDATA](https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/passive-instruments#:~:text=Unlike%20active%20instruments%2C%20which%20emit,emitted%20from%20the%20natural%20environment.&text=Credit%3A%20NASA%20Earthdata.,in%20NASA%20Earth%20science%20data)](images/w1_images/passive-instrument-illustration.png)
+![Passive Sensor (Source: [NASA EARTHDATA](https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/passive-instruments#:~:text=Unlike%20active%20instruments%2C%20which%20emit,emitted%20from%20the%20natural%20environment.&text=Credit%3A%20NASA%20Earthdata.,in%20NASA%20Earth%20science%20data))](images/w1_images/passive-instrument-illustration.png)
 
 ![Active Sensor (Source: [NASA EARTHDATA](https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/active-instruments#:~:text=Active%20instruments%20send%20out%20a,the%20atmosphere%20under%20most%20conditions))](images/w1_images/active-instrument-illustration.png){#reference}
 :::
@@ -29,7 +29,7 @@ The size of the raster grid cell per pixel, where it can range from metres to ki
 Visible part of the electromagnetic spectrum is composed of red, green and blue wavelengths. Multi-spectral sensors measure reflection at multiple wavelength bands to create spectral signatures, which such patterns of reflectence across the spectrum helps distinguish different surface features. However, observations are often constrained to atmospheric windows (e.g. cloud cover) which absorbs radiation.
 
 ::: {#CHUNKNAME layout-ncol="1"}
-[![Electromagnetic Spectrum and Satellite Sensor Capture Range (Source: [ESRI](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/))](images/w1_images/electromagnetic_spectrum.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"}](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/)
+[![Electromagnetic Spectrum and Satellite Sensor Capture Range (Source: [ESRI](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/))](images/w1_images/electromagnetic_spectrum.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)" fig-align="left"}](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/)
 :::
 
 #### Temporal Resolution
@@ -84,31 +84,31 @@ $$
 \begin{split}Wetness=0.1509(B2)+0.1973(B3)\\+0.3279(B4)+0.3406(B8)\\-0.7112(B11)-0.4572(B12)\end{split}
 $$
 
-+-----------------------------------+--------------------------------------------------------------------+
-| Tasseled Cap Transformation Bands | Physical Associations                                              |
-+===================================+====================================================================+
-| Brightness                        | -   Bare earth soil                                                |
-|                                   |                                                                    |
-|                                   | -   Built up surfaces                                              |
-|                                   |                                                                    |
-|                                   | -   Natural features (concrete, asphalt, gravel, rock outcrops...) |
-|                                   |                                                                    |
-|                                   | -   Bright materials                                               |
-+-----------------------------------+--------------------------------------------------------------------+
-| Greenness                         | -   Green vegetation                                               |
-+-----------------------------------+--------------------------------------------------------------------+
-| Wetness                           | -   Moisture                                                       |
-|                                   |                                                                    |
-|                                   | -   Soil moisture                                                  |
-|                                   |                                                                    |
-|                                   | -   Water                                                          |
-+-----------------------------------+--------------------------------------------------------------------+
++-----------------------------+--------------------------------------------------------------------+
+| Tasseled Cap Transformation | Physical Associations                                              |
++=============================+====================================================================+
+| Brightness                  | -   Bare earth soil                                                |
+|                             |                                                                    |
+|                             | -   Built up surfaces                                              |
+|                             |                                                                    |
+|                             | -   Natural features (concrete, asphalt, gravel, rock outcrops...) |
+|                             |                                                                    |
+|                             | -   Bright materials                                               |
++-----------------------------+--------------------------------------------------------------------+
+| Greenness                   | -   Green vegetation                                               |
++-----------------------------+--------------------------------------------------------------------+
+| Wetness                     | -   Moisture                                                       |
+|                             |                                                                    |
+|                             | -   Soil moisture                                                  |
+|                             |                                                                    |
+|                             | -   Water                                                          |
++-----------------------------+--------------------------------------------------------------------+
 
 : Tasseled Cap Functions (Source: [ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/tasseled-cap-function.htm#ESRI_SECTION1_6B9B732A91344B8782F925E4BE4ACA4F))
 
 The below two Sentinel-2 tasseled cap transformed imagery is adjusted for brightness, greenness and wetness between August and December 2025. Although there is no obvious land cover change, the comparisons have visualized some subtle hue changes within certain areas. Blue, red and pink areas of built up urban infrastructure (road networks, airport, coastal piers) and waters remained unchanged, while brown areas depicts the built up urban features. Greenness is distinguished by lighter blue and greens, highlighting areas with higher moisture and humibidity. Overall, vegetation coverage appears equivalent in both seasons
 
-Despite Lisboa's Mediterranean climate, there is no fluctuation of seasonal vegetation coverage change. One interesting feature to look at is the Parque Florestal de Monsanto large urban forest, where the vegetation coverage has a very subtle brightness difference between August and December. With a high density of vegetation, the overlay of greenness and wetness detections also indicates consistent moisture levels across seasons. Moving beyond the subtle variations in the visual interpretations, spectral reflectance across different bands will be looked at next.
+Despite Lisboa's Mediterranean climate, there is no fluctuation of seasonal vegetation coverage change. One interesting feature to look at is the Parque Florestal de Monsanto large urban forest, where the vegetation coverage has a very subtle brightness difference between August and December. With a high density of vegetation, the overlay of greenness and wetness detections also visualize moisture levels across time. Moving beyond the subtle variations in the visual interpretations, spectral reflectance across different bands will be looked at next.
 
 ::: {layout-ncol="2"}
 ![Lisboa in August 2025 (Sentinel, Tasseled Cap Transformed)](images/w1_images/tasseledcaps_sentinel.png)
@@ -116,15 +116,23 @@ Despite Lisboa's Mediterranean climate, there is no fluctuation of seasonal vege
 ![Lisboa in December 2025 (Sentinel, Tasseled Cap Transformed)](images/w1_images/tasseledcaps_sentinel_1229.png)
 :::
 
+Spectral reflectance across bands showed distinct differences for each land cover type. Both sensors are found similar results for identifying the spectral behaviours between each land cover, while Landsat has a comparably higher mean reflectance across all bands. Both NIR bands are noted most significant for distinguishing vegetated and non-vegetated surfaces. Greenspace have been noted with the lowest reflectance, while bare earth has the highest reflectance.
+
 ::: {layout-ncol="1"}
 ![Spectral Reflectence of Sentinel (A, B) and Landsat (C, D)](images/w1_images/final_spectral_reflectance_image.png)
 :::
+
+Sentinel-2 and Landsat have very similar spectral bands,
 
 ::: {layout-ncol="1"}
 ![Spectral Reflectence Bands of Sentinel-2 and Landsat (Source: [USGS 2019](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-sentinel-2-comparison-sentinel-2-and-landsat))](images/w1_images/dmidS2LS7Comparison.png)
 :::
 
 ## Reflection
+
+Beyond capturing Earth's surface imagery, EO data functions as a powerful measurement tool. This has shifted my perspective from viewing satellite imagery primarily as visual reference material to recognizing it as a quantitative measurement instrument. Interpretation varies significantly depending on band selection, resampling methods, and processing techniques. EO has demonstrated potential for efficiently mapping vast areas for monitoring and early prediction, but this requires careful consideration of cloud coverage, noise, and systematic biases. Lisboa has been a strong study area, as it display features of coastal conditions where atmospheric effects influence satellite reflectance and interpretation. The analysis demonstrated the strength of multispectral signatures, where urban and greenspace land uses can be distinguished through spectral characteristics. Therefore, further understanding atmospheric correction and scattering effects is essential, as cloud coverage and particles redirect radiation, which weakens surface sensing and reducing data quality.
+
+**(Word count: 358)**
 
 ## References
 
