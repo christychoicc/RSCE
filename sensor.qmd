@@ -7,7 +7,7 @@ This section will look at **Sentinel-1**. The slides are presented in the Xaring
 
 ## Presentation
 
-```{r}
+```{r, echo=FALSE}
 
 xaringanExtra::embed_xaringan(
   url = "slides/sensor-slides.html", 

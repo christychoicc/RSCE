@@ -1,6 +1,9 @@
 project:
   type: book
   output-dir: docs
+  render: 
+  - "*.qmd"      # Only render QMD files
+  - "!slides/"   # EXPLICITLY IGNORE this folder for rendering
   resources: 
   - slides/
   - images/
