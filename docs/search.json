@@ -52,7 +52,7 @@
   {
     "objectID": "sensor.html",
     "href": "sensor.html",
-    "title": "2  Sensor",
+    "title": "\n2  Sensor\n",
     "section": "",
     "text": "2.1 Presentation\nThis section will look at Sentinel-1. The slides are presented in the Xaringan template.",
     "crumbs": [
@@ -62,8 +62,8 @@
   {
     "objectID": "sensor.html#reflection",
     "href": "sensor.html#reflection",
-    "title": "2  Sensor",
-    "section": "2.2 Reflection",
+    "title": "\n2  Sensor\n",
+    "section": "\n2.2 Reflection",
     "text": "2.2 Reflection",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sensor</span>"
