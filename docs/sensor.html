@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction – CASA0023 Remotely Sensing Cities and Environments Learning Diary</title>
+<title>2&nbsp; Sensor – CASA0023 Remotely Sensing Cities and Environments Learning Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./sensor.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -74,36 +74,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/fitvids-2.1.1/fitvids.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -307,7 +280,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sensor.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sensor</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -327,13 +300,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sensor.html" class="sidebar-item-text sidebar-link">
+  <a href="./sensor.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sensor</span></span></a>
   </div>
 </li>
@@ -353,17 +326,11 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">1.1</span> Summary</a>
+  <li><a href="#sensor" id="toc-sensor" class="nav-link active" data-scroll-target="#sensor"><span class="header-section-number">3</span> Sensor</a>
   <ul class="collapse">
-  <li><a href="#types-of-sensor" id="toc-types-of-sensor" class="nav-link" data-scroll-target="#types-of-sensor"><span class="header-section-number">1.1.1</span> Types of Sensor</a></li>
-  <li><a href="#types-of-resolution" id="toc-types-of-resolution" class="nav-link" data-scroll-target="#types-of-resolution"><span class="header-section-number">1.1.2</span> Types of Resolution</a></li>
+  <li><a href="#presentation" id="toc-presentation" class="nav-link" data-scroll-target="#presentation"><span class="header-section-number">3.1</span> Presentation</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">3.2</span> Reflection</a></li>
   </ul></li>
-  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">1.2</span> Application</a>
-  <ul class="collapse">
-  <li><a href="#study-area-lisboa-portugal" id="toc-study-area-lisboa-portugal" class="nav-link" data-scroll-target="#study-area-lisboa-portugal"><span class="header-section-number">1.2.1</span> Study Area: Lisboa, Portugal</a></li>
-  </ul></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">1.3</span> Reflection</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">1.4</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -373,7 +340,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sensor</span></h1>
 </div>
 
 
@@ -390,239 +357,25 @@ window.Quarto = {
 </header>
 
 
-<p>Remote sensing is not only satellite imagery but a system that allows us to obtain EO data through acquiring information from a distance using sensors on platforms. This section introduces types of sensors and resolutions of remote sensing data. The following study area of Lisboa, Portugal will demonstrate a workflow of analysing Earth Observations (EO) data processed through SNAP and R.</p>
-<section id="summary" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.1</span> Summary</h2>
-<section id="types-of-sensor" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="types-of-sensor"><span class="header-section-number">1.1.1</span> Types of Sensor</h3>
-<p><strong>Passive Sensors</strong> detect energy emitted or reflected from the object by the sun. They mainly operate in the visible, infrared, thermal infrared, and microwave bands of the electromagnetic spectrum, mostly used to measure surface temperature, vegetation properties and other physical attributes. However, passive sensors cannot penetrate dense cloud cover, limiting areas with higher cloud rates.</p>
-<p><strong>Active Sensors</strong> emits energy and collect data based on changes in the return signal. Most active sensors have higher capabilities to penetrate atmospheric conditions. For example, the Synthetic Aperture Radar (SAR), has the ability to “see through cloud” as it operates with comparably longer wavelengths, allowing data collections during night hours. This allows them to be less dependent on sunlight which better handles atmospheric constraints.</p>
-<p>Overall, observations are shaped by the electromagnetic spectrum and its interactions between radiation, atmosphere, and Earth’s surface, where radiation can be absorbed, transmitted, or scattered (Tempfli <em>et al.</em>, 2009). To mitigate atmospheric scattering in imagery, atmospheric correction can be applied to remove these effects.</p>
-<div id="Fig_Passive_Active_Sensors" class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/w1_images/passive-instrument-illustration.png" class="img-fluid figure-img"></p>
-<figcaption>Passive Sensor (Source: <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/passive-instruments#:~:text=Unlike%20active%20instruments%2C%20which%20emit,emitted%20from%20the%20natural%20environment.&amp;text=Credit%3A%20NASA%20Earthdata.,in%20NASA%20Earth%20science%20data">NASA EARTHDATA</a>)</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="reference" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/w1_images/active-instrument-illustration.png" class="img-fluid figure-img"></p>
-<figcaption>Active Sensor (Source: <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/active-instruments#:~:text=Active%20instruments%20send%20out%20a,the%20atmosphere%20under%20most%20conditions">NASA EARTHDATA</a>)</figcaption>
-</figure>
-</div>
+<section id="sensor" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Sensor</h1>
+<p>This section will look at <strong>Sentinel-1</strong>. The slides are presented in the Xaringan template.</p>
+<section id="presentation" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="presentation"><span class="header-section-number">3.1</span> Presentation</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
+<iframe src="https://christychoicc.github.io/RSCE/sensor-slides.html" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen=""></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 </div>
 </div>
 </section>
-<section id="types-of-resolution" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="types-of-resolution"><span class="header-section-number">1.1.2</span> Types of Resolution</h3>
-<section id="spatial-resolution" class="level4" data-number="1.1.2.1">
-<h4 data-number="1.1.2.1" class="anchored" data-anchor-id="spatial-resolution"><span class="header-section-number">1.1.2.1</span> Spatial Resolution</h4>
-<p>The size of the raster grid cell per pixel, where it can range from metres to kilometres. The spatial resolution scale varies depending on specific observation and reasearch suitability, ranging from highest/finest resolution at 10m for buildings to the lowest/coarse at 100km for a global scale (NASA EARTHDATA).</p>
-</section>
-<section id="spectral-resolution" class="level4" data-number="1.1.2.2">
-<h4 data-number="1.1.2.2" class="anchored" data-anchor-id="spectral-resolution"><span class="header-section-number">1.1.2.2</span> Spectral Resolution</h4>
-<p>Visible part of the electromagnetic spectrum is composed of red, green and blue wavelengths. Multi-spectral sensors measure reflection at multiple wavelength bands to create spectral signatures, which such patterns of reflectence across the spectrum helps distinguish different surface features. However, observations are often constrained to atmospheric windows (e.g.&nbsp;cloud cover) which absorbs radiation.</p>
-<div id="CHUNKNAME" class="quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><a href="https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/"><img src="images/w1_images/electromagnetic_spectrum.png" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"></a></p>
-</figure>
-</div>
-<figcaption>Electromagnetic Spectrum and Satellite Sensor Capture Range (Source: [ESRI](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/))</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="temporal-resolution" class="level4" data-number="1.1.2.3">
-<h4 data-number="1.1.2.3" class="anchored" data-anchor-id="temporal-resolution"><span class="header-section-number">1.1.2.3</span> Temporal Resolution</h4>
-<p>The frequency of a sensor’s revisit in capturing the same observation area. The temporal resolution measurement period can vary from 1 to 16 days depending on the platform (NASA EARTHDATA <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution" class="uri">https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution</a>).</p>
-</section>
-<section id="radiometric-resolution" class="level4" data-number="1.1.2.4">
-<h4 data-number="1.1.2.4" class="anchored" data-anchor-id="radiometric-resolution"><span class="header-section-number">1.1.2.4</span> Radiometric Resolution</h4>
-<p>The ability of a sensor to identify and discriminate between subtle differences in energy in each pixel.</p>
-<div class="quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/w1_images/remote-sensing-resolutions.png" class="img-fluid figure-img"></p>
-<figcaption>Remote Sensing Resolutions (Source: <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution">NASA EARTHDATA</a>)</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="application" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="application"><span class="header-section-number">1.2</span> Application</h2>
-<section id="study-area-lisboa-portugal" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="study-area-lisboa-portugal"><span class="header-section-number">1.2.1</span> Study Area: Lisboa, Portugal</h3>
-<p>Satellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed with SNAP. Selecting the RGB-image it gives the <strong>True Natural Color</strong> combination of B4, B3 and B2. <strong>False Colour Composite</strong> of B8, B4 and B3 highlights healthy and unhealthy vegetation, with denser vegetation visualised as red and urban areas as white. <strong>Atmospheric Penetration</strong> of B12, B11 and B8A composites with no visible bands to penetrate atmospheric particles, highlighting vegetation in blue and urban areas as gray, cyan or purple. More can be found at <a href="https://gisgeography.com/sentinel-2-bands-combinations/">Sentinel 2 Bands and Combinations</a>.</p>
-<div id="Sentinel_Colour" class="quarto-layout-panel" data-layout-ncol="3">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/w1_images/truenaturalcolour_sentinel.png" class="img-fluid figure-img"></p>
-<figcaption>True Natural Colour, Sentinel</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/w1_images/falsecolourcomposite_sentinel.png" class="img-fluid figure-img"></p>
-<figcaption>False Colour Composite, Sentinel</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/w1_images/atmosphericpentration_sentinel.png" class="img-fluid figure-img"></p>
-<figcaption>Atmospheric Penetration, Sentinel</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>The scatter plots of Sentinel-2 (B4, B8) and Landsat (B4, B5) showed the spectral relationship between Red and Near-infrared spectral feature space. Both pixel distribution showed low values of NIR absorption for water , low red and high NIR values for vegetation and correlated red and NIR values increases for urban areas, characterizing the land cover composition of Lisboa.</p>
-<div id="Scatterplot" class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/w1_images/b4b8_scatterplot_sentinel.png" class="img-fluid figure-img"></p>
-<figcaption>Sentinel Band 4 and Band 8 Scatterplot</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/w1_images/b4b5scatterplot_landsat.png" class="img-fluid figure-img"></p>
-<figcaption>Landsat Band 4 and Band 5 Scatterplot</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<section id="tasseled-caps" class="level4" data-number="1.2.1.1">
-<h4 data-number="1.2.1.1" class="anchored" data-anchor-id="tasseled-caps"><span class="header-section-number">1.2.1.1</span> Tasseled Caps</h4>
-<p>Different combinations of multi-spectral bands to examine relationship between the bands, to highlight physical land features. It is commonly used to evaluate <strong>brightness</strong>, <strong>greenness</strong> and <strong>wetness</strong> for monitor vegetation growth cycles, soil and urban development ( reference - <a href="https://support.esri.com/en-us/gis-dictionary/tasseled-cap-transformation" class="uri">https://support.esri.com/en-us/gis-dictionary/tasseled-cap-transformation</a>).</p>
-<p>Applied Maths Band Equations:</p>
-<p><span class="math display">\[
-\begin{split}Brightness=0.3037(B2) + 0.2793(B3)+\\0.4743(B4)+0.5585(B8)+\\0.5082(B11)+0.1863(B12)\end{split}
-\]</span></p>
-<p><span class="math display">\[
-\begin{split}Greenness=-0.2848(B2)-0.2435(B3)\\-0.5436(B4)+0.7243(B8)+\\0.0840(B11)-0.1800(B12)\end{split}
-\]</span></p>
-<p><span class="math display">\[
-\begin{split}Wetness=0.1509(B2)+0.1973(B3)\\+0.3279(B4)+0.3406(B8)\\-0.7112(B11)-0.4572(B12)\end{split}
-\]</span></p>
-<table class="caption-top table">
-<caption>Tasseled Cap Functions (Source: <a href="https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/tasseled-cap-function.htm#ESRI_SECTION1_6B9B732A91344B8782F925E4BE4ACA4F">ArcGIS Pro</a>)</caption>
-<thead>
-<tr class="header">
-<th>Tasseled Cap Transformation</th>
-<th>Physical Associations</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Brightness</td>
-<td><p>Bare earth soil</p>
-<p>Built up surfaces</p>
-<p>Natural features (concrete, asphalt, gravel, rock outcrops…)</p>
-<p>Bright materials</p></td>
-</tr>
-<tr class="even">
-<td>Greenness</td>
-<td>Green vegetation</td>
-</tr>
-<tr class="odd">
-<td>Wetness</td>
-<td><p>Moisture</p>
-<p>Soil moisture</p>
-<p>Water</p></td>
-</tr>
-</tbody>
-</table>
-<p>The below two Sentinel-2 tasseled cap transformed imagery is adjusted for brightness, greenness and wetness between August and December 2025. Although there is no obvious land cover change, the comparisons have visualized some subtle hue changes within certain areas. Blue, red and pink areas of built up urban infrastructure (road networks, airport, coastal piers) and waters remained unchanged, while brown areas depicts the built up urban features. Greenness is distinguished by lighter blue and greens, highlighting areas with higher moisture and humibidity. Overall, vegetation coverage appears equivalent in both seasons</p>
-<p>Despite Lisboa’s Mediterranean climate, there is no fluctuation of seasonal vegetation coverage change. One interesting feature to look at is the Parque Florestal de Monsanto large urban forest, where the vegetation coverage has a very subtle brightness difference between August and December. With a high density of vegetation, the overlay of greenness and wetness detections also visualize moisture levels across time. Moving beyond the subtle variations in the visual interpretations, spectral reflectance across different bands will be looked at next.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/w1_images/tasseledcaps_sentinel.png" class="img-fluid figure-img"></p>
-<figcaption>Lisboa in August 2025 (Sentinel, Tasseled Cap Transformed)</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/w1_images/tasseledcaps_sentinel_1229.png" class="img-fluid figure-img"></p>
-<figcaption>Lisboa in December 2025 (Sentinel, Tasseled Cap Transformed)</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Spectral reflectance across bands showed distinct differences for each land cover type. Both sensors are found similar results for identifying the spectral behaviours between each land cover, while Landsat has a comparably higher mean reflectance across all bands. Both NIR bands are noted most significant for distinguishing vegetated and non-vegetated surfaces. Greenspace have been noted with the lowest reflectance, while bare earth has the highest reflectance.</p>
-<div class="quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/w1_images/final_spectral_reflectance_image.png" class="img-fluid figure-img"></p>
-<figcaption>Spectral Reflectence of Sentinel (A, B) and Landsat (C, D)</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Sentinel-2 and Landsat have very similar spectral bands, where key differences are their spatial and temporal resolution. Sentinel-2 has a comparably finer spatial resolution and higher revisit frequency, giving advantages of higher details and regular monitoring of dynamic changes. Despite, their spectral similarity allows cross-validation analysis when there are limitations of cloud coverage or data availability on one platform, enabling higher flexibility multi-temporal studies.</p>
-<div class="quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/w1_images/dmidS2LS7Comparison.png" class="img-fluid figure-img"></p>
-<figcaption>Spectral Reflectence Bands of Sentinel-2 and Landsat (Source: <a href="https://www.usgs.gov/centers/eros/science/usgs-eros-archive-sentinel-2-comparison-sentinel-2-and-landsat">USGS 2019</a>)</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="reflection" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">1.3</span> Reflection</h2>
-<p>Beyond capturing Earth’s surface imagery, EO data functions as a powerful measurement tool. This has shifted my perspective from viewing satellite imagery primarily as visual reference material to recognizing it as a quantitative measurement instrument. Interpretation varies significantly depending on band selection, resampling methods, and processing techniques. EO has demonstrated potential for efficiently mapping vast areas for monitoring and early prediction, but this requires careful consideration of cloud coverage, noise, and systematic biases. Lisboa has been a strong study area, as it display features of coastal conditions where atmospheric effects influence satellite reflectance and interpretation. The analysis demonstrated the strength of multispectral signatures, where urban and greenspace land uses can be distinguished through spectral characteristics. Therefore, further understanding atmospheric correction and scattering effects is essential, as cloud coverage and particles redirect radiation, which weakens surface sensing and reducing data quality.</p>
-</section>
-<section id="references" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="references"><span class="header-section-number">1.4</span> References</h2>
-<p>Sentinel Data Source:</p>
-<p><a href="https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/auth?client_id=sh-5f8b630b-b083-49ed-b340-b8f01ecb81c4&amp;redirect_uri=https%3A%2F%2Fbrowser.dataspace.copernicus.eu%2F%3Fzoom%3D5%26lat%3D50.16282%26lng%3D20.78613%26demSource3D%3D%2522MAPZEN%2522%26cloudCoverage%3D30%26dateMode%3DSINGLE&amp;state=26c991f3-8c5e-487e-b23d-d5fe36fbabb7&amp;response_mode=fragment&amp;response_type=code&amp;scope=openid&amp;nonce=c67a4727-3008-4473-8b84-0a9304c87ce3&amp;code_challenge=ZGmOypxnXCivN18EjxS722lF4SDVSsskdcUb_zktYp4&amp;code_challenge_method=S256" class="uri">https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/auth?client_id=sh-5f8b630b-b083-49ed-b340-b8f01ecb81c4&amp;redirect_uri=https%3A%2F%2Fbrowser.dataspace.copernicus.eu%2F%3Fzoom%3D5%26lat%3D50.16282%26lng%3D20.78613%26demSource3D%3D%2522MAPZEN%2522%26cloudCoverage%3D30%26dateMode%3DSINGLE&amp;state=26c991f3-8c5e-487e-b23d-d5fe36fbabb7&amp;response_mode=fragment&amp;response_type=code&amp;scope=openid&amp;nonce=c67a4727-3008-4473-8b84-0a9304c87ce3&amp;code_challenge=ZGmOypxnXCivN18EjxS722lF4SDVSsskdcUb_zktYp4&amp;code_challenge_method=S256</a></p>
+<section id="reflection" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.2</span> Reflection</h2>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1041,13 +794,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sensor.html" class="pagination-link" aria-label="Sensor">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sensor</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

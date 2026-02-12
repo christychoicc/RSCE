@@ -29,7 +29,7 @@ The size of the raster grid cell per pixel, where it can range from metres to ki
 Visible part of the electromagnetic spectrum is composed of red, green and blue wavelengths. Multi-spectral sensors measure reflection at multiple wavelength bands to create spectral signatures, which such patterns of reflectence across the spectrum helps distinguish different surface features. However, observations are often constrained to atmospheric windows (e.g. cloud cover) which absorbs radiation.
 
 ::: {#CHUNKNAME layout-ncol="1"}
-[![Electromagnetic Spectrum and Satellite Sensor Capture Range (Source: [ESRI](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/))](images/w1_images/electromagnetic_spectrum.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)" fig-align="left"}](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/)
+[![Electromagnetic Spectrum and Satellite Sensor Capture Range (Source: \[ESRI\](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/))](images/w1_images/electromagnetic_spectrum.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)" fig-align="left"}](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/)
 :::
 
 #### Temporal Resolution
@@ -84,25 +84,25 @@ $$
 \begin{split}Wetness=0.1509(B2)+0.1973(B3)\\+0.3279(B4)+0.3406(B8)\\-0.7112(B11)-0.4572(B12)\end{split}
 $$
 
-+-----------------------------+--------------------------------------------------------------------+
-| Tasseled Cap Transformation | Physical Associations                                              |
-+=============================+====================================================================+
-| Brightness                  | -   Bare earth soil                                                |
-|                             |                                                                    |
-|                             | -   Built up surfaces                                              |
-|                             |                                                                    |
-|                             | -   Natural features (concrete, asphalt, gravel, rock outcrops...) |
-|                             |                                                                    |
-|                             | -   Bright materials                                               |
-+-----------------------------+--------------------------------------------------------------------+
-| Greenness                   | -   Green vegetation                                               |
-+-----------------------------+--------------------------------------------------------------------+
-| Wetness                     | -   Moisture                                                       |
-|                             |                                                                    |
-|                             | -   Soil moisture                                                  |
-|                             |                                                                    |
-|                             | -   Water                                                          |
-+-----------------------------+--------------------------------------------------------------------+
++-----------------------------+----------------------------------------------------------------+
+| Tasseled Cap Transformation | Physical Associations                                          |
++=============================+================================================================+
+| Brightness                  | Bare earth soil                                                |
+|                             |                                                                |
+|                             | Built up surfaces                                              |
+|                             |                                                                |
+|                             | Natural features (concrete, asphalt, gravel, rock outcrops...) |
+|                             |                                                                |
+|                             | Bright materials                                               |
++-----------------------------+----------------------------------------------------------------+
+| Greenness                   | Green vegetation                                               |
++-----------------------------+----------------------------------------------------------------+
+| Wetness                     | Moisture                                                       |
+|                             |                                                                |
+|                             | Soil moisture                                                  |
+|                             |                                                                |
+|                             | Water                                                          |
++-----------------------------+----------------------------------------------------------------+
 
 : Tasseled Cap Functions (Source: [ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/tasseled-cap-function.htm#ESRI_SECTION1_6B9B732A91344B8782F925E4BE4ACA4F))
 

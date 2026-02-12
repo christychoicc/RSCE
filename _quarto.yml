@@ -23,7 +23,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - summary.qmd
+    - sensor.qmd
     - references.qmd
 
 

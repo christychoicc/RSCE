@@ -1,0 +1,45 @@
+---
+title: "Sensor"
+subtitle: "Sentinel-1"
+author: "Christy Choi"
+institute: "RStudio, PBC"
+date: "2016/12/12 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    #preamble (colour for the slide)
+    css: [default, xaringan-themer.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    self_contained: false
+---
+```{r setup, include=FALSE}
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "authoryear",
+           style = "markdown",
+           hyperlink = TRUE,
+           dashed = FALSE,
+           no.print.fields=c("doi", "url", "urldate", "issn"))
+myBib <- ReadBib("./Bib.bib", check = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+
+style_mono_light(
+  base_color = "#2c3e50",
+  background_color = "#fafafa",
+  header_font_google = google_font("Libre Baskerville"),
+  text_font_google   = google_font("Libre Baskerville"),
+  code_font_google   = google_font("Fira Code"),
+  text_line_height = "1.5",
+  base_font_size = "20px"
+)
+```
+
+---
+
