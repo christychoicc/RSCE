@@ -296,17 +296,17 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 
 /* Extra CSS */
 .title-slide h1 {
-  font-size: 80px;
+  font-size: 60px;
   color: #FFFFFF;
   margin-bottom: 0px;
 }
 .title-slide h2 {
-  font-size: 45px;
+  font-size: 32px;
   color: #FFFFFF;
   margin-top: 0px;
 }
 .title-slide h3 {
-  font-size: 28px;
+  font-size: 24px;
   color: #FFFFFF;
   font-weight: normal;
 }
