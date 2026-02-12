@@ -38,22 +38,24 @@ style_mono_light(
   code_font_google   = google_font("Fira Code"),
   base_font_size = "20px",
   extra_css = list(
+    # Title (h1)
     ".title-slide h1" = list(
-      "font-size" = "60px",
-      "color" = "#2c3e50",
-      "margin-bottom" = "0px"
+      "font-size" = "55px",
+      "margin-bottom" = "15px"
     ),
+    # Subtitle (h2)
     ".title-slide h2" = list(
-      "font-size" = "32px",
-      "color" = "#2c3e50",
-      "margin-top" = "0px"
-    ), 
+      "font-size" = "35px",
+      "margin-top" = "0px",
+      "margin-bottom" = "30px"
+    ),
+    # Author, Institute, Date (h3)
     ".title-slide h3" = list(
-      "font-size" = "24px",
-      "color" = "#2c3e50",
-      "font-weight" = "normal"
-    )  
-  )   
+      "font-size" = "20px",
+      "font-weight" = "normal",
+      "margin-bottom" = "10px"
+    )
+  )
 )
 ```
 

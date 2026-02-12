@@ -27,6 +27,7 @@ book:
     - index.qmd
     - intro.qmd
     - sensor.qmd
+    - correction.qmd
     - references.qmd
 
 

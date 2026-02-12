@@ -2,7 +2,7 @@
 title: "Sensor"
 ---
 
-This section will look at Sentinel-1. The slides are presented in the Xaringan template.
+This section will look at **Sentinel-1**. The slides are presented using the Xaringan template.
 
 ## Presentation
 
