@@ -1,14 +1,12 @@
 ---
 title: "Sensor"
-format: html
 ---
 
-This section will look at **Sentinel-1**. The slides are presented in the Xaringan template.
+This section will look at Sentinel-1. The slides are presented in the Xaringan template.
 
 ## Presentation
 
 ```{r, echo=FALSE}
-
 xaringanExtra::embed_xaringan(
   url = "slides/sensor-slides.html", 
   ratio = "16:9"
