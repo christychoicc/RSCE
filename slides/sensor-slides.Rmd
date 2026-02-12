@@ -2,8 +2,8 @@
 title: "Sensor"
 subtitle: "Sentinel-1"
 author: "Christy Choi"
-institute: "RStudio, PBC"
-date: "2016/12/12 (updated: `r Sys.Date()`)"
+institute: "The Bartlett Centre for Advanced Spatial Analysis, UCL"
+date: "2026/02/11 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     #preamble (colour for the slide)
@@ -24,7 +24,7 @@ BibOptions(check.entries = FALSE,
            hyperlink = TRUE,
            dashed = FALSE,
            no.print.fields=c("doi", "url", "urldate", "issn"))
-myBib <- ReadBib("./Bib.bib", check = FALSE)
+myBib <- ReadBib("../references.bib", check = FALSE)
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -36,10 +36,25 @@ style_mono_light(
   header_font_google = google_font("Libre Baskerville"),
   text_font_google   = google_font("Libre Baskerville"),
   code_font_google   = google_font("Fira Code"),
-  text_line_height = "1.5",
-  base_font_size = "20px"
+  base_font_size = "20px",
+  extra_css = list(
+    ".title-slide h1" = list(
+      "font-size" = "60px",
+      "color" = "#FFFFFF",
+      "margin-bottom" = "0px"
+    ),
+    ".title-slide h2" = list(
+      "font-size" = "32px",
+      "color" = "#FFFFFF",
+      "margin-top" = "0px"
+    ), 
+    ".title-slide h3" = list(
+      "font-size" = "24px",
+      "color" = "#FFFFFF",
+      "font-weight" = "normal"
+    )  
+  )   
 )
 ```
 
----
 

@@ -10,7 +10,7 @@ This section will look at **Sentinel-1**. The slides are presented in the Xaring
 ```{r, echo=FALSE}
 
 xaringanExtra::embed_xaringan(
-  url = "https://christychoicc.github.io/RSCE/sensor-slides.html", 
+  url = "https://christychoicc.github.io/slides/sensor-slides.html", 
   ratio = "16:9"
 )
 ```
