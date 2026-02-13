@@ -37,11 +37,14 @@ style_mono_light(
   header_font_google = google_font("Libre Baskerville"),
   text_font_google   = google_font("Libre Baskerville"),
   code_font_google   = google_font("Fira Code"),
-  base_font_size = "20px",
+  base_font_size = "16px",
+  header_h1_font_size = "2.2rem", # Was likely ~2.5-3rem by default
+  header_h2_font_size = "1.8rem",
+  header_h3_font_size = "1.4rem",
   extra_css = list(
     # Title (h1)
     ".title-slide h1" = list(
-      "font-size" = "48px",
+      "font-size" = "40px",
       "margin-bottom" = "15px"
     ),
     # Subtitle (h2)
@@ -63,8 +66,8 @@ style_mono_light(
 # What is Sentinel-1? 
 .pull-left[
 * A polar orbiting two satellite constellation that carries C-band synthetic aperture radar (C-SAR)
+
 * Able to acquire data under day-and-night, all weather and atmospheric conditions
-*
 ]
 
 .pull-right[
@@ -92,11 +95,13 @@ xaringanExtra::use_panelset()
 .pull-left[
 .panelset[
 .panel[.panel-name[Resolution]
-* Bullet points
+* Spectral Resolution: 1nm - 180nm
+
+* Temporal Coverage: Global revisit bi-weekly (interval of 12 Days)
 
 ]
 .panel[.panel-name[Applications]
-* Global revisit coverage bi-weekly(an interval of ... days)
+* bullet points
 
 ] ] ] .pull-right[
 The below shows the total coverage of Sentinel-1 Ground Range Detected (GRD) from 2014 to January 2026.
