@@ -1,8 +1,8 @@
 ---
-title: "Sensor"
-subtitle: "Sentinel-1"
+title: "Sentinel-1"
+subtitle: "Earth Observations, Land and Ocean Monitoring"
 author: "Christy Choi"
-institute: "The Bartlett Centre for Advanced Spatial Analysis, UCL"
+institute: "CASA0023 Learning Diary"
 date: "2026/02/11 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
@@ -14,6 +14,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
     self_contained: false
+    ratio: '16:9'
 ---
 ```{r setup, include=FALSE}
 library(RefManageR)
@@ -40,18 +41,18 @@ style_mono_light(
   extra_css = list(
     # Title (h1)
     ".title-slide h1" = list(
-      "font-size" = "55px",
+      "font-size" = "48px",
       "margin-bottom" = "15px"
     ),
     # Subtitle (h2)
     ".title-slide h2" = list(
-      "font-size" = "35px",
+      "font-size" = "28px",
       "margin-top" = "0px",
       "margin-bottom" = "30px"
     ),
     # Author, Institute, Date (h3)
     ".title-slide h3" = list(
-      "font-size" = "20px",
+      "font-size" = "18px",
       "font-weight" = "normal",
       "margin-bottom" = "10px"
     )
@@ -59,4 +60,70 @@ style_mono_light(
 )
 ```
 
+# What is Sentinel-1? 
+.pull-left[
+* A polar orbiting two satellite constellation that carries C-band synthetic aperture radar (C-SAR)
+* Able to acquire data under day-and-night, all weather and atmospheric conditions
+*
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width='100%', fig.align='right'}
+# Add a sentinel-1 picture
+# Source: https://sentiwiki.copernicus.eu/web/sentinel-1
+knitr::include_graphics("../images/w2_images/sentinel-1.jpg")
+```
+]
+
+---
+
+# Mission of Sentinel-1
+
+
+
+---
+
+# Technical Specifications
+```{r tech-setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+# Load xaringanExtra for the tabs
+xaringanExtra::use_panelset()
+```
+.pull-left[
+.panelset[
+.panel[.panel-name[Resolution]
+* Bullet points
+
+]
+.panel[.panel-name[Applications]
+* Global revisit coverage bi-weekly(an interval of ... days)
+
+] ] ] .pull-right[
+The below shows the total coverage of Sentinel-1 Ground Range Detected (GRD) from 2014 to January 2026.
+```{r, echo=FALSE, out.width='100%', fig.align='right'}
+# Add a ground range detection picture 
+# Source: https://www.earthdata.nasa.gov/data/platforms/space-based-platforms/sentinel-1
+knitr::include_graphics("../images/w2_images/GoundRangeDetected-Cumulative-2026-01.png")
+```
+]
+
+---
+
+# Benefits and Limitations 
+
+---
+
+# Application 1
+
+---
+
+# Application 2
+
+---
+
+# Application 3
+
+---
+
+# Reflection
 
