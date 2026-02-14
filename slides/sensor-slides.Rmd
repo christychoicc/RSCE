@@ -1,5 +1,5 @@
 ---
-title: "Sentinel-1"
+title: "Sentinel-1 C-SAR"
 subtitle: "Earth Observations, Land and Ocean Monitoring"
 author: "Christy Choi"
 institute: "CASA0023 Learning Diary"
@@ -68,6 +68,10 @@ style_mono_light(
 * A polar orbiting two satellite constellation that carries C-band synthetic aperture radar (C-SAR)
 
 * Able to acquire data under day-and-night, all weather and atmospheric conditions
+
+* Able to capture land, ice, and coastal zones data with high and medium resolutions
+
+* Launched by the European Space Agency (ESA) under the Copernicus Program to acquire environment and security data
 ]
 
 .pull-right[
@@ -76,6 +80,9 @@ style_mono_light(
 # Source: https://sentiwiki.copernicus.eu/web/sentinel-1
 knitr::include_graphics("../images/w2_images/sentinel-1.jpg")
 ```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 1: Sentinel-1 (Source: <a href="https://sentiwiki.copernicus.eu/web/sentinel-1">SentiWiki Copernicus</a>)
+</p>
 ]
 
 ---
@@ -95,21 +102,39 @@ xaringanExtra::use_panelset()
 .pull-left[
 .panelset[
 .panel[.panel-name[Resolution]
+* Spatial Resolution: 25 x 40 m, 5 x 5 m, and 5 x 20 m
+
 * Spectral Resolution: 1nm - 180nm
 
-* Temporal Coverage: Global revisit bi-weekly (interval of 12 Days)
-
+* Temporal Coverage: 
+  * Global revisit bi-weekly (interval of 12 Days)
+  * Repeat frequency of 6 days with two-satellites constellation
+  * 175 orbits per cycle per satellite
+  * Revisit rates higher in areas with higher latitude (e.g. < 1 day at Arctic, ~ 2 days at Europe)
+  
+* Reference Sources: [SentiWiki](https://sentiwiki.copernicus.eu/web/sentiwiki) and [NASA EARTHDATA](https://www.earthdata.nasa.gov/data/instruments/sentinel-1-c-sar#:~:text=Instrument%20Type,Frequently%20Asked%20Questions) 
 ]
 .panel[.panel-name[Applications]
 * bullet points
 
 ] ] ] .pull-right[
-The below shows the total coverage of Sentinel-1 Ground Range Detected (GRD) from 2014 to January 2026.
-```{r, echo=FALSE, out.width='100%', fig.align='right'}
+```{r, echo=FALSE, out.width='280px', fig.align='center'}
+# Add a sentinel-1 constellation 
+# Source: https://sentiwiki.copernicus.eu/web/s1-mission
+knitr::include_graphics("../images/w2_images/sentinel1_constellation.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: -10px; margin-bottom: 20px;">
+Figure 2: Sentinel-1 Constellation (Source: <a href="https://sentiwiki.copernicus.eu/web/s1-mission">SentiWiki Copernicus</a>)
+</p>
+
+```{r, echo=FALSE, out.width='280px', fig.align='center'}
 # Add a ground range detection picture 
 # Source: https://www.earthdata.nasa.gov/data/platforms/space-based-platforms/sentinel-1
 knitr::include_graphics("../images/w2_images/GoundRangeDetected-Cumulative-2026-01.png")
 ```
+<p style="font-size: 0.6em; text-align: center; margin-top: -10px;">
+Figure 3: Sentinel-1 Ground Range Detected Coverage (Source: <a href="https://www.earthdata.nasa.gov/data/platforms/space-based-platforms/sentinel-1">NASA Earthdata</a>)
+</p>
 ]
 
 ---
@@ -118,15 +143,15 @@ knitr::include_graphics("../images/w2_images/GoundRangeDetected-Cumulative-2026-
 
 ---
 
-# Application 1
+# Application: Land Monitoring
 
 ---
 
-# Application 2
+# Application: Maritime Monitoring
 
 ---
 
-# Application 3
+# Application: Emergency Response Management
 
 ---
 

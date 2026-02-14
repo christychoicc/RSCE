@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Sentinel-1</title>
+    <title>Sentinel-1 C-SAR</title>
     <meta charset="utf-8" />
     <meta name="author" content="Christy Choi" />
     <script src="libs/header-attrs/header-attrs.js"></script>
@@ -15,7 +15,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Sentinel-1
+# Sentinel-1 C-SAR
 ]
 .subtitle[
 ## Earth Observations, Land and Ocean Monitoring
@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ### CASA0023 Learning Diary
 ]
 .date[
-### 2026/02/11 (updated: 2026-02-13)
+### 2026/02/11 (updated: 2026-02-14)
 ]
 
 ---
@@ -41,10 +41,17 @@ class: center, middle, inverse, title-slide
 * A polar orbiting two satellite constellation that carries C-band synthetic aperture radar (C-SAR)
 
 * Able to acquire data under day-and-night, all weather and atmospheric conditions
+
+* Able to capture land, ice, and coastal zones data with high and medium resolutions
+
+* Launched by the European Space Agency (ESA) under the Copernicus Program to acquire environment and security data
 ]
 
 .pull-right[
 &lt;img src="../images/w2_images/sentinel-1.jpg" alt="" width="100%" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: 0;"&gt;
+Figure 1: Sentinel-1 (Source: &lt;a href="https://sentiwiki.copernicus.eu/web/sentinel-1"&gt;SentiWiki Copernicus&lt;/a&gt;)
+&lt;/p&gt;
 ]
 
 ---
@@ -60,17 +67,31 @@ class: center, middle, inverse, title-slide
 .pull-left[
 .panelset[
 .panel[.panel-name[Resolution]
+* Spatial Resolution: 25 x 40 m, 5 x 5 m, and 5 x 20 m
+
 * Spectral Resolution: 1nm - 180nm
 
-* Temporal Coverage: Global revisit bi-weekly (interval of 12 Days)
-
+* Temporal Coverage: 
+  * Global revisit bi-weekly (interval of 12 Days)
+  * Repeat frequency of 6 days with two-satellites constellation
+  * 175 orbits per cycle per satellite
+  * Revisit rates higher in areas with higher latitude (e.g. &lt; 1 day at Arctic, ~ 2 days at Europe)
+  
+* Reference Sources: [SentiWiki](https://sentiwiki.copernicus.eu/web/sentiwiki) and [NASA EARTHDATA](https://www.earthdata.nasa.gov/data/instruments/sentinel-1-c-sar#:~:text=Instrument%20Type,Frequently%20Asked%20Questions) 
 ]
 .panel[.panel-name[Applications]
 * bullet points
 
 ] ] ] .pull-right[
-The below shows the total coverage of Sentinel-1 Ground Range Detected (GRD) from 2014 to January 2026.
-&lt;img src="../images/w2_images/GoundRangeDetected-Cumulative-2026-01.png" alt="" width="100%" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="../images/w2_images/sentinel1_constellation.png" alt="" width="280px" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: -10px; margin-bottom: 20px;"&gt;
+Figure 2: Sentinel-1 Constellation (Source: &lt;a href="https://sentiwiki.copernicus.eu/web/s1-mission"&gt;SentiWiki Copernicus&lt;/a&gt;)
+&lt;/p&gt;
+
+&lt;img src="../images/w2_images/GoundRangeDetected-Cumulative-2026-01.png" alt="" width="280px" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: -10px;"&gt;
+Figure 3: Sentinel-1 Ground Range Detected Coverage (Source: &lt;a href="https://www.earthdata.nasa.gov/data/platforms/space-based-platforms/sentinel-1"&gt;NASA Earthdata&lt;/a&gt;)
+&lt;/p&gt;
 ]
 
 ---
@@ -79,15 +100,15 @@ The below shows the total coverage of Sentinel-1 Ground Range Detected (GRD) fro
 
 ---
 
-# Application 1
+# Application: Land Monitoring
 
 ---
 
-# Application 2
+# Application: Maritime Monitoring
 
 ---
 
-# Application 3
+# Application: Emergency Response Management
 
 ---
 
