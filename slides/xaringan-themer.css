@@ -326,3 +326,21 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   float: right;
   width: 32%;
 }
+.pull-left-4 {
+  float: left;
+  width: 22%;
+}
+.pull-mid1-4 {
+  float: left;
+  width: 22%;
+  margin-left: 4%;
+}
+.pull-mid2-4 {
+  float: left;
+  width: 22%;
+  margin-left: 4%;
+}
+.pull-right-4 {
+  float: right;
+  width: 22%;
+}
