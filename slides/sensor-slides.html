@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ### CASA0023 Learning Diary
 ]
 .date[
-### 2026/02/11 (updated: 2026-02-14)
+### 2026/02/11 (updated: 2026-02-15)
 ]
 
 ---
@@ -56,20 +56,72 @@ Figure 1: Sentinel-1 (Source: &lt;a href="https://sentiwiki.copernicus.eu/web/se
 
 ---
 
-# Mission of Sentinel-1
+# Mission of Sentinel-1C
 
 
+Launched in 5 December 2024, reestablished a two-satellite constellation orbiting 180° apart for extensive worldwide coverage by May 2025, with improved features such as the Automatic Identification System (AIS) for maritime tracking.
 
+### Key Mission Objectives and Applications
+.panelset[
+.panel[.panel-name[Land Monitoring]
+&lt;div style="font-size: 14px;"&gt;
+.pull-left-3[
+#### Forestry
+* **Role**: Forest Type Classification, Biomass Estimation, Disturbance Detection
+
+* **Climate Change**: Forest Carbon History, Estimate Carbon Emissions
+
+* **Land Cover**: Support forest management, Monitor illegal timber harvesting activities
+]
+
+.pull-middle-3[
+#### Agriculture
+* **Role**: Food Security, Monitor Crop Conditions
+
+* **Agricultural Production**: Harvest Prediction, Monitor Seasonal Changes, Pastures Productivity, Drought Impacts
+
+* **Soil**: Monitor Soil Properties, Soil Degradation, Land Productivity, Tillage Activities
+
+* **Policy**: Supporting Sustainable Development and using estimations to support Food Security efforts
+]
+
+.pull-right-3[
+#### Urban Deformation Mapping
+* **Role**: Monitoring to improve safety and reduce economic loss
+
+* **Land Subsidence**: Detect surface movements to up an accuracy of few millimetres per year
+
+* **Infrastructure**: Detect Structural Damage to Infrastructures (e.g. Buildings) and Underground Conditions
+
+* **Disaster**: Assess Damage/ Devastation After Events (e.g. Explosion)
+]
+&lt;div style="clear:both"&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+]
+
+.panel[.panel-name[Maritime Monitoring]
+
+]
+
+.panel[.panel-name[Emergency Management]
+
+]
+
+]
+
+* Reference Sources: [NASA EARTHDATA](https://www.earthdata.nasa.gov/data/platforms/space-based-platforms/sentinel-1) , [SentiWiki Copernicus](https://sentiwiki.copernicus.eu/web/s1-applications#S1Applications-OverviewofS1Applications)
 ---
 
 # Technical Specifications
-
 .pull-left[
 .panelset[
 .panel[.panel-name[Resolution]
+* Spatial Coverage: Worldwide
+
 * Spatial Resolution: 25 x 40 m, 5 x 5 m, and 5 x 20 m
 
-* Spectral Resolution: 1nm - 180nm
+* Spectral Resolution: C-band radar at 5.405 GHz
 
 * Temporal Coverage: 
   * Global revisit bi-weekly (interval of 12 Days)
@@ -77,10 +129,19 @@ Figure 1: Sentinel-1 (Source: &lt;a href="https://sentiwiki.copernicus.eu/web/se
   * 175 orbits per cycle per satellite
   * Revisit rates higher in areas with higher latitude (e.g. &lt; 1 day at Arctic, ~ 2 days at Europe)
   
-* Reference Sources: [SentiWiki](https://sentiwiki.copernicus.eu/web/sentiwiki) and [NASA EARTHDATA](https://www.earthdata.nasa.gov/data/instruments/sentinel-1-c-sar#:~:text=Instrument%20Type,Frequently%20Asked%20Questions) 
+* Reference Sources: [SentiWiki](https://sentiwiki.copernicus.eu/web/sentiwiki) , [NASA EARTHDATA](https://www.earthdata.nasa.gov/data/instruments/sentinel-1-c-sar#:~:text=Instrument%20Type,Frequently%20Asked%20Questions) , [Torres. et.al, 2012](https://www.sciencedirect.com/science/article/pii/S0034425712000600) 
 ]
-.panel[.panel-name[Applications]
-* bullet points
+.panel[.panel-name[Specifications]
+
+* Orbital Altitude: 693 km
+
+* Sensor Complement: C-SAR (C-band Synthetic Aperture Radar)
+
+* Operative autonomy: 96 hours
+
+* Lifespan: 7.25 years (consumables for 12 years)
+
+* Reference Sources: [eoPortal](https://www.eoportal.org/satellite-missions/copernicus-sentinel-1#spacecraft)
 
 ] ] ] .pull-right[
 &lt;img src="../images/w2_images/sentinel1_constellation.png" alt="" width="280px" style="display: block; margin: auto;" /&gt;
