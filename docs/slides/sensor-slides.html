@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ### CASA0023 Learning Diary
 ]
 .date[
-### 2026/02/11 (updated: 2026-02-16)
+### 2026/02/11 (updated: 2026-02-17)
 ]
 
 ---
@@ -59,9 +59,13 @@ Figure 1: Sentinel-1 (Source: &lt;a href="https://sentiwiki.copernicus.eu/web/se
 # Mission of Sentinel-1C
 
 
-Launched in 5 December 2024, reestablished a two-satellite constellation orbiting 180° apart for extensive worldwide coverage by May 2025 with improved features. SAR actively senses the microwaves from the Earth's surface, distincting dark features visibly, making it uniquely reliable for the continuous monitoring for modern applications.
+Launched on 5 December 2024, Sentinel-1C reestablished a two-satellite constellation orbiting 180° apart for extensive worldwide coverage by May 2025 with technical upgrades. SAR allows continuous monitoring and provides consistent long-term data for time-series analysis.
 
-### Key Mission Objectives and Applications
+### Key Mission Objectives and Applications 
+&lt;div style="font-size: 10px; margin-top: -15px; margin-bottom: 15px; color: #555;"&gt;
+Reference: &lt;a href="https://www.earthdata.nasa.gov/data/platforms/space-based-platforms/sentinel-1"&gt;NASA EARTHDATA&lt;/a&gt; , &lt;a href="https://sentiwiki.copernicus.eu/web/s1-applications#S1Applications-OverviewofS1Applications"&gt;SentiWiki Copernicus&lt;/a&gt;
+&lt;/div&gt;
+
 .panelset[
 .panel[.panel-name[Land Monitoring]
 &lt;div style="font-size: 14px;"&gt;
@@ -69,26 +73,24 @@ Launched in 5 December 2024, reestablished a two-satellite constellation orbitin
 #### Forestry
 * **Role**: Forest Type Classification, Biomass Estimation, Disturbance Detection
 
-* **Climate Change**: Forest Carbon History, Estimate Carbon Emissions
+* **Climate Change**: Trace Forest Carbon History, Estimate Carbon Emissions
 
 * **Land Cover**: Support forest management, Monitor illegal timber harvesting activities
 ]
 
 .pull-middle-3[
 #### Agriculture
-* **Role**: Food Security, Monitor Crop Conditions
 
-* **Agricultural Production**: Harvest Prediction, Monitor Seasonal Changes, Pastures Productivity, Drought Impacts
+* **Crop Production**: Conditions, Harvest Prediction, Monitor Seasonal Changes, Pastures Productivity, Drought Impacts
 
-* **Soil**: Monitor Soil Properties, Soil Degradation, Land Productivity, Tillage Activities
+* **Soil**: Soil Properties, Degradation, Land Productivity, Tillage Activities
 
 ]
 
 .pull-right-3[
 #### Urban Deformation Mapping
-* **Role**: Accurate Monitoring of Surface Deformation
 
-* **Land Subsidence**: Detect surface movements to up an accuracy of few millimetres per year
+* **Land Subsidence**: Detect surface movements
 
 * **Infrastructure**: Detect Structural Damage to Infrastructures (e.g. Buildings) and Underground Conditions
 
@@ -103,34 +105,33 @@ Launched in 5 December 2024, reestablished a two-satellite constellation orbitin
 &lt;div style="font-size: 14px;"&gt;
 .pull-left-4[
 #### Ice
-* **Role**: Ice Classification, Iceberg Information
 
-* **Identification**: Type, Salinity, Roughness, Thickness, Size, Density, Orientation, Location, Drift
+* **Identification**: Type, Thickness, Size, Density, Orientation, Location
 
-* **Navigation**: Coast Guards, Navies, Ships in Ice-Covered Zones
+* **Navigation in Ice-Covered Zones**
 
 ]
 
 .pull-mid1-4[
 #### Ship
 
-* **Cooperative System**: Uses AIS (Automatic Identification System) Onboard to Trace and Identify Ships, Reporting Identity and Location
+* **Cooperative System**: Uses AIS to Detect, Classify, Trace and Locate Vessels
 
 ]
 
 .pull-mid2-4[
 #### Oil Pollution
 
-* **Prosecution**: Oil Detection from Illegal discharges, Oil Spills Spread, Naturally Seepage correlated with AIS information
+* **Prosecution**: Oil Detection from Illegal discharges, Spills Spread, Naturally Seepage with AIS information
 
 ]
 
 .pull-right-4[
-#### Marine Waves and Winds
+#### Oceanography
 
-* **Weather Prediction**: Storm and Cyclone Monitoring
+* **Weather Prediction**: Storm and Cyclone
 
-* **Coastal**: Ocean Currents and Sea Surface Winds
+* **Coastal**: Marine Waves, Ocean Currents and Sea Surface Winds
 
 * **Wave Energy**
 
@@ -145,11 +146,8 @@ Launched in 5 December 2024, reestablished a two-satellite constellation orbitin
 &lt;div style="font-size: 14px;"&gt;
 .pull-left-3[
 #### Flood Monitoring
-* **Role**: Impact Assessment on human, economic and environmental loss
 
-* **Extensive Mapping**: Assessing flooded areas with cloud cover, High Frequency of Revisits
-
-* **Hydrology**: Digital Elevation Models (DEM) for Run-off and Inundation Analysis 
+* **Hydrology**: Run-off and Inundation Analysis 
 
 * **Vegetation**: Detect Flooded Vegetation
 
@@ -157,21 +155,19 @@ Launched in 5 December 2024, reestablished a two-satellite constellation orbitin
 
 .pull-middle-3[
 #### Earthquake Analysis
-* **Role**: Persistent Monitoring of Earthquake-Prone Areas
 
-* **Earthquake Deformation Mapping** 
+* **Earthquake Deformation Mapping**
 
 * **Identify Potential Risks**: Discover Active Fault Lines from Persistent Monitoring
 
-* **Large-scale Monitoring**: Interferometric Wide swath mode allows easier monitoring of large scale earthquakes
+* **Large-scale Monitoring Earthquakes**
 
 ]
 
 .pull-right-3[
 #### Landslide and Volcano Monitoring
-* **Role**: Identify Areas Prone to Landslides, Monitor Surface Deformation
 
-* **Identify Potential Warnings**: First Signs of Increasing Levels of Volcanic Activity, Preceding Earthquakes, Pre-eruption Uplift, Quantify Ground Deformation, Post Eruption Volcanic Shrinkage
+* **Identify Potential Warnings**: Monitor Surface Deformation, Identify First Signs of Volcanic Activity, Preceding Earthquakes, Pre-eruption Uplift, Quantify Ground Deformation, Post Eruption Volcanic Shrinkage
 
 ]
 &lt;div style="clear:both"&gt;&lt;/div&gt;
@@ -181,7 +177,6 @@ Launched in 5 December 2024, reestablished a two-satellite constellation orbitin
 ]
 
 
-* Reference Sources: [NASA EARTHDATA](https://www.earthdata.nasa.gov/data/platforms/space-based-platforms/sentinel-1) , [SentiWiki Copernicus](https://sentiwiki.copernicus.eu/web/s1-applications#S1Applications-OverviewofS1Applications)
 ---
 
 # Technical Specifications
@@ -190,7 +185,7 @@ Launched in 5 December 2024, reestablished a two-satellite constellation orbitin
 .panel[.panel-name[Resolution]
 * Spatial Coverage: Worldwide
 
-* Spatial Resolution: 25 x 40 m, 5 x 5 m, and 5 x 20 m
+* Spatial Resolution: 25x40m, 5x5m, and 5x20m
 
 * Spectral Resolution: C-band radar at 5.405 GHz
 
@@ -199,20 +194,26 @@ Launched in 5 December 2024, reestablished a two-satellite constellation orbitin
   * Repeat frequency of 6 days with two-satellites constellation
   * 175 orbits per cycle per satellite
   * Revisit rates higher in areas with higher latitude (e.g. &lt; 1 day at Arctic, ~ 2 days at Europe)
-  
-* Reference Sources: [SentiWiki](https://sentiwiki.copernicus.eu/web/sentiwiki) , [NASA EARTHDATA](https://www.earthdata.nasa.gov/data/instruments/sentinel-1-c-sar#:~:text=Instrument%20Type,Frequently%20Asked%20Questions) , [Torres. et.al, 2012](https://www.sciencedirect.com/science/article/pii/S0034425712000600) 
-]
+
+&lt;div style="font-size: 10px; margin-top: 20px; color: #555;"&gt;
+Reference: &lt;a href="https://sentiwiki.copernicus.eu/web/sentiwiki"&gt;SentiWiki&lt;/a&gt; , &lt;a href="https://www.earthdata.nasa.gov/data/instruments/sentinel-1-c-sar#:~:text=Instrument%20Type,Frequently%20Asked%20Questions"&gt;NASA EARTHDATA&lt;/a&gt; , &lt;a href="https://www.sciencedirect.com/science/article/pii/S0034425712000600"&gt;Torres. et.al, 2012&lt;/a&gt;
+&lt;/div&gt;]
+
 .panel[.panel-name[Specifications]
 
 * Orbital Altitude: 693 km
 
-* Sensor Complement: C-SAR (C-band Synthetic Aperture Radar)
+* Sensor Complement: C-SAR
 
 * Operative autonomy: 96 hours
 
+* Data Delivery: 24 hours
+
 * Lifespan: 7.25 years (consumables for 12 years)
 
-* Reference Sources: [eoPortal](https://www.eoportal.org/satellite-missions/copernicus-sentinel-1#spacecraft)
+&lt;div style="font-size: 10px; margin-top: 20px; color: #555;"&gt;
+Reference: &lt;a href="https://www.eoportal.org/satellite-missions/copernicus-sentinel-1#spacecraft"&gt;eoPortal&lt;/a&gt;
+&lt;/div&gt;
 
 ] ] ] .pull-right[
 &lt;img src="../images/w2_images/sentinel1_constellation.png" alt="" width="280px" style="display: block; margin: auto;" /&gt;
@@ -220,9 +221,9 @@ Launched in 5 December 2024, reestablished a two-satellite constellation orbitin
 Figure 2: Sentinel-1 Constellation (Source: &lt;a href="https://sentiwiki.copernicus.eu/web/s1-mission"&gt;SentiWiki Copernicus&lt;/a&gt;)
 &lt;/p&gt;
 
-&lt;img src="../images/w2_images/GoundRangeDetected-Cumulative-2026-01.png" alt="" width="280px" style="display: block; margin: auto;" /&gt;
+&lt;img src="../images/w2_images/Sentinel-1-Repeat-Coverage-Frequency-Geometry-2025_1.2.jpg" alt="" width="280px" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: -10px;"&gt;
-Figure 3: Sentinel-1 Ground Range Detected Coverage (Source: &lt;a href="https://www.earthdata.nasa.gov/data/platforms/space-based-platforms/sentinel-1"&gt;NASA Earthdata&lt;/a&gt;)
+Figure 3: Sentinel-1 Repeat Coverage Frequency (Source: &lt;a href="https://sentiwiki.copernicus.eu/web/s1-mission"&gt;SentiWiki Copernicus&lt;/a&gt;)
 &lt;/p&gt;
 ]
 
@@ -230,21 +231,78 @@ Figure 3: Sentinel-1 Ground Range Detected Coverage (Source: &lt;a href="https:/
 
 # Benefits and Limitations 
 
+.panelset[
+
+.panel[.panel-name[Benefits]
+
+&lt;img src="../images/w2_images/huge.jpg" alt="" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;p style="font-size: 0.6em; text-align: center; margin-top: -10px;"&gt;
+Figure 4: (Left) Sentinel-1 C-Band Radar transmit signals to the Earth surface. (Right) Radar passes through clouds (red), and depicts signals reflected from Earth's surface back to the satellite.   (Source: &lt;a href="https://land.copernicus.eu/en/feature-articles/sentinel-1c-secures-the-future-of-radar-data"&gt;NASA Earthdata&lt;/a&gt;)
+&lt;/p&gt;
+
+* **Free and Open Data**
+* **Consistent, High-Resolution, Quality, Reliable Data**
+* **Accessibility**: Timely and Accurate Data
+* **Improved Technical Instruments**: Upgraded radar imaging and design to withstand space debris 
+* **C-band radar**
+  * Ability to penetrate through clouds, and vegetation but to a lesser extent
+  * Able to deliver consistent and reliable data under conditions
+* **Two-satellite constellation** allow passing over same areas at the same time each orbital cycle
+
+&lt;div style="font-size: 10px; margin-top: 20px; color: #555;"&gt;
+Reference: &lt;a href="https://land.copernicus.eu/en/feature-articles/sentinel-1c-secures-the-future-of-radar-data"&gt;Copernicus&lt;/a&gt;
+&lt;/div&gt;
+
+]
+
+.panel[.panel-name[Limitations]
+
+* **Extensive pre-processing required**: GRD data require pre-processing procedure of noise removal before analysis ([Boemke, et.al, 2023](https://www.sciencedirect.com/science/article/pii/S1875963723000241))
+
+* SAR operates at shorter wavelengths, therefore exhibits shallower penetration depth and interacts primarily with the upper canopy layer ([Gupta, et.al, 2026](https://www.sciencedirect.com/science/article/pii/S2666017226000155))
+
+* Limited capabilities for topographic mapping based on stereoscopic methods applied to the amplitude ([Braun, 2021](https://www.degruyterbrill.com/document/doi/10.1515/geo-2020-0246/html)
+
+
+* There maybe areals of low coherence between the sensor and the area may limit interferometric approaches ([Boemke, et.al, 2023](https://www.sciencedirect.com/science/article/pii/S1875963723000241))
+
+
+]]
 ---
 
-# Application: Land Monitoring
+# Land Monitoring 
+### Crop Monitoring: A Case Study of the Netherlands ([Khabbazan,et.al, 2019](https://www.mdpi.com/2072-4292/11/16/1887))
+.pull-left[
+* **Purpose**
+  * Monitor growth and development of crops
+
+* **Why and How?**
+  * SAR ensured quality, reliability of data, meeting monitoring needs
+  * Low frequency radar suitable for sensing soil moisture, water content and structural changes in agricultural crops
+]
+
+.pull-right[
+
+IMAGE!!!
+
+]
 
 ---
 
-# Application: Maritime Monitoring
+# Maritime Monitoring
+
+
 
 ---
 
-# Application: Emergency Response Management
+# Emergency Response Management
+
+
 
 ---
 
 # Reflection
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

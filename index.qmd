@@ -11,7 +11,7 @@ I am a current master’s student at the Bartlett Centre for Advanced Spatial An
 Each chapter will be covering contents taught in the corresponding week:
 
 1.  Introduction
-    -   Getting started with remote sensing, introductions, sensors, spatial resolutions and practical pre-processing
+    -   Getting started with remote sensing, introductions, sensors, spatial resolutions and practical pre-processing.
 2.  Sensor
-    -   Looking at Sentinel-1
+    -   Looking at Sentinel-1, summary of the sensor, its mission, technical specifications, key objectives and applications, benefits and limitations, examples of case studies and reflections.
 3.  Correction

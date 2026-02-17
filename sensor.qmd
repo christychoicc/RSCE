@@ -14,5 +14,3 @@ xaringanExtra::embed_xaringan(
 ```
 
 View the full-screen version at: [Sentinel-1 Presentation](https://christychoicc.github.io/RSCE/slides/sensor-slides.html)
-
-## Reflection

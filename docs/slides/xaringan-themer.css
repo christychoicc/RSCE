@@ -314,17 +314,17 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 /* Extra CSS */
 .pull-left-3 {
   float: left;
-  width: 32%;
+  width: 30%;
 }
 .pull-middle-3 {
   float: left;
-  width: 32%;
-  margin-left: 2%;
-  margin-right: 2%;
+  width: 30%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .pull-right-3 {
   float: right;
-  width: 32%;
+  width: 30%;
 }
 .pull-left-4 {
   float: left;
