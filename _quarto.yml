@@ -41,9 +41,6 @@ format:
       light: [cosmo, flatly]
       dark: [cosmo, darkly]
     code-link: true
-    
-  pdf:
-    documentclass: scrreprt
 
 editor: visual
 
