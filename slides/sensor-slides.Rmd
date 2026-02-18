@@ -308,8 +308,6 @@ Figure 3: Sentinel-1 Repeat Coverage Frequency (Source: <a href="https://sentiwi
 * Coherence Data is a more readily identifiable indicator for harvest
 * Address Netherlands' persistent cloud covers during growing seasons (Only 20% chance of clear satellite acquisition can be obtained)
 
-]
-
 ---
 
 # Maritime Monitoring
