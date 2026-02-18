@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ### CASA0023 Learning Diary
 ]
 .date[
-### 2026/02/11 (updated: 2026-02-17)
+### 2026/02/11 (updated: 2026-02-18)
 ]
 
 ---
@@ -56,7 +56,7 @@ Figure 1: Sentinel-1 (Source: &lt;a href="https://sentiwiki.copernicus.eu/web/se
 
 ---
 
-# Mission of Sentinel-1C
+# Mission of Sentinel-1
 
 
 Launched on 5 December 2024, Sentinel-1C reestablished a two-satellite constellation orbiting 180° apart for extensive worldwide coverage by May 2025 with technical upgrades. SAR allows continuous monitoring and provides consistent long-term data for time-series analysis.
@@ -271,19 +271,27 @@ Reference: &lt;a href="https://land.copernicus.eu/en/feature-articles/sentinel-1
 ---
 
 # Land Monitoring 
-### Crop Monitoring: A Case Study of the Netherlands ([Khabbazan,et.al, 2019](https://www.mdpi.com/2072-4292/11/16/1887))
-.pull-left[
-* **Purpose**
-  * Monitor growth and development of crops
+#### Crop Monitoring, A Case Study of the Netherlands ([Khabbazan,et.al, 2019](https://www.mdpi.com/2072-4292/11/16/1887))
+**Purpose**
+* Monitor growth and development of key Dutch crops during growing season
 
-* **Why and How?**
-  * SAR ensured quality, reliability of data, meeting monitoring needs
-  * Low frequency radar suitable for sensing soil moisture, water content and structural changes in agricultural crops
-]
+**Data and Methods**
+* 60 Sentinel-1A/B SAR acquisitions, 6 days temporal resolution, IW 5x20m spatial resolution
+* Backscatter time series compared against imagery
+* Coherence Data compared to NDVI and ground observations 
+* Hydrometeorological data
+  * Weather: Precipitation, Temperature, Solar Radiation, Humidity, Wind Speed
+  * Inception and Dew (water detected with rain events, and without rain)
+  * Soil Moisture
+* Estimate key dates for emergence, closure from VH backscatter time series and harvest from interferometric coherence
 
-.pull-right[
 
-IMAGE!!!
+**Key Takeaways**
+* SAR ensured quality, timely and reliability of data, meeting monitoring needs
+* Low frequency radar suitable for sensing soil moisture, water content and structural changes of crops
+* VH/VV ratios useful in reducing soil moisture influences, more sensitive in vegetation water content
+* Coherence Data is a more readily identifiable indicator for harvest
+* Address Netherlands' persistent cloud covers during growing seasons (Only 20% chance of clear satellite acquisition can be obtained)
 
 ]
 
@@ -303,6 +311,7 @@ IMAGE!!!
 
 # Reflection
 
+SAR takes advantages over weather dependent optical satellites. 
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
