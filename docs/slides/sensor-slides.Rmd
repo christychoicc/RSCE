@@ -1,0 +1,411 @@
+---
+title: "Sentinel-1"
+subtitle: "Earth Observations, Land and Ocean Monitoring"
+author: "Christy Choi"
+institute: "CASA0023 Learning Diary"
+date: "2026/02/11 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    #preamble (colour for the slide)
+    css: [default, xaringan-themer.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    self_contained: false
+    ratio: '16:9'
+---
+```{r setup, include=FALSE}
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "authoryear",
+           style = "markdown",
+           hyperlink = TRUE,
+           dashed = FALSE,
+           no.print.fields=c("doi", "url", "urldate", "issn"))
+myBib <- ReadBib("../references.bib", check = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+
+style_mono_light(
+  base_color = "#2c3e50",
+  background_color = "#fafafa",
+  header_font_google = google_font("Libre Baskerville"),
+  text_font_google   = google_font("Libre Baskerville"),
+  code_font_google   = google_font("Fira Code"),
+  base_font_size = "16px",
+  header_h1_font_size = "2.2rem", # Was likely ~2.5-3rem by default
+  header_h2_font_size = "1.8rem",
+  header_h3_font_size = "1.4rem",
+  extra_css = list(
+    # Title (h1)
+    ".title-slide h1" = list(
+      "font-size" = "40px",
+      "margin-bottom" = "15px"
+    ),
+    # Subtitle (h2)
+    ".title-slide h2" = list(
+      "font-size" = "28px",
+      "margin-top" = "0px",
+      "margin-bottom" = "30px"
+    ),
+    # Author, Institute, Date (h3)
+    ".title-slide h3" = list(
+      "font-size" = "18px",
+      "font-weight" = "normal",
+      "margin-bottom" = "10px"
+    )
+  )
+)
+```
+
+# What is Sentinel-1? 
+.pull-left[
+* A polar orbiting two satellite constellation that carries C-band synthetic aperture radar (C-SAR)
+
+* Able to acquire data under day-and-night, all weather and atmospheric conditions
+
+* Able to capture land, ice, and coastal zones data with high and medium resolutions
+
+* Launched by the European Space Agency (ESA) under the Copernicus Program to acquire environment and security data
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width='100%', fig.align='right'}
+# Add a sentinel-1 picture
+# Source: https://sentiwiki.copernicus.eu/web/sentinel-1
+knitr::include_graphics("../images/w2_images/sentinel-1.jpg")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: 0;">
+Figure 1: Sentinel-1 (Source: <a href="https://sentiwiki.copernicus.eu/web/sentinel-1">SentiWiki Copernicus</a>)
+</p>
+]
+
+---
+
+# Mission of Sentinel-1
+```{r tech-setup, include=FALSE}
+# Panel settings
+library(xaringanthemer)
+library(xaringanExtra)
+
+options(htmltools.dir.version = FALSE)
+# Load xaringanExtra for the tabs
+style_extra_css(css = list(
+  ".pull-left-3" = list("float" = "left", "width" = "30%"),
+  ".pull-middle-3" = list("float" = "left", "width" = "30%", "margin-left" = "5%", "margin-right" = "5%"),
+  ".pull-right-3" = list("float" = "right", "width" = "30%"),
+  ".pull-left-4" = list("float" = "left", "width" = "22%"),
+  ".pull-mid1-4" = list("float" = "left", "width" = "22%", "margin-left" = "4%"),
+  ".pull-mid2-4" = list("float" = "left", "width" = "22%", "margin-left" = "4%"),
+  ".pull-right-4" = list("float" = "right", "width" = "22%")
+))
+xaringanExtra::use_panelset()
+```
+
+Launched on 5 December 2024, Sentinel-1C reestablished a two-satellite constellation orbiting 180° apart for extensive worldwide coverage by May 2025 with technical upgrades. SAR allows continuous monitoring and provides consistent long-term data for time-series analysis.
+
+### Key Mission Objectives and Applications 
+<div style="font-size: 10px; margin-top: -15px; margin-bottom: 15px; color: #555;">
+Reference: <a href="https://www.earthdata.nasa.gov/data/platforms/space-based-platforms/sentinel-1">NASA EARTHDATA</a> , <a href="https://sentiwiki.copernicus.eu/web/s1-applications#S1Applications-OverviewofS1Applications">SentiWiki Copernicus</a>
+</div>
+
+.panelset[
+.panel[.panel-name[Land Monitoring]
+<div style="font-size: 14px;">
+.pull-left-3[
+#### Forestry
+* **Role**: Forest Type Classification, Biomass Estimation, Disturbance Detection
+
+* **Climate Change**: Trace Forest Carbon History, Estimate Carbon Emissions
+
+* **Land Cover**: Support forest management, Monitor illegal timber harvesting activities
+]
+
+.pull-middle-3[
+#### Agriculture
+
+* **Crop Production**: Conditions, Harvest Prediction, Monitor Seasonal Changes, Pastures Productivity, Drought Impacts
+
+* **Soil**: Soil Properties, Degradation, Land Productivity, Tillage Activities
+
+]
+
+.pull-right-3[
+#### Urban Deformation Mapping
+
+* **Land Subsidence**: Detect surface movements
+
+* **Infrastructure**: Detect Structural Damage to Infrastructures (e.g. Buildings) and Underground Conditions
+
+* **Disaster**: Assess Damage/ Devastation After Events (e.g. Explosion)
+]
+<div style="clear:both"></div>
+
+</div>
+]
+
+.panel[.panel-name[Maritime Monitoring]
+<div style="font-size: 14px;">
+.pull-left-4[
+#### Ice
+
+* **Identification**: Type, Thickness, Size, Density, Orientation, Location
+
+* **Navigation in Ice-Covered Zones**
+
+]
+
+.pull-mid1-4[
+#### Ship
+
+* **Cooperative System**: Uses AIS to Detect, Classify, Trace and Locate Vessels
+
+]
+
+.pull-mid2-4[
+#### Oil Pollution
+
+* **Prosecution**: Oil Detection from Illegal discharges, Spills Spread, Naturally Seepage with AIS information
+
+]
+
+.pull-right-4[
+#### Oceanography
+
+* **Weather Prediction**: Storm and Cyclone
+
+* **Coastal**: Marine Waves, Ocean Currents and Sea Surface Winds
+
+* **Wave Energy**
+
+]
+
+<div style="clear:both"></div>
+
+</div>
+]
+
+.panel[.panel-name[Emergency Management]
+<div style="font-size: 14px;">
+.pull-left-3[
+#### Flood Monitoring
+
+* **Hydrology**: Run-off and Inundation Analysis 
+
+* **Vegetation**: Detect Flooded Vegetation
+
+]
+
+.pull-middle-3[
+#### Earthquake Analysis
+
+* **Earthquake Deformation Mapping**
+
+* **Identify Potential Risks**: Discover Active Fault Lines from Persistent Monitoring
+
+* **Large-scale Monitoring Earthquakes**
+
+]
+
+.pull-right-3[
+#### Landslide and Volcano Monitoring
+
+* **Identify Potential Warnings**: Monitor Surface Deformation, Identify First Signs of Volcanic Activity, Preceding Earthquakes, Pre-eruption Uplift, Quantify Ground Deformation, Post Eruption Volcanic Shrinkage
+
+]
+<div style="clear:both"></div>
+
+</div>
+]
+]
+
+
+---
+
+# Technical Specifications
+.pull-left[
+.panelset[
+.panel[.panel-name[Resolution]
+* Spatial Coverage: Worldwide
+
+* Spatial Resolution: 25x40m, 5x5m, and 5x20m
+
+* Spectral Resolution: C-band radar at 5.405 GHz
+
+* Temporal Coverage: 
+  * Global revisit bi-weekly (interval of 12 Days)
+  * Repeat frequency of 6 days with two-satellites constellation
+  * 175 orbits per cycle per satellite
+  * Revisit rates higher in areas with higher latitude (e.g. < 1 day at Arctic, ~ 2 days at Europe)
+
+<div style="font-size: 10px; margin-top: 20px; color: #555;">
+Reference: <a href="https://sentiwiki.copernicus.eu/web/sentiwiki">SentiWiki</a> , <a href="https://www.earthdata.nasa.gov/data/instruments/sentinel-1-c-sar#:~:text=Instrument%20Type,Frequently%20Asked%20Questions">NASA EARTHDATA</a> , <a href="https://www.sciencedirect.com/science/article/pii/S0034425712000600">Torres. et.al, 2012</a>
+</div>]
+
+.panel[.panel-name[Specifications]
+
+* Orbital Altitude: 693 km
+
+* Sensor Complement: C-SAR
+
+* Operative autonomy: 96 hours
+
+* Data Delivery: 24 hours
+
+* Lifespan: 7.25 years (consumables for 12 years)
+
+<div style="font-size: 10px; margin-top: 20px; color: #555;">
+Reference: <a href="https://www.eoportal.org/satellite-missions/copernicus-sentinel-1#spacecraft">eoPortal</a>
+</div>
+
+] ] ] .pull-right[
+```{r, echo=FALSE, out.width='280px', fig.align='center'}
+# Add a sentinel-1 constellation 
+# Source: https://sentiwiki.copernicus.eu/web/s1-mission
+knitr::include_graphics("../images/w2_images/sentinel1_constellation.png")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: -10px; margin-bottom: 20px;">
+Figure 2: Sentinel-1 Constellation (Source: <a href="https://sentiwiki.copernicus.eu/web/s1-mission">SentiWiki Copernicus</a>)
+</p>
+
+```{r, echo=FALSE, out.width='280px', fig.align='center'}
+# Add a ground range detection picture 
+# Source: https://sentiwiki.copernicus.eu/web/s1-mission
+knitr::include_graphics("../images/w2_images/Sentinel-1-Repeat-Coverage-Frequency-Geometry-2025_1.2.jpg")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: -10px;">
+Figure 3: Sentinel-1 Repeat Coverage Frequency (Source: <a href="https://sentiwiki.copernicus.eu/web/s1-mission">SentiWiki Copernicus</a>)
+</p>
+]
+
+---
+
+# Land Monitoring 
+#### Crop Monitoring, Case Study of the Netherlands ([Khabbazan et al., 2019](https://www.mdpi.com/2072-4292/11/16/1887))
+**Purpose**
+* Monitor growth and development of key Dutch crops during growing season
+
+**Data and Methods**
+* 60 Sentinel-1A/B SAR acquisitions, 6 days temporal resolution, IW 5x20m spatial resolution
+* Backscatter time series compared against imagery
+* Coherence Data compared to NDVI and ground observations 
+* Hydrometeorological data
+  * Weather: Precipitation, Temperature, Solar Radiation, Humidity, Wind Speed
+  * Inception and Dew (water detected with rain events, and without rain)
+  * Soil Moisture
+* Estimate key dates for emergence, closure and harvest
+
+
+**Key Takeaways**
+* SAR ensured quality, timely and reliability of data, meeting monitoring needs
+* Low frequency radar suitable for sensing soil moisture, water content and structural changes of crops
+* VH/VV ratios useful in reducing soil moisture influences, more sensitive in vegetation water content
+* Coherence Data is a more readily identifiable indicator for harvest
+* Address Netherlands' persistent cloud covers during growing seasons (Only 20% chance of clear satellite acquisition can be obtained)
+
+]
+
+---
+
+# Maritime Monitoring
+#### Maritime Surveillance at the Mediterranean Sea ([Santamaria et al., 2017](https://www.mdpi.com/2072-4292/9/7/678))
+
+**Purpose**
+* Monitor human shipping activities at sea
+  * Security: Irregular sea border crossing, smuggling illegal goods or substances
+  * Safety: Search and Rescue, Shipping traffic
+  * Environmental and sustainability: Fishing Control, Pollution
+
+**Data and Methods**
+* Total 11,647 Sentinel-1 IW acquisitions over 2 years, 6 days temporal resolution, 20x22m resolution
+* Ship detection: SUMO (automatic analysis for large set of images)
+* Storage and Processing Earth Observation Data: JEODPP
+* Integrated Maritime Surveillance Platform: Blue Hub
+* Recurrent Targets Analysis
+
+
+**Key Takeaways**
+* Access to unprecedented volumes of data enables comprehensive maritime surveillance
+* Observation periodicities of 1.5 to 4 days due to overlap swaths
+* Shipping activity mapping
+* Ability to detect non-cooperative vessels that is not visible on AIS
+  * 60% found correlated with AIS, 40% non-correlated
+* However, Recurrent Target Analysis identified 20% of false alarms (15% fixed structures, 5% ambiguity) from SUMO detection, allowing filtering according to specific application needs
+
+---
+
+# Emergency Response Management
+#### Flood Mapping for Tropical Storm Imelda ([Amer, 2025](https://www.mdpi.com/2072-4292/17/11/1869))
+**Purpose**
+* Informing emergency response and risk mitigation
+
+**Data and Methods**
+* 10x10m spatial resolution
+* Used backscatter ratio and machine learning to classify water and land
+* Able to capture flooding, rainfall extent caused by the storm
+* Identify any terrain, land cover characteristics that influences the spatial distribution of floodings
+
+**Key Takeaways**
+* Able to provide accurate, timely information for disaster response 
+* Advantageous during heavy rainfall events, where optical sensor are comparably ineffective
+* High accuracy for rapid responses with 96% and 94% of pre-flood and during-flood classification
+
+---
+# Benefits and Limitations 
+
+.panelset[
+
+.panel[.panel-name[Benefits]
+
+```{r, echo=FALSE, out.width='80%', fig.align='center'}
+# Add a C-Band Radar Operation picture 
+# Source: https://land.copernicus.eu/en/feature-articles/sentinel-1c-secures-the-future-of-radar-data
+knitr::include_graphics("../images/w2_images/huge.jpg")
+```
+<p style="font-size: 0.6em; text-align: center; margin-top: -10px;">
+Figure 4: (Left) Sentinel-1 C-Band Radar transmit signals to the Earth surface. (Right) Radar passes through clouds (red), and depicts signals reflected from Earth's surface back to the satellite.   (Source: <a href="https://land.copernicus.eu/en/feature-articles/sentinel-1c-secures-the-future-of-radar-data">NASA Earthdata</a>)
+</p>
+
+* Free and Open Data
+* Consistent, High-Resolution, Quality, Reliable Data
+* Accessibility: Timely and Accurate Data
+* Improved Technical Instruments: Upgraded radar imaging and design to withstand space debris 
+* C-band radar
+  * Ability to operate in darkness, penetrate through clouds, and vegetation but to a lesser extent
+  * Able to deliver consistent and reliable data under conditions
+* Two-satellite constellation allow passing over same areas at the same time each orbital cycle
+
+<div style="font-size: 10px; margin-top: 20px; color: #555;">
+Reference: <a href="https://land.copernicus.eu/en/feature-articles/sentinel-1c-secures-the-future-of-radar-data">Copernicus</a>
+</div>
+
+]
+
+.panel[.panel-name[Limitations]
+
+* Extensive pre-processing required: Noise removal required before analysis ([Boemke, et.al, 2023](https://www.sciencedirect.com/science/article/pii/S1875963723000241))
+
+* Temporal misalignment (gap): may risk failing to capture peak events in rapid-onset monsoon events ([Anucharn et.al ,2025](https://ijg.journals.publicknowledgeproject.org/index.php/journal/article/view/4165/2171)) 
+
+* Able to detect medium to large patterns, smaller and denser patterns may be limited ([Khabbazan et al., 2019](https://www.mdpi.com/2072-4292/11/16/1887)) ([Santamaria et al., 2017](https://www.mdpi.com/2072-4292/9/7/678))
+
+* SAR operates at shorter microwave wavelengths, exhibiting weaker penetration which interacts primarily with the upper canopy layer ([Gupta, et.al, 2026](https://www.sciencedirect.com/science/article/pii/S2666017226000155))
+
+]]
+---
+
+# Reflection
+
+* Overall, SAR takes advantages over weather dependent optical satellites. 
+
+* Spatial resolution of Sentinel-1 is beneficial for large-scale but less on smaller scale applications, therefore suitability based on application needs should be carefully considered
+
+* Reliance on a single sensor choice may cause limitations. Therefore, multi-sensor integration such as optical imagery may be beneficial
+
+* Studies mentioned about using Sentinel-1 SAR imagery with Google Earth Engine (GEE) for efficiency and consistency in data pre-processing. More on GEE this will be covered in later chapters
+
