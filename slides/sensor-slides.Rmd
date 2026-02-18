@@ -1,5 +1,5 @@
 ---
-title: "Sentinel-1 C-SAR"
+title: "Sentinel-1"
 subtitle: "Earth Observations, Land and Ocean Monitoring"
 author: "Christy Choi"
 institute: "CASA0023 Learning Diary"
@@ -285,6 +285,77 @@ Figure 3: Sentinel-1 Repeat Coverage Frequency (Source: <a href="https://sentiwi
 
 ---
 
+# Land Monitoring 
+#### Crop Monitoring, Case Study of the Netherlands ([Khabbazan et al., 2019](https://www.mdpi.com/2072-4292/11/16/1887))
+**Purpose**
+* Monitor growth and development of key Dutch crops during growing season
+
+**Data and Methods**
+* 60 Sentinel-1A/B SAR acquisitions, 6 days temporal resolution, IW 5x20m spatial resolution
+* Backscatter time series compared against imagery
+* Coherence Data compared to NDVI and ground observations 
+* Hydrometeorological data
+  * Weather: Precipitation, Temperature, Solar Radiation, Humidity, Wind Speed
+  * Inception and Dew (water detected with rain events, and without rain)
+  * Soil Moisture
+* Estimate key dates for emergence, closure and harvest
+
+
+**Key Takeaways**
+* SAR ensured quality, timely and reliability of data, meeting monitoring needs
+* Low frequency radar suitable for sensing soil moisture, water content and structural changes of crops
+* VH/VV ratios useful in reducing soil moisture influences, more sensitive in vegetation water content
+* Coherence Data is a more readily identifiable indicator for harvest
+* Address Netherlands' persistent cloud covers during growing seasons (Only 20% chance of clear satellite acquisition can be obtained)
+
+]
+
+---
+
+# Maritime Monitoring
+#### Maritime Surveillance at the Mediterranean Sea ([Santamaria et al., 2017](https://www.mdpi.com/2072-4292/9/7/678))
+
+**Purpose**
+* Monitor human shipping activities at sea
+  * Security: Irregular sea border crossing, smuggling illegal goods or substances
+  * Safety: Search and Rescue, Shipping traffic
+  * Environmental and sustainability: Fishing Control, Pollution
+
+**Data and Methods**
+* Total 11,647 Sentinel-1 IW acquisitions over 2 years, 6 days temporal resolution, 20x22m resolution
+* Ship detection: SUMO (automatic analysis for large set of images)
+* Storage and Processing Earth Observation Data: JEODPP
+* Integrated Maritime Surveillance Platform: Blue Hub
+* Recurrent Targets Analysis
+
+
+**Key Takeaways**
+* Access to unprecedented volumes of data enables comprehensive maritime surveillance
+* Observation periodicities of 1.5 to 4 days due to overlap swaths
+* Shipping activity mapping
+* Ability to detect non-cooperative vessels that is not visible on AIS
+  * 60% found correlated with AIS, 40% non-correlated
+* However, Recurrent Target Analysis identified 20% of false alarms (15% fixed structures, 5% ambiguity) from SUMO detection, allowing filtering according to specific application needs
+
+---
+
+# Emergency Response Management
+#### Flood Mapping for Tropical Storm Imelda ([Amer, 2025](https://www.mdpi.com/2072-4292/17/11/1869))
+**Purpose**
+* Informing emergency response and risk mitigation
+
+**Data and Methods**
+* 10x10m spatial resolution
+* Used backscatter ratio and machine learning to classify water and land
+* Able to capture flooding, rainfall extent caused by the storm
+* Identify any terrain, land cover characteristics that influences the spatial distribution of floodings
+
+**Key Takeaways**
+* Able to provide accurate, timely information for disaster response 
+* Advantageous during heavy rainfall events, where optical sensor are comparably ineffective
+* High accuracy for rapid responses with 96% and 94% of pre-flood and during-flood classification
+
+---
 # Benefits and Limitations 
 
 .panelset[
@@ -300,14 +371,14 @@ knitr::include_graphics("../images/w2_images/huge.jpg")
 Figure 4: (Left) Sentinel-1 C-Band Radar transmit signals to the Earth surface. (Right) Radar passes through clouds (red), and depicts signals reflected from Earth's surface back to the satellite.   (Source: <a href="https://land.copernicus.eu/en/feature-articles/sentinel-1c-secures-the-future-of-radar-data">NASA Earthdata</a>)
 </p>
 
-* **Free and Open Data**
-* **Consistent, High-Resolution, Quality, Reliable Data**
-* **Accessibility**: Timely and Accurate Data
-* **Improved Technical Instruments**: Upgraded radar imaging and design to withstand space debris 
-* **C-band radar**
-  * Ability to penetrate through clouds, and vegetation but to a lesser extent
+* Free and Open Data
+* Consistent, High-Resolution, Quality, Reliable Data
+* Accessibility: Timely and Accurate Data
+* Improved Technical Instruments: Upgraded radar imaging and design to withstand space debris 
+* C-band radar
+  * Ability to operate in darkness, penetrate through clouds, and vegetation but to a lesser extent
   * Able to deliver consistent and reliable data under conditions
-* **Two-satellite constellation** allow passing over same areas at the same time each orbital cycle
+* Two-satellite constellation allow passing over same areas at the same time each orbital cycle
 
 <div style="font-size: 10px; margin-top: 20px; color: #555;">
 Reference: <a href="https://land.copernicus.eu/en/feature-articles/sentinel-1c-secures-the-future-of-radar-data">Copernicus</a>
@@ -317,59 +388,24 @@ Reference: <a href="https://land.copernicus.eu/en/feature-articles/sentinel-1c-s
 
 .panel[.panel-name[Limitations]
 
-* **Extensive pre-processing required**: GRD data require pre-processing procedure of noise removal before analysis ([Boemke, et.al, 2023](https://www.sciencedirect.com/science/article/pii/S1875963723000241))
+* Extensive pre-processing required: Noise removal required before analysis ([Boemke, et.al, 2023](https://www.sciencedirect.com/science/article/pii/S1875963723000241))
 
-* SAR operates at shorter wavelengths, therefore exhibits shallower penetration depth and interacts primarily with the upper canopy layer ([Gupta, et.al, 2026](https://www.sciencedirect.com/science/article/pii/S2666017226000155))
+* Temporal misalignment (gap): may risk failing to capture peak events in rapid-onset monsoon events ([Anucharn et.al ,2025](https://ijg.journals.publicknowledgeproject.org/index.php/journal/article/view/4165/2171)) 
 
-* Limited capabilities for topographic mapping based on stereoscopic methods applied to the amplitude ([Braun, 2021](https://www.degruyterbrill.com/document/doi/10.1515/geo-2020-0246/html)
+* Able to detect medium to large patterns, smaller and denser patterns may be limited ([Khabbazan et al., 2019](https://www.mdpi.com/2072-4292/11/16/1887)) ([Santamaria et al., 2017](https://www.mdpi.com/2072-4292/9/7/678))
 
-
-* There maybe areals of low coherence between the sensor and the area may limit interferometric approaches ([Boemke, et.al, 2023](https://www.sciencedirect.com/science/article/pii/S1875963723000241))
-
+* SAR operates at shorter microwave wavelengths, exhibiting weaker penetration which interacts primarily with the upper canopy layer ([Gupta, et.al, 2026](https://www.sciencedirect.com/science/article/pii/S2666017226000155))
 
 ]]
 ---
 
-# Land Monitoring 
-#### Crop Monitoring, A Case Study of the Netherlands ([Khabbazan,et.al, 2019](https://www.mdpi.com/2072-4292/11/16/1887))
-**Purpose**
-* Monitor growth and development of key Dutch crops during growing season
-
-**Data and Methods**
-* 60 Sentinel-1A/B SAR acquisitions, 6 days temporal resolution, IW 5x20m spatial resolution
-* Backscatter time series compared against imagery
-* Coherence Data compared to NDVI and ground observations 
-* Hydrometeorological data
-  * Weather: Precipitation, Temperature, Solar Radiation, Humidity, Wind Speed
-  * Inception and Dew (water detected with rain events, and without rain)
-  * Soil Moisture
-* Estimate key dates for emergence, closure from VH backscatter time series and harvest from interferometric coherence
-
-
-**Key Takeaways**
-* SAR ensured quality, timely and reliability of data, meeting monitoring needs
-* Low frequency radar suitable for sensing soil moisture, water content and structural changes of crops
-* VH/VV ratios useful in reducing soil moisture influences, more sensitive in vegetation water content
-* Coherence Data is a more readily identifiable indicator for harvest
-* Address Netherlands' persistent cloud covers during growing seasons (Only 20% chance of clear satellite acquisition can be obtained)
-
-]
-
----
-
-# Maritime Monitoring
-
-
-
----
-
-# Emergency Response Management
-
-
-
----
-
 # Reflection
 
-SAR takes advantages over weather dependent optical satellites. 
+* Overall, SAR takes advantages over weather dependent optical satellites. 
+
+* Spatial resolution of Sentinel-1 is beneficial for large-scale but less on smaller scale applications, therefore suitability based on application needs should be carefully considered
+
+* Reliance on a single sensor choice may cause limitations. Therefore, multi-sensor integration such as optical imagery may be beneficial
+
+* Studies mentioned about using Sentinel-1 SAR imagery with Google Earth Engine (GEE) for efficiency and consistency in data pre-processing. More on GEE this will be covered in later chapters
 
