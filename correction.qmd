@@ -2,8 +2,10 @@
 title: "Correction"
 ---
 
+Two main sources of environmental attenuation is atmospheric scattering and topographic attenuation. As irradiance travels through the atmosphere and reflects back to sensors as radiance, atmospheric absorption and scattering introduces "adjacency effect" which captures radiance from neighboring pixels rather than the target. These distortions can creates haze and reduce contrast in imagery, indicating the need for atmospheric correction to obtain true apparent reflectance.
+
 ## Summary
 
 ## Application
 
-## Reflection 
+## Reflection
