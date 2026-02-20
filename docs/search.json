@@ -1,32 +1,32 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CASA0023 Remotely Sensing Cities and Environments Learning Diary",
+    "objectID": "correction.html",
+    "href": "correction.html",
+    "title": "3  Correction",
     "section": "",
-    "text": "Welcome !\nHello and welcome to my page on Remote Sensing. This page is an online learning diary for CASA Remotely Sensing Cities and Environments 25/26. This website contains a record of my week-by-week learning, including summary of key concepts, practical applications, reviews on academic literature and relevant web sources, as well as reflections and discussions on learnt concepts and techniques.",
+    "text": "3.1 Summary\nTwo main sources of environmental attenuation is atmospheric scattering and topographic attenuation. As irradiance travels through the atmosphere and reflects back to sensors as radiance, atmospheric absorption and scattering introduces “adjacency effect” which captures radiance from neighboring pixels rather than the target. These distortions can creates haze and reduce contrast in imagery, indicating the need for atmospheric correction to obtain true apparent reflectance.",
     "crumbs": [
-      "Welcome !"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correction</span>"
     ]
   },
   {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "CASA0023 Remotely Sensing Cities and Environments Learning Diary",
-    "section": "About me",
-    "text": "About me\nI am a current master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) pursuing MSc, Urban Spatial Science. I hold a bachelor’s degree in BSc, Planning and Real Estate from the University of Manchester in 2022-2025.",
+    "objectID": "correction.html#application",
+    "href": "correction.html#application",
+    "title": "3  Correction",
+    "section": "3.2 Application",
+    "text": "3.2 Application",
     "crumbs": [
-      "Welcome !"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correction</span>"
     ]
   },
   {
-    "objectID": "index.html#in-this-learning-diary",
-    "href": "index.html#in-this-learning-diary",
-    "title": "CASA0023 Remotely Sensing Cities and Environments Learning Diary",
-    "section": "In this Learning Diary",
-    "text": "In this Learning Diary\nEach chapter will be covering contents taught in the corresponding week:\n\nIntroduction\n\nGetting started with remote sensing, this introduction will go through types of sensors, spatial resolutions and practical data pre-processing with Lisbon as the study area.\n\nSensor\n\nLooking at Sentinel-1, the slides will provide a summary of the sensor, its mission, technical specifications, key objectives and applications, benefits and limitations, and reflections\n\nCorrection",
+    "objectID": "correction.html#reflection",
+    "href": "correction.html#reflection",
+    "title": "3  Correction",
+    "section": "3.3 Reflection",
+    "text": "3.3 Reflection",
     "crumbs": [
-      "Welcome !"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correction</span>"
     ]
   },
   {
@@ -87,36 +87,6 @@
     "text": "2.1 Presentation\nThis section will look at Sentinel-1. The slides are presented using the Xaringan template.\nView the full-screen version at: Sentinel-1 Presentation",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sensor</span>"
-    ]
-  },
-  {
-    "objectID": "correction.html",
-    "href": "correction.html",
-    "title": "3  Correction",
-    "section": "",
-    "text": "3.1 Summary",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correction</span>"
-    ]
-  },
-  {
-    "objectID": "correction.html#application",
-    "href": "correction.html#application",
-    "title": "3  Correction",
-    "section": "3.2 Application",
-    "text": "3.2 Application",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correction</span>"
-    ]
-  },
-  {
-    "objectID": "correction.html#reflection",
-    "href": "correction.html#reflection",
-    "title": "3  Correction",
-    "section": "3.3 Reflection",
-    "text": "3.3 Reflection",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correction</span>"
     ]
   }
 ]

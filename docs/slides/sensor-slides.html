@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ### CASA0023 Learning Diary
 ]
 .date[
-### 2026/02/11 (updated: 2026-02-18)
+### 2026/02/11 (updated: 2026-02-20)
 ]
 
 ---
@@ -250,7 +250,7 @@ Figure 3: Sentinel-1 Repeat Coverage Frequency (Source: &lt;a href="https://sent
 * Low frequency radar suitable for sensing soil moisture, water content and structural changes of crops
 * VH/VV ratios useful in reducing soil moisture influences, more sensitive in vegetation water content
 * Coherence Data is a more readily identifiable indicator for harvest
-* Address Netherlands' persistent cloud covers during growing seasons (Only 20% chance of clear satellite acquisition can be obtained)
+* Address Netherlands' persistent cloud covers during growing seasons (Only 20% chance of clear satellite acquisition can be obtained usually)
 
 ---
 
@@ -277,7 +277,7 @@ Figure 3: Sentinel-1 Repeat Coverage Frequency (Source: &lt;a href="https://sent
 * Shipping activity mapping
 * Ability to detect non-cooperative vessels that is not visible on AIS
   * 60% found correlated with AIS, 40% non-correlated
-* However, Recurrent Target Analysis identified 20% of false alarms (15% fixed structures, 5% ambiguity) from SUMO detection, allowing filtering according to specific application needs
+* However, Recurrent Target Analysis identified 20% of false alarms (15% fixed structures, 5% ambiguity) from SUMO detection, requiring filtering according to specific application needs
 
 ---
 
@@ -306,7 +306,7 @@ Figure 3: Sentinel-1 Repeat Coverage Frequency (Source: &lt;a href="https://sent
 
 &lt;img src="../images/w2_images/huge.jpg" alt="" width="80%" style="display: block; margin: auto;" /&gt;
 &lt;p style="font-size: 0.6em; text-align: center; margin-top: -10px;"&gt;
-Figure 4: (Left) Sentinel-1 C-Band Radar transmit signals to the Earth surface. (Right) Radar passes through clouds (red), and depicts signals reflected from Earth's surface back to the satellite.   (Source: &lt;a href="https://land.copernicus.eu/en/feature-articles/sentinel-1c-secures-the-future-of-radar-data"&gt;NASA Earthdata&lt;/a&gt;)
+Figure 4: (Left) Sentinel-1 C-Band Radar transmit signals to the Earth surface. (Right) Radar passes through clouds (red), and depicts signals reflected from Earth's surface back to the satellite.   (Source: &lt;a href="https://land.copernicus.eu/en/feature-articles/sentinel-1c-secures-the-future-of-radar-data"&gt;Copernicus&lt;/a&gt;)
 &lt;/p&gt;
 
 * Free and Open Data
@@ -330,7 +330,7 @@ Reference: &lt;a href="https://land.copernicus.eu/en/feature-articles/sentinel-1
 
 * Temporal misalignment (gap): may risk failing to capture peak events in rapid-onset monsoon events ([Anucharn et.al ,2025](https://ijg.journals.publicknowledgeproject.org/index.php/journal/article/view/4165/2171)) 
 
-* Able to detect medium to large patterns, smaller and denser patterns may be limited ([Khabbazan et al., 2019](https://www.mdpi.com/2072-4292/11/16/1887)) ([Santamaria et al., 2017](https://www.mdpi.com/2072-4292/9/7/678))
+* Able to detect medium to large patterns, smaller and denser patterns may be limited ([Khabbazan et al., 2019](https://www.mdpi.com/2072-4292/11/16/1887); [Santamaria et al., 2017](https://www.mdpi.com/2072-4292/9/7/678))
 
 * SAR operates at shorter microwave wavelengths, exhibiting weaker penetration which interacts primarily with the upper canopy layer ([Gupta, et.al, 2026](https://www.sciencedirect.com/science/article/pii/S2666017226000155))
 
@@ -339,13 +339,15 @@ Reference: &lt;a href="https://land.copernicus.eu/en/feature-articles/sentinel-1
 
 # Reflection
 
-* Overall, SAR takes advantages over weather dependent optical satellites. 
+* Overall, SAR takes advantages over weather dependent optical satellites
 
-* Spatial resolution of Sentinel-1 is beneficial for large-scale but less on smaller scale applications, therefore suitability based on application needs should be carefully considered
+* Studies have demonstrated Sentinel-1's technical abilities monitor urban and natural environments, through integrated quantitative designs it allows EO data to support predictions and decision makings
 
-* Reliance on a single sensor choice may cause limitations. Therefore, multi-sensor integration such as optical imagery may be beneficial
+* Spatial resolution of Sentinel-1 is beneficial for large-scale but less on smaller scale applications, therefore suitability based on specific application needs should be carefully considered
 
-* Studies mentioned about using Sentinel-1 SAR imagery with Google Earth Engine (GEE) for efficiency and consistency in data pre-processing. More on GEE this will be covered in later chapters
+* Reliance on a single sensor choice may cause limitations. Therefore, multi-sensor integration such as optical imagery may be beneficial to look at
+
+* Studies mentioned about using Sentinel-1 SAR imagery with Google Earth Engine (GEE) for efficiency and consistency in data pre-processing. More on GEE will be covered in later chapters
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
