@@ -391,16 +391,71 @@ window.Quarto = {
 </header>
 
 
-<p>Remotely sensing imagery occasionally requires pre-processing, as sensors may pick up atmospheric effects which may distort the actual surface reflectance from the bottom of atmosphere (BOA). This section will focus on atmospheric correction. The following study area of Hong Kong will demonstrate a workflow of mosiacking Landsat 8-9 tiles and some imagery enhancements processed through R.</p>
+<p>Remotely sensing imagery occasionally requires pre-processing, as sensors may pick up atmospheric effects which may distort the actual surface reflectance from the bottom of atmosphere (BOA). This section will focus on correction and enhancements. The following study area of Hong Kong will demonstrate a workflow of mosiacking Landsat 8-9 tiles and imagery enhancements processed through R.</p>
 <section id="summary" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">3.1</span> Summary</h2>
 <p>Two main sources of environmental attenuation is atmospheric scattering and topographic attenuation. As irradiance travels through the atmosphere and reflects back to sensors as radiance, atmospheric absorption and scattering introduces “adjacency effect” which captures radiance from neighboring pixels rather than the target. These distortions can creates haze and reduce contrast in imagery, presenting the need for atmospheric correction to obtain true apparent reflectance.</p>
+<p>Beyond atmospheric correction, remotely sensing data may also require geometric, orthorectification, and radiometric corrections to account for any sensor distortions, terrain displacement, and calibration errors. The following discusses the 5 main types of corrections.</p>
+<section id="types-of-correction" class="level4" data-number="3.1.0.1">
+<h4 data-number="3.1.0.1" class="anchored" data-anchor-id="types-of-correction"><span class="header-section-number">3.1.0.1</span> Types of Correction</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Correction</th>
+<th>Description</th>
+<th>Benefits</th>
+<th>Limitations</th>
+<th>When to use?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Geometric Correction</td>
+<td>Correct positional distortions from off-nadir view angles, topography, wind, earth shape and rotation</td>
+<td>Aligning with Ground Control Points (GCPs) allows high accuracy</td>
+<td>Time consuming; Computational complexity</td>
+<td>Compared with data or maps; Calculation of distances or area; Two images acquired at different dates to be compared pixel by pixel. (<a href="https://www.researchgate.net/publication/261795733_Geometric_correction_of_satellite_and_airborne_imagery">Green and Clark, 2000</a>)</td>
+</tr>
+<tr class="even">
+<td>Atmospheric Correction</td>
+<td><p>Removes atmospheric effects;</p>
+<p>Methods: Dark Object Subtraction (DOS); Psuedo-invariant Features (PIFs)</p></td>
+<td>Removes haze and adjacency effects</td>
+<td></td>
+<td>Need to acquire biophysical parameters (e.g.&nbsp;temperature, NDVI); Using spectral signatures through time and space</td>
+</tr>
+<tr class="odd">
+<td>Empirical Line Correction</td>
+<td>Uses field spectrometer for measurements taken during satellite overpass</td>
+<td>Provide a simple surface reflectance calibration: available invariant-in-time calibration target measurement (<a href="https://www.researchgate.net/publication/200459166_The_empiracle_line_method_for_the_atmospheric_correction_of_IKONOS_imagery">Karpouzli et.al, 2003</a>)</td>
+<td>Requires physical field measurement to be done exactly timed with satellite overpasses; Hazards may present on site</td>
+<td>To obtain accurate and precise surface refection</td>
+</tr>
+<tr class="even">
+<td>Orthorectification (Topographic) Correction</td>
+<td>Assign coordinates to an image (Georectification) and Orthorectification goes beyond in removing distortions (influences of topography), ensuring pixels are as if depicted from nadir</td>
+<td>Allow accuracy for terrain areas through removing terrain displacements</td>
+<td></td>
+<td><p>For areas with complex terrain</p>
+<p>(Note* Should be used after atmospheric correction)</p></td>
+</tr>
+<tr class="odd">
+<td>Radiometric Calibration</td>
+<td>Convert Digital Numbers (DN) to spectral radiance</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Sources: (<a href="https://www.researchgate.net/publication/261795733_Geometric_correction_of_satellite_and_airborne_imagery">Green and Clark, 2000</a>) , (<a href="https://www.researchgate.net/publication/200459166_The_empiracle_line_method_for_the_atmospheric_correction_of_IKONOS_imagery">Karpouzli et.al., 2003</a>), and CASA0023 github pages</p>
+</section>
 </section>
 <section id="application" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="application"><span class="header-section-number">3.2</span> Application</h2>
 <section id="study-area-hong-kong" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="study-area-hong-kong"><span class="header-section-number">3.2.1</span> Study Area: Hong Kong</h3>
-<p>Two satellite tiles were selected from Landsat 8-9 OLI/TIRS C2 L2, Collection 2 and Level 2 is selected for surface reflection (provides surface temperature as well). In this case, two tiles were sufficient to cover the boundaries of Hong Kong. One Landsat 8 and one Landsat 9 tile has been downloaded with &lt;10% cloud cover between 19th to 20th of March 2025.</p>
+<p>Two satellite tiles were selected from Landsat 8-9 OLI/TIRS C2 L2, Collection 2 and Level 2 is selected for surface reflection (provides surface temperature as well) where . In this case, two tiles were sufficient to cover the boundaries of Hong Kong. One Landsat 8 and one Landsat 9 tile has been downloaded with &lt;10% cloud cover between 19th to 20th of March 2025.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -415,14 +470,14 @@ window.Quarto = {
 </div>
 <section id="mosaicking-and-data-processing" class="level4" data-number="3.2.1.1">
 <h4 data-number="3.2.1.1" class="anchored" data-anchor-id="mosaicking-and-data-processing"><span class="header-section-number">3.2.1.1</span> Mosaicking and Data Processing</h4>
-<p>Merging and joining data sets feathers the images together, which creates seamless mosaic imagery. Below shows the two tiles separately and linear stretched in RGB imagery.</p>
+<p>Merging and joining data sets feathers the images together, which creates seamless mosaic imagery. Note that it is important that the tiles share a common CRS before mosaicking. Below shows the two tiles separately and linear stretched in RGB imagery.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w3_images/rgb_merge_comparison.png" class="img-fluid figure-img"></p>
-<figcaption>Tiles Selection (Obtained from: [USGS](https://earthexplorer.usgs.gov/))</figcaption>
+<figcaption>Tiles Selection (Obtained from: <a href="https://earthexplorer.usgs.gov/">USGS</a>)</figcaption>
 </figure>
 </div>
 </div>
@@ -449,7 +504,7 @@ window.Quarto = {
 <p><span class="math display">\[
 NDVI = \frac{NIR - Red}{NIR + Red}
 \]</span></p>
-<p>NDVI uses near-infrared (NIR) and red spectral bands to display vegetation. Healthy vegetation Areas with high NDVI indicates healthy vegetation. More other ratios can be found in <a href="https://www.indexdatabase.de/">Index DataBase</a>.</p>
+<p>NDVI uses near-infrared (NIR) and red spectral bands to display vegetation. Healthy and green vegetation reflects stronger in NIR while simultaneously absorbs red through photosynthesis. Areas with high NDVI indicates healthy vegetation. This has led NDVI to be an effective indicator for vegetation health. More other ratios can be found in <a href="https://www.indexdatabase.de/">Index DataBase</a>.</p>
 <div id="Scatterplot" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -473,6 +528,7 @@ NDVI = \frac{NIR - Red}{NIR + Red}
 </section>
 <section id="texture" class="level4" data-number="3.2.1.3">
 <h4 data-number="3.2.1.3" class="anchored" data-anchor-id="texture"><span class="header-section-number">3.2.1.3</span> Texture</h4>
+<p>The scale factor applied: <code>* 0.0000275 - 0.2</code> converted the stored DN values to true surface reflectance values for analysis.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -505,6 +561,8 @@ NDVI = \frac{NIR - Red}{NIR + Red}
 </section>
 <section id="reflection" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.3</span> Reflection</h2>
+<p>Luckily, Level 2 data are analysis ready data (ARD), no manual correction processes needed.</p>
+<p>Hong Kong is a very interesting study area, where it comprimises one of the world’s most dense urban areas while having about three quarters of land covered in vegetation (<a href="https://www.hketoberlin.gov.hk/download/Green_HK.pdf">Gov.hk</a>, 2013).</p>
 
 
 </section>
