@@ -2,10 +2,36 @@
 title: "Correction"
 ---
 
-Two main sources of environmental attenuation is atmospheric scattering and topographic attenuation. As irradiance travels through the atmosphere and reflects back to sensors as radiance, atmospheric absorption and scattering introduces "adjacency effect" which captures radiance from neighboring pixels rather than the target. These distortions can creates haze and reduce contrast in imagery, indicating the need for atmospheric correction to obtain true apparent reflectance.
+This section will discuss about atmospheric correction. The following study area of Hong Kong will demonstrate a workflow of correction of Landsat 8-9 OLC... processed through R.
 
 ## Summary
 
+Two main sources of environmental attenuation is atmospheric scattering and topographic attenuation. As irradiance travels through the atmosphere and reflects back to sensors as radiance, atmospheric absorption and scattering introduces "adjacency effect" which captures radiance from neighboring pixels rather than the target. These distortions can creates haze and reduce contrast in imagery, indicating the need for atmospheric correction to obtain true apparent reflectance.
+
 ## Application
+
+### Study Area: Hong Kong  
+
+::: {layout-ncol="1"}
+![Selecting Area of Interest on EarthExplorer USGS](images/w3_images/aoi_landsat89.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"}
+:::
+
+::: {layout-ncol="1"}
+![Landsat-8 Spectral Bands](images/w3_images/landsat_bands_panel3.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"}
+:::
+
+::: {#Scatterplot layout-ncol="2"}
+![NDVI](images/w3_images/m1_ndvi.png){alt="Sentinel Band 4 and Band 8 Scatterplot"}
+
+![NDVI Vegetation](images/w3_images/vegetation.png){alt="Landsat Band 4 and Band 5 Scatterplot"}
+:::
+
+::: {layout-ncol="1"}
+![Textures](images/w3_images/glcm_all_metrics.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"}
+:::
+
+::: {layout-ncol="1"}
+![PCA 1-4](images/w3_images/pca_1-4.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"}
+:::
 
 ## Reflection
