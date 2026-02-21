@@ -401,14 +401,13 @@ window.Quarto = {
 <section id="study-area-hong-kong" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="study-area-hong-kong"><span class="header-section-number">3.2.1</span> Study Area: Hong Kong</h3>
 <p>Two satellite tiles were selected from Landsat 8-9 OLI/TIRS C2 L2, Collection 2 and Level 2 is selected for surface reflection (provides surface temperature as well). In this case, two tiles were sufficient to cover the boundaries of Hong Kong. One Landsat 8 and one Landsat 9 tile has been downloaded with &lt;10% cloud cover between 19th to 20th of March 2025.</p>
-<p>Nice hack: draw an area of interest to search for tiles within the boundary for tiles and data preview in EarthExplorer.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w3_images/aoi_landsat89.png" class="img-fluid figure-img"></p>
-<figcaption>Tiles Selection (Obtained from: <a href="https://earthexplorer.usgs.gov/">USGS</a>)</figcaption>
+<figcaption>Tiles Selection: draw an area of interest to search for tiles within the boundary for tiles and data preview in EarthExplorer (Obtained from: <a href="https://earthexplorer.usgs.gov/">USGS</a>)</figcaption>
 </figure>
 </div>
 </div>
@@ -416,14 +415,14 @@ window.Quarto = {
 </div>
 <section id="mosaicking-and-data-processing" class="level4" data-number="3.2.1.1">
 <h4 data-number="3.2.1.1" class="anchored" data-anchor-id="mosaicking-and-data-processing"><span class="header-section-number">3.2.1.1</span> Mosaicking and Data Processing</h4>
-<p>Merging and joining data sets feathers the images together, which creates seamless mosaic imagery. Below shows the two tiles separately and merged in RGB imagery.</p>
+<p>Merging and joining data sets feathers the images together, which creates seamless mosaic imagery. Below shows the two tiles separately and linear stretched in RGB imagery.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w3_images/rgb_merge_comparison.png" class="img-fluid figure-img"></p>
-<figcaption>Merging Two Tiles</figcaption>
+<figcaption>Tiles Selection (Obtained from: [USGS](https://earthexplorer.usgs.gov/))</figcaption>
 </figure>
 </div>
 </div>
@@ -442,15 +441,15 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Hong Kong Planning Districts Boundaries Data were obtained from <a href="https://opendata.esrichina.hk/maps/7b854e8c055d448a8385f4e693c828d1/explore?location=22.385925%2C114.110150%2C11">Esri China (Hong Kong)</a>, which is used to clip the rasters image. This enables further processing in enhancements, looking at certain features or spectral traits, texture and principal component analysis (PCA).</p>
+<p>Hong Kong Planning Districts Boundaries Data were obtained from <a href="https://opendata.esrichina.hk/maps/7b854e8c055d448a8385f4e693c828d1/explore?location=22.385925%2C114.110150%2C11">Esri China (Hong Kong)</a> and transformed to a common CRS to ensure consistency with the satellite imagery, which is then used to clip the raster images. This enables further processing in enhancements, looking at certain features or spectral traits, texture and principal component analysis (PCA).</p>
 </section>
 <section id="normalised-difference-vegetation-index-ndvi" class="level4" data-number="3.2.1.2">
 <h4 data-number="3.2.1.2" class="anchored" data-anchor-id="normalised-difference-vegetation-index-ndvi"><span class="header-section-number">3.2.1.2</span> Normalised Difference Vegetation Index (NDVI)</h4>
-<p>The NVDI index is used to highlight healthy vegetation, the following equation is applied:</p>
+<p>The NDVI index is used to highlight healthy vegetation, the following equation is applied:</p>
 <p><span class="math display">\[
 NDVI = \frac{NIR - Red}{NIR + Red}
 \]</span></p>
-<p>Note that… More other ratios can be found in <a href="https://www.indexdatabase.de/">Index DataBase</a>.</p>
+<p>NDVI uses near-infrared (NIR) and red spectral bands to display vegetation. Healthy vegetation Areas with high NDVI indicates healthy vegetation. More other ratios can be found in <a href="https://www.indexdatabase.de/">Index DataBase</a>.</p>
 <div id="Scatterplot" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
