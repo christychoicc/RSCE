@@ -75,6 +75,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -362,17 +391,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This section will discuss about atmospheric correction. The following study area of Hong Kong will demonstrate a workflow of correction of Landsat 8-9 OLC… processed through R.</p>
+<p>Remotely sensing imagery occasionally requires pre-processing, as sensors may pick up atmospheric effects which may distort the actual surface reflectance from the bottom of atmosphere (BOA). This section will focus on atmospheric correction. The following study area of Hong Kong will demonstrate a workflow of mosiacking Landsat 8-9 tiles and some imagery enhancements processed through R.</p>
 <section id="summary" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">3.1</span> Summary</h2>
 <p>Two main sources of environmental attenuation is atmospheric scattering and topographic attenuation. As irradiance travels through the atmosphere and reflects back to sensors as radiance, atmospheric absorption and scattering introduces “adjacency effect” which captures radiance from neighboring pixels rather than the target. These distortions can creates haze and reduce contrast in imagery, presenting the need for atmospheric correction to obtain true apparent reflectance.</p>
-<p>DOS</p>
 </section>
 <section id="application" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="application"><span class="header-section-number">3.2</span> Application</h2>
 <section id="study-area-hong-kong" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="study-area-hong-kong"><span class="header-section-number">3.2.1</span> Study Area: Hong Kong</h3>
-<p>Two satellite tiles were selected from Landsat 8-9 OLI/TIRS C2 L2, Collection 2 and Level 2 is selected for surface reflecton (provides surface temperature as well). In this case, two tiles were sufficient to cover the boundaries of Hong Kong, one Landsat 8 and one Landsat 9 tile has been downloaded with &lt;10% cloud cover. Hong Kong Planning Districts Boundaries Data were obtained from <a href="https://opendata.esrichina.hk/maps/7b854e8c055d448a8385f4e693c828d1/explore?location=22.385925%2C114.110150%2C11">Esri China (Hong Kong)</a>.</p>
+<p>Two satellite tiles were selected from Landsat 8-9 OLI/TIRS C2 L2, Collection 2 and Level 2 is selected for surface reflection (provides surface temperature as well). In this case, two tiles were sufficient to cover the boundaries of Hong Kong. One Landsat 8 and one Landsat 9 tile has been downloaded with &lt;10% cloud cover between 19th to 20th of March 2025.</p>
 <p>Nice hack: draw an area of interest to search for tiles within the boundary for tiles and data preview in EarthExplorer.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
@@ -386,9 +414,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<section id="mosaicking" class="level4" data-number="3.2.1.1">
-<h4 data-number="3.2.1.1" class="anchored" data-anchor-id="mosaicking"><span class="header-section-number">3.2.1.1</span> Mosaicking</h4>
-<p>Merging and joining data sets feathers the images together, creating seamless mosaic imagery. Below shows the two tiles separately and merged in RGB imagery.</p>
+<section id="mosaicking-and-data-processing" class="level4" data-number="3.2.1.1">
+<h4 data-number="3.2.1.1" class="anchored" data-anchor-id="mosaicking-and-data-processing"><span class="header-section-number">3.2.1.1</span> Mosaicking and Data Processing</h4>
+<p>Merging and joining data sets feathers the images together, which creates seamless mosaic imagery. Below shows the two tiles separately and merged in RGB imagery.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -401,7 +429,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Taking the mosaic imagery, spectral bands. Bands information is taken from <a href="https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites">USGS</a>.</p>
+<p>Taking the mosaic imagery, spectral bands. Bands have different wavelengths, Bands 1 to 7 are in 30m resolution where Band 8 is in 15m. More on Landsat Bands can be found in <a href="https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites">USGS</a>.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -414,9 +442,15 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p>Hong Kong Planning Districts Boundaries Data were obtained from <a href="https://opendata.esrichina.hk/maps/7b854e8c055d448a8385f4e693c828d1/explore?location=22.385925%2C114.110150%2C11">Esri China (Hong Kong)</a>, which is used to clip the rasters image. This enables further processing in enhancements, looking at certain features or spectral traits, texture and principal component analysis (PCA).</p>
 </section>
 <section id="normalised-difference-vegetation-index-ndvi" class="level4" data-number="3.2.1.2">
 <h4 data-number="3.2.1.2" class="anchored" data-anchor-id="normalised-difference-vegetation-index-ndvi"><span class="header-section-number">3.2.1.2</span> Normalised Difference Vegetation Index (NDVI)</h4>
+<p>The NVDI index is used to highlight healthy vegetation, the following equation is applied:</p>
+<p><span class="math display">\[
+NDVI = \frac{NIR - Red}{NIR + Red}
+\]</span></p>
+<p>Note that… More other ratios can be found in <a href="https://www.indexdatabase.de/">Index DataBase</a>.</p>
 <div id="Scatterplot" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
