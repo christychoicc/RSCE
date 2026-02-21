@@ -6,32 +6,54 @@ This section will discuss about atmospheric correction. The following study area
 
 ## Summary
 
-Two main sources of environmental attenuation is atmospheric scattering and topographic attenuation. As irradiance travels through the atmosphere and reflects back to sensors as radiance, atmospheric absorption and scattering introduces "adjacency effect" which captures radiance from neighboring pixels rather than the target. These distortions can creates haze and reduce contrast in imagery, indicating the need for atmospheric correction to obtain true apparent reflectance.
+Two main sources of environmental attenuation is atmospheric scattering and topographic attenuation. As irradiance travels through the atmosphere and reflects back to sensors as radiance, atmospheric absorption and scattering introduces "adjacency effect" which captures radiance from neighboring pixels rather than the target. These distortions can creates haze and reduce contrast in imagery, presenting the need for atmospheric correction to obtain true apparent reflectance.
+
+DOS
 
 ## Application
 
-### Study Area: Hong Kong  
+### Study Area: Hong Kong
+
+Two satellite tiles were selected from Landsat 8-9 OLI/TIRS C2 L2, Collection 2 and Level 2 is selected for surface reflecton (provides surface temperature as well). In this case, two tiles were sufficient to cover the boundaries of Hong Kong, one Landsat 8 and one Landsat 9 tile has been downloaded with \<10% cloud cover. Hong Kong Planning Districts Boundaries Data were obtained from [Esri China (Hong Kong)](https://opendata.esrichina.hk/maps/7b854e8c055d448a8385f4e693c828d1/explore?location=22.385925%2C114.110150%2C11).
+
+Nice hack: draw an area of interest to search for tiles within the boundary for tiles and data preview in EarthExplorer.
 
 ::: {layout-ncol="1"}
-![Selecting Area of Interest on EarthExplorer USGS](images/w3_images/aoi_landsat89.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"}
+![Tiles Selection (Obtained from: [USGS](https://earthexplorer.usgs.gov/))](images/w3_images/aoi_landsat89.png)
 :::
 
+#### Mosaicking 
+
+Merging and joining data sets feathers the images together, creating seamless mosaic imagery. Below shows the two tiles separately and merged in RGB imagery.
+
 ::: {layout-ncol="1"}
-![Landsat-8 Spectral Bands](images/w3_images/landsat_bands_panel3.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"}
+![Merging Two Tiles](images/w3_images/rgb_merge_comparison.png){alt="Tiles Selection (Obtained from: [USGS](https://earthexplorer.usgs.gov/))"}
 :::
+
+Taking the mosaic imagery, spectral bands. Bands information is taken from [USGS](https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites).
+
+::: {layout-ncol="1"}
+![Landsat 8-9 Spectral Bands](images/w3_images/landsat_bands_panel3.png)
+:::
+
+#### Normalised Difference Vegetation Index (NDVI)
 
 ::: {#Scatterplot layout-ncol="2"}
-![NDVI](images/w3_images/m1_ndvi.png){alt="Sentinel Band 4 and Band 8 Scatterplot"}
+![NDVI](images/w3_images/m1_ndvi.png)
 
-![NDVI Vegetation](images/w3_images/vegetation.png){alt="Landsat Band 4 and Band 5 Scatterplot"}
+![NDVI Vegetation Cover Only](images/w3_images/vegetation.png)
 :::
 
-::: {layout-ncol="1"}
-![Textures](images/w3_images/glcm_all_metrics.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"}
-:::
+#### Texture
 
 ::: {layout-ncol="1"}
-![PCA 1-4](images/w3_images/pca_1-4.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"}
+![Textures](images/w3_images/glcm_all_metrics.png)
+:::
+
+#### PCA
+
+::: {layout-ncol="1"}
+![PCA 1-4](images/w3_images/pca_1-4.png)
 :::
 
 ## Reflection
