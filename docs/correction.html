@@ -497,7 +497,7 @@ NDVI = \frac{NIR - Red}{NIR + Red}
 </div>
 </section><section id="texture" class="level3" data-number="3.2.3"><h3 data-number="3.2.3" class="anchored" data-anchor-id="texture">
 <span class="header-section-number">3.2.3</span> Texture</h3>
-<p>Texture captures the spatial relationships between neighbouring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths. Vegetation absorbs red light for photosynthesis while concrete and buildings reflect it, creating strong contrast that makes land cover differences structurally distinguishable.</p>
+<p>Texture captures the spatial relationships between neighbouring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.</p>
 <p>Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting textures:</p>
 <p><span class="math display">\[
 \rho = (\text{pixel\_value} \cdot 0.0000275) - 0.2
