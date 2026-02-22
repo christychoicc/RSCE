@@ -1,0 +1,9 @@
+Importance of components:
+                          PC1    PC2     PC3     PC4     PC5    PC6     PC7    PC8     PC9    PC10    PC11    PC12
+Standard deviation     2.8232 2.0581 1.19101 1.02581 0.79250 0.5322 0.46463 0.2967 0.22020 0.16025 0.13643 0.09184
+Proportion of Variance 0.4981 0.2647 0.08866 0.06577 0.03925 0.0177 0.01349 0.0055 0.00303 0.00161 0.00116 0.00053
+Cumulative Proportion  0.4981 0.7629 0.85152 0.91729 0.95654 0.9742 0.98773 0.9932 0.99627 0.99787 0.99904 0.99956
+                          PC13    PC14    PC15      PC16
+Standard deviation     0.05894 0.05165 0.02915 2.104e-07
+Proportion of Variance 0.00022 0.00017 0.00005 0.000e+00
+Cumulative Proportion  0.99978 0.99995 1.00000 1.000e+00
