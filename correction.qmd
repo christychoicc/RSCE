@@ -2,7 +2,7 @@
 title: "Correction"
 ---
 
-Remotely sensing imagery occasionally requires pre-processing, as sensors may pick up atmospheric effects which may distort the actual surface reflectance from the bottom of atmosphere (BOA). This section will focus on correction and enhancements. The following study area of Hong Kong will demonstrate a workflow of mosiacking Landsat 8-9 tiles and imagery enhancements processed through R.
+Remotely sensing imagery occasionally requires pre-processing, as sensors may pick up distortions that may affect surface reflectance imagery from the bottom of atmosphere. This section will focus on correction and enhancements. The following study area of Hong Kong will demonstrate a workflow of mosiacking Landsat 8-9 tiles and imagery enhancements processed through R.
 
 ## Summary
 
@@ -32,9 +32,9 @@ Beyond atmospheric correction, remotely sensing data may also require geometric,
 
 Sources: ([Green and Clark, 2000](https://www.researchgate.net/publication/261795733_Geometric_correction_of_satellite_and_airborne_imagery)) , ([Karpouzli et.al., 2003](https://www.researchgate.net/publication/200459166_The_empiracle_line_method_for_the_atmospheric_correction_of_IKONOS_imagery)), and CASA0023 github pages
 
-## Application
+## Application 
 
-### Study Area: Hong Kong
+## Study Area: Hong Kong
 
 Two satellite tiles were selected from Landsat 8-9 OLI/TIRS C2 L2, Collection 2 and Level 2 is selected for surface reflection (provides surface temperature as well) where . In this case, two tiles were sufficient to cover the boundaries of Hong Kong. One Landsat 8 and one Landsat 9 tile has been downloaded with \<10% cloud cover between 19th to 20th of March 2025.
 
@@ -42,23 +42,23 @@ Two satellite tiles were selected from Landsat 8-9 OLI/TIRS C2 L2, Collection 2 
 ![Tiles Selection: draw an area of interest to search for tiles within the boundary for tiles and data preview in EarthExplorer (Obtained from: [USGS](https://earthexplorer.usgs.gov/))](images/w3_images/aoi_landsat89.png)
 :::
 
-#### Mosaicking and Data Processing
+### Mosaicking and Data Processing
 
-Merging and joining data sets feathers the images together, which creates seamless mosaic imagery. Note that it is important that the tiles share a common CRS before mosaicking. Below shows the two tiles separately and linear stretched in RGB imagery.
+Merging and joining data sets feathers the images together, which creates seamless mosaic imagery. Note that it is important that the tiles share a common CRS before mosaicking. Below shows the two tiles separately and linear stretched merged in RGB imagery.
 
 ::: {layout-ncol="1"}
 ![Tiles Selection (Obtained from: [USGS](https://earthexplorer.usgs.gov/))](images/w3_images/rgb_merge_comparison.png)
 :::
 
-Taking the mosaic imagery, spectral bands. Bands have different wavelengths, Bands 1 to 7 are in 30m resolution where Band 8 is in 15m. More on Landsat Bands can be found in [USGS](https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites).
+The plot below compares spectral behaviours to capture different surface features. Each band operates at a different wavelength, with Bands 1–7 at 30m resolution and finer at 15m for Band 8. Vegetation shows high reflection in Band 5 NIR and Bands 6–7 SWIR respond to soil moisture and vegetation water content, which is helpful in distinguishing types of land uses ([Wang et.al., 2008](https://www.researchgate.net/publication/233783774_Sensitivity_studies_of_the_moisture_effects_on_MODIS_SWIR_reflectance_and_vegetation_water_indices)). Theses spectral characteristics provided useful insights for understanding our study area before anaylsis. More about Landsat bands can be found in [USGS](https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites).
 
 ::: {layout-ncol="1"}
 ![Landsat 8-9 Spectral Bands](images/w3_images/landsat_bands_panel3.png)
 :::
 
-Hong Kong Planning Districts Boundaries Data were obtained from [Esri China (Hong Kong)](https://opendata.esrichina.hk/maps/7b854e8c055d448a8385f4e693c828d1/explore?location=22.385925%2C114.110150%2C11) and transformed to a common CRS to ensure consistency with the satellite imagery, which is then used to clip the raster images. This enables further processing in enhancements, looking at certain features or spectral traits, texture and principal component analysis (PCA).
+Next, clip Hong Kong boundaries to the imagery. Hong Kong Planning Districts Boundaries Data were obtained from [Esri China (Hong Kong)](https://opendata.esrichina.hk/maps/7b854e8c055d448a8385f4e693c828d1/explore?location=22.385925%2C114.110150%2C11) and transformed to a common CRS to ensure consistency with the satellite imagery, which is then used to clip the raster images. This enables further processing in enhancements, looking at certain features or spectral traits, texture and principal component analysis (PCA).
 
-#### Normalised Difference Vegetation Index (NDVI)
+### Normalised Difference Vegetation Index (NDVI)
 
 The NDVI index is used to highlight healthy vegetation, the following equation is applied:
 
@@ -66,7 +66,7 @@ $$
 NDVI = \frac{NIR - Red}{NIR + Red}
 $$
 
-NDVI uses near-infrared (NIR) and red spectral bands to display vegetation. Healthy and green vegetation reflects stronger in NIR while simultaneously absorbs red through photosynthesis. Areas with high NDVI indicates healthy vegetation. This has led NDVI to be an effective indicator for vegetation health. More other ratios can be found in [Index DataBase](https://www.indexdatabase.de/).
+NDVI uses near-infrared (NIR) and red spectral bands to display vegetation which is not visible under visible bands. Healthy and green vegetation reflects stronger in NIR while simultaneously absorbs Red through photosynthesis, this has led NDVI to be an effective indicator for vegetation health. More other ratios can be found in [Index DataBase](https://www.indexdatabase.de/).
 
 ::: {#Scatterplot layout-ncol="2"}
 ![NDVI](images/w3_images/m1_ndvi.png)
@@ -74,18 +74,38 @@ NDVI uses near-infrared (NIR) and red spectral bands to display vegetation. Heal
 ![NDVI Vegetation Cover Only](images/w3_images/vegetation.png)
 :::
 
-#### Texture
+### Texture
 
-The scale factor applied: `* 0.0000275 - 0.2` converted the stored DN values to true surface reflectance values for analysis.
+Texture captures the spatial relationships between neighbouring pixels, highlighting different land surfaces' distinct structural patterns (e.g. bumpy forests, smooth grass, jagged rocks). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths. Vegetation absorbs red light for photosynthesis while concrete and buildings reflect it, creating strong contrast that makes land cover differences structurally distinguishable.
+
+Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting structural contrast, dissimilarity, homogeneity, angular second moment, entropy, GLCM mean, variance and correlation with GLCM:
+
+$$
+$$\rho = (\text{pixel\_value} \cdot 0.0000275) - 0.2$$
+$$
 
 ::: {layout-ncol="1"}
-![Textures](images/w3_images/glcm_all_metrics.png)
+![Textures of Hong Kong](images/w3_images/glcm_all_metrics.png)
 :::
 
-#### PCA
+### PCA
+
+Principal Component Analysis (PCA) allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information. Computing a PCA summary shows that
+
+```{r, echo=FALSE}
+cat(readLines("correction/pca_summary.txt"), sep = "\n")
+```
+
+| Metric                 |    PC1 |    PC2 |     PC3 |     PC4 |
+|------------------------|-------:|-------:|--------:|--------:|
+| Standard deviation     | 2.8232 | 2.0581 | 1.19101 | 1.02581 |
+| Proportion of Variance | 0.4981 | 0.2647 | 0.08866 | 0.06577 |
+| Cumulative Proportion  | 0.4981 | 0.7629 | 0.85152 | 0.91729 |
+
+97% of spectral variance can be identified in PC1, PC2, PC3, and PC4.
 
 ::: {layout-ncol="1"}
-![PCA 1-4](images/w3_images/pca_1-4.png)
+![PC1-4](images/w3_images/pca_1-4.png)
 :::
 
 ## Reflection
