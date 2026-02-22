@@ -34,7 +34,7 @@ Sources: ([Green and Clark, 2000](https://www.researchgate.net/publication/26179
 
 ## Application 
 
-## Study Area: Hong Kong
+**Study Area: Hong Kong**
 
 Two satellite tiles were selected from Landsat 8-9 OLI/TIRS C2 L2, Collection 2 and Level 2 is selected for surface reflection (provides surface temperature as well) where . In this case, two tiles were sufficient to cover the boundaries of Hong Kong. One Landsat 8 and one Landsat 9 tile has been downloaded with \<10% cloud cover between 19th to 20th of March 2025.
 
@@ -90,22 +90,30 @@ $$
 
 ### PCA
 
-Principal Component Analysis (PCA) allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information. Computing a PCA summary shows that
+Principal Component Analysis (PCA) allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information. PCA summary of 8 spectral bands and 8 texture variables shows:
 
 ```{r, echo=FALSE}
 cat(readLines("correction/pca_summary.txt"), sep = "\n")
 ```
 
-| Metric                 |    PC1 |    PC2 |     PC3 |     PC4 |
-|------------------------|-------:|-------:|--------:|--------:|
-| Standard deviation     | 2.8232 | 2.0581 | 1.19101 | 1.02581 |
-| Proportion of Variance | 0.4981 | 0.2647 | 0.08866 | 0.06577 |
-| Cumulative Proportion  | 0.4981 | 0.7629 | 0.85152 | 0.91729 |
++----------------------------+--------------------------------------------------------+
+| Components                 | Explaination                                           |
++============================+========================================================+
+| Standard Deviation         | Spread of data                                         |
++----------------------------+--------------------------------------------------------+
+| Proportion of Variance     | Proportion of data retained from the original data set |
++----------------------------+--------------------------------------------------------+
+| Cumulative Proportion      | Proportion of total variance of the original data set  |
++----------------------------+--------------------------------------------------------+
 
-97% of spectral variance can be identified in PC1, PC2, PC3, and PC4.
+In this case, PC1 to PC4 explains most of the variations. Looking at cumulative proportion, 91% of spectral variance can be identified in the first 4 principle components. This is a very helpful measure as it allows higher efficiency in analysis, with ability to include most of total variance reducing 16 layers to 4 without missing out much of information.
+
+| Metric                |    PC1 |    PC2 |     PC3 |     PC4 |
+|-----------------------|-------:|-------:|--------:|--------:|
+| Cumulative Proportion | 0.4981 | 0.7629 | 0.85152 | 0.91729 |
 
 ::: {layout-ncol="1"}
-![PC1-4](images/w3_images/pca_1-4.png)
+![PC1 to PC4 of Hong Kong](images/w3_images/pca_1-4.png)
 :::
 
 ## Reflection

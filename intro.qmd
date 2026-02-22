@@ -46,7 +46,7 @@ The ability of a sensor to identify and discriminate between subtle differences 
 
 ## Application
 
-### Study Area: Lisboa, Portugal
+**Study Area: Lisboa, Portugal**
 
 Satellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed with SNAP. Selecting the RGB-image it gives the **True Natural Color** combination of B4, B3 and B2. **False Colour Composite** of B8, B4 and B3 highlights healthy and unhealthy vegetation, with denser vegetation visualised as red and urban areas as white. **Atmospheric Penetration** of B12, B11 and B8A composites with no visible bands to penetrate atmospheric particles, highlighting vegetation in blue and urban areas as gray, cyan or purple. More can be found at [Sentinel 2 Bands and Combinations](https://gisgeography.com/sentinel-2-bands-combinations/).
 
@@ -66,7 +66,7 @@ The scatter plots of Sentinel-2 (B4, B8) and Landsat (B4, B5) showed the spectra
 ![Landsat Band 4 and Band 5 Scatterplot](images/w1_images/b4b5scatterplot_landsat.png)
 :::
 
-#### Tasseled Caps
+### Tasseled Caps
 
 Different combinations of multi-spectral bands to examine relationship between the bands, to highlight physical land features. It is commonly used to evaluate **brightness**, **greenness** and **wetness** for monitor vegetation growth cycles, soil and urban development ( reference - <https://support.esri.com/en-us/gis-dictionary/tasseled-cap-transformation>).
 
