@@ -76,12 +76,12 @@ NDVI uses near-infrared (NIR) and red spectral bands to display vegetation which
 
 ### Texture
 
-Texture captures the spatial relationships between neighbouring pixels, highlighting different land surfaces' distinct structural patterns (e.g. bumpy forests, smooth grass, jagged rocks). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths. Vegetation absorbs red light for photosynthesis while concrete and buildings reflect it, creating strong contrast that makes land cover differences structurally distinguishable.
+Texture captures the spatial relationships between neighbouring pixels, highlighting different land surfaces' distinct structural patterns (e.g. bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths. Vegetation absorbs red light for photosynthesis while concrete and buildings reflect it, creating strong contrast that makes land cover differences structurally distinguishable.
 
 Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting structural contrast, dissimilarity, homogeneity, angular second moment, entropy, GLCM mean, variance and correlation with GLCM:
 
 $$
-$$\rho = (\text{pixel\_value} \cdot 0.0000275) - 0.2$$
+\rho = (\text{pixel\_value} \cdot 0.0000275) - 0.2
 $$
 
 ::: {layout-ncol="1"}
@@ -108,7 +108,7 @@ cat(readLines("correction/pca_summary.txt"), sep = "\n")
 
 In this case, PC1 to PC4 explains most of the variations. Looking at cumulative proportion, 91% of spectral variance can be identified in the first 4 principle components. This is a very helpful measure as it allows higher efficiency in analysis, with ability to include most of total variance reducing 16 layers to 4 without missing out much of information.
 
-| Metric                |    PC1 |    PC2 |     PC3 |     PC4 |
+| Component             |    PC1 |    PC2 |     PC3 |     PC4 |
 |-----------------------|-------:|-------:|--------:|--------:|
 | Cumulative Proportion | 0.4981 | 0.7629 | 0.85152 | 0.91729 |
 
@@ -118,6 +118,10 @@ In this case, PC1 to PC4 explains most of the variations. Looking at cumulative 
 
 ## Reflection
 
-Luckily, Level 2 data are analysis ready data (ARD), no manual correction processes needed.
+There is a lot of contents in data correction and enhancements. Luckily, there is open acess to Level 2 data that are analysis ready data (ARD), no extensive manual correction process needed. More on Level 2 data can be found in the following, click for [Sentinel](https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/data-processing-levels) and [Landsat](https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products).
 
-Hong Kong is a very interesting study area, where it comprimises one of the world's most dense urban areas while having about three quarters of land covered in vegetation ([Gov.hk](https://www.hketoberlin.gov.hk/download/Green_HK.pdf), 2013).
+I have always choose [GADM](https://gadm.org/) for obtaining adminstrative boundaries, however it lacks coverage for special administrative regions like Hong Kong. This has given me opportunities to explore for alternative boundary sources.
+
+Having to lived in Hong Kong for many years, I have never looked at the city through a remote sensing perspective. This is a very interesting study area both personally and scientifically. It comprimises one of the world's most dense urban areas while having about three quarters of land covered in vegetation, which offers a unique juxtaposition of dense urban form with natural landscape within a small land area ([Gov.hk](https://www.hketoberlin.gov.hk/download/Green_HK.pdf), 2013).
+
+## References
