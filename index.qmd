@@ -15,5 +15,5 @@ Each chapter will be covering contents taught in the corresponding week:
 2.  Sensor
     -   Looking at Sentinel-1, the slides will provide a summary of the sensor, its mission, technical specifications, key objectives and applications, benefits and limitations, and reflections
 3.  Correction
-    -   Explores preprocessing corrections and enhancements through Hong Kong as a study area, includes mosaicking of Landsat 8-9 tiles, NDVI, GLCM texture analysis, and PCA
+    -   Explores preprocessing corrections and enhancements with Hong Kong as a study area, include mosaicking of Landsat 8-9 tiles, NDVI, GLCM texture, and PCA analyses.
 4.  Policy
