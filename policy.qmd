@@ -8,16 +8,16 @@ This section will look at New York City, USA as a case study city, with their th
 
 The OneNYC 2050: Building a Strong and Fair City is a long term strategic plan compromised of 8 goals and 30 initiatives. It aims to achieve an equitable, sustainable and thriving city through addressing its climate change, economic equality, housing, health, education, transportation and infrastructure.
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-| A Livable Climate Initiatives, OneNYC 2050 Strategic Plan                                                                       |
-+=================================================================================================================================+
-| 20. Achieve carbon neutrality and 100 percent clean electricity                                                                 |
-| 21. A LIVABLE CLIMATE Strengthen communities, buildings, infrastructure, and the waterfront to be more resilient                |
-| 22. Create economic opportunities for all New Yorkers through climate action                                                    |
-| 23. Fight for climate accountability and justice                                                                                |
-|                                                                                                                                 |
-| Source: [Government Publication Portal, 2019](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en) |
-+---------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+| A Livable Climate Initiatives, OneNYC 2050 Strategic Plan                                                         |
++===================================================================================================================+
+| 20. Achieve carbon neutrality and 100 percent clean electricity                                                   |
+| 21. A LIVABLE CLIMATE Strengthen communities, buildings, infrastructure, and the waterfront to be more resilient  |
+| 22. Create economic opportunities for all New Yorkers through climate action                                      |
+| 23. Fight for climate accountability and justice                                                                  |
++-------------------------------------------------------------------------------------------------------------------+
+
+: Source: [Government Publication Portal, 2019](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en)
 
 NYC has identified extreme heat to be one of its major climate threats, where it "is now the number one cause of mortality from weather conditions" ([Government Publication Portal, 2019](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en), p.32). Previously, extreme heat waves have been found sending deadly wildfires devastate communities in California ([Government Publication Portal, 2019](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en), p.234).
 
