@@ -24,7 +24,7 @@
     "href": "index.html#in-this-learning-diary",
     "title": "CASA0023 Remotely Sensing Cities and Environments Learning Diary",
     "section": "In this Learning Diary",
-    "text": "In this Learning Diary\nEach chapter will be covering contents taught in the corresponding week:\n\nIntroduction\n\nGetting started with remote sensing, this introduction will go through types of sensors, spatial resolutions and practical data pre-processing with Lisbon as the study area.\n\nSensor\n\nLooking at Sentinel-1, the slides will provide a summary of the sensor, its mission, technical specifications, key objectives and applications, benefits and limitations, and reflections\n\nCorrection\n\nExplores preprocessing corrections and enhancements through Hong Kong as a study area, includes mosaicking of Landsat 8-9 tiles, NDVI, GLCM texture analysis, and PCA\n\nPolicy",
+    "text": "In this Learning Diary\nEach chapter will be covering contents taught in the corresponding week:\n\nIntroduction\n\nGetting started with remote sensing, this introduction will go through types of sensors, spatial resolutions and practical data pre-processing with Lisbon as the study area.\n\nSensor\n\nLooking at Sentinel-1, the slides will provide a summary of the sensor, its mission, technical specifications, key objectives and applications, benefits and limitations, and reflections\n\nCorrection\n\nExplores preprocessing corrections and enhancements with Hong Kong as a study area, include mosaicking of Landsat 8-9 tiles, NDVI, GLCM texture, and PCA analyses.\n\nPolicy",
     "crumbs": [
       "Welcome !"
     ]
@@ -144,7 +144,17 @@
     "href": "policy.html",
     "title": "4  Policy",
     "section": "",
-    "text": "4.1 Summary\nThis section will look at New York as a case study city.\nThe One NYC 2025",
+    "text": "4.1 Summary\nThis section will look at New York City, USA as a case study city, with their the OneNYC 2050 strategy’s goal to achieve “A Liveable Climate”. Like most dense urban areas, New York City (NYC) is also facing the problems of warmer urban temperatures than its rural and suburban neighborhoods. Given growing events of higher frequency, longer lasting and more intense heat waves, this section will focus on one of NYC’s experiencing climate threats of Extreme Heat.\nThe OneNYC 2050: Building a Strong and Fair City is a long term strategic plan compromised of 8 goals and 30 initiatives. It aims to achieve an equitable, sustainable and thriving city through addressing its climate change, economic equality, housing, health, education, transportation and infrastructure.\nNYC has identified extreme heat to be one of its major climate threats, where it “is now the number one cause of mortality from weather conditions” (Government Publication Portal, 2019, p.32). Previously, extreme heat waves have been found sending deadly wildfires devastate communities in California (Government Publication Portal, 2019, p.234).\nUrban forests efforts to combat extreme heat\nHeat Vulnerability Index to show neighborhoods that are more at risk following extreme heat",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
+    ]
+  },
+  {
+    "objectID": "policy.html#summary",
+    "href": "policy.html#summary",
+    "title": "4  Policy",
+    "section": "",
+    "text": "A Livable Climate Initiatives, OneNYC 2050 Strategic Plan\n\n\n\n\n\nAchieve carbon neutrality and 100 percent clean electricity\nA LIVABLE CLIMATE Strengthen communities, buildings, infrastructure, and the waterfront to be more resilient\nCreate economic opportunities for all New Yorkers through climate action\nFight for climate accountability and justice\n\nSource: Government Publication Portal, 2019",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
     ]
@@ -154,7 +164,7 @@
     "href": "policy.html#application",
     "title": "4  Policy",
     "section": "4.2 Application",
-    "text": "4.2 Application",
+    "text": "4.2 Application\nExtreme heat studies",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
     ]
@@ -174,7 +184,7 @@
     "href": "policy.html#reference",
     "title": "4  Policy",
     "section": "4.4 Reference",
-    "text": "4.4 Reference",
+    "text": "4.4 Reference\nOneNYC 2050 Strategic Plan (A Liveable Climate at page 229) Online PDF: https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf\nOr\nOneNYC 2050 Strategic Plan: download at: https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
     ]
