@@ -19,7 +19,7 @@ The OneNYC 2050: Building a Strong and Fair City is a long term strategic plan c
 
 : Source: [Government Publication Portal, 2019](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en)
 
-NYC has identified extreme heat to be one of its major climate threats, where it "is now the number one cause of mortality from weather conditions" ([Government Publication Portal, 2019](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en), p.32). Previously, extreme heat waves have been found sending deadly wildfires devastate communities in California ([Government Publication Portal, 2019](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en), p.234).
+NYC has identified extreme heat to be one of its major climate threats, where it "is now the number one cause of mortality from weather conditions" ([Government Publication Portal, 2019](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en), p.32).
 
 Urban forests efforts to combat extreme heat
 
@@ -27,9 +27,19 @@ Heat Vulnerability Index to show neighborhoods that are more at risk following e
 
 ## Application
 
-Extreme heat studies
+### Data
+
+Land surface temperature (LST) obtained from satellite sensors are particularly useful for understanding extreme heat.
+
+The Landsat Thematic Mapper (TM)/Enhanced Thematic Mapper (ETM+)/Thermal Infrared Sensor (TIRS) and Terra/Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) together are the most commonly used satellite sensors, accounting for around 78% of urban heat related published studies ([Zhou et. al., 2019](https://www.mdpi.com/2072-4292/11/1/48)).
+
+"The measurement of urban heat poses several challenges with current methods leveraging either ground based, in situ observations, or satellite-derived surface temperatures estimated from land use emissivity. While both techniques contain inherent advantages and biases to predicting temperatures, their integration may offer an opportunity to improve the spatial resolution and global application of urban heat measurements." ([Shandas et.al., 2019](https://www.mdpi.com/2225-1154/7/1/5))
+
+### Addressing Policy Challenge
 
 ## Reflection
+
+"Current approaches to describing the spatial distribution of urban heat can be characterized into two categories: ground-based measurements of ambient air temperature and satellite-derived land surface temperatures. Common methods of intra-urban heat analysis use thermal infrared (TIR) satellite data. However, these methods do not present human-experienced ground-level temperature predictions due to the low resolution of satellite-based TIR band. Thus, it is inappropriate to use TIR-capable platforms such as Landsat or Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER) for urban heat island effect (UHI) analyses in which human comfort and/or health are concerned. The alternative approach is to collect ground-based measurements (“traverses”) and create models of observed temperatures across urban areas. This collection method has been used successfully both recently and before the existence of satellite-based TIR data. Although the exact techniques vary, the overall methodology persists throughout the traverse-based literature: the use of moving temperature measurement devices throughout an urban environment to assess the changes in temperature, based on land use/land cover (LULC) configuration."**([Shandas et.al., 2019](https://www.mdpi.com/2225-1154/7/1/5)) –\>** While Landsat/MODIS LST data effectively supports NYC's city-wide Heat Vulnerability Index mapping, its inability to capture ground-level human-experienced temperatures is a genuine methodological limitation that planners should be aware of.
 
 ## Reference
 
