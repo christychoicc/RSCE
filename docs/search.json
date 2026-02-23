@@ -144,7 +144,7 @@
     "href": "policy.html",
     "title": "4  Policy",
     "section": "",
-    "text": "4.1 Summary\nThis section will look at New York City, USA as a case study city, with their the OneNYC 2050 strategy’s goal to achieve “A Liveable Climate”. Like most dense urban areas, New York City (NYC) is also facing the problems of warmer urban temperatures than its rural and suburban neighborhoods. Given growing events of higher frequency, longer lasting and more intense heat waves, this section will focus on one of NYC’s experiencing climate threats of Extreme Heat.\nThe OneNYC 2050: Building a Strong and Fair City is a long term strategic plan compromised of 8 goals and 30 initiatives. It aims to achieve an equitable, sustainable and thriving city through addressing its climate change, economic equality, housing, health, education, transportation and infrastructure.\nNYC has identified extreme heat to be one of its major climate threats, where it “is now the number one cause of mortality from weather conditions” (Government Publication Portal, 2019, p.32). Previously, extreme heat waves have been found sending deadly wildfires devastate communities in California (Government Publication Portal, 2019, p.234).\nUrban forests efforts to combat extreme heat\nHeat Vulnerability Index to show neighborhoods that are more at risk following extreme heat",
+    "text": "4.1 Summary\nThis section will look at New York City, USA as a case study city, with their the OneNYC 2050 strategy’s goal to achieve “A Liveable Climate”. Like most dense urban areas, New York City (NYC) is also facing the problems of warmer urban temperatures than its rural and suburban neighborhoods. Given growing events of higher frequency, longer lasting and more intense heat waves, this section will focus on one of NYC’s experiencing climate threats of Extreme Heat.\nThe OneNYC 2050: Building a Strong and Fair City is a long term strategic plan compromised of 8 goals and 30 initiatives. It aims to achieve an equitable, sustainable and thriving city through addressing its climate change, economic equality, housing, health, education, transportation and infrastructure.\nNYC has identified extreme heat to be one of its major climate threats, where it “is now the number one cause of mortality from weather conditions” (Government Publication Portal, 2019, p.32).\nUrban forests efforts to combat extreme heat\nHeat Vulnerability Index to show neighborhoods that are more at risk following extreme heat",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
     ]
@@ -154,7 +154,7 @@
     "href": "policy.html#summary",
     "title": "4  Policy",
     "section": "",
-    "text": "A Livable Climate Initiatives, OneNYC 2050 Strategic Plan\n\n\n\n\n\nAchieve carbon neutrality and 100 percent clean electricity\nA LIVABLE CLIMATE Strengthen communities, buildings, infrastructure, and the waterfront to be more resilient\nCreate economic opportunities for all New Yorkers through climate action\nFight for climate accountability and justice\n\nSource: Government Publication Portal, 2019",
+    "text": "Source: Government Publication Portal, 2019\n\n\nA Livable Climate Initiatives, OneNYC 2050 Strategic Plan\n\n\n\n\n\nAchieve carbon neutrality and 100 percent clean electricity\nA LIVABLE CLIMATE Strengthen communities, buildings, infrastructure, and the waterfront to be more resilient\nCreate economic opportunities for all New Yorkers through climate action\nFight for climate accountability and justice",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
     ]
@@ -164,7 +164,7 @@
     "href": "policy.html#application",
     "title": "4  Policy",
     "section": "4.2 Application",
-    "text": "4.2 Application\nExtreme heat studies",
+    "text": "4.2 Application\n\n4.2.1 Data\nLand surface temperature (LST) obtained from satellite sensors are particularly useful for understanding extreme heat.\nThe Landsat Thematic Mapper (TM)/Enhanced Thematic Mapper (ETM+)/Thermal Infrared Sensor (TIRS) and Terra/Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) together are the most commonly used satellite sensors, accounting for around 78% of urban heat related published studies (Zhou et. al., 2019).\nYet measuring urban heat also posed several challenges. Shandas et.al.(2019) outlined two commonly and currently used approaches of ground based temperature and satellite imagery to estimate surface temperatures. Although both demonstrated strengths and weaknesses for predicting temperatures, yet integrating both could enable a more accurate and scalable solution for cities.\nSatellite-based thermal infrared (TIR) data, from sensors like Landsat or ASTER, is the most widely used method across studies. However, it captures the temperature on rooftops and pavements surfaces, not the temperature that humans experience at street level. This makes it less of a fit for studies when considering ground level analysis. Therefore, for high precision and accuracy, one solution is to place ground-based measurement “traverses” models in different areas across the city. This enables observations of variation of temperature across different land uses and land covers, providing a more throughout assessment of urban heat across the city. Critically, this method is more expensive and resource intensive for a placement coverage across an entire city.\n\n\n4.2.2 Addressing Policy Challenge",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
     ]
@@ -174,7 +174,7 @@
     "href": "policy.html#reflection",
     "title": "4  Policy",
     "section": "4.3 Reflection",
-    "text": "4.3 Reflection",
+    "text": "4.3 Reflection\nWhile Landsat/MODIS LST data effectively supports NYC’s city-wide Heat Vulnerability Index mapping, its inability to capture ground-level human-experienced temperatures is a genuine methodological limitation that planners should be aware of.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
     ]
