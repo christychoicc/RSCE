@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./classification-1.html" rel="next">
 <link href="./correction.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -322,6 +322,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./classification-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Classification - Part 1</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -375,7 +381,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="4.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.1</span> Summary</h2>
 <p>The OneNYC 2050: Building a Strong and Fair City is a long term strategic plan compromised of 8 goals and 30 initiatives. It aims to achieve an equitable, sustainable and thriving city through addressing its climate change, economic equality, housing, health, education, transportation and infrastructure.</p>
 <table class="caption-top table">
-<caption>Source: <a href="https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en">Government Publication Portal, 2019</a></caption>
+<caption>Relevant Initiatives, Source: <a href="https://www.nyc.gov/assets/sustainability/downloads/pdf/publications/OneNYC-2050-Summary.pdf">OneNYC 2050</a></caption>
 <thead>
 <tr class="header">
 <th>A Livable Climate Initiatives, OneNYC 2050 Strategic Plan</th>
@@ -392,18 +398,41 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>NYC has identified extreme heat to be one of its major climate threats, where it “is now the number one cause of mortality from weather conditions” (<a href="https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en">Government Publication Portal, 2019</a>, p.32).</p>
-<p>Urban forests efforts to combat extreme heat</p>
-<p>Heat Vulnerability Index to show neighborhoods that are more at risk following extreme heat</p>
+<p>NYC has identified extreme heat to be one of its major climate threats, where it “is now the number one cause of mortality from weather conditions” (<a href="https://www.nyc.gov/assets/sustainability/downloads/pdf/publications/OneNYC-2050-Summary.pdf">OneNYC 2050</a>, p.32). Extreme heat within the city also known as the Urban Heat Island (UHI) effect, is a challenge that is widely faced by many cities globally. These neighborhoods tends to have dense concentrations of built structures with dark surfaces made up of concrete or other building materials, which absorb and retain heat. Combined with limited vegetation cover within these densely built environment, it provides limited opportunities for natural cooling methods such as evapotranspiration and solar shading to mitigate rising temperatures.</p>
+<div class="quarto-layout-panel" data-layout-ncol="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/w4_images/UHIfig1.jpg" class="img-fluid figure-img"></p>
+<figcaption>UHI</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The OneNYC mentioned using the Heat Vulnerability Index to identify neighborhoods that are more at risk following extreme heat. South Bronx, Central Brooklyn and Upper Manhattan is highlighted as the city’s most heat vulnerable neighborhoods.</p>
+<div class="quarto-layout-panel" data-layout-ncol="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/w4_images/NYC_HVI_Map2.png" class="img-fluid figure-img"></p>
+<figcaption>NYC HVI Map (Data Source: <a href="https://experience.arcgis.com/experience/6a3da7b920f248af961554bdf01d668b/page/Data-Explorer">ENJYC Full Data Explorer, NVY Mayors Office of Climate and Environmental Justice</a>)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The OneNYC mentioned urban forests efforts to combat extreme heat, cool roofs to lower local temperatures and mitigate the health impacts of UHI.</p>
 </section>
 <section id="application" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="application"><span class="header-section-number">4.2</span> Application</h2>
 <section id="data" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="data"><span class="header-section-number">4.2.1</span> Data</h3>
-<p>Land surface temperature (LST) obtained from satellite sensors are particularly useful for understanding extreme heat.</p>
-<p>The Landsat Thematic Mapper (TM)/Enhanced Thematic Mapper (ETM+)/Thermal Infrared Sensor (TIRS) and Terra/Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) together are the most commonly used satellite sensors, accounting for around 78% of urban heat related published studies (<a href="https://www.mdpi.com/2072-4292/11/1/48">Zhou et. al., 2019</a>).</p>
+<p>Land surface temperature (LST) obtained from satellite sensors are particularly useful for understanding extreme heat. The Landsat Thematic Mapper (TM)/Enhanced Thematic Mapper (ETM+)/Thermal Infrared Sensor (TIRS) and Terra/Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) are commonly used for urban heat studies, accounting for around 78% of total publications (<a href="https://www.mdpi.com/2072-4292/11/1/48">Zhou et. al., 2019</a>).</p>
+<p>Ground based temperature sensors</p>
 <p>Yet measuring urban heat also posed several challenges. <a href="https://www.mdpi.com/2225-1154/7/1/5">Shandas et.al.</a>(2019) outlined two commonly and currently used approaches of ground based temperature and satellite imagery to estimate surface temperatures. Although both demonstrated strengths and weaknesses for predicting temperatures, yet integrating both could enable a more accurate and scalable solution for cities.</p>
-<p>Satellite-based thermal infrared (TIR) data, from sensors like Landsat or ASTER, is the most widely used method across studies. However, it captures the temperature on rooftops and pavements surfaces, not the temperature that humans experience at street level. This makes it less of a fit for studies when considering ground level analysis. Therefore, for high precision and accuracy, one solution is to place ground-based measurement “traverses” models in different areas across the city. This enables observations of variation of temperature across different land uses and land covers, providing a more throughout assessment of urban heat across the city. Critically, this method is more expensive and resource intensive for a placement coverage across an entire city.</p>
 </section>
 <section id="addressing-policy-challenge" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="addressing-policy-challenge"><span class="header-section-number">4.2.2</span> Addressing Policy Challenge</h3>
@@ -411,7 +440,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="reflection" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">4.3</span> Reflection</h2>
-<p>While Landsat/MODIS LST data effectively supports NYC’s city-wide Heat Vulnerability Index mapping, its inability to capture ground-level human-experienced temperatures is a genuine methodological limitation that planners should be aware of.</p>
+<p>Satellite-based thermal infrared (TIR) data, from sensors like Landsat or ASTER, is the most widely used method across studies. However, it captures the temperature on rooftops and pavements surfaces, not the temperature that humans experience at street level. This makes it less of a fit for studies when considering ground level analysis. Therefore, for high precision and accuracy, one solution is to place ground-based measurement “traverses” models in different areas across the city. This enables observations of variation of temperature across different land uses and land covers, providing a more throughout assessment of urban heat across the city. Critically, this method is more expensive and resource intensive for a placement coverage across an entire city.</p>
+<p>In NYC, while Landsat/MODIS LST data effectively supports city-wide Heat Vulnerability Index mapping, yet its inability to capture ground-level human-experienced temperatures remains a methodological limitation that should be considered for urban heat mitigation.</p>
 </section>
 <section id="reference" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="reference"><span class="header-section-number">4.4</span> Reference</h2>
@@ -843,8 +873,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./classification-1.html" class="pagination-link" aria-label="Classification - Part 1">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Classification - Part 1</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

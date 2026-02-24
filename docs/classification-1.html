@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.27">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>3&nbsp; Correction – CASA0023 Remotely Sensing Cities and Environments Learning Diary</title>
+
+
+<title>5&nbsp; Classification - Part 1 – CASA0023 Remotely Sensing Cities and Environments Learning Diary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -26,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./policy.html" rel="next">
-<link href="./sensor.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./policy.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -42,7 +46,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-635da006507a4f5110871ca9c075f887.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-985b50f9537809427317b15cc5012cf1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-635da006507a4f5110871ca9c075f887.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-635da006507a4f5110871ca9c075f887.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -68,33 +73,11 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
+}</script>
+
+
 </head>
+
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -260,10 +243,14 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/casa_logo.jpg" alt="" class="navbar-logo light-content"><img src="./images/casa_logo.jpg" alt="" class="navbar-logo dark-content"></a>
+    <img src="./images/casa_logo.jpg" alt="" class="navbar-logo light-content">
+    <img src="./images/casa_logo.jpg" alt="" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">CASA0023 Remotely Sensing Cities and Environments Learning Diary</span>
     </a>
@@ -274,30 +261,36 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item compact">
+  <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/christychoicc"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-</div> <!-- /navcollapse -->
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./correction.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Correction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./classification-1.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Classification - Part 1</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome !</span></a>
@@ -317,7 +310,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./correction.html" class="sidebar-item-text sidebar-link active">
+  <a href="./correction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Correction</span></span></a>
   </div>
 </li>
@@ -329,7 +322,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./classification-1.html" class="sidebar-item-text sidebar-link">
+  <a href="./classification-1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Classification - Part 1</span></span></a>
   </div>
 </li>
@@ -340,32 +333,20 @@ window.Quarto = {
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-<li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">3.1</span> Summary</a></li>
-  <li>
-<a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="header-section-number">3.2</span> Application</a>
-  <ul class="collapse">
-<li><a href="#mosaicking-and-data-processing" id="toc-mosaicking-and-data-processing" class="nav-link" data-scroll-target="#mosaicking-and-data-processing"><span class="header-section-number">3.2.1</span> Mosaicking and Data Processing</a></li>
-  <li><a href="#normalised-difference-vegetation-index-ndvi" id="toc-normalised-difference-vegetation-index-ndvi" class="nav-link" data-scroll-target="#normalised-difference-vegetation-index-ndvi"><span class="header-section-number">3.2.2</span> Normalised Difference Vegetation Index (NDVI)</a></li>
-  <li><a href="#texture" id="toc-texture" class="nav-link" data-scroll-target="#texture"><span class="header-section-number">3.2.3</span> Texture</a></li>
-  <li><a href="#pca" id="toc-pca" class="nav-link" data-scroll-target="#pca"><span class="header-section-number">3.2.4</span> PCA</a></li>
-  </ul>
-</li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">3.3</span> Reflection</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3.4</span> References</a></li>
-  </ul></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">
-<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Correction</span>
-</h1>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Classification - Part 1</span></h1>
 </div>
 
 
@@ -379,223 +360,14 @@ window.Quarto = {
   
 
 
-</header><p>Remotely sensing imagery occasionally requires pre-processing, as sensors may pick up distortions that may affect surface reflectance imagery. This section will focus on correction and enhancements. The following study area of Hong Kong will demonstrate a workflow of mosiacking Landsat 8-9 tiles and imagery enhancements processed through R.</p>
-<section id="summary" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="summary">
-<span class="header-section-number">3.1</span> Summary</h2>
-<p>Two main sources of environmental attenuation is atmospheric scattering and topographic attenuation. As irradiance travels through the atmosphere and reflects back to sensors as radiance, atmospheric absorption and scattering introduces “adjacency effect” which captures radiance from neighboring pixels rather than the target. These distortions can creates haze and reduce contrast in imagery, presenting the need for atmospheric correction to obtain true apparent reflectance.</p>
-<p>Beyond atmospheric correction, remotely sensing data may also require geometric, orthorectification, and radiometric corrections to account for any sensor distortions, displacement, and calibration errors. The following discuss the 5 key types of corrections.</p>
-<section id="types-of-correction" class="level4" data-number="3.1.0.1"><h4 data-number="3.1.0.1" class="anchored" data-anchor-id="types-of-correction">
-<span class="header-section-number">3.1.0.1</span> Types of Correction</h4>
-<table class="caption-top table">
-<thead><tr class="header">
-<th>Correction</th>
-<th>Description</th>
-<th>Benefits</th>
-<th>Limitations</th>
-<th>When to use?</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Geometric Correction</td>
-<td>Correct positional distortions from off-nadir view angles, topography, wind, earth shape and rotation</td>
-<td>Aligning with Ground Control Points (GCPs) allows high accuracy</td>
-<td>Time consuming; Computational intensive</td>
-<td>Compared with data or maps; Calculation of distances or area; Two images acquired at different dates to be compared pixel by pixel. (<a href="https://www.researchgate.net/publication/261795733_Geometric_correction_of_satellite_and_airborne_imagery">Green and Clark, 2000</a>)</td>
-</tr>
-<tr class="even">
-<td>Atmospheric Correction</td>
-<td>
-<p>Removes atmospheric effects;</p>
-<p>Methods: Dark Object Subtraction (DOS); Psuedo-invariant Features (PIFs)</p>
-</td>
-<td>Removes haze and adjacency effects</td>
-<td>May not remove all atmospheric effects completely</td>
-<td>Need to acquire biophysical parameters (e.g.&nbsp;temperature, NDVI); Using spectral signatures through time and space</td>
-</tr>
-<tr class="odd">
-<td>Empirical Line Correction</td>
-<td>Uses field spectrometer for measurements taken during satellite overpass</td>
-<td>Provide a simple surface reflectance calibration: available invariant-in-time calibration target measurement (<a href="https://www.researchgate.net/publication/200459166_The_empiracle_line_method_for_the_atmospheric_correction_of_IKONOS_imagery">Karpouzli et.al, 2003</a>)</td>
-<td>Requires physical field measurement to be done exactly timed with satellite overpasses; Hazards may present on site</td>
-<td>To obtain accurate and precise surface refection</td>
-</tr>
-<tr class="even">
-<td>Orthorectification (Topographic) Correction</td>
-<td>Assign coordinates to an image (Georectification) and Orthorectification goes beyond in removing distortions (influences of topography), ensuring pixels are as if depicted from directly above</td>
-<td>Allow accuracy for terrain areas through removing terrain displacements</td>
-<td>Require an accurate and high resolution digital elevation model (DEM) (<a href="https://ieeexplore.ieee.org/abstract/document/5597959">Shimada, 2010</a>)</td>
-<td>
-<p>For areas with complex terrain</p>
-<p>(Note* Should be used after atmospheric correction)</p>
-</td>
-</tr>
-<tr class="odd">
-<td>Radiometric Calibration</td>
-<td>Convert Digital Numbers (DN) to spectral radiance</td>
-<td>Allow comparison across sensors across different acquisition dates</td>
-<td></td>
-<td>To convert the output signal into physical magnitudes (e.g.&nbsp;radiance, reflectivity, temperature) (<a href="https://taylorandfrancis.com/knowledge/Engineering_and_technology/Artificial_intelligence/Radiometric_calibration/#:~:text=Radiometric%20calibration%20refers%20to%20the,onboard%20calibration%2C%20and%20vicarious%20calibration.">Taylor &amp; Francis, 2021</a>)</td>
-</tr>
-</tbody>
-</table>
-<p>Sources: (<a href="https://www.researchgate.net/publication/261795733_Geometric_correction_of_satellite_and_airborne_imagery">Green and Clark, 2000</a>) , (<a href="https://www.researchgate.net/publication/200459166_The_empiracle_line_method_for_the_atmospheric_correction_of_IKONOS_imagery">Karpouzli et.al., 2003</a>), (<a href="https://ieeexplore.ieee.org/abstract/document/5597959">Shimada, 2010</a>) and <a href="https://andrewmaclachlan.github.io/CASA0023/">CASA0023</a></p>
-</section></section><section id="application" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="application">
-<span class="header-section-number">3.2</span> Application</h2>
-<p><strong>Study Area: Hong Kong</strong></p>
-<p>Two satellite tiles were selected from Landsat 8-9 OLI/TIRS, Collection 2 and Level 2 is selected for surface reflection (provides surface temperature as well). Here, two tiles were sufficient to cover the boundaries of Hong Kong. One Landsat 8 and one Landsat 9 tile has been downloaded with &lt;10% cloud cover between 19th to 20th of March 2025.</p>
-<div class="quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/w3_images/aoi_landsat89.png" class="img-fluid figure-img"></p>
-<figcaption>Tiles Selection: draw an area of interest to search for tiles within the boundary and for tiles and data preview in EarthExplorer (Obtained from: <a href="https://earthexplorer.usgs.gov/">USGS</a>)</figcaption></figure>
-</div>
-</div>
-</div>
-</div>
-<section id="mosaicking-and-data-processing" class="level3" data-number="3.2.1"><h3 data-number="3.2.1" class="anchored" data-anchor-id="mosaicking-and-data-processing">
-<span class="header-section-number">3.2.1</span> Mosaicking and Data Processing</h3>
-<p>Merging and joining data sets feathers the images together, which creates seamless mosaic imagery. Note that it is important that the tiles share a common CRS before mosaicking. Below shows the two tiles separately and linear stretched merged in RGB imagery.</p>
-<div class="quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/w3_images/rgb_merge_comparison.png" class="img-fluid figure-img"></p>
-<figcaption>Tiles Selection (Obtained from: <a href="https://earthexplorer.usgs.gov/">USGS</a>)</figcaption></figure>
-</div>
-</div>
-</div>
-</div>
-<p>The plot below compares spectral behaviours to capture different surface features. Each band operates at a different wavelength, with Bands 1–7 at 30m resolution and finer at 15m for Band 8. Vegetation shows high reflection in Band 5 NIR and Bands 6–7 SWIR respond to soil moisture and vegetation water content, which is helpful in distinguishing types of land uses (<a href="https://www.researchgate.net/publication/233783774_Sensitivity_studies_of_the_moisture_effects_on_MODIS_SWIR_reflectance_and_vegetation_water_indices">Wang et.al., 2008</a>). These spectral characteristics provided useful insights for understanding our study area before anaylsis. More about Landsat bands: <a href="https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites">USGS</a>.</p>
-<div class="quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/w3_images/landsat_bands_panel3.png" class="img-fluid figure-img"></p>
-<figcaption>Landsat 8-9 Spectral Bands</figcaption></figure>
-</div>
-</div>
-</div>
-</div>
-<p>Hong Kong Planning Districts Boundaries Data were obtained from <a href="https://opendata.esrichina.hk/maps/7b854e8c055d448a8385f4e693c828d1/explore?location=22.385925%2C114.110150%2C11">Esri China (Hong Kong)</a> transformed to a common CRS to ensure consistency with satellite imagery, and used to clip the raster images. This enables further processing in enhancements, looking at certain features or spectral traits, texture and principal component analysis (PCA).</p>
-</section><section id="normalised-difference-vegetation-index-ndvi" class="level3" data-number="3.2.2"><h3 data-number="3.2.2" class="anchored" data-anchor-id="normalised-difference-vegetation-index-ndvi">
-<span class="header-section-number">3.2.2</span> Normalised Difference Vegetation Index (NDVI)</h3>
-<p>NDVI is used to highlight healthy vegetation, the following equation is applied:</p>
-<p><span class="math display">\[
-NDVI = \frac{NIR - Red}{NIR + Red}
-\]</span></p>
-<p>NDVI uses Near-Infrared (NIR) and Red spectral bands to display vegetation which is not visible under visible bands. Healthy and green vegetation reflects stronger in NIR while simultaneously absorbs Red through photosynthesis, this has led NDVI to be an effective indicator for vegetation health. More on other ratios: <a href="https://www.indexdatabase.de/">Index DataBase</a>.</p>
-<div id="Scatterplot" class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/w3_images/m1_ndvi.png" class="img-fluid figure-img"></p>
-<figcaption>NDVI</figcaption></figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/w3_images/vegetation.png" class="img-fluid figure-img"></p>
-<figcaption>NDVI Vegetation Cover Only</figcaption></figure>
-</div>
-</div>
-</div>
-</div>
-</section><section id="texture" class="level3" data-number="3.2.3"><h3 data-number="3.2.3" class="anchored" data-anchor-id="texture">
-<span class="header-section-number">3.2.3</span> Texture</h3>
-<p>Texture captures the spatial relationships between neighbouring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.</p>
-<p>Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting textures:</p>
-<p><span class="math display">\[
-\rho = (\text{pixel\_value} \times 0.0000275) - 0.2
-\]</span></p>
-<div class="quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/w3_images/glcm_all_metrics.png" class="img-fluid figure-img"></p>
-<figcaption>8 GLCM Textures of Hong Kong</figcaption></figure>
-</div>
-</div>
-</div>
-</div>
-</section><section id="pca" class="level3" data-number="3.2.4"><h3 data-number="3.2.4" class="anchored" data-anchor-id="pca">
-<span class="header-section-number">3.2.4</span> PCA</h3>
-<p>PCA allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information. PCA summary of 8 spectral bands and 8 texture variables shows:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>Importance of components:
-                          PC1    PC2     PC3     PC4     PC5    PC6     PC7    PC8     PC9    PC10    PC11    PC12
-Standard deviation     2.8232 2.0581 1.19101 1.02581 0.79250 0.5322 0.46463 0.2967 0.22020 0.16025 0.13643 0.09184
-Proportion of Variance 0.4981 0.2647 0.08866 0.06577 0.03925 0.0177 0.01349 0.0055 0.00303 0.00161 0.00116 0.00053
-Cumulative Proportion  0.4981 0.7629 0.85152 0.91729 0.95654 0.9742 0.98773 0.9932 0.99627 0.99787 0.99904 0.99956
-                          PC13    PC14    PC15      PC16
-Standard deviation     0.05894 0.05165 0.02915 2.104e-07
-Proportion of Variance 0.00022 0.00017 0.00005 0.000e+00
-Cumulative Proportion  0.99978 0.99995 1.00000 1.000e+00</code></pre>
-</div>
-</div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead><tr class="header">
-<th>Components</th>
-<th>Explaination</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Standard Deviation</td>
-<td>Spread of data</td>
-</tr>
-<tr class="even">
-<td>Proportion of Variance</td>
-<td>Proportion of data retained from the original data set</td>
-</tr>
-<tr class="odd">
-<td>Cumulative Proportion</td>
-<td>Proportion of total variance of the original data set</td>
-</tr>
-</tbody>
-</table>
-<p>In this case, PC1 to PC4 explains most of the variations. Looking at cumulative proportion, 91% of spectral variance can be identified in the first 4 principle components. This is a very helpful measure as it allows higher efficiency in analysis, including most of total variance while reducing 16 layers to 4 without loosing much information.</p>
-<table class="caption-top table">
-<thead><tr class="header">
-<th>Component</th>
-<th style="text-align: right;">PC1</th>
-<th style="text-align: right;">PC2</th>
-<th style="text-align: right;">PC3</th>
-<th style="text-align: right;">PC4</th>
-</tr></thead>
-<tbody><tr class="odd">
-<td>Cumulative Proportion</td>
-<td style="text-align: right;">0.4981</td>
-<td style="text-align: right;">0.7629</td>
-<td style="text-align: right;">0.85152</td>
-<td style="text-align: right;">0.91729</td>
-</tr></tbody>
-</table>
-<div class="quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/w3_images/pca_1-4.png" class="img-fluid figure-img"></p>
-<figcaption>PC1 to PC4 of Hong Kong</figcaption></figure>
-</div>
-</div>
-</div>
-</div>
-</section></section><section id="reflection" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="reflection">
-<span class="header-section-number">3.3</span> Reflection</h2>
-<p>There is a lot of contents in data correction and enhancements, yet they are fundamental to ensure reliability, accuracy and comparability within remotely sensing analysis. Luckily, there is now open acess to Level 2 data that are analysis ready data (ARD), no extensive manual correction process needed. More on Level 2 data can be found in the following, click for <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/data-processing-levels">Sentinel</a> and <a href="https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products">Landsat</a>.</p>
-<p>GLCM Texture and PCA analysis were the most insightful sections in this section. It was very interesting to see visually that combinations of spectral and structural information can reveal spatial patterns that enables accurate classification of land cover rather than just relying information derived from one spectral band only. One limitations in this application workflow is that it is time consuming and computational intensive, which this will be improved using Google Earth Engine which will be covered later.</p>
-<p>I have always choose <a href="https://gadm.org/">GADM</a> for obtaining adminstrative boundaries, however it lacks coverage for special administrative regions like Hong Kong. This has given me opportunities to explore on broader range of reliable alternative boundary sources.</p>
-<p>Having lived in Hong Kong for many years, I have never looked at the city through a remote sensing perspective. This has been a very interesting study area both personally and scientifically. It is comprised of one of the world’s most dense urban form while having about three quarters of land covered in vegetation, offering a unique juxtaposition of dense urban form with natural landscape packed within a small land area (<a href="https://www.hketoberlin.gov.hk/download/Green_HK.pdf">Gov.hk</a>, 2013). Furthermore, there is presence of a mixed range of green infrastructure within the densely built city, and there are growing trends of vertical greenery systems on building facades. This has questioned whether nadir imagery from conventional EO data may undermine full vegetation coverage. For such complex environments, the approaches above may not be the most suitable approach for precision, but it has provided a reliable indicator of overall vegetation coverage and identifying terrain structures despite finer-scale green infrastructure to be harder to capture. Overall, the workflow covered in this section is strongly transferable and applicable across a range of study contexts, it is important to note that choosing the right sensor that suits the specific application remains critical for producing meaningful results.</p>
-</section><section id="references" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="references">
-<span class="header-section-number">3.4</span> References</h2>
+</header>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1007,18 +779,21 @@ Cumulative Proportion  0.99978 0.99995 1.00000 1.000e+00</code></pre>
       }
     }
   });
-  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./sensor.html" class="pagination-link" aria-label="Sensor">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sensor</span></span>
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./policy.html" class="pagination-link" aria-label="Policy">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./policy.html" class="pagination-link" aria-label="Policy">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policy</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
