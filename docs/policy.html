@@ -405,20 +405,20 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w4_images/UHIfig1.jpg" class="img-fluid figure-img"></p>
-<figcaption>Tiles Selection: draw an area of interest to search for tiles within the boundary and for tiles and data preview in EarthExplorer (Obtained from: USGS)</figcaption>
+<figcaption>UHI, Source: <a href="https://earth.org/data_visualization/urban-heat-islands/">EARTH.ORG</a></figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<p>It is stated that “all heat deaths are preventable” (<a href="https://www.nyc.gov/content/climate/pages/extreme-heat">Nyc.gov, 2019</a>). The OneNYC strategy uses the Heat Vulnerability Index to identify neighborhoods that are more at risk following extreme heat. The risks are not evenly distributed acorss the city, where South Bronx, Central Brooklyn and Upper Manhattan are highlighted as the city’s most heat vulnerable neighborhoods.</p>
+<p>It is stated that “all heat deaths are preventable” (<a href="https://www.nyc.gov/content/climate/pages/extreme-heat">Nyc.gov, 2019</a>). The OneNYC uses the Heat Vulnerability Index to identify neighborhoods that are more at risk following extreme heat. The risks are not evenly distributed across the city, where South Bronx, Central Brooklyn and Upper Manhattan are highlighted as the city’s most heat vulnerable neighborhoods.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w4_images/NYC_HVI_Map2.png" class="img-fluid figure-img"></p>
-<figcaption>Tiles Selection: draw an area of interest to search for tiles within the boundary and for tiles and data preview in EarthExplorer (Obtained from: USGS)</figcaption>
+<figcaption>HVI (Data Source: <a href="https://experience.arcgis.com/experience/6a3da7b920f248af961554bdf01d668b">EJNYC Full Data Explorer</a> )</figcaption>
 </figure>
 </div>
 </div>
@@ -430,7 +430,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="4.2" class="anchored" data-anchor-id="application"><span class="header-section-number">4.2</span> Application</h2>
 <section id="data" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="data"><span class="header-section-number">4.2.1</span> Data</h3>
-<p>Land surface temperature (LST) obtained from satellite sensors are particularly useful for understanding extreme heat. The Landsat Thematic Mapper (TM)/Enhanced Thematic Mapper (ETM+)/Thermal Infrared Sensor (TIRS) and Terra/Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) are commonly used for urban heat studies, accounting for around 78% of total publications (<a href="https://www.mdpi.com/2072-4292/11/1/48">Zhou et. al., 2019</a>).</p>
+<p>Land surface temperature (LST) obtained from satellite sensors are particularly useful for understanding and mapping extreme heat. The Landsat Thematic Mapper (TM)/Enhanced Thematic Mapper (ETM+)/Thermal Infrared Sensor (TIRS) and Terra/Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) are commonly used for urban heat studies, accounting for around 78% of total publications (<a href="https://www.mdpi.com/2072-4292/11/1/48">Zhou et. al., 2019</a>). This reflected how widely remotely sensing satellite data has been adopted for research in this field.</p>
 <p>Ground based temperature sensors</p>
 </section>
 <section id="addressing-policy-challenge" class="level3" data-number="4.2.2">
@@ -446,7 +446,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="header">
 <th>Solutions</th>
 <th>Methodology</th>
-<th>Application of Remotely Sensing Data</th>
+<th>Remotely Sensing Data</th>
 </tr>
 </thead>
 <tbody>
@@ -458,39 +458,49 @@ ul.task-list li input[type="checkbox"] {
 <td>Landsat 8-9 Collection 2 Level 2, Equipped with Operational Land Imager (OLI) and Thermal Infrared Sensor (TIRS)</td>
 </tr>
 <tr class="even">
-<td><p>Heat Vulnerability Heat Index</p>
+<td><p>Identify UHI trends (seasonal trends) for strategic planning and climate-sensitive design approaches</p>
+<p>Source: <a href="https://www.sciencedirect.com/science/article/pii/S1364682624001871">Ahmad, 2024</a></p></td>
+<td>Calculating NDVI and LST for monitoring and analysis purposes</td>
+<td>Landsat 9</td>
+</tr>
+<tr class="odd">
+<td><p>Identify locations of heat vulnerability - Heat Vulnerability Heat Index</p>
 <p>Source: <a href="https://a816-dohbesp.nyc.gov/IndicatorPublic/data-explorer/climate/?id=2411#display=summary">Environment &amp; Health</a> and <a href="https://data.cityofnewyork.us/Health/Heat-Vulnerability-Index-Rankings/4mhf-duep/about_data">NYC Open Data</a></p></td>
 <td>Obtain average surface temperature from remotely sensing data integrated with Census data</td>
 <td>LiDAR; Fahrenheit from ECOSSTRESS thermal imaging</td>
 </tr>
-<tr class="odd">
-<td><p>Calculate how much heat is absorbed or radiated by different neighborhoods.</p>
-<p>Thermal imaging distinguishes between different urban surfaces (asphalt, concrete, green roofs) to calculate how much heat is absorbed or radiated by different neighborhoods, particularly areas with identified with highest heat vulnerability.</p></td>
-<td></td>
-<td>Surface Heat Assessment - Landsat thermal band data</td>
-</tr>
 <tr class="even">
-<td>Remote sensing is used to monitor the transition from dark to reflective (cool) roofs, with studies identifying that reflectivity below 0.6 indicates a need for, or effective conversion to, a “cool roof”.</td>
-<td></td>
-<td>Cool roofs, remotely sensed data to monitor transitions to cool roofs</td>
+<td><p>Assess outdoor thermal comfort and heat stress by Local Climate Zones (LCZs)</p>
+<p>Source: <a href="https://www.mdpi.com/2072-4292/15/23/5461">Mushore et.al., 2023</a></p></td>
+<td>Surface Heat Assessment, LST adjusted based on Universal Thermal Comfort Index (UTCI), Machine Learning Random forest classifier (training classification)</td>
+<td>Landsat 8 thermal band data</td>
 </tr>
 <tr class="odd">
-<td>Satellite imagery calculates NDVI (Normalized Difference Vegetation Index) to measure green space coverage, allowing planners to identify areas where new, high-canopy trees could provide maximum cooling.</td>
-<td></td>
-<td>Veg and G, remote sensing to calculate HDVI</td>
+<td><p>Understand spatialtemporal performances and trends of reflective cool roofs</p>
+<p>Source: <a href="https://www.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2025.1655812/full">Boanni et.al., 2025</a></p></td>
+<td>Satellite data with Machine Learning</td>
+<td>Landsat 8</td>
 </tr>
 <tr class="even">
-<td>Advanced models, such as Random Forest and XGBoost, are applied to remote sensing data to predict land surface temperatures (LST) and evaluate optimal greening scenarios, with studies showing potential reduction of surface temperatures by up to 6.38°C in some areas.</td>
+<td>Predict LST</td>
+<td>Machine Learning Random forest classifier (training classification)</td>
+<td>Landsat 8 thermal band data</td>
+</tr>
+<tr class="odd">
+<td><p>Predict LST and</p>
+<p>Random Forest and XGBoost, are applied to remote sensing data to predict land surface temperatures (LST) and evaluate optimal greening scenarios, with studies showing potential reduction of surface temperatures by up to 6.38°C in some areas.</p></td>
 <td></td>
-<td>Prediction</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>Yet measuring urban heat also posed several challenges. <a href="https://www.mdpi.com/2225-1154/7/1/5">Shandas et.al.</a>(2019) discussed two commonly and currently used approaches of ground based temperature and satellite imagery to estimate surface temperatures. Although both demonstrated strengths and weaknesses for predicting temperatures, yet integrating both could enable a more accurate and scalable solution for cities.</p>
+<p>However, measuring urban heat also posed several challenges. <a href="https://www.mdpi.com/2225-1154/7/1/5">Shandas et.al.</a>(2019) discussed two commonly and currently used approaches of ground based temperature and satellite imagery to estimate surface temperatures. Thermal infrared sensors from satellite data record the hotness of physical surfaces, but this will not be the same case of what air temperature humans experiences at street level. For a city where extreme heat can cause deaths, this approach may not be sufficient. Therefore, integrating both methods enables higher accuracy and precision. Such integrated approach has been increasingly seen in heat monitoring tools, including the HVI, which combines land cover from satellite data with ground-level health and social vulnerability indicators.</p>
+<p>Similarly, <a href="https://www.mdpi.com/2072-4292/15/23/5461">Mushore et.al., 2023</a> also suggested the benefits of installing high-resolution thermal comfort mneasuring instruments that are fairly distributed across different parts of an area, capturing experiences to improve remotely sensed data.</p>
 </section>
 </section>
 <section id="reflection" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">4.3</span> Reflection</h2>
+<p>Urban greening policies and strategies need to be scaled up at the municipal level to ensure interventions are both comprehensive and economically viable. <a href="https://www.mdpi.com/2072-4292/15/23/5461">Mushore et.al., 2023</a> study has demonstrated that vegetation and water ecosystems has proven heat mitigation value, alongside the promotion of roof greening as a cost-effective adaptation measure in densely built areas. OneNYC 2050’s urban forest and cool roof initiatives operate at precisely this municipal scale, but require sustained investment and coordination across all boroughs to reach the communities most exposed to extreme heat. Without embedding these strategies into long-term planning and funding frameworks, greening efforts may remain a short fall rather than delivering the city-wide temperature reductions solving any urgently need.</p>
 <p>Satellite-based thermal infrared (TIR) data, from sensors like Landsat or ASTER, is the most widely used method across studies. However, it captures the temperature on rooftops and pavements surfaces, not the temperature that humans experience at street level. This makes it less of a fit for studies when considering ground level analysis. Therefore, for high precision and accuracy, one solution is to place ground-based measurement “traverses” models in different areas across the city. This enables observations of variation of temperature across different land uses and land covers, providing a more throughout assessment of urban heat across the city. Critically, this method is more expensive and resource intensive for a placement coverage across an entire city.</p>
 <p>In NYC, while Landsat/MODIS LST data effectively supports city-wide Heat Vulnerability Index mapping, yet its inability to capture ground-level human-experienced temperatures remains a methodological limitation that should be considered for urban heat mitigation.</p>
 <p>Overall, remotely sensed data remains significant potential in monitoring and understanding urban heat. It offers a more direct and accurate observation to understand the development of our cities, which is critical for informing policy decision-makings.</p>
@@ -498,8 +508,6 @@ ul.task-list li input[type="checkbox"] {
 <section id="reference" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="reference"><span class="header-section-number">4.4</span> Reference</h2>
 <p>OneNYC 2050 Strategic Plan (A Liveable Climate at page 229) Online PDF: <a href="https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf" class="uri">https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf</a></p>
-<p>Or</p>
-<p>OneNYC 2050 Strategic Plan: download at: <a href="https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en" class="uri">https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en</a></p>
 
 
 </section>
