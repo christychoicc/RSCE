@@ -17,9 +17,13 @@ The OneNYC 2050: Building a Strong and Fair City is a long term strategic plan c
 | 23. Fight for climate accountability and justice                                                                  |
 +-------------------------------------------------------------------------------------------------------------------+
 
-: Relevant Initiatives, Source: [OneNYC 2050](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en)
+: Relevant Initiatives, Source: [OneNYC 2050](https://www.nyc.gov/assets/sustainability/downloads/pdf/publications/OneNYC-2050-Summary.pdf)
 
-NYC has identified extreme heat to be one of its major climate threats, where it "is now the number one cause of mortality from weather conditions" ([Government Publication Portal, 2019](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en), p.32). Extreme heat within the city also known as the Urban Heat Island (UHI) effect, is a challenge that is widely faced by many cities globally.
+NYC has identified extreme heat to be one of its major climate threats, where it "is now the number one cause of mortality from weather conditions" ([OneNYC 2050](https://www.nyc.gov/assets/sustainability/downloads/pdf/publications/OneNYC-2050-Summary.pdf), p.32). Extreme heat within the city also known as the Urban Heat Island (UHI) effect, is a challenge that is widely faced by many cities globally. These neighborhoods tends to have dense concentrations of built structures with dark surfaces made up of concrete or other building materials, which absorb and retain heat. Combined with limited vegetation cover within these densely built environment, it provides limited opportunities for natural cooling methods such as evapotranspiration and solar shading to mitigate rising temperatures.
+
+::: {layout-ncol="1"}
+![UHI](images/w4_images/UHIfig1.jpg){alt="Tiles Selection: draw an area of interest to search for tiles within the boundary and for tiles and data preview in EarthExplorer (Obtained from: USGS)"}
+:::
 
 The OneNYC mentioned using the Heat Vulnerability Index to identify neighborhoods that are more at risk following extreme heat. South Bronx, Central Brooklyn and Upper Manhattan is highlighted as the city's most heat vulnerable neighborhoods.
 
