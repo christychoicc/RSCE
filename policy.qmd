@@ -2,36 +2,36 @@
 title: "Policy"
 ---
 
-This section will look at New York City, USA as a case study city, with their the [OneNYC 2050](https://www.nyc.gov/site/cpp/our-programs/onenyc.page) strategy's goal to achieve "A Liveable Climate". Like most dense urban areas, New York City (NYC) is also facing the problems of warmer urban temperatures than its rural and suburban neighborhoods. Given growing events of higher frequency, longer lasting and more intense heat waves, this section will focus on one of NYC's experiencing climate threats of [Extreme Heat](https://www.nyc.gov/content/climate/pages/extreme-heat).
+This section will look at New York City, USA as a case study city, with their the [OneNYC 2050](https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf) strategy's goal to achieve "A Liveable Climate". Like most dense urban areas, New York City (NYC) is also facing the problems of warmer urban temperatures than its rural and suburban neighborhoods. Given growing events of higher frequency, longer lasting and more intense heat waves, this section will focus on one of NYC's experiencing climate threats of [Extreme Heat](https://www.nyc.gov/content/climate/pages/extreme-heat).
 
-## Summary 
+## Summary
 
-The OneNYC 2050: Building a Strong and Fair City is a long term strategic plan compromised of 8 goals and 30 initiatives. It aims to achieve an equitable, sustainable and thriving city through addressing its climate change, economic equality, housing, health, education, transportation and infrastructure.
+The OneNYC 2050: Building a Strong and Fair City is a long term strategic plan compromised of 8 goals and 30 initiatives. It aims to achieve an equitable, sustainable and thriving city through addressing its climate change, economic equality, housing, health, education, transportation and infrastructure. Under its "Livable Climate" goal, the strategy sets out the following key initiatives in repsonse to NYC's climate threats. Initiative 21 is directly relevant to the extreme heat challenge, envisioning community level interventions that aims to reduce vulnerability to climate impacts such as rising temperatures.
 
-+-------------------------------------------------------------------------------------------------------------------+
-| A Livable Climate Initiatives, OneNYC 2050 Strategic Plan                                                         |
-+===================================================================================================================+
-| 20. Achieve carbon neutrality and 100 percent clean electricity                                                   |
-| 21. A LIVABLE CLIMATE Strengthen communities, buildings, infrastructure, and the waterfront to be more resilient  |
-| 22. Create economic opportunities for all New Yorkers through climate action                                      |
-| 23. Fight for climate accountability and justice                                                                  |
-+-------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+| A Livable Climate Initiatives, OneNYC 2050 Strategic Plan                                                        |
++==================================================================================================================+
+| 20. Achieve carbon neutrality and 100 percent clean electricity                                                  |
+| 21. A LIVABLE CLIMATE Strengthen communities, buildings, infrastructure, and the waterfront to be more resilient |
+| 22. Create economic opportunities for all New Yorkers through climate action                                     |
+| 23. Fight for climate accountability and justice                                                                 |
++------------------------------------------------------------------------------------------------------------------+
 
-: Relevant Initiatives, Source: [OneNYC 2050](https://www.nyc.gov/assets/sustainability/downloads/pdf/publications/OneNYC-2050-Summary.pdf)
+: Relevant Initiatives, Source: [OneNYC 2050](https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf)
 
-NYC has identified extreme heat to be one of its major climate threats, where it "is now the number one cause of mortality from weather conditions" ([OneNYC 2050](https://www.nyc.gov/assets/sustainability/downloads/pdf/publications/OneNYC-2050-Summary.pdf), p.32). Extreme heat within the city also known as the Urban Heat Island (UHI) effect, is a challenge that is widely faced by many cities globally. These neighborhoods tends to have dense concentrations of built structures with dark surfaces made up of concrete or other building materials, which absorb and retain heat. Combined with limited vegetation cover within these densely built environment, it provides limited opportunities for natural cooling methods such as evapotranspiration and solar shading to mitigate rising temperatures.
-
-::: {layout-ncol="1"}
-![UHI](images/w4_images/UHIfig1.jpg){alt="Tiles Selection: draw an area of interest to search for tiles within the boundary and for tiles and data preview in EarthExplorer (Obtained from: USGS)"}
-:::
-
-The OneNYC mentioned using the Heat Vulnerability Index to identify neighborhoods that are more at risk following extreme heat. South Bronx, Central Brooklyn and Upper Manhattan is highlighted as the city's most heat vulnerable neighborhoods.
+NYC has identified extreme heat to be one of its major climate threats, where it "is now the number one cause of mortality from weather conditions" ([OneNYC 2050](https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf), p.32). Extreme heat within the city also known as the Urban Heat Island (UHI) effect, is a challenge that is widely faced by many cities globally. These neighbourhoods tends to have concentrations dark surfaces from built structures, concrete and asphalt that absorbs and retain solar radiation throughout the day, while having limited green space to facilitate natural cooling through evapotranspiration and solar shading. The NYC has also identified limited access to air conditioning, energy costs and poor housing quality as drivers of such heat impacts ([Nyc.gov, 2019](https://www.nyc.gov/content/climate/pages/extreme-heat)).
 
 ::: {layout-ncol="1"}
-![NYC HVI Map (Data Source: [ENJYC Full Data Explorer, NVY Mayors Office of Climate and Environmental Justice](https://experience.arcgis.com/experience/6a3da7b920f248af961554bdf01d668b/page/Data-Explorer))](images/w4_images/NYC_HVI_Map2.png){alt="Tiles Selection: draw an area of interest to search for tiles within the boundary and for tiles and data preview in EarthExplorer (Obtained from: USGS)"}
+![Tiles Selection: draw an area of interest to search for tiles within the boundary and for tiles and data preview in EarthExplorer (Obtained from: USGS)](images/w4_images/UHIfig1.jpg)
 :::
 
-The OneNYC mentioned urban forests efforts to combat extreme heat, cool roofs to lower local temperatures and mitigate the health impacts of UHI.
+It is stated that "all heat deaths are preventable" ([Nyc.gov, 2019](https://www.nyc.gov/content/climate/pages/extreme-heat)). The OneNYC strategy uses the Heat Vulnerability Index to identify neighborhoods that are more at risk following extreme heat. The risks are not evenly distributed acorss the city, where South Bronx, Central Brooklyn and Upper Manhattan are highlighted as the city's most heat vulnerable neighborhoods.
+
+::: {layout-ncol="1"}
+![Tiles Selection: draw an area of interest to search for tiles within the boundary and for tiles and data preview in EarthExplorer (Obtained from: USGS)](images/w4_images/NYC_HVI_Map2.png)
+:::
+
+In action, the OneNYC strategy is commited to intervene through a range of natural and built solutions, such as promoting urban forests efforts to combat extreme heat, installation of cool roofs to lower local temperatures and mitigate the health impacts from UHI as well as further green infrastructure investments. Next will be looked at how remotely sensed data could be used to address policy goals.
 
 ## Application
 
@@ -41,15 +41,47 @@ Land surface temperature (LST) obtained from satellite sensors are particularly 
 
 Ground based temperature sensors
 
-Yet measuring urban heat also posed several challenges. [Shandas et.al.](https://www.mdpi.com/2225-1154/7/1/5)(2019) outlined two commonly and currently used approaches of ground based temperature and satellite imagery to estimate surface temperatures. Although both demonstrated strengths and weaknesses for predicting temperatures, yet integrating both could enable a more accurate and scalable solution for cities.
-
 ### Addressing Policy Challenge
+
+OneNYC identify objectives which can be monitored or managed through remotely sensing data:
+
+-   Urban Forests
+
+-   Cooling Neighborhoods
+
+-   Green Infrastructure
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| Solutions                                                                                                                                                                                                                                                                   | Methodology                                                                                                   | Application of Remotely Sensing Data                                                                              |
++=============================================================================================================================================================================================================================================================================+===============================================================================================================+===================================================================================================================+
+| Identify areas that will benefit from enhanced greenery systems to mitigate UHI or Micro-Urban Heat Islands (MUHI) developments.                                                                                                                                            | Obtain LST readings through thermal data bands (TIRS spectral bands 10 and 11), and map surface temperature.  | Landsat 8-9 Collection 2 Level 2, Equipped with Operational Land Imager (OLI) and Thermal Infrared Sensor (TIRS)  |
+|                                                                                                                                                                                                                                                                             |                                                                                                               |                                                                                                                   |
+| Source: [Ahmad, 2025](https://www.researchgate.net/publication/394960889_Identifying_and_Combatting_Micro-Urban_Heat_Islands_in_New_York_City)                                                                                                                              | LST is determined by NVDI, calculated by Land Surface Emissivity (LSE) and Brightness Temperature (BT)        |                                                                                                                   |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| Heat Vulnerability Heat Index                                                                                                                                                                                                                                               | Obtain average surface temperature from remotely sensing data integrated with Census data                     | LiDAR; Fahrenheit from ECOSSTRESS thermal imaging                                                                 |
+|                                                                                                                                                                                                                                                                             |                                                                                                               |                                                                                                                   |
+| Source: [Environment & Health](https://a816-dohbesp.nyc.gov/IndicatorPublic/data-explorer/climate/?id=2411#display=summary) and [NYC Open Data](https://data.cityofnewyork.us/Health/Heat-Vulnerability-Index-Rankings/4mhf-duep/about_data)                                |                                                                                                               |                                                                                                                   |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| Calculate how much heat is absorbed or radiated by different neighborhoods.                                                                                                                                                                                                 |                                                                                                               | Surface Heat Assessment - Landsat thermal band data                                                               |
+|                                                                                                                                                                                                                                                                             |                                                                                                               |                                                                                                                   |
+| Thermal imaging distinguishes between different urban surfaces (asphalt, concrete, green roofs) to calculate how much heat is absorbed or radiated by different neighborhoods, particularly areas with identified with highest heat vulnerability.                          |                                                                                                               |                                                                                                                   |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| Remote sensing is used to monitor the transition from dark to reflective (cool) roofs, with studies identifying that reflectivity below 0.6 indicates a need for, or effective conversion to, a "cool roof".                                                                |                                                                                                               | Cool roofs, remotely sensed data to monitor transitions to cool roofs                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| Satellite imagery calculates NDVI (Normalized Difference Vegetation Index) to measure green space coverage, allowing planners to identify areas where new, high-canopy trees could provide maximum cooling.                                                                 |                                                                                                               | Veg and G, remote sensing to calculate HDVI                                                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| Advanced models, such as Random Forest and XGBoost, are applied to remote sensing data to predict land surface temperatures (LST) and evaluate optimal greening scenarios, with studies showing potential reduction of surface temperatures by up to 6.38°C in some areas.  |                                                                                                               | Prediction                                                                                                        |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+
+Yet measuring urban heat also posed several challenges. [Shandas et.al.](https://www.mdpi.com/2225-1154/7/1/5)(2019) discussed two commonly and currently used approaches of ground based temperature and satellite imagery to estimate surface temperatures. Although both demonstrated strengths and weaknesses for predicting temperatures, yet integrating both could enable a more accurate and scalable solution for cities.
 
 ## Reflection
 
 Satellite-based thermal infrared (TIR) data, from sensors like Landsat or ASTER, is the most widely used method across studies. However, it captures the temperature on rooftops and pavements surfaces, not the temperature that humans experience at street level. This makes it less of a fit for studies when considering ground level analysis. Therefore, for high precision and accuracy, one solution is to place ground-based measurement "traverses" models in different areas across the city. This enables observations of variation of temperature across different land uses and land covers, providing a more throughout assessment of urban heat across the city. Critically, this method is more expensive and resource intensive for a placement coverage across an entire city.
 
 In NYC, while Landsat/MODIS LST data effectively supports city-wide Heat Vulnerability Index mapping, yet its inability to capture ground-level human-experienced temperatures remains a methodological limitation that should be considered for urban heat mitigation.
+
+Overall, remotely sensed data remains significant potential in monitoring and understanding urban heat. It offers a more direct and accurate observation to understand the development of our cities, which is critical for informing policy decision-makings.
 
 ## Reference
 
