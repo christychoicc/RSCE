@@ -17,31 +17,35 @@ The OneNYC 2050: Building a Strong and Fair City is a long term strategic plan c
 | 23. Fight for climate accountability and justice                                                                  |
 +-------------------------------------------------------------------------------------------------------------------+
 
-: Source: [Government Publication Portal, 2019](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en)
+: Relevant Initiatives, Source: [OneNYC 2050](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en)
 
-NYC has identified extreme heat to be one of its major climate threats, where it "is now the number one cause of mortality from weather conditions" ([Government Publication Portal, 2019](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en), p.32).
+NYC has identified extreme heat to be one of its major climate threats, where it "is now the number one cause of mortality from weather conditions" ([Government Publication Portal, 2019](https://a860-gpp.nyc.gov/concern/nyc_government_publications/gx41mm584?locale=en), p.32). Extreme heat within the city also known as the Urban Heat Island (UHI) effect, is a challenge that is widely faced by many cities globally.
 
-Urban forests efforts to combat extreme heat
+The OneNYC mentioned using the Heat Vulnerability Index to identify neighborhoods that are more at risk following extreme heat. South Bronx, Central Brooklyn and Upper Manhattan is highlighted as the city's most heat vulnerable neighborhoods.
 
-Heat Vulnerability Index to show neighborhoods that are more at risk following extreme heat
+::: {layout-ncol="1"}
+![NYC HVI Map (Data Source: [ENJYC Full Data Explorer, NVY Mayors Office of Climate and Environmental Justice](https://experience.arcgis.com/experience/6a3da7b920f248af961554bdf01d668b/page/Data-Explorer))](images/w4_images/NYC_HVI_Map2.png){alt="Tiles Selection: draw an area of interest to search for tiles within the boundary and for tiles and data preview in EarthExplorer (Obtained from: USGS)"}
+:::
+
+The OneNYC mentioned urban forests efforts to combat extreme heat, cool roofs to lower local temperatures and mitigate the health impacts of UHI.
 
 ## Application
 
 ### Data
 
-Land surface temperature (LST) obtained from satellite sensors are particularly useful for understanding extreme heat.
+Land surface temperature (LST) obtained from satellite sensors are particularly useful for understanding extreme heat. The Landsat Thematic Mapper (TM)/Enhanced Thematic Mapper (ETM+)/Thermal Infrared Sensor (TIRS) and Terra/Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) are commonly used for urban heat studies, accounting for around 78% of total publications ([Zhou et. al., 2019](https://www.mdpi.com/2072-4292/11/1/48)).
 
-The Landsat Thematic Mapper (TM)/Enhanced Thematic Mapper (ETM+)/Thermal Infrared Sensor (TIRS) and Terra/Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) together are the most commonly used satellite sensors, accounting for around 78% of urban heat related published studies ([Zhou et. al., 2019](https://www.mdpi.com/2072-4292/11/1/48)).
+Ground based temperature sensors
 
 Yet measuring urban heat also posed several challenges. [Shandas et.al.](https://www.mdpi.com/2225-1154/7/1/5)(2019) outlined two commonly and currently used approaches of ground based temperature and satellite imagery to estimate surface temperatures. Although both demonstrated strengths and weaknesses for predicting temperatures, yet integrating both could enable a more accurate and scalable solution for cities.
-
-Satellite-based thermal infrared (TIR) data, from sensors like Landsat or ASTER, is the most widely used method across studies. However, it captures the temperature on rooftops and pavements surfaces, not the temperature that humans experience at street level. This makes it less of a fit for studies when considering ground level analysis. Therefore, for high precision and accuracy, one solution is to place ground-based measurement "traverses" models in different areas across the city. This enables observations of variation of temperature across different land uses and land covers, providing a more throughout assessment of urban heat across the city. Critically, this method is more expensive and resource intensive for a placement coverage across an entire city.
 
 ### Addressing Policy Challenge
 
 ## Reflection
 
-While Landsat/MODIS LST data effectively supports NYC's city-wide Heat Vulnerability Index mapping, its inability to capture ground-level human-experienced temperatures is a genuine methodological limitation that planners should be aware of.
+Satellite-based thermal infrared (TIR) data, from sensors like Landsat or ASTER, is the most widely used method across studies. However, it captures the temperature on rooftops and pavements surfaces, not the temperature that humans experience at street level. This makes it less of a fit for studies when considering ground level analysis. Therefore, for high precision and accuracy, one solution is to place ground-based measurement "traverses" models in different areas across the city. This enables observations of variation of temperature across different land uses and land covers, providing a more throughout assessment of urban heat across the city. Critically, this method is more expensive and resource intensive for a placement coverage across an entire city.
+
+In NYC, while Landsat/MODIS LST data effectively supports city-wide Heat Vulnerability Index mapping, yet its inability to capture ground-level human-experienced temperatures remains a methodological limitation that should be considered for urban heat mitigation.
 
 ## Reference
 

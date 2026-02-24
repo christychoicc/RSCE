@@ -30,6 +30,7 @@ book:
     - sensor.qmd
     - correction.qmd
     - policy.qmd
+    - classification-1.qmd
     - references.qmd
 
 
