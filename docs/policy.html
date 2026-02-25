@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./classification-1.html" rel="next">
+<link href="./gee.html" rel="next">
 <link href="./correction.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -322,8 +322,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./gee.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">gee</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./classification-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Classification - Part 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Classification - Part 1</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -380,12 +386,12 @@ ul.task-list li input[type="checkbox"] {
 <p>This section will look at New York City, USA as a case study city, with their the <a href="https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf">OneNYC 2050</a> strategy’s goal to achieve “A Liveable Climate”. Like most dense urban areas, New York City (NYC) is also facing the problems of warmer urban temperatures than its rural and suburban neighborhoods. Given growing events of higher frequency, longer lasting and more intense heat waves, this section will focus on one of NYC’s experiencing climate threats of <a href="https://www.nyc.gov/content/climate/pages/extreme-heat">Extreme Heat</a>.</p>
 <section id="summary" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.1</span> Summary</h2>
-<p>The OneNYC 2050: Building a Strong and Fair City is a long term strategic plan compromised of 8 goals and 30 initiatives. It aims to achieve an equitable, sustainable and thriving city through addressing its climate change, economic equality, housing, health, education, transportation and infrastructure. Under its “Livable Climate” goal, the strategy sets out the following key initiatives in repsonse to NYC’s climate threats. Initiative 21 is directly relevant to the extreme heat challenge, envisioning community level interventions that aims to reduce vulnerability to climate impacts such as rising temperatures.</p>
+<p>The OneNYC 2050: Building a Strong and Fair City is a long term strategic plan compromised of 8 goals and 30 initiatives. It frames its climate resilience goal under “A Livable Climate” recognising extreme heat as one of its major climate threats. Initiative 21 is directly relevant to the extreme heat challenge, envisioning community level interventions that aims to reduce vulnerability to climate impacts such as rising temperatures.</p>
 <table class="caption-top table">
 <caption>Relevant Initiatives, Source: <a href="https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf">OneNYC 2050</a></caption>
 <thead>
 <tr class="header">
-<th>A Livable Climate Initiatives, OneNYC 2050 Strategic Plan</th>
+<th>A Livable Climate Obejectives, OneNYC 2050</th>
 </tr>
 </thead>
 <tbody>
@@ -399,7 +405,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>NYC has identified extreme heat to be one of its major climate threats, where it “is now the number one cause of mortality from weather conditions” (<a href="https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf">OneNYC 2050</a>, p.32). Extreme heat within the city also known as the Urban Heat Island (UHI) effect, is a challenge that is widely faced by many cities globally. These neighbourhoods tends to have concentrations dark surfaces from built structures, concrete and asphalt that absorbs and retain solar radiation throughout the day, while having limited green space to facilitate natural cooling through evapotranspiration and solar shading. The NYC has also identified limited access to air conditioning, energy costs and poor housing quality as drivers of such heat impacts (<a href="https://www.nyc.gov/content/climate/pages/extreme-heat">Nyc.gov, 2019</a>).</p>
+<p>OneNYC has stated extreme heat to be one of its “number one cause of mortality from weather conditions” (<a href="https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf">OneNYC 2050</a>, p.32). Also known as the Urban Heat Island (UHI) effect, is a challenge that is widely faced by many cities globally. These neighborhoods tends to have concentrations dark surfaces from built structures, concrete and asphalt that absorbs and retain solar radiation throughout the day, while having limited green space to facilitate natural cooling through evapotranspiration and solar shading. The NYC has also identified limited access to air conditioning, energy costs and poor housing quality as drivers of such heat impacts (<a href="https://www.nyc.gov/content/climate/pages/extreme-heat">Nyc.gov, 2019</a>).</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -441,7 +447,7 @@ ul.task-list li input[type="checkbox"] {
 <caption>Sources: <a href="https://www.researchgate.net/publication/394960889_Identifying_and_Combatting_Micro-Urban_Heat_Islands_in_New_York_City">Ahmad, 2025</a> , <a href="https://www.mdpi.com/2072-4292/15/23/5461">Mushore et.al., 2023</a> , <a href="https://www.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2025.1655812/full">Boanni et.al., 2025</a> , <a href="https://a816-dohbesp.nyc.gov/IndicatorPublic/data-explorer/climate/?id=2411#display=summary">Environment &amp; Health</a> , <a href="https://data.cityofnewyork.us/Health/Heat-Vulnerability-Index-Rankings/4mhf-duep/about_data">NYC Open Data</a></caption>
 <thead>
 <tr class="header">
-<th>OneNYC 2025 Policy Objective</th>
+<th>OneNYC 2050 Policy Objective</th>
 <th>Application</th>
 <th>Methodology</th>
 <th>Remotely Sensing Data</th>
@@ -910,8 +916,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./classification-1.html" class="pagination-link" aria-label="Classification - Part 1">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Classification - Part 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./gee.html" class="pagination-link" aria-label="gee">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">gee</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
