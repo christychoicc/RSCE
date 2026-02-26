@@ -437,8 +437,44 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="4.2" class="anchored" data-anchor-id="application"><span class="header-section-number">4.2</span> Application</h2>
 <section id="data" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="data"><span class="header-section-number">4.2.1</span> Data</h3>
-<p>Land surface temperature (LST) obtained from satellite sensors are particularly useful for understanding and mapping extreme heat. The Landsat Thematic Mapper (TM)/Enhanced Thematic Mapper (ETM+)/Thermal Infrared Sensor (TIRS) and Terra/Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) are commonly used for urban heat studies, accounting for around 78% of total publications (<a href="https://www.mdpi.com/2072-4292/11/1/48">Zhou et. al., 2019</a>).</p>
-<p>Another approach is the ground based temperature sensors. The observations allow monitoring and studying of the urban boundary layer, which is the layer above the city where heat and moisture exchanges. It has been identified for ability to provide monitoring and long term conditions of locations, complementing remotely sensing data (<a href="https://nyaspubs.onlinelibrary.wiley.com/doi/epdf/10.1111/nyas.12587">Solecki et.al., 2015</a>).</p>
+<p>Land surface temperature (LST) obtained from sensors are particularly useful for identifying the spatial pattern of surface heat across neighbourhoods and for monitoring how interventions change surface temperatures over time. The following datasets are commonly used for urban heat studies:</p>
+<table class="caption-top table">
+<caption>Source: <a href="https://terra.nasa.gov/about/terra-instruments/modis">MODIS</a> , <a href="https://www.mdpi.com/2072-4292/11/1/48">Zhou et. al., 2019</a> , <a href="https://nyaspubs.onlinelibrary.wiley.com/doi/epdf/10.1111/nyas.12587">Solecki et.al., 2015</a> , <a href="https://www.sciencedirect.com/science/article/pii/S0034425712004610">Hantson, 2013</a> ,</caption>
+<thead>
+<tr class="header">
+<th>Data</th>
+<th>Benefits</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Landsat 8-9 Collection 2 Level 2 Operational Land Imager (OLI), Thematic Mapper (TM), Enhanced Thematic Mapper (ETM+), Thermal Infrared Sensor (TIRS)</td>
+<td>High spatial resolution, consistent data for long term monitoring</td>
+<td>Long revisit time of 8-16 days, unable to penetrate through clouds</td>
+</tr>
+<tr class="even">
+<td>Terra and Aqua, MODIS</td>
+<td>Surface temperature measurement, suitable for large scale monitoring, phtosynthetic activity</td>
+<td>Long revisit time of 8-16 days, unable to penetrate through clouds (LST requires), coarse resolution</td>
+</tr>
+<tr class="odd">
+<td>ECOSTRESS</td>
+<td>Highest spatial resolution thermal infrared space instrument, spatially continuous map of urban temperature, day and night coverage, able to monitor water vegetation stress responses and identify areas of at-risk ‘hot spots’</td>
+<td>Unable to penetrate through clouds</td>
+</tr>
+<tr class="even">
+<td>LiDAR</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Ground based temperature</td>
+<td>Allow monitoring long term conditions of street level air temperature and humidity through studying of the urban boundary layer, which is the layer above the city where heat and moisture exchanges</td>
+<td>Expensive for comprehensive coverage, locational biased installation may distort findings</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="addressing-policy-challenge" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="addressing-policy-challenge"><span class="header-section-number">4.2.2</span> Addressing Policy Challenge</h3>
@@ -458,23 +494,23 @@ ul.task-list li input[type="checkbox"] {
 <td>Advance nature-based solutions to mitigate physical risks posed by climate change (e.g.&nbsp;urban forests)</td>
 <td>Identify seasonal UHI trends to inform strategic planning and target areas that would benefit most from enhanced greenery systems to mitigate Urban Heat Island and Micro-Urban Heat Island (MUHI) developments.</td>
 <td>Calculate LST from TIRS spectral bands 10 and 11 using NDVI, Land Surface Emissivity (LSE) and Brightness Temperature (BT), apply Machine Learning (ML) models (Random Forest, XGBoost) to predict LST reductions</td>
-<td>Landsat 8-9 Collection 2 Level 2, Equipped with Operational Land Imager (OLI) and Thermal Infrared Sensor (TIRS)</td>
+<td>Landsat 8-9</td>
 </tr>
 <tr class="even">
 <td>Promote climate health preparedness for heat-vulnerable New Yorkers (e.g.&nbsp;cool roofs)</td>
 <td>Understand and monitor spatialtemporal performances and trends of reflective coated cool roofs</td>
 <td>Band 10 satellite data with ML</td>
-<td>Landsat 8-9, More on Landsat Science Products: <a href="https://www.usgs.gov/landsat-missions/landsat-science-products">USGS</a></td>
+<td>Landsat 8-9</td>
 </tr>
 <tr class="odd">
 <td>Study emerging climate impacts to better understand NYC’s built environment and communities</td>
 <td>Identify locations of heat vulnerability - Heat Vulnerability Index; Surface Heat Assessment,</td>
 <td>Obtain average surface temperature from remotely sensing data integrated with indicators (e.g.&nbsp;census); LST / LST prediction assessed through Universal Thermal Comfort Index (UTCI) and ML random forests classifer</td>
-<td>LiDAR; Fahrenheit from ECOSSTRESS thermal imaging; Landsat 8-9</td>
+<td>LiDAR; ECOSSTRESS; Landsat 8-9</td>
 </tr>
 <tr class="even">
 <td>Continue to refine the climate resiliency design guidelines</td>
-<td>Not Remote Sensing Applications</td>
+<td>Not Applicable via Remote Sensing</td>
 <td>-</td>
 <td>-</td>
 </tr>
