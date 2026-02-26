@@ -75,7 +75,7 @@ This hits a common limitation of metropolitan policy documents, which tend to se
 
 ### Limitations and Integrated Approaches
 
-Satellite thermal infrared data measures physical surface heat, not the street level air temperature humans actually experience, so it may overlook areas where extreme heat can cause deaths ([Shandas et.al.](https://www.mdpi.com/2225-1154/7/1/5), 2019). Integrating satellite data with ground-based measurements that is fairly distributed across the city can strengthen monitoring and improves accuracy, especially in neighbourhoods with higher heat vulnerability ([Mushore et.al., 2023](https://www.mdpi.com/2072-4292/15/23/5461) ; [Solecki et.al., 2015](https://nyaspubs.onlinelibrary.wiley.com/doi/epdf/10.1111/nyas.12587)).
+Satellite thermal infrared data measures physical surface heat, not the street level air temperature humans actually experience, so it may overlook areas where extreme heat can cause deaths ([Shandas et.al.](https://www.mdpi.com/2225-1154/7/1/5), 2019). Integrating satellite data with ground-based measurements that is fairly distributed across the city can strengthen monitoring and improves accuracy, especially in neighborhoods with higher heat vulnerability ([Mushore et.al., 2023](https://www.mdpi.com/2072-4292/15/23/5461) ; [Solecki et.al., 2015](https://nyaspubs.onlinelibrary.wiley.com/doi/epdf/10.1111/nyas.12587)).
 
 ## Reflection
 
