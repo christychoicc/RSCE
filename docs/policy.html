@@ -450,12 +450,12 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>Landsat 8-9 Collection 2 Level 2 Operational Land Imager (OLI), Thematic Mapper (TM), Enhanced Thematic Mapper (ETM+), Thermal Infrared Sensor (TIRS)</td>
-<td>High spatial resolution, consistent data for long term monitoring</td>
+<td>High spatial resolution, consistent data for long term monitoring, open access</td>
 <td>Long revisit time of 8-16 days, unable to penetrate through clouds</td>
 </tr>
 <tr class="even">
 <td>Terra and/or Aqua, MODIS</td>
-<td>36 bands LST measurement, global coverage with revisit time of every 1-2 days, allow large scale monitoring, phtosynthetic activity</td>
+<td>36 bands LST measurement; global coverage with revisit time of every 1-2 days; allow large scale monitoring; timely monitoring of phtosynthetic activity, heatwaves and seasonal trends</td>
 <td>Unable to penetrate through clouds (LST requires), coarse resolution</td>
 </tr>
 <tr class="odd">
@@ -478,7 +478,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="addressing-policy-challenge" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="addressing-policy-challenge"><span class="header-section-number">4.2.2</span> Addressing Policy Challenge</h3>
-<p>For OneNYC’s “A Livable Climate” objective, remotely sensed evidence can support the following key objectives:</p>
+<p>This hits a common limitation of metropolitan policy documents, which tend to set strategic direction but lack local level specifities towards heat reduction targets (<a href="https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2020.519599/full">MacLachlan et al., 2021</a>). OneNYC incoporates UHI into strategies, the following key UHI related objectives from initiative 21 can be potentially be addressed through remotely sensing evidences:</p>
 <table class="caption-top table">
 <caption>Sources: <a href="https://www.researchgate.net/publication/394960889_Identifying_and_Combatting_Micro-Urban_Heat_Islands_in_New_York_City">Ahmad, 2025</a> , <a href="https://www.mdpi.com/2072-4292/15/23/5461">Mushore et.al., 2023</a> , <a href="https://www.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2025.1655812/full">Boanni et.al., 2025</a> , <a href="https://a816-dohbesp.nyc.gov/IndicatorPublic/data-explorer/climate/?id=2411#display=summary">Environment &amp; Health</a> , <a href="https://data.cityofnewyork.us/Health/Heat-Vulnerability-Index-Rankings/4mhf-duep/about_data">NYC Open Data</a></caption>
 <thead>
@@ -492,19 +492,19 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>Advance nature-based solutions to mitigate physical risks posed by climate change (e.g.&nbsp;urban forests)</td>
-<td>Identify seasonal UHI trends to inform strategic planning and target areas that would benefit most from enhanced greenery systems to mitigate Urban Heat Island and Micro-Urban Heat Island (MUHI) developments.</td>
+<td>Identify seasonal UHI trends to inform strategic planning and target areas that would benefit most from enhanced greenery systems to mitigate Urban Heat Island and Micro-Urban Heat Island (MUHI) developments (e.g.&nbsp;areas with high LST but low vegetation)</td>
 <td>Calculate LST from TIRS spectral bands 10 and 11 using NDVI, Land Surface Emissivity (LSE) and Brightness Temperature (BT), apply Machine Learning (ML) models (Random Forest, XGBoost) to predict LST reductions</td>
 <td>Landsat 8-9</td>
 </tr>
 <tr class="even">
 <td>Promote climate health preparedness for heat-vulnerable New Yorkers (e.g.&nbsp;cool roofs)</td>
-<td>Understand and monitor spatialtemporal performances and trends of reflective coated cool roofs, to target areas for implementation</td>
+<td>Understand and monitor spatialtemporal performances and trends of reflective coated cool roofs, to target areas (e.g.&nbsp;high roof concentrations but poor thermal performance) for implementation</td>
 <td>Band 10 satellite data with ML</td>
 <td>Landsat 8-9</td>
 </tr>
 <tr class="odd">
 <td>Study emerging climate impacts to better understand NYC’s built environment and communities</td>
-<td>Identify locations of heat vulnerability - Heat Vulnerability Index; Surface Heat Assessment,</td>
+<td>Identify locations of heat vulnerability (e.g.&nbsp;Heat Vulnerability Index; Surface Heat Assessment)</td>
 <td>Obtain average surface temperature from remotely sensing data integrated with indicators (e.g.&nbsp;census); LST / LST prediction assessed through Universal Thermal Comfort Index (UTCI) and ML random forests classifer</td>
 <td>LiDAR; ECOSSTRESS; Landsat 8-9</td>
 </tr>
@@ -519,13 +519,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="limitations-and-integrated-approaches" class="level3" data-number="4.2.3">
 <h3 data-number="4.2.3" class="anchored" data-anchor-id="limitations-and-integrated-approaches"><span class="header-section-number">4.2.3</span> Limitations and Integrated Approaches</h3>
-<p>Satellite thermal infrared data measures physical surface heat, not the street level air temperature humans actually experience, so it may overlook areas where extreme heat can cause deaths (<a href="https://www.mdpi.com/2225-1154/7/1/5">Shandas et.al.</a>, 2019). Integrating satellite data with ground-based measurements that is fairly distributed across the city can strengthen monitoring and improves accuracy, especially in neighbourhoods with higher heat vulnerability (<a href="https://www.mdpi.com/2072-4292/15/23/5461">Mushore et.al., 2023</a> ; <a href="https://nyaspubs.onlinelibrary.wiley.com/doi/epdf/10.1111/nyas.12587">Solecki et.al., 2015</a>).</p>
+<p>Satellite thermal infrared data measures physical surface heat, not the street level air temperature humans actually experience, so it may overlook areas where extreme heat can cause deaths (<a href="https://www.mdpi.com/2225-1154/7/1/5">Shandas et.al.</a>, 2019). Integrating satellite data with ground-based measurements that is fairly distributed across the city can strengthen monitoring and improves accuracy, especially in neighborhoods with higher heat vulnerability (<a href="https://www.mdpi.com/2072-4292/15/23/5461">Mushore et.al., 2023</a> ; <a href="https://nyaspubs.onlinelibrary.wiley.com/doi/epdf/10.1111/nyas.12587">Solecki et.al., 2015</a>).</p>
 </section>
 </section>
 <section id="reflection" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">4.3</span> Reflection</h2>
 <p>This section deepened my understanding of policy and remotely sensing data’s role in addressing urban climate challenges. Remotely sensing data provides spatial evidence that bridges between policy objectives and decision-makings. This allowed translation of visionary strategies into actionable solutions.</p>
-<p>Municipality policies tends to provide an overall vision for actions, governance and long-term goals, rather than technical implementation details. The OneNYC although did not detail in remotely sensing methods, but NYC works often involve tools that derives data from remotely sensing systems.</p>
+<p>Metropolitan policies tends to provide an overall vision for actions, governance and long-term goals, rather than technical implementation details. The OneNYC although did not detail in remotely sensing methods, but NYC works often involve tools that derives data from remotely sensing systems.</p>
 <p>Many studies relied on satellite-based thermal infrared (TIR) data. A key insight is that it could be a limitation, as it captures purely surface temperature but not the temperature that humans experience at street level. This matters in dense neighborhoods where the urban form shapes heat exposure and health risk. This enables observations of variation of temperature across different land uses and land covers, providing a more throughout assessment of urban heat across the city. Critically, this method is more expensive and resource intensive for a large installation coverage.</p>
 <p>This section also reinforced that data and visionary policies alone does not bring resilience. <a href="https://www.mdpi.com/2072-4292/15/23/5461">Mushore et.al. (2023</a>) have suggested the need of urban greening strategies to be scaled up to municipal level to be economically viable and effective. Without sustained investment and coordination across all boroughs as well as political support, OneNYC 2050’s initiatives may remain a short fall otherwise.</p>
 <p>On a global context, the goals and objectives aligns with international guidance such as UNEP’s Beat the Heat handbook on greening, cool surfaces, and planning, and it also connects to global goals through the SDGs, particularly SDG 3, SDG 11, and SDG 13 for “A Liveable Climate” (<a href="https://www.unep.org/resources/report/beating-heat-sustainable-cooling-handbook-cities">UNEP, 2021</a> ; <a href="https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf">OneNYC 2050</a>). Overall, OneNYC 2050 provides a positive, sustainable and ambitious strategy for addressing extreme heat, but its success depends on long term stakeholders collaboration and the technical and economic capacity needed to turn spatial evidence into equitable, actionable solutions.</p>
