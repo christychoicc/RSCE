@@ -323,7 +323,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./gee.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">gee</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -437,44 +437,39 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="4.2" class="anchored" data-anchor-id="application"><span class="header-section-number">4.2</span> Application</h2>
 <section id="data" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="data"><span class="header-section-number">4.2.1</span> Data</h3>
-<p>Land surface temperature (LST) obtained from sensors are particularly useful for identifying the spatial pattern of surface heat across neighbourhoods and for monitoring how interventions change surface temperatures over time. The following datasets are commonly used for urban heat studies:</p>
-<table class="caption-top table">
-<caption>Source: <a href="https://terra.nasa.gov/about/terra-instruments/modis">MODIS</a> , <a href="https://www.mdpi.com/2072-4292/11/1/48">Zhou et. al., 2019</a> , <a href="https://nyaspubs.onlinelibrary.wiley.com/doi/epdf/10.1111/nyas.12587">Solecki et.al., 2015</a> , <a href="https://www.sciencedirect.com/science/article/pii/S0034425712004610">Hantson, 2013</a> ,</caption>
-<thead>
-<tr class="header">
-<th>Data</th>
-<th>Benefits</th>
-<th>Limitations</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Landsat 8-9 Collection 2 Level 2 Operational Land Imager (OLI), Thematic Mapper (TM), Enhanced Thematic Mapper (ETM+), Thermal Infrared Sensor (TIRS)</td>
-<td>High spatial resolution, consistent data for long term monitoring, open access</td>
-<td>Long revisit time of 8-16 days, unable to penetrate through clouds</td>
-</tr>
-<tr class="even">
-<td>Terra and/or Aqua, MODIS</td>
-<td>36 bands LST measurement; global coverage with revisit time of every 1-2 days; allow large scale monitoring; timely monitoring of phtosynthetic activity, heatwaves and seasonal trends</td>
-<td>Unable to penetrate through clouds (LST requires), coarse resolution</td>
-</tr>
-<tr class="odd">
-<td>ECOSTRESS</td>
-<td>Highest spatial resolution thermal infrared space instrument, spatially continuous map of urban temperature, day and night coverage, able to monitor water vegetation stress responses and identify areas of at-risk ‘hot spots’</td>
-<td>Unable to penetrate through clouds</td>
-</tr>
-<tr class="even">
-<td>LiDAR</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Ground based temperature</td>
-<td>Allow monitoring long term conditions of street level air temperature and humidity through studying of the urban boundary layer, which is the layer above the city where heat and moisture exchanges</td>
-<td>Expensive for comprehensive coverage, locational biased installation may distort findings</td>
-</tr>
-</tbody>
-</table>
+<p>Land surface temperature (LST) obtained from sensors are particularly useful for identifying the spatial pattern of surface heat across neighborhoods and for monitoring how interventions change surface temperatures over time. The following are commonly used for measuring urban heat:</p>
+<ul>
+<li><p>Landsat 8-9 Collection 2 Level 2 Operational Land Imager (OLI), Thematic Mapper (TM), Enhanced Thematic Mapper (ETM+), Thermal Infrared Sensor (TIRS)</p>
+<div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
+<p>High spatial resolution; Consistent data for long-term monitoring</p>
+</div>
+<div style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;">
+<p>Low temporal resolution; Unable to penetrate through clouds</p>
+</div></li>
+<li><p>Terra and/or Aqua, MODIS</p>
+<div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
+<p>High temporal resolution (1-2 days)</p>
+</div>
+<div style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;">
+<p>Coarse spatial resolution may not be suitable for heterogeneous (mixed-used) urban environments; Unable to penetrate through clouds</p>
+</div></li>
+<li><p>ECOSTRESS</p>
+<div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
+<p>LST observations can be made continuously and during day and night; Can identify areas of at-risk ‘hot spots’; Atmospheric Corrected</p>
+</div>
+<div style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;">
+<p>Unable to penetrate through clouds</p>
+</div></li>
+<li><p>SOLWEIG</p>
+<p>Requires elevation models, land cover data, and meteorological data (air temperature, relative humidity, barometric pressure, wind speed, wind direction, and downward shortwave radiation)</p>
+<div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
+<p>Temperature can be modeled per square meter every 3 hours and outputs can be compared to low and high density urban areas</p>
+</div>
+<div style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;">
+<p>Meterological data are often unavailable in spatially continuous form (raster data)</p>
+</div></li>
+<li><p>Source: <a href="https://terra.nasa.gov/about/terra-instruments/modis">MODIS</a> , <a href="https://www.mdpi.com/2072-4292/11/1/48">Zhou et. al., 2019</a> , <a href="https://nyaspubs.onlinelibrary.wiley.com/doi/epdf/10.1111/nyas.12587">Solecki et.al., 2015</a> , <a href="https://www.sciencedirect.com/science/article/pii/S0034425712004610">Hantson, 2013</a> , <a href="https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2020.519599/full">MacLachlan et al., 2021</a></p></li>
+</ul>
 </section>
 <section id="addressing-policy-challenge" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="addressing-policy-challenge"><span class="header-section-number">4.2.2</span> Addressing Policy Challenge</h3>
@@ -492,20 +487,20 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>Advance nature-based solutions to mitigate physical risks posed by climate change (e.g.&nbsp;urban forests)</td>
-<td>Identify seasonal UHI trends to inform strategic planning and target areas that would benefit most from enhanced greenery systems to mitigate Urban Heat Island and Micro-Urban Heat Island (MUHI) developments (e.g.&nbsp;areas with high LST but low vegetation)</td>
-<td>Calculate LST from TIRS spectral bands 10 and 11 using NDVI, Land Surface Emissivity (LSE) and Brightness Temperature (BT), apply Machine Learning (ML) models (Random Forest, XGBoost) to predict LST reductions</td>
+<td>Identify seasonal UHI trends to inform strategic planning and target areas that would benefit most from enhanced greenery systems (e.g.&nbsp;areas with high LST but low vegetation)</td>
+<td>Calculate LST from TIRS spectral bands 10 and 11 using NDVI, Land Surface Emissivity (LSE) and Brightness Temperature (BT)</td>
 <td>Landsat 8-9</td>
 </tr>
 <tr class="even">
 <td>Promote climate health preparedness for heat-vulnerable New Yorkers (e.g.&nbsp;cool roofs)</td>
 <td>Understand and monitor spatialtemporal performances and trends of reflective coated cool roofs, to target areas (e.g.&nbsp;high roof concentrations but poor thermal performance) for implementation</td>
-<td>Band 10 satellite data with ML</td>
+<td>Identify hotspots using LST and compare LST trends before and after implementation</td>
 <td>Landsat 8-9</td>
 </tr>
 <tr class="odd">
 <td>Study emerging climate impacts to better understand NYC’s built environment and communities</td>
 <td>Identify locations of heat vulnerability (e.g.&nbsp;Heat Vulnerability Index; Surface Heat Assessment)</td>
-<td>Obtain average surface temperature from remotely sensing data integrated with indicators (e.g.&nbsp;census); LST / LST prediction assessed through Universal Thermal Comfort Index (UTCI) and ML random forests classifer</td>
+<td>LST / LST prediction assessed through Universal Thermal Comfort Index (UTCI)</td>
 <td>LiDAR; ECOSSTRESS; Landsat 8-9</td>
 </tr>
 <tr class="even">
@@ -525,10 +520,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="reflection" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">4.3</span> Reflection</h2>
 <p>This section deepened my understanding of policy and remotely sensing data’s role in addressing urban climate challenges. Remotely sensing data provides spatial evidence that bridges between policy objectives and decision-makings. This allowed translation of visionary strategies into actionable solutions.</p>
-<p>Metropolitan policies tends to provide an overall vision for actions, governance and long-term goals, rather than technical implementation details. The OneNYC although did not detail in remotely sensing methods, but NYC works often involve tools that derives data from remotely sensing systems.</p>
-<p>Many studies relied on satellite-based thermal infrared (TIR) data. A key insight is that it could be a limitation, as it captures purely surface temperature but not the temperature that humans experience at street level. This matters in dense neighborhoods where the urban form shapes heat exposure and health risk. This enables observations of variation of temperature across different land uses and land covers, providing a more throughout assessment of urban heat across the city. Critically, this method is more expensive and resource intensive for a large installation coverage.</p>
-<p>This section also reinforced that data and visionary policies alone does not bring resilience. <a href="https://www.mdpi.com/2072-4292/15/23/5461">Mushore et.al. (2023</a>) have suggested the need of urban greening strategies to be scaled up to municipal level to be economically viable and effective. Without sustained investment and coordination across all boroughs as well as political support, OneNYC 2050’s initiatives may remain a short fall otherwise.</p>
-<p>On a global context, the goals and objectives aligns with international guidance such as UNEP’s Beat the Heat handbook on greening, cool surfaces, and planning, and it also connects to global goals through the SDGs, particularly SDG 3, SDG 11, and SDG 13 for “A Liveable Climate” (<a href="https://www.unep.org/resources/report/beating-heat-sustainable-cooling-handbook-cities">UNEP, 2021</a> ; <a href="https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf">OneNYC 2050</a>). Overall, OneNYC 2050 provides a positive, sustainable and ambitious strategy for addressing extreme heat, but its success depends on long term stakeholders collaboration and the technical and economic capacity needed to turn spatial evidence into equitable, actionable solutions.</p>
+<p>Metropolitan policies tends to provide an overall vision for actions, governance and long-term goals, rather than technical implementation details. The OneNYC identified extreme heat as a priority threat and named vulnerable neighborhoods, but did not specify how spatial evidence should be used to guide action.</p>
+<p>Many studies relied on satellite-based thermal infrared (TIR) data. A key insight is that it could be a limitation, as it captures purely surface temperature but not the temperature that humans experience at street level. This matters in dense neighborhoods where the urban form shapes heat exposure and health risk. Ground-based measurements enables observations of variation of temperature across different land uses and land covers, providing a more throughout assessment of urban heat across the city. Critically, this method is more expensive and resource intensive for a large installation coverage.</p>
+<p>What remains uncertain is whether the political and institutional conditions exist to translate spatial evidence into action. <a href="https://www.mdpi.com/2072-4292/15/23/5461">Mushore et.al. (2023</a>) note that urban greening strategies need to scaled up at municipal scale to be economically viable, which requires coordination across all boroughs and political support. OneNYC 2050 aligns with the UNEP Beat the Heat Handbook and to SDGs 3, 11 and 13, but alignment with global frameworks does not mean local implementations Ultimately, success depends on long term stakeholder collaboration and the technical and economic capacity to turn spatial evidence into equitable, actionable solutions.</p>
 </section>
 <section id="reference" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="reference"><span class="header-section-number">4.4</span> Reference</h2>
@@ -958,8 +952,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./gee.html" class="pagination-link" aria-label="gee">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">gee</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./gee.html" class="pagination-link" aria-label="Google Earth Engine">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Google Earth Engine</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
