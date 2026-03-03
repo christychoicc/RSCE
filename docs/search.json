@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "CASA0023 Remotely Sensing Cities and Environments Learning Diary",
     "section": "",
-    "text": "Welcome !\nHello and welcome to my page on Remote Sensing. This page is an online learning diary for CASA Remotely Sensing Cities and Environments 25/26. This website contains a record of my week-by-week learning, including summary of key concepts, practical applications, reviews on academic literature and relevant web sources, as well as reflections and discussions on learnt concepts and techniques.",
+    "text": "Welcome !\nHello and welcome to my page on Remote Sensing. This page is an online learning diary for CASA Remotely Sensing Cities and Environments 25/26. This website contains a record of my week-by-week learning, including summary of key concepts, practical applications, reviews on academic literature and relevant web sources, as well as reflections and discussions on learnt concepts and techniques. Through application sections each week, I want to step out of my comfort zone and explore unfamiliar cities and environments to broaden my geographic perspective.",
     "crumbs": [
       "Welcome !"
     ]
@@ -24,7 +24,7 @@
     "href": "index.html#in-this-learning-diary",
     "title": "CASA0023 Remotely Sensing Cities and Environments Learning Diary",
     "section": "In this Learning Diary",
-    "text": "In this Learning Diary\nEach chapter will be covering contents taught in the corresponding week:\n\nIntroduction\n\nGetting started with remote sensing, this introduction will go through types of sensors, spatial resolutions and practical data pre-processing with Lisbon as the study area.\n\nSensor\n\nLooking at Sentinel-1, the slides will provide a summary of the sensor, its mission, technical specifications, key objectives and applications, benefits and limitations, and reflections\n\nCorrection\n\nExplores preprocessing corrections and enhancements with Hong Kong as a study area, include mosaicking of Landsat 8-9 tiles, NDVI, GLCM texture, and PCA analyses.\n\nPolicy",
+    "text": "In this Learning Diary\nEach chapter will be covering contents taught in the corresponding week:\n\nIntroduction\n\nGetting started with remote sensing, this introduction will go through types of sensors, spatial resolutions and practical data pre-processing with Lisbon as the study area.\n\nSensor\n\nLooking at Sentinel-1, the slides will provide a summary of the sensor, its mission, technical specifications, key objectives and applications, benefits and limitations, and reflections\n\nCorrection\n\nExplores preprocessing corrections and enhancements with Hong Kong as a study area, include mosaicking of Landsat 8-9 tiles, NDVI, GLCM texture, and PCA analyses.\n\nPolicy\n\nLooking at OneNYC 2050\n\nGoogle Earth Engine\nClassification I\nClassification II",
     "crumbs": [
       "Welcome !"
     ]

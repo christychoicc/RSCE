@@ -1,6 +1,6 @@
 # Welcome ! {.unnumbered}
 
-Hello and welcome to my page on Remote Sensing. This page is an online learning diary for CASA Remotely Sensing Cities and Environments 25/26. This website contains a record of my week-by-week learning, including summary of key concepts, practical applications, reviews on academic literature and relevant web sources, as well as reflections and discussions on learnt concepts and techniques.
+Hello and welcome to my page on Remote Sensing. This page is an online learning diary for CASA Remotely Sensing Cities and Environments 25/26. This website contains a record of my week-by-week learning, including summary of key concepts, practical applications, reviews on academic literature and relevant web sources, as well as reflections and discussions on learnt concepts and techniques. Through application sections each week, I want to step out of my comfort zone and explore unfamiliar cities and environments to broaden my geographic perspective.
 
 ## About me
 
@@ -17,3 +17,7 @@ Each chapter will be covering contents taught in the corresponding week:
 3.  Correction
     -   Explores preprocessing corrections and enhancements with Hong Kong as a study area, include mosaicking of Landsat 8-9 tiles, NDVI, GLCM texture, and PCA analyses.
 4.  Policy
+    -   Looking at OneNYC 2050
+5.  Google Earth Engine
+6.  Classification I
+7.  Classification II
