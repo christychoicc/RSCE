@@ -1,3 +1,13 @@
 ---
 title: "Google Earth Engine"
 ---
+
+This section will look at Google Earth Engine, a geospatial analysis platform where remotely sensing satellite imagery is stored. It allows us to analyse data more efficiently.
+
+## Summary
+
+## Applications
+
+## Resources
+
+## References
