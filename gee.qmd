@@ -44,6 +44,10 @@ So load Landsat 8 –\> more images –\> ok use
 ![PCA 1 and 2](images/w6_images/PCA_1_2.png){alt="UHI, Source: EARTH.ORG"}
 :::
 
+```{r, echo=FALSE}
+cat(readLines("gee/pca_values.txt"), sep = "\n")
+```
+
 ::: {layout-ncol="1"}
 ![NDVI](images/w6_images/NDVI.png){alt="UHI, Source: EARTH.ORG"}
 :::

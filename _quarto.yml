@@ -8,6 +8,7 @@ project:
   - slides/
   - images/
   - correction/
+  - gee/
 
 book:
   title: "CASA0023 Remotely Sensing Cities and Environments Learning Diary"
