@@ -375,6 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#introduction-to-gee" id="toc-introduction-to-gee" class="nav-link" data-scroll-target="#introduction-to-gee"><span class="header-section-number">5.1.1</span> Introduction to GEE</a></li>
   <li><a href="#scale-factor" id="toc-scale-factor" class="nav-link" data-scroll-target="#scale-factor"><span class="header-section-number">5.1.2</span> Scale Factor</a></li>
   <li><a href="#filtering-image-collections-reducer-reducing" id="toc-filtering-image-collections-reducer-reducing" class="nav-link" data-scroll-target="#filtering-image-collections-reducer-reducing"><span class="header-section-number">5.1.3</span> Filtering Image Collections (Reducer/ Reducing)</a></li>
+  <li><a href="#benefits-and-limitations" id="toc-benefits-and-limitations" class="nav-link" data-scroll-target="#benefits-and-limitations"><span class="header-section-number">5.1.4</span> Benefits and Limitations</a></li>
   </ul>
 </li>
   <li>
@@ -424,8 +425,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="scale-factor" class="level3" data-number="5.1.2"><h3 data-number="5.1.2" class="anchored" data-anchor-id="scale-factor">
 <span class="header-section-number">5.1.2</span> Scale Factor</h3>
-<p>Scale factors</p>
-<p>The below will list scale factor math functions for most commonly used satellite sensors.</p>
+<p>Scale factor</p>
+<p>The below will list scale factor math functions for most commonly used satellite sensors:</p>
 <table class="caption-top table">
 <caption>Source: <a href="https://developers.google.com/earth-engine/datasets">Earth Engine Data Catalouge</a>
 </caption>
@@ -452,8 +453,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table></section><section id="filtering-image-collections-reducer-reducing" class="level3" data-number="5.1.3"><h3 data-number="5.1.3" class="anchored" data-anchor-id="filtering-image-collections-reducer-reducing">
 <span class="header-section-number">5.1.3</span> Filtering Image Collections (Reducer/ Reducing)</h3>
-<p>The reducing method was commonly used to aggregate pixel values.</p>
-<p>A good practice I will always adopt is to apply the Scale Factor first, then take the mean (when there is a few images) or Median (when there is a big stack of images) depending on the volume of images obtained.</p>
+<p>The reducing method ( <code>ee.Reducer</code> ) are commonly used to aggregate pixel values using mean, median, sum or percentiles.</p>
+<p>To summarise pixel values within</p>
+<ul>
+<li><p><code>image.reduceRegion</code>, one region, suitable for NDVI, rainfall, etc.</p></li>
+<li><p><code>image.reduce.Regions</code>, multiple regions, suitable for land use cover</p></li>
+<li><p><code>image.reduce.Neighbourhood</code>, within the neighbourhood, suitable for terrain texture processing</p></li>
+</ul>
+<p>Taking the median out of a stack of images is often the most common practice as it provides a simple and quite reliable summary of a time series data. However, its is also just a “good enough” approach and does not necessarily be the most suitable approach. In some cases, considering using percentiles maybe a more sensible approach than median. Selecting a higher percentile such as the 75th to 90th percentile range may better capture conditions and interpret more meaningful results.</p>
+<div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
+<p>A good practice I will always adopt is to <strong>apply the Scale Factor first</strong>, <strong>reducing image by region(s) or neighbourhood</strong>, then take the <strong>mean</strong> (when there is a few images) <strong>or median</strong> (when there is a big stack of images) <strong>depending on the volume of images obtained.</strong></p>
+</div>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -464,15 +474,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Summary Limitations</p>
-<p>GEE speeds up and simplfies processing processes but to another extent, it</p>
-</section></section><section id="applications" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="applications">
+</section><section id="benefits-and-limitations" class="level3" data-number="5.1.4"><h3 data-number="5.1.4" class="anchored" data-anchor-id="benefits-and-limitations">
+<span class="header-section-number">5.1.4</span> Benefits and Limitations</h3>
+<table class="caption-top table">
+<caption>Source: <a href="https://www.researchgate.net/figure/GEE-applications-LC-Land-Cover_fig8_344056372">Amani et. al., 2020</a>
+</caption>
+<thead><tr class="header">
+<th></th>
+<th>Benefits</th>
+<th>Limitations</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Cloud-based Platform</td>
+<td><ul>
+<li><p>Free for non-commercial use</p></li>
+<li><p>Process remotely sensing data across large spatial and temporal scales</p></li>
+<li><p>Fast filtering and sorting allows easier search in large image collections</p></li>
+<li><p>Able to share scripts and workflows</p></li>
+</ul></td>
+<td><ul>
+<li><p>Depend on internet access, cannot be used offline</p></li>
+<li><p>Takes longer to download processed data</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Data sets and Data Pre-processing</td>
+<td><ul>
+<li><p>Large catalog of data sets (Landsat, Sentinel, MODIS, etc.)</p></li>
+<li><p>Pre-processed data sets available</p></li>
+<li><p>Client side can upload, store and share data sets</p></li>
+<li><p>Available derivative products (e.g.&nbsp;NDVI)</p></li>
+</ul></td>
+<td><ul>
+<li><p>Analysis maybe limited to available tools within GEE</p></li>
+<li><p>SAR phase data are not supported, limiting Polarimetric SAR and InSAR applications</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Function and Analysis Methods</td>
+<td><ul>
+<li><p>Support standard remote sensing and geospatial workflows</p></li>
+<li><p>Many available image processing functions: geometric operations, machine learning, classification, visualisation</p></li>
+</ul></td>
+<td><ul>
+<li><p>Limited number of classification and regression algorithms available</p></li>
+<li><p>Advanced deep learning models have to be conducted outside GEE</p></li>
+<li><p>Limited amount of samples / features within classification methods</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table></section></section><section id="applications" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="applications">
 <span class="header-section-number">5.2</span> Applications</h2>
 <section id="study-area-delhi-india" class="level3" data-number="5.2.1"><h3 data-number="5.2.1" class="anchored" data-anchor-id="study-area-delhi-india">
 <span class="header-section-number">5.2.1</span> Study Area: Delhi, India</h3>
 <section id="texture" class="level4" data-number="5.2.1.1"><h4 data-number="5.2.1.1" class="anchored" data-anchor-id="texture">
 <span class="header-section-number">5.2.1.1</span> Texture</h4>
-<p>The GLCM texture highlighted high reflectance areas of urban land uses, industrial activities and ……</p>
+<p>The GLCM texture highlighted high reflectance areas of urban land uses, industrial activities</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -550,6 +608,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>GEE Code for this practical can be found <a href="https://code.earthengine.google.com/ff0bb6c3b77cf5aab59fd6f18da05f03">here</a>.</p>
 </section></section><section id="applications-of-gee-in-research" class="level3" data-number="5.2.2"><h3 data-number="5.2.2" class="anchored" data-anchor-id="applications-of-gee-in-research">
 <span class="header-section-number">5.2.2</span> Applications of GEE in Research</h3>
+<p>GEE is very extensive when it comes to research. The following shows a range of applications that GEE supports as well as satellite and sensors that are most commonly used with GEE:</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -572,9 +631,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section></section><section id="reflection" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="reflection">
 <span class="header-section-number">5.3</span> Reflection</h2>
-<p>Switching from manual data pre-processing in QGIS and SNAP to GEE has really been a massive upgrade in saving time and really easing off the computational complexity. This week provided a strong foundation in both JavaScript and GEE as a new language and new tool. I found exploring through Google Earth Engine webpage particularly insightful, offering ready-made code, concept explanations, and analysis guides that is surprisingly accessible and able understand quickly as a first time user. Another benefit of GEE I found especially useful is the ability to clip spatial boundary shapefile and adding analysis outputs as map layers, with adjustable transparency that allows comparison against Google’s base map for quick visual checks.</p>
-<p>That said, there are notable limitations. GEE is impying a noncommercial quota tier in April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly affect future project works. The platform does not support markdown style cell-by-cell execution, making step-by-step debugging less intuitive compared to notebook environments and most importantly using up my quotas if I run the code too much. As a cloud-based platform, it means that it is entirely dependent on stable internet connection, which makes offline working impossible.</p>
-<p>I have touched upon Google Earth before in my undergraduate field trip in Porto, Portugal for site analysis purposes. It was really useful back then for getting a brief understanding of the site upon arrival for on site qualitative assessments, especially when the study area is abroad. This week’s learning have taken site anaylsis to a deeper level, especially how spatial patterns changes over time. I also played around with timelapse……</p>
+<p>Switching from manual data pre-processing in QGIS and SNAP to GEE has really been a massive upgrade in saving time and really easing off the computational complexity.</p>
+<p>This week provided a good opportunity to delve in both JavaScript and GEE as a new language and new tool. I found exploring through Google Earth Engine webpage particularly insightful, offering ready-made code, concept explanations, and analysis guides that is easily accessible and user friendly for a first time user. I found it particularly useful that we can easily clip spatial boundary and adding analysis outputs as map layers. The adjustable transparency in each layers allows comparison against Google’s base map, observing the accuracy of data visually.</p>
+<p>Despite, it has also raise my awareness of its limitations. GEE is impying a noncommercial quota tier in April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly affect future project work progresses. I also found the fact that GEE does not support markdown style cell-by-cell execution, makes catching error harder and most importantly may use up my precious quotas if I run the code too many times. Although GEE’s cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which is not possible for offline usage.</p>
+<p>I have touched upon Google Earth before in my undergraduate field trip in Porto, Portugal for site analysis purposes. It was really useful back then for identifying features within the site, understanding the surrounding context, and getting a brief understanding of the site upon arrival. Yet, Google Earth is more of a passive observational tool, and so building on that, this week’s learning of GEE felt like a major step up personally. Still using a Google served platform, but able to delve deeper in remotely sensing applications.</p>
 <p>Overall, GEE provided more opportunities for advanced geospatial applications, I am excited to use GEE to do more cool analysis in the near future!</p>
 </section><section id="references" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="references">
 <span class="header-section-number">5.4</span> References</h2>
