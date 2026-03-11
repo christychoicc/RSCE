@@ -1,0 +1,242 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CASA0023 Remotely Sensing Cities and Environments Learning Diary",
+    "section": "",
+    "text": "Welcome !\nHello and welcome to my page on Remote Sensing. This page is an online learning diary for CASA Remotely Sensing Cities and Environments 25/26. This website contains a record of my week-by-week learning, including summary of key concepts, practical applications, reviews on academic literature and relevant web sources, as well as reflections and discussions on learnt concepts and techniques. Through application sections each week, I want to step out of my comfort zone and explore unfamiliar cities and environments to broaden my geographic perspective.",
+    "crumbs": [
+      "Welcome !"
+    ]
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "CASA0023 Remotely Sensing Cities and Environments Learning Diary",
+    "section": "About me",
+    "text": "About me\nI am a current master’s student at the Bartlett Centre for Advanced Spatial Analysis (CASA), University College London (UCL) pursuing MSc, Urban Spatial Science. I hold a bachelor’s degree in BSc, Planning and Real Estate from the University of Manchester in 2022-2025.",
+    "crumbs": [
+      "Welcome !"
+    ]
+  },
+  {
+    "objectID": "index.html#in-this-learning-diary",
+    "href": "index.html#in-this-learning-diary",
+    "title": "CASA0023 Remotely Sensing Cities and Environments Learning Diary",
+    "section": "In this Learning Diary",
+    "text": "In this Learning Diary\nEach chapter will be covering contents taught in the corresponding week:\n\nIntroduction\n\nGetting started with remote sensing, this introduction will go through types of sensors, spatial resolutions and practical data pre-processing with Lisbon as the study area.\n\nSensor\n\nLooking at Sentinel-1, the slides will provide a summary of the sensor, its mission, technical specifications, key objectives and applications, benefits and limitations, and reflections\n\nCorrection\n\nExplores preprocessing corrections and enhancements with Hong Kong as a study area, include mosaicking of Landsat 8-9 tiles, NDVI, GLCM texture, and PCA analyses.\n\nPolicy\n\nLooking at OneNYC 2050\n\nGoogle Earth Engine\nClassification I\nClassification II",
+    "crumbs": [
+      "Welcome !"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 Summary\nRemote sensing is not only satellite imagery but a system that allows us to obtain EO data through acquiring information from a distance using sensors on platforms. This section introduces types of sensors and resolutions of remote sensing data. The following study area of Lisboa, Portugal will demonstrate a workflow of analysing Earth Observations (EO) data processed through SNAP and R.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#summary",
+    "href": "intro.html#summary",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1.1 Types of Sensor\nPassive Sensors detect energy emitted or reflected from the object by the sun. They mainly operate in the visible, infrared, thermal infrared, and microwave bands of the electromagnetic spectrum, mostly used to measure surface temperature, vegetation properties and other physical attributes. However, passive sensors cannot penetrate dense cloud cover, limiting areas with higher cloud rates.\nActive Sensors emits energy and collect data based on changes in the return signal. Most active sensors have higher capabilities to penetrate atmospheric conditions. For example, the Synthetic Aperture Radar (SAR), has the ability to “see through cloud” as it operates with comparably longer wavelengths, allowing data collections during night hours. This allows them to be less dependent on sunlight which better handles atmospheric constraints.\nOverall, observations are shaped by the electromagnetic spectrum and its interactions between radiation, atmosphere, and Earth’s surface, where radiation can be absorbed, transmitted, or scattered (Tempfli et al., 2009). To mitigate atmospheric scattering in imagery, atmospheric correction can be applied to remove these effects.\n\n\n\n\n\n\nPassive Sensor (Source: NASA EARTHDATA)\n\n\n\n\n\n\n\nActive Sensor (Source: NASA EARTHDATA)\n\n\n\n\n\n\n\n1.1.2 Types of Resolution\n\n1.1.2.1 Spatial Resolution\nThe size of the raster grid cell per pixel, where it can range from metres to kilometres. The spatial resolution scale varies depending on specific observation and reasearch suitability, ranging from highest/finest resolution at 10m for buildings to the lowest/coarse at 100km for a global scale (NASA EARTHDATA).\n\n\n1.1.2.2 Spectral Resolution\nVisible part of the electromagnetic spectrum is composed of red, green and blue wavelengths. Multi-spectral sensors measure reflection at multiple wavelength bands to create spectral signatures, which such patterns of reflectence across the spectrum helps distinguish different surface features. However, observations are often constrained to atmospheric windows (e.g. cloud cover) which absorbs radiation.\n\n\n\n\n\n\n\n\n\n\nElectromagnetic Spectrum and Satellite Sensor Capture Range (Source: [ESRI](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/))\n\n\n\n\n\n\n\n1.1.2.3 Temporal Resolution\nThe frequency of a sensor’s revisit in capturing the same observation area. The temporal resolution measurement period can vary from 1 to 16 days depending on the platform (NASA EARTHDATA https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution).\n\n\n1.1.2.4 Radiometric Resolution\nThe ability of a sensor to identify and discriminate between subtle differences in energy in each pixel.\n\n\n\n\n\n\nRemote Sensing Resolutions (Source: NASA EARTHDATA)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#application",
+    "href": "intro.html#application",
+    "title": "1  Introduction",
+    "section": "1.2 Application",
+    "text": "1.2 Application\nStudy Area: Lisboa, Portugal\nSatellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed with SNAP. Selecting the RGB-image it gives the True Natural Color combination of B4, B3 and B2. False Colour Composite of B8, B4 and B3 highlights healthy and unhealthy vegetation, with denser vegetation visualised as red and urban areas as white. Atmospheric Penetration of B12, B11 and B8A composites with no visible bands to penetrate atmospheric particles, highlighting vegetation in blue and urban areas as gray, cyan or purple. More can be found at Sentinel 2 Bands and Combinations.\n\n\n\n\n\n\nTrue Natural Colour, Sentinel\n\n\n\n\n\n\n\nFalse Colour Composite, Sentinel\n\n\n\n\n\n\n\nAtmospheric Penetration, Sentinel\n\n\n\n\n\nThe scatter plots of Sentinel-2 (B4, B8) and Landsat (B4, B5) showed the spectral relationship between Red and Near-infrared spectral feature space. Both pixel distribution showed low values of NIR absorption for water , low red and high NIR values for vegetation and correlated red and NIR values increases for urban areas, characterizing the land cover composition of Lisboa.\n\n\n\n\n\n\nSentinel Band 4 and Band 8 Scatterplot\n\n\n\n\n\n\n\nLandsat Band 4 and Band 5 Scatterplot\n\n\n\n\n\n\n1.2.1 Tasseled Caps\nDifferent combinations of multi-spectral bands to examine relationship between the bands, to highlight physical land features. It is commonly used to evaluate brightness, greenness and wetness for monitor vegetation growth cycles, soil and urban development ( reference - https://support.esri.com/en-us/gis-dictionary/tasseled-cap-transformation).\nApplied Maths Band Equations:\n\\[\n\\begin{split}Brightness=0.3037(B2) + 0.2793(B3)+\\\\0.4743(B4)+0.5585(B8)+\\\\0.5082(B11)+0.1863(B12)\\end{split}\n\\]\n\\[\n\\begin{split}Greenness=-0.2848(B2)-0.2435(B3)\\\\-0.5436(B4)+0.7243(B8)+\\\\0.0840(B11)-0.1800(B12)\\end{split}\n\\]\n\\[\n\\begin{split}Wetness=0.1509(B2)+0.1973(B3)\\\\+0.3279(B4)+0.3406(B8)\\\\-0.7112(B11)-0.4572(B12)\\end{split}\n\\]\n\nTasseled Cap Functions (Source: ArcGIS Pro)\n\n\nTasseled Cap Transformation\nPhysical Associations\n\n\n\n\nBrightness\nBare earth soil\nBuilt up surfaces\nNatural features (concrete, asphalt, gravel, rock outcrops…)\nBright materials\n\n\nGreenness\nGreen vegetation\n\n\nWetness\nMoisture\nSoil moisture\nWater\n\n\n\nThe below two Sentinel-2 tasseled cap transformed imagery is adjusted for brightness, greenness and wetness between August and December 2025. Although there is no obvious land cover change, the comparisons have visualized some subtle hue changes within certain areas. Blue, red and pink areas of built up urban infrastructure (road networks, airport, coastal piers) and waters remained unchanged, while brown areas depicts the built up urban features. Greenness is distinguished by lighter blue and greens, highlighting areas with higher moisture and humibidity. Overall, vegetation coverage appears equivalent in both seasons\nDespite Lisboa’s Mediterranean climate, there is no fluctuation of seasonal vegetation coverage change. One interesting feature to look at is the Parque Florestal de Monsanto large urban forest, where the vegetation coverage has a very subtle brightness difference between August and December. With a high density of vegetation, the overlay of greenness and wetness detections also visualize moisture levels across time. Moving beyond the subtle variations in the visual interpretations, spectral reflectance across different bands will be looked at next.\n\n\n\n\n\n\nLisboa in August 2025 (Sentinel, Tasseled Cap Transformed)\n\n\n\n\n\n\n\nLisboa in December 2025 (Sentinel, Tasseled Cap Transformed)\n\n\n\n\n\nSpectral reflectance across bands showed distinct differences for each land cover type. Both sensors are found similar results for identifying the spectral behaviours between each land cover, while Landsat has a comparably higher mean reflectance across all bands. Both NIR bands are noted most significant for distinguishing vegetated and non-vegetated surfaces. Greenspace have been noted with the lowest reflectance, while bare earth has the highest reflectance.\n\n\n\n\n\n\nSpectral Reflectence of Sentinel (A, B) and Landsat (C, D)\n\n\n\n\n\nSentinel-2 and Landsat have very similar spectral bands, where key differences are their spatial and temporal resolution. Sentinel-2 has a comparably finer spatial resolution and higher revisit frequency, giving advantages of higher details and regular monitoring of dynamic changes. Despite, their spectral similarity allows cross-validation analysis when there are limitations of cloud coverage or data availability on one platform, enabling higher flexibility multi-temporal studies.\n\n\n\n\n\n\nSpectral Reflectence Bands of Sentinel-2 and Landsat (Source: USGS 2019)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#reflection",
+    "href": "intro.html#reflection",
+    "title": "1  Introduction",
+    "section": "1.3 Reflection",
+    "text": "1.3 Reflection\nBeyond capturing Earth’s surface imagery, EO data functions as a powerful measurement tool. This has shifted my perspective from viewing satellite imagery primarily as visual reference material to recognizing it as a quantitative measurement instrument. Interpretation varies significantly depending on band selection, resampling methods, and processing techniques. EO has demonstrated potential for efficiently mapping vast areas for monitoring and early prediction, but this requires careful consideration of cloud coverage, noise, and systematic biases. Lisboa has been a strong study area, as it display features of coastal conditions where atmospheric effects influence satellite reflectance and interpretation. The analysis demonstrated the strength of multispectral signatures, where urban and greenspace land uses can be distinguished through spectral characteristics. Therefore, further understanding atmospheric correction and scattering effects is essential, as cloud coverage and particles redirect radiation, which weakens surface sensing and reducing data quality.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#references",
+    "href": "intro.html#references",
+    "title": "1  Introduction",
+    "section": "1.4 References",
+    "text": "1.4 References\nSentinel Data Source:\nhttps://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/auth?client_id=sh-5f8b630b-b083-49ed-b340-b8f01ecb81c4&redirect_uri=https%3A%2F%2Fbrowser.dataspace.copernicus.eu%2F%3Fzoom%3D5%26lat%3D50.16282%26lng%3D20.78613%26demSource3D%3D%2522MAPZEN%2522%26cloudCoverage%3D30%26dateMode%3DSINGLE&state=26c991f3-8c5e-487e-b23d-d5fe36fbabb7&response_mode=fragment&response_type=code&scope=openid&nonce=c67a4727-3008-4473-8b84-0a9304c87ce3&code_challenge=ZGmOypxnXCivN18EjxS722lF4SDVSsskdcUb_zktYp4&code_challenge_method=S256",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "sensor.html",
+    "href": "sensor.html",
+    "title": "\n2  Sensor\n",
+    "section": "",
+    "text": "2.1 Presentation\nThis section will look at Sentinel-1. The slides are presented using the Xaringan template.\nView the full-screen version at: Sentinel-1 Presentation",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Sensor</span>"
+    ]
+  },
+  {
+    "objectID": "correction.html",
+    "href": "correction.html",
+    "title": "\n3  Correction\n",
+    "section": "",
+    "text": "3.1 Summary\nRemotely sensing imagery occasionally requires pre-processing, as sensors may pick up distortions that may affect surface reflectance imagery. This section will focus on correction and enhancements. The following study area of Hong Kong will demonstrate a workflow of mosiacking Landsat 8-9 tiles and imagery enhancements processed through R.\nTwo main sources of environmental attenuation is atmospheric scattering and topographic attenuation. As irradiance travels through the atmosphere and reflects back to sensors as radiance, atmospheric absorption and scattering introduces “adjacency effect” which captures radiance from neighboring pixels rather than the target. These distortions can creates haze and reduce contrast in imagery, presenting the need for atmospheric correction to obtain true apparent reflectance.\nBeyond atmospheric correction, remotely sensing data may also require geometric, orthorectification, and radiometric corrections to account for any sensor distortions, displacement, and calibration errors. The following discuss the 5 key types of corrections.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correction</span>"
+    ]
+  },
+  {
+    "objectID": "correction.html#summary",
+    "href": "correction.html#summary",
+    "title": "\n3  Correction\n",
+    "section": "",
+    "text": "3.1.0.1 Types of Correction\n\n\nCorrection\nDescription\nBenefits\nLimitations\nWhen to use?\n\n\n\nGeometric Correction\nCorrect positional distortions from off-nadir view angles, topography, wind, earth shape and rotation\nAligning with Ground Control Points (GCPs) allows high accuracy\nTime consuming; Computational intensive\nCompared with data or maps; Calculation of distances or area; Two images acquired at different dates to be compared pixel by pixel. (Green and Clark, 2000)\n\n\nAtmospheric Correction\n\nRemoves atmospheric effects;\nMethods: Dark Object Subtraction (DOS); Psuedo-invariant Features (PIFs)\n\nRemoves haze and adjacency effects\nMay not remove all atmospheric effects completely\nNeed to acquire biophysical parameters (e.g. temperature, NDVI); Using spectral signatures through time and space\n\n\nEmpirical Line Correction\nUses field spectrometer for measurements taken during satellite overpass\nProvide a simple surface reflectance calibration: available invariant-in-time calibration target measurement (Karpouzli et.al, 2003)\nRequires physical field measurement to be done exactly timed with satellite overpasses; Hazards may present on site\nTo obtain accurate and precise surface refection\n\n\nOrthorectification (Topographic) Correction\nAssign coordinates to an image (Georectification) and Orthorectification goes beyond in removing distortions (influences of topography), ensuring pixels are as if depicted from directly above\nAllow accuracy for terrain areas through removing terrain displacements\nRequire an accurate and high resolution digital elevation model (DEM) (Shimada, 2010)\n\nFor areas with complex terrain\n(Note* Should be used after atmospheric correction)\n\n\n\nRadiometric Calibration\nConvert Digital Numbers (DN) to spectral radiance\nAllow comparison across sensors across different acquisition dates\n\nTo convert the output signal into physical magnitudes (e.g. radiance, reflectivity, temperature) (Taylor & Francis, 2021)\n\n\n\nSources: (Green and Clark, 2000) , (Karpouzli et.al., 2003), (Shimada, 2010) and CASA0023",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correction</span>"
+    ]
+  },
+  {
+    "objectID": "correction.html#application",
+    "href": "correction.html#application",
+    "title": "\n3  Correction\n",
+    "section": "\n3.2 Application",
+    "text": "3.2 Application\nStudy Area: Hong Kong\nTwo satellite tiles were selected from Landsat 8-9 OLI/TIRS, Collection 2 and Level 2 is selected for surface reflection (provides surface temperature as well). Here, two tiles were sufficient to cover the boundaries of Hong Kong. One Landsat 8 and one Landsat 9 tile has been downloaded with &lt;10% cloud cover between 19th to 20th of March 2025.\n\n\n\n\n\nTiles Selection: draw an area of interest to search for tiles within the boundary and for tiles and data preview in EarthExplorer (Obtained from: USGS)\n\n\n\n\n\n3.2.1 Mosaicking and Data Processing\nMerging and joining data sets feathers the images together, which creates seamless mosaic imagery. Note that it is important that the tiles share a common CRS before mosaicking. Below shows the two tiles separately and linear stretched merged in RGB imagery.\n\n\n\n\n\nTiles Selection (Obtained from: USGS)\n\n\n\n\nThe plot below compares spectral behaviours to capture different surface features. Each band operates at a different wavelength, with Bands 1–7 at 30m resolution and finer at 15m for Band 8. Study by Wang et.al. (2008) disussed reflection of SWIR wavelengths responds highly to both soil moisture and leaf water content, where combining NIR and SWIR are useful measures in detecting vegetation moisture conditions, helpful in distinguishing types of land uses. These spectral characteristics provided useful insights for understanding our study area before analysis. More about Landsat bands: USGS.\n\n\n\n\n\nLandsat 8-9 Spectral Bands\n\n\n\n\nHong Kong Planning Districts Boundaries Data were obtained from Esri China (Hong Kong) transformed to a common CRS to ensure consistency with satellite imagery, and used to clip the raster images. This enables further processing in enhancements, looking at certain features or spectral traits, texture and principal component analysis (PCA).\n\n3.2.2 Normalised Difference Vegetation Index (NDVI)\nNDVI is used to highlight healthy vegetation, the following equation is applied:\n\\[\nNDVI = \\frac{NIR - Red}{NIR + Red}\n\\]\nNDVI uses Near-Infrared (NIR) and Red spectral bands to display vegetation which is not visible under visible bands. Healthy and green vegetation reflects stronger in NIR while simultaneously absorbs Red through photosynthesis, this has led NDVI to be an effective indicator for vegetation health. More on other ratios: Index DataBase.\n\n\n\n\n\nNDVI\n\n\n\n\n\nNDVI Vegetation Cover Only\n\n\n\n\n\n3.2.3 Texture\nTexture captures the spatial relationships between neighboring pixels, highlighting different land surfaces’ distinct structural patterns (e.g. bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.\nGrey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting textures:\n\\[\n\\rho = (\\text{pixel\\_value} \\times 0.0000275) - 0.2\n\\]\n\n\n\n\n\n8 GLCM Textures of Hong Kong\n\n\n\n\n\n3.2.4 PCA\nPCA allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information. PCA summary of 8 spectral bands and 8 texture variables shows:\n\n\nImportance of components:\n                          PC1    PC2     PC3     PC4     PC5    PC6     PC7    PC8     PC9    PC10    PC11    PC12\nStandard deviation     2.8232 2.0581 1.19101 1.02581 0.79250 0.5322 0.46463 0.2967 0.22020 0.16025 0.13643 0.09184\nProportion of Variance 0.4981 0.2647 0.08866 0.06577 0.03925 0.0177 0.01349 0.0055 0.00303 0.00161 0.00116 0.00053\nCumulative Proportion  0.4981 0.7629 0.85152 0.91729 0.95654 0.9742 0.98773 0.9932 0.99627 0.99787 0.99904 0.99956\n                          PC13    PC14    PC15      PC16\nStandard deviation     0.05894 0.05165 0.02915 2.104e-07\nProportion of Variance 0.00022 0.00017 0.00005 0.000e+00\nCumulative Proportion  0.99978 0.99995 1.00000 1.000e+00\n\n\n\n\n\n\n\n\nComponents\nExplaination\n\n\n\nStandard Deviation\nSpread of data\n\n\nProportion of Variance\nProportion of data retained from the original data set\n\n\nCumulative Proportion\nProportion of total variance of the original data set\n\n\n\nIn this case, PC1 to PC4 explains most of the variations. Looking at cumulative proportion, 91% of spectral variance can be identified in the first 4 principle components. This is a very helpful measure as it allows higher efficiency in analysis, including most of total variance while reducing 16 layers to 4 without loosing much information.\n\n\nComponent\nPC1\nPC2\nPC3\nPC4\n\n\nCumulative Proportion\n0.4981\n0.7629\n0.85152\n0.91729\n\n\n\n\n\n\n\nPC1 to PC4 of Hong Kong",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correction</span>"
+    ]
+  },
+  {
+    "objectID": "correction.html#reflection",
+    "href": "correction.html#reflection",
+    "title": "\n3  Correction\n",
+    "section": "\n3.3 Reflection",
+    "text": "3.3 Reflection\nThere is a lot of contents in data correction and enhancements, yet they are fundamental to ensure reliability, accuracy and comparability within remotely sensing analysis. Luckily, there is now open acess to Level 2 data that are analysis ready data (ARD), no extensive manual correction process needed. More on Level 2 data can be found in the following, click for Sentinel and Landsat.\nGLCM Texture and PCA analysis were the most insightful sections in this section. It was very interesting to see visually that combinations of spectral and structural information can reveal spatial patterns that enables accurate classification of land cover rather than just relying information derived from one spectral band only. One limitations in this application workflow is that it is time consuming and computational intensive, which this will be improved using Google Earth Engine which will be covered later.\nI have always choose GADM for obtaining adminstrative boundaries, however it lacks coverage for special administrative regions like Hong Kong. This has given me opportunities to explore on broader range of reliable alternative boundary sources.\nHaving lived in Hong Kong for many years, I have never looked at the city through a remote sensing perspective. This has been a very interesting study area both personally and scientifically. It is comprised of one of the world’s most dense urban form while having about three quarters of land covered in vegetation, offering a unique juxtaposition of dense urban form with natural landscape packed within a small land area (Gov.hk, 2013). Furthermore, there is presence of a mixed range of green infrastructure within the densely built city, and there are growing trends of vertical greenery systems on building facades. This has questioned whether nadir imagery from conventional EO data may undermine full vegetation coverage. For such complex environments, the approaches above may not be the most suitable approach for precision, but it has provided a reliable indicator of overall vegetation coverage and identifying terrain structures despite finer-scale green infrastructure to be harder to capture. Overall, the workflow covered in this section is strongly transferable and applicable across a range of study contexts, it is important to note that choosing the right sensor that suits the specific application remains critical for producing meaningful results.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correction</span>"
+    ]
+  },
+  {
+    "objectID": "correction.html#references",
+    "href": "correction.html#references",
+    "title": "\n3  Correction\n",
+    "section": "\n3.4 References",
+    "text": "3.4 References",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Correction</span>"
+    ]
+  },
+  {
+    "objectID": "policy.html",
+    "href": "policy.html",
+    "title": "4  Policy",
+    "section": "",
+    "text": "4.1 Summary\nThis section will look at New York City, USA as a case study city, with their the OneNYC 2050 strategy’s goal to achieve “A Liveable Climate”. Like most dense urban areas, New York City (NYC) is also facing the problems of warmer urban temperatures than its rural and suburban neighborhoods. Given growing events of higher frequency, longer lasting and more intense heat waves, this section will focus on one of NYC’s experiencing climate threats of Extreme Heat.\nThe OneNYC 2050: Building a Strong and Fair City is a long term strategic plan compromised of 8 goals and 30 initiatives. It frames its climate resilience goal under “A Livable Climate” recognising extreme heat as one of its major climate threats. Initiative 21 is directly relevant to the extreme heat challenge, envisioning community level interventions that aims to reduce vulnerability to climate impacts such as rising temperatures.\nOneNYC has stated extreme heat to be one of its “number one cause of mortality from weather conditions” (OneNYC 2050, p.32). Also known as the Urban Heat Island (UHI) effect, is a challenge that is widely faced by many cities globally. These neighborhoods tends to have concentrations dark surfaces from built structures, concrete and asphalt that absorbs and retain solar radiation throughout the day, while having limited green space to facilitate natural cooling through evapotranspiration and solar shading. The NYC has also identified limited access to air conditioning, energy costs and poor housing quality as drivers of such heat impacts (Nyc.gov, 2019).\n“All heat deaths are preventable” (Nyc.gov, 2019). The OneNYC uses the Heat Vulnerability Index to identify neighborhoods that are more at risk following extreme heat. The risks are not evenly distributed across the city, where South Bronx, Central Brooklyn and Upper Manhattan are highlighted as the city’s most heat vulnerable neighborhoods.\nIn action, the OneNYC strategy supports scientific based decision-making, and is commited to ensure that policies and physical actions are protective and cost effective. It is commited to intervene through a range of nature-based and built solutions, such as promoting urban forests efforts to combat extreme heat, installation of cool roofs to lower local temperatures and mitigate the health impacts from UHI as well as further green infrastructure investments.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
+    ]
+  },
+  {
+    "objectID": "policy.html#summary",
+    "href": "policy.html#summary",
+    "title": "4  Policy",
+    "section": "",
+    "text": "Relevant Initiatives, Source: OneNYC 2050\n\n\nA Livable Climate Obejectives, OneNYC 2050\n\n\n\n\n\nAchieve carbon neutrality and 100 percent clean electricity\nA LIVABLE CLIMATE Strengthen communities, buildings, infrastructure, and the waterfront to be more resilient\nCreate economic opportunities for all New Yorkers through climate action\nFight for climate accountability and justice\n\n\n\n\n\n\n\n\n\n\n\nUHI, Source: EARTH.ORG\n\n\n\n\n\n\n\n\n\n\n\n\nHVI (Data Source: EJNYC Full Data Explorer )",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
+    ]
+  },
+  {
+    "objectID": "policy.html#application",
+    "href": "policy.html#application",
+    "title": "4  Policy",
+    "section": "4.2 Application",
+    "text": "4.2 Application\n\n4.2.1 Data\nLand surface temperature (LST) obtained from sensors are particularly useful for identifying the spatial pattern of surface heat across neighborhoods and for monitoring how interventions change surface temperatures over time. The following are commonly used for measuring urban heat:\n\nLandsat 8-9 Collection 2 Level 2 Operational Land Imager (OLI), Thematic Mapper (TM), Enhanced Thematic Mapper (ETM+), Thermal Infrared Sensor (TIRS)\n\nHigh spatial resolution; Consistent data for long-term monitoring\n\n\nLow temporal resolution; Unable to penetrate through clouds\n\nTerra and/or Aqua, MODIS\n\nHigh temporal resolution (1-2 days)\n\n\nCoarse spatial resolution may not be suitable for heterogeneous (mixed-used) urban environments; Unable to penetrate through clouds\n\nECOSTRESS\n\nLST observations can be made continuously and during day and night; Can identify areas of at-risk ‘hot spots’; Atmospheric Corrected\n\n\nUnable to penetrate through clouds\n\nSOLWEIG\nRequires elevation models, land cover data, and meteorological data (air temperature, relative humidity, barometric pressure, wind speed, wind direction, and downward shortwave radiation)\n\nTemperature can be modeled per square meter every 3 hours and outputs can be compared to low and high density urban areas\n\n\nMeterological data are often unavailable in spatially continuous form (raster data)\n\nSource: MODIS , Zhou et. al., 2019 , Solecki et.al., 2015 , Hantson, 2013 , MacLachlan et al., 2021\n\n\n\n4.2.2 Addressing Policy Challenge\nThis hits a common limitation of metropolitan policy documents, which tend to set strategic direction but lack local level specifities towards heat reduction targets (MacLachlan et al., 2021). OneNYC incoporates UHI into strategies, the following key UHI related objectives from initiative 21 can be potentially be addressed through remotely sensing evidences:\n\nSources: Ahmad, 2025 , Mushore et.al., 2023 , Boanni et.al., 2025 , Environment & Health , NYC Open Data\n\n\nObjectives\nApplication\nMethodology\nRemotely Sensing Data\n\n\n\n\nAdvance nature-based solutions to mitigate physical risks posed by climate change (e.g. urban forests)\nIdentify seasonal UHI trends to inform strategic planning and target areas that would benefit most from enhanced greenery systems (e.g. areas with high LST but low vegetation)\nCalculate LST from TIRS spectral bands 10 and 11 using NDVI, Land Surface Emissivity (LSE) and Brightness Temperature (BT)\nLandsat 8-9\n\n\nPromote climate health preparedness for heat-vulnerable New Yorkers (e.g. cool roofs)\nUnderstand and monitor spatialtemporal performances and trends of reflective coated cool roofs, to target areas (e.g. high roof concentrations but poor thermal performance) for implementation\nIdentify hotspots using LST and compare LST trends before and after implementation\nLandsat 8-9\n\n\nStudy emerging climate impacts to better understand NYC’s built environment and communities\nIdentify locations of heat vulnerability (e.g. Heat Vulnerability Index; Surface Heat Assessment)\nLST / LST prediction assessed through Universal Thermal Comfort Index (UTCI)\nLiDAR; ECOSSTRESS; Landsat 8-9\n\n\nContinue to refine the climate resiliency design guidelines\nNot Applicable via Remote Sensing\n-\n-\n\n\n\n\n\n4.2.3 Limitations and Integrated Approaches\nSatellite thermal infrared data measures physical surface heat, not the street level air temperature humans actually experience, so it may overlook areas where extreme heat can cause deaths (Shandas et.al., 2019). Integrating satellite data with ground-based measurements that is fairly distributed across the city can strengthen monitoring and improves accuracy, especially in neighborhoods with higher heat vulnerability (Mushore et.al., 2023 ; Solecki et.al., 2015).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
+    ]
+  },
+  {
+    "objectID": "policy.html#reflection",
+    "href": "policy.html#reflection",
+    "title": "4  Policy",
+    "section": "4.3 Reflection",
+    "text": "4.3 Reflection\nThis section deepened my understanding of policy and remotely sensing data’s role in addressing urban climate challenges. Remotely sensing data provides spatial evidence that bridges between policy objectives and decision-makings. This allowed translation of visionary strategies into actionable solutions.\nMetropolitan policies tends to provide an overall vision for actions, governance and long-term goals, rather than technical implementation details. The OneNYC identified extreme heat as a priority threat and named vulnerable neighborhoods, but did not specify how spatial evidence should be used to guide action.\nMany studies relied on satellite-based thermal infrared (TIR) data. A key insight is that it could be a limitation, as it captures purely surface temperature but not the temperature that humans experience at street level. This matters in dense neighborhoods where the urban form shapes heat exposure and health risk. Ground-based measurements enables observations of variation of temperature across different land uses and land covers, providing a more throughout assessment of urban heat across the city. Critically, this method is more expensive and resource intensive for a large installation coverage.\nWhat remains uncertain is whether the political and institutional conditions exist to translate spatial evidence into action. Mushore et.al. (2023) note that urban greening strategies need to scaled up at municipal scale to be economically viable, which requires coordination across all boroughs and political support. OneNYC 2050 aligns with the UNEP Beat the Heat Handbook and to SDGs 3, 11 and 13, but alignment with global frameworks does not mean local implementations Ultimately, success depends on long term stakeholder collaboration and the technical and economic capacity to turn spatial evidence into equitable, actionable solutions.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
+    ]
+  },
+  {
+    "objectID": "policy.html#reference",
+    "href": "policy.html#reference",
+    "title": "4  Policy",
+    "section": "4.4 Reference",
+    "text": "4.4 Reference\nOneNYC 2050 Strategic Plan (A Liveable Climate at page 229) Online PDF: https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Policy</span>"
+    ]
+  },
+  {
+    "objectID": "gee.html",
+    "href": "gee.html",
+    "title": "\n5  Google Earth Engine\n",
+    "section": "",
+    "text": "5.1 Summary\nThis section will look at using Google Earth Engine (GEE), a geospatial analysis platform where remotely sensing satellite imagery is stored. It allows us to process and analyse large data sets more efficiently. The following will be using Delhi, India as a study area for exploring GEE data processing methods. Data is filtered to the 2021-06-01 to 2022-10-10 date period.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "gee.html#summary",
+    "href": "gee.html#summary",
+    "title": "\n5  Google Earth Engine\n",
+    "section": "",
+    "text": "5.1.1 Introduction to GEE\nThe below sums up the interface on GEE platform, where all the coding for processing and analysis takes place. In GEE, it employs a client-server architecture. Earth engine objects can be easily identified as a “proxy object” with anything starting with ee on clients side, where the local environment interacts and communicates with the server.\n\n\n\n\n\nGEE Code Editor Interface (Source: )\n\n\n\n\n\n5.1.2 Scale Factor\nScale factor\nThe below will list scale factor math functions for most commonly used satellite sensors:\n\nSource: Earth Engine Data Catalouge\n\n\nSatellite\nMath Function\n\n\n\nLandsat 8 and 9 (Collection 2)\n\nMultiply by 0.0000275 and add -0.2 (Optical Bands)\nMultiply by 0.00341802 and add 149.0 (Thermal Bands)\n\n\n\nSentinel 2\nMultiply by 0.0001\n\n\nMODIS\nMultiply by 0.0001\n\n\n\n5.1.3 Filtering Image Collections (Reducer/ Reducing)\nThe reducing method ( ee.Reducer ) are commonly used to aggregate pixel values using mean, median, sum or percentiles.\nTo summarise pixel values within\n\nimage.reduceRegion, one region, suitable for NDVI, rainfall, etc.\nimage.reduce.Regions, multiple regions, suitable for land use cover\nimage.reduce.Neighbourhood, within the neighbourhood, suitable for terrain texture processing\n\nTaking the median out of a stack of images is often the most common practice as it provides a simple and quite reliable summary of a time series data. However, its is also just a “good enough” approach and does not necessarily be the most suitable approach. In some cases, considering using percentiles maybe a more sensible approach than median. Selecting a higher percentile such as the 75th to 90th percentile range may better capture conditions and interpret more meaningful results.\n\nA good practice I will always adopt is to apply the Scale Factor first, reducing image by region(s) or neighbourhood, then take the mean (when there is a few images) or median (when there is a big stack of images) depending on the volume of images obtained.\n\n\n\n\n\n\nReducer (Source: GEE Tutorials )\n\n\n\n\n\n5.1.4 Benefits and Limitations\n\nSource: Amani et. al., 2020\n\n\n\nBenefits\nLimitations\n\n\n\nCloud-based Platform\n\nFree for non-commercial use\nProcess remotely sensing data across large spatial and temporal scales\nFast filtering and sorting allows easier search in large image collections\nAble to share scripts and workflows\n\n\nDepend on internet access, cannot be used offline\nTakes longer to download processed data\n\n\n\nData sets and Data Pre-processing\n\nLarge catalog of data sets (Landsat, Sentinel, MODIS, etc.)\nPre-processed data sets available\nClient side can upload, store and share data sets\nAvailable derivative products (e.g. NDVI)\n\n\nAnalysis maybe limited to available tools within GEE\nSAR phase data are not supported, limiting Polarimetric SAR and InSAR applications\n\n\n\nFunction and Analysis Methods\n\nSupport standard remote sensing and geospatial workflows\nMany available image processing functions: geometric operations, machine learning, classification, visualisation\n\n\nLimited number of classification and regression algorithms available\nAdvanced deep learning models have to be conducted outside GEE\nLimited amount of samples / features within classification methods",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "gee.html#applications",
+    "href": "gee.html#applications",
+    "title": "\n5  Google Earth Engine\n",
+    "section": "\n5.2 Applications",
+    "text": "5.2 Applications\n\n5.2.1 Study Area: Delhi, India\n\n5.2.1.1 Texture\nThe GLCM texture highlighted high reflectance areas of urban land uses, industrial activities\n\n\n\n\n\nGLCM Texture\n\n\n\n\n\n5.2.1.2 PCA\nGEE is also capable for conducting PCA analysis, but slightly more complex than doing it through R. Looking at the list of PCA values, the first 2 values answered around 93% of total variance of the study area. Therefore, combining these two bands, it is able to distinguish most land types within our study area.\n\n\nList (21 elements)\n0: 79.86\n1: 13.33\n2: 4.33\n3: 2.03\n4: 0.39\n5: 0.06\n6: 0.00\n......\n\n\n\n\n\n\n\nPCA 1 and 2\n\n\n\n\n\n5.2.1.3 NDVI\nAs discussed in Chapter 3: Correction, NDVI is used as an indicator for vegetation in studies. Also capable for calculating band maths, GEE allows NDVI analysis and even having its own function:\nvar NDVI = clip.normalizedDifference([SR_B5, SR_B4]);\n\n\n\n\n\nNDVI\n\n\n\n\n\n\n\n\n\nNDVI over Time in Delhi\n\n\n\n\nHaving exploring around, I also found that GEE supports plotting graphs of time series data. The above time-series analysis of mean NDVI in Delhi used Landsat 8 Surface Reflectance data between October 2021 to May 2022. Data gaps within the data series maybe due to data selection of &lt; 10% cloud cover. This figure captures seasonal differences of vegetation, offering insights of agricultural cycle and climate conditions in Delhi. The fluctuations of vegetation conditions peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise of NDVI values March, which maybe due to atmospheric noise of data rather than reflecting vegetation conditions? It continues to decline in May (hottest month of the year in Delhi) and thereafter.\nGEE Code for this practical can be found here.\n\n5.2.2 Applications of GEE in Research\nGEE is very extensive when it comes to research. The following shows a range of applications that GEE supports as well as satellite and sensors that are most commonly used with GEE:\n\n\n\n\n\nGEE Applications (Source: Amani et. al., 2020)\n\n\n\n\n\n\n\n\n\nSatellites and Sensors with GEE (Source: Velastegui-Montoya et.al., 2023 )",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "gee.html#reflection",
+    "href": "gee.html#reflection",
+    "title": "\n5  Google Earth Engine\n",
+    "section": "\n5.3 Reflection",
+    "text": "5.3 Reflection\nSwitching from manual data pre-processing in QGIS and SNAP to GEE has really been a massive upgrade in saving time and really easing off the computational complexity.\nThis week provided a good opportunity to delve in both JavaScript and GEE as a new language and new tool. I found exploring through Google Earth Engine webpage particularly insightful, offering ready-made code, concept explanations, and analysis guides that is easily accessible and user friendly for a first time user. I found it particularly useful that we can easily clip spatial boundary and adding analysis outputs as map layers. The adjustable transparency in each layers was one of the things I liked most so far, as it allows comparison against Google’s base map, observing the accuracy of data visually.\nDespite, it has also raise my awareness of limitations. GEE is implying a noncommercial quota tier in April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly affect future project work progresses. I also found the fact that GEE does not support markdown style cell-by-cell execution, makes catching error harder and most importantly may use up my precious quotas if I run the code too many times. Although GEE’s cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which may ocassionally be a problem.\nI have touched upon Google Earth before in my undergraduate field trip in Porto, Portugal for site analysis purposes. It was really useful back then for identifying features within the site, understanding the surrounding context, and getting a brief understanding of the site upon arrival. Yet, Google Earth is more of a passive observational tool, and so building on that, this week’s learning of GEE gave me flashbacks from my previous studies. Still using a Google served platform, but able to delve deeper in remotely sensing applications.\nOverall, GEE provided more opportunities for advanced geospatial applications, I am excited to use GEE to do more cool analysis in the near future!",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "gee.html#references",
+    "href": "gee.html#references",
+    "title": "\n5  Google Earth Engine\n",
+    "section": "\n5.4 References",
+    "text": "5.4 References",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Google Earth Engine</span>"
+    ]
+  }
+]

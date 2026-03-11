@@ -103,7 +103,7 @@ The GLCM texture highlighted high reflectance areas of urban land uses, industri
 GEE is also capable for conducting PCA analysis, but slightly more complex than doing it through R. Looking at the list of PCA values, the first 2 values answered around 93% of total variance of the study area. Therefore, combining these two bands, it is able to distinguish most land types within our study area.
 
 ```{r, echo=FALSE}
-cat(readLines("gee/pca_values.txt"), sep = "\n")
+cat(readLines("gee/pca.txt"), sep = "\n")
 ```
 
 ::: {layout-ncol="1"}
