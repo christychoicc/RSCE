@@ -16,9 +16,7 @@ The below sums up the interface on GEE platform, where all the coding for proces
 
 ### Scale Factor
 
-Scale factor refers to pixel resolution
-
-The below will list scale factor math functions for most commonly used satellite sensors:
+In GEE, scale refers to pixel resolution. Images are stored in multi-resolution levels in image pyramids, where it selects the resolution level that is closest to our chosen band scale size (e.g. 30 meter pixel for Landsat). The below will list scale factor math functions for most commonly used satellite sensors:
 
 +---------------------------------+------------------------------------------------------------+
 | Satellite                       | Math Function                                              |
