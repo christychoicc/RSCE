@@ -341,6 +341,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./classification-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classification II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -472,7 +478,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>The plot below compares spectral behaviours to capture different surface features. Each band operates at a different wavelength, with Bands 1–7 at 30m resolution and finer at 15m for Band 8. Vegetation shows high reflection in Band 5 NIR and Bands 6–7 SWIR respond to soil moisture and vegetation water content, which is helpful in distinguishing types of land uses (<a href="https://www.researchgate.net/publication/233783774_Sensitivity_studies_of_the_moisture_effects_on_MODIS_SWIR_reflectance_and_vegetation_water_indices">Wang et.al., 2008</a>). These spectral characteristics provided useful insights for understanding our study area before anaylsis. More about Landsat bands: <a href="https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites">USGS</a>.</p>
+<p>The plot below compares spectral behaviours to capture different surface features. Each band operates at a different wavelength, with Bands 1–7 at 30m resolution and finer at 15m for Band 8. Study by <a href="https://www.researchgate.net/publication/233783774_Sensitivity_studies_of_the_moisture_effects_on_MODIS_SWIR_reflectance_and_vegetation_water_indices">Wang et.al.</a> (2008) disussed reflection of SWIR wavelengths responds highly to both soil moisture and leaf water content, where combining NIR and SWIR are useful measures in detecting vegetation moisture conditions, helpful in distinguishing types of land uses. These spectral characteristics provided useful insights for understanding our study area before analysis. More about Landsat bands: <a href="https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites">USGS</a>.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -509,7 +515,7 @@ NDVI = \frac{NIR - Red}{NIR + Red}
 </div>
 </section><section id="texture" class="level3" data-number="3.2.3"><h3 data-number="3.2.3" class="anchored" data-anchor-id="texture">
 <span class="header-section-number">3.2.3</span> Texture</h3>
-<p>Texture captures the spatial relationships between neighbouring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.</p>
+<p>Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.</p>
 <p>Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting textures:</p>
 <p><span class="math display">\[
 \rho = (\text{pixel\_value} \times 0.0000275) - 0.2

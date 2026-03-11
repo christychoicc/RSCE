@@ -2,50 +2,82 @@
 title: "Google Earth Engine"
 ---
 
-This section will look at using Google Earth Engine (GEE), a geospatial analysis platform where remotely sensing satellite imagery is stored. It allows us to analyse data more efficiently. The following will be using Delhi, India as a study area for exploring GEE data processing methods. Data is filtered to the 2021-06-01 to 2022-10-10 date period.
+This section will look at using Google Earth Engine (GEE), a geospatial analysis platform where remotely sensing satellite imagery is stored. It allows us to process and analyse large data sets more efficiently. The following will be using Delhi, India as a study area for exploring GEE data processing methods. Data is filtered to the 2021-06-01 to 2022-10-10 date period.
 
 ## Summary
 
 ### Introduction to GEE
 
-::: {layout-ncol="1"}
-![GEE Platform (Source: )](images/w6_images/gee_platform.png){alt="UHI, Source: EARTH.ORG"}
-:::
+The below sums up the interface on GEE platform, where all the coding for processing and analysis takes place. In GEE, it employs a client-server architecture. Earth engine objects can be easily identified as a "proxy object" with anything starting with `ee` on clients side, where the local environment interacts and communicates with the server.
 
-Server vs Client
+::: {layout-ncol="1"}
+![GEE Code Editor Interface (Source: )](images/w6_images/gee_platform.png){alt="UHI, Source: EARTH.ORG"}
+:::
 
 ### Scale Factor
 
+Scale factors
+
+The below will list scale factor math functions for most commonly used satellite sensors.
+
++--------------------------------+------------------------------------------------------+
+| Satellite                      | Math Function                                        |
++================================+======================================================+
+| Landsat 8 and 9 (Collection 2) | Multiply by 0.0000275 and add -0.2 (Optical Bands)   |
+|                                |                                                      |
+|                                | Multiply by 0.00341802 and add 149.0 (Thermal Bands) |
++--------------------------------+------------------------------------------------------+
+| Sentinel 2                     | Multiply by 0.0001                                   |
++--------------------------------+------------------------------------------------------+
+| MODIS                          | Multiply by 0.0001                                   |
++--------------------------------+------------------------------------------------------+
+
+: Source: [Earth Engine Data Catalouge](https://developers.google.com/earth-engine/datasets)
+
 ### Filtering Image Collections (Reducer/ Reducing)
 
-The reducing method ee.Reducer()
+The reducing method was commonly used to aggregate pixel values.
+
+A good practice I will always adopt is to apply the Scale Factor first, then take the mean (when there is a few images) or Median (when there is a big stack of images) depending on the volume of images obtained.
 
 ::: {layout-ncol="1"}
 ![Reducer (Source: [GEE Tutorials](https://google-earth-engine.com/Interpreting-Image-Series/Filter-Map-Reduce/) )](images/w6_images/ee.reducer.median.png){alt="UHI, Source: EARTH.ORG"}
 :::
 
+Summary Limitations
+
+GEE speeds up and simplfies processing processes but to another extent, it
+
 ## Applications
 
-zoom in 1 = entire world
+### Study Area: Delhi, India
 
-zoom in 10 = city level
+#### Texture
 
-zoom in 20 = buildings
-
-Load in Landsat 9 –\> obtained 6 images –\> too little
-
-So load Landsat 8 –\> more images –\> ok use
+The GLCM texture highlighted high reflectance areas of urban land uses, industrial activities and ......
 
 ::: {layout-ncol="1"}
 ![GLCM Texture](images/w6_images/texture.png){alt="UHI, Source: EARTH.ORG"}
 :::
 
+#### PCA
+
+GEE is also capable for conducting PCA analysis, but slightly more complex than doing it through R. Looking at the list of PCA values, the first 2 values answered around 93% of total variance of the study area. Therefore, combining these two bands, it is able to distinguish most land types within our study area.
+
+```{r, echo=FALSE}
+cat(readLines("gee/pca_values.txt"), sep = "\n")
+```
+
 ::: {layout-ncol="1"}
 ![PCA 1 and 2](images/w6_images/PCA_1_2.png){alt="UHI, Source: EARTH.ORG"}
 :::
 
-```{r, echo=FALSE}
-cat(readLines("gee/pca_values.txt"), sep = "\n")
+#### NDVI 
+
+As discussed in Chapter 3: Correction, NDVI is used as an indicator for vegetation in studies. Also capable for calculating band maths, GEE allows NDVI analysis and even having its own function:
+
+``` JavaScript
+var NDVI = clip.normalizedDifference([SR_B5, SR_B4]);
 ```
 
 ::: {layout-ncol="1"}
@@ -56,10 +88,28 @@ cat(readLines("gee/pca_values.txt"), sep = "\n")
 ![NDVI over Time in Delhi](images/w6_images/ee-chart.png){alt="UHI, Source: EARTH.ORG"}
 :::
 
-Time-series analysis of mean NDVI in Delhi extracted November 2021 to May 2022 using Landsat 8 Surface Reflectance. Data gaps within the data series maybe due to data selection of \< 10% cloud cover. This figure captures seasonal differences of vegetation, offering insights of agricultural cycle and climate conditions in Delhi. The fluctuations of vegetation conditions peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise of NDVI values March, which maybe due to atmospheric noise of data rather than reflecting vegetation conditions? It continues to decline in May (hottest month of the year in Delhi) and thereafter.
+Having exploring around, I also found that GEE supports plotting graphs of time series data. The above time-series analysis of mean NDVI in Delhi used Landsat 8 Surface Reflectance data between October 2021 to May 2022. Data gaps within the data series maybe due to data selection of \< 10% cloud cover. This figure captures seasonal differences of vegetation, offering insights of agricultural cycle and climate conditions in Delhi. The fluctuations of vegetation conditions peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise of NDVI values March, which maybe due to atmospheric noise of data rather than reflecting vegetation conditions? It continues to decline in May (hottest month of the year in Delhi) and thereafter.
+
+GEE Code for this practical can be found [here](https://code.earthengine.google.com/ff0bb6c3b77cf5aab59fd6f18da05f03).
+
+### Applications of GEE in Research
+
+::: {layout-ncol="1"}
+![GEE Applications (Source: [Amani et. al., 2020](https://www.researchgate.net/figure/GEE-applications-LC-Land-Cover_fig8_344056372))](images/w6_images/gee_applications.png){alt="UHI, Source: EARTH.ORG"}
+:::
+
+::: {layout-ncol="1"}
+![Satellites and Sensors with GEE (Source: [Velastegui-Montoya et.al., 2023](https://www.mdpi.com/2072-4292/15/14/3675) )](images/w6_images/satellite_sensors_most_mentioned_in_publications_gee_2011_22.jpg){alt="UHI, Source: EARTH.ORG"}
+:::
 
 ## Reflection
 
-Switching from manual data pre-processing in QGIS and SNAP to GEE has been a massive upgrade in saving time and really easing off the computational complexity.
+Switching from manual data pre-processing in QGIS and SNAP to GEE has really been a massive upgrade in saving time and really easing off the computational complexity. This week provided a strong foundation in both JavaScript and GEE as a new language and new tool. I found exploring through Google Earth Engine webpage particularly insightful, offering ready-made code, concept explanations, and analysis guides that is surprisingly accessible and able understand quickly as a first time user. I also discovered the ability to load shapefiles and clip them to a study boundary directly within GEE — a functionality I was previously unaware of. Another benefit of GEE I found especially useful is the ability to add analysis outputs as map layers, with adjustable transparency, allowing comparison against Google's basemap for a quick visual check.
+
+That said, there are notable limitations. GEE is impying a noncommercial quota tier in April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly affect future project works. The platform does not support markdown style cell-by-cell execution, making step-by-step debugging less intuitive compared to notebook environments and most importantly using up my quotas if I run the code too much. As a cloud-based platform, it means that it is entirely dependent on stable internet connection, which makes offline working impossible.
+
+I have touched upon Google Earth before in my undergraduate field trip in Porto, Portugal for site analysis purposes. It was really useful back then for getting a brief understanding of the site upon arrival for on site qualitative assessments, especially when the study area is abroad. This week's learning have taken site anaylsis to a deeper level, especially how spatial patterns changes over time. I also played around with timelapse......
+
+Overall, GEE provided more opportunities for advanced geospatial applications, I am excited to use GEE to do more cool analysis in the near future!
 
 ## References
