@@ -74,7 +74,7 @@ cat(readLines("gee/pca_values.txt"), sep = "\n")
 
 #### NDVI 
 
-As discussed in Chapter 3: Correction, NDVI is used as an indicator for vegetation in studies. Also capable for calculating band maths, GEE allows NDVI analysis and even having its own function:
+As discussed in [Chapter 3: Correction](https://christychoicc.github.io/RSCE/correction.html), NDVI is used as an indicator for vegetation in studies. Also capable for calculating band maths, GEE allows NDVI analysis and even having its own function:
 
 ``` JavaScript
 var NDVI = clip.normalizedDifference([SR_B5, SR_B4]);
@@ -104,7 +104,7 @@ GEE Code for this practical can be found [here](https://code.earthengine.google.
 
 ## Reflection
 
-Switching from manual data pre-processing in QGIS and SNAP to GEE has really been a massive upgrade in saving time and really easing off the computational complexity. This week provided a strong foundation in both JavaScript and GEE as a new language and new tool. I found exploring through Google Earth Engine webpage particularly insightful, offering ready-made code, concept explanations, and analysis guides that is surprisingly accessible and able understand quickly as a first time user. I also discovered the ability to load shapefiles and clip them to a study boundary directly within GEE — a functionality I was previously unaware of. Another benefit of GEE I found especially useful is the ability to add analysis outputs as map layers, with adjustable transparency, allowing comparison against Google's basemap for a quick visual check.
+Switching from manual data pre-processing in QGIS and SNAP to GEE has really been a massive upgrade in saving time and really easing off the computational complexity. This week provided a strong foundation in both JavaScript and GEE as a new language and new tool. I found exploring through Google Earth Engine webpage particularly insightful, offering ready-made code, concept explanations, and analysis guides that is surprisingly accessible and able understand quickly as a first time user. Another benefit of GEE I found especially useful is the ability to clip spatial boundary shapefile and adding analysis outputs as map layers, with adjustable transparency that allows comparison against Google's base map for quick visual checks.
 
 That said, there are notable limitations. GEE is impying a noncommercial quota tier in April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly affect future project works. The platform does not support markdown style cell-by-cell execution, making step-by-step debugging less intuitive compared to notebook environments and most importantly using up my quotas if I run the code too much. As a cloud-based platform, it means that it is entirely dependent on stable internet connection, which makes offline working impossible.
 
