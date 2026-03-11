@@ -2,7 +2,7 @@
 title: "Google Earth Engine"
 ---
 
-This section will look at using Google Earth Engine (GEE), a geospatial analysis platform where remotely sensing satellite imagery is stored. It allows us to process and analyse large data sets more efficiently. The following will be using Delhi, India as a study area for exploring GEE data processing methods. Data is filtered to the 2021-06-01 to 2022-10-10 date period.
+This section will look at using Google Earth Engine (GEE), a geospatial analysis platform where remotely sensing satellite imagery is stored. It allows us to process and analyse large data sets more efficiently. The following will be using Delhi, India as a study area for exploring GEE data processing methods, where data is filtered to the 2021-06-01 to 2022-10-10 date period.
 
 ## Summary
 
@@ -16,25 +16,25 @@ The below sums up the interface on GEE platform, where all the coding for proces
 
 ### Scale Factor
 
-Scale factor
+Scale factor refers to pixel resolution
 
 The below will list scale factor math functions for most commonly used satellite sensors:
 
-+--------------------------------+------------------------------------------------------+
-| Satellite                      | Math Function                                        |
-+================================+======================================================+
-| Landsat 8 and 9 (Collection 2) | Multiply by 0.0000275 and add -0.2 (Optical Bands)   |
-|                                |                                                      |
-|                                | Multiply by 0.00341802 and add 149.0 (Thermal Bands) |
-+--------------------------------+------------------------------------------------------+
-| Sentinel 2                     | Multiply by 0.0001                                   |
-+--------------------------------+------------------------------------------------------+
-| MODIS                          | Multiply by 0.0001                                   |
-+--------------------------------+------------------------------------------------------+
++---------------------------------+------------------------------------------------------------+
+| Satellite                       | Math Function                                              |
++=================================+============================================================+
+| Landsat 8 and 9 (Collection 2)  | Multiply by 0.0000275 and add -0.2 (Surface Reflectance)   |
+|                                 |                                                            |
+|                                 | Multiply by 0.00341802 and add 149.0 (Surface Temperature) |
++---------------------------------+------------------------------------------------------------+
+| Sentinel 2                      | Multiply by 0.0001                                         |
++---------------------------------+------------------------------------------------------------+
+| MODIS                           | Multiply by 0.0001                                         |
++---------------------------------+------------------------------------------------------------+
 
-: Source: [Earth Engine Data Catalouge](https://developers.google.com/earth-engine/datasets)
+: Source: [USGS](https://www.usgs.gov/faqs/how-do-i-use-a-scale-factor-landsat-level-2-science-products#:~:text=Frequently%20Asked%20Questions-,How%20do%20I%20use%20a%20scale%20factor%20with%20Landsat%20Level,0.0000275), [Earth Engine Data Catalouge](https://developers.google.com/earth-engine/datasets)
 
-### Filtering Image Collections (Reducer/ Reducing)
+### Filtering Image Collections
 
 The reducing method ( `ee.Reducer` ) are commonly used to aggregate pixel values using mean, median, sum or percentiles.
 
@@ -84,7 +84,7 @@ A good practice I will always adopt is to **apply the Scale Factor first**, **re
 |                                   |                                                                                                                      | -   Limited amount of samples / features within classification methods                 |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
-: Source: [Amani et. al., 2020](https://www.researchgate.net/figure/GEE-applications-LC-Land-Cover_fig8_344056372)
+: Source: [Amani et. al., 2020](https://www.researchgate.net/figure/GEE-applications-LC-Land-Cover_fig8_344056372), [CASA0023](https://andrewmaclachlan.github.io/CASA0023/)
 
 ## Applications
 
@@ -132,7 +132,7 @@ GEE Code for this practical can be found [here](https://code.earthengine.google.
 
 ### Applications of GEE in Research
 
-GEE is very extensive when it comes to research. The following shows a range of applications that GEE supports as well as satellite and sensors that are most commonly used with GEE:
+GEE has an extensive application coverage when it comes to research. The following shows a range of applications that GEE supports as well as satellite and sensors that are most commonly used with GEE:
 
 ::: {layout-ncol="1"}
 ![GEE Applications (Source: [Amani et. al., 2020](https://www.researchgate.net/figure/GEE-applications-LC-Land-Cover_fig8_344056372))](images/w6_images/gee_applications.png){alt="UHI, Source: EARTH.ORG"}
@@ -144,11 +144,11 @@ GEE is very extensive when it comes to research. The following shows a range of 
 
 ## Reflection
 
-Switching from manual data pre-processing in QGIS and SNAP to GEE has really been a massive upgrade in saving time and really easing off the computational complexity.
+Switching from manual data pre-processing in QGIS and SNAP to GEE has really been a massive upgrade in saving time and really easing off the computational complexity by a lot .
 
-This week provided a good opportunity to delve in both JavaScript and GEE as a new language and new tool. I found exploring through Google Earth Engine webpage particularly insightful, offering ready-made code, concept explanations, and analysis guides that is easily accessible and user friendly for a first time user. I found it particularly useful that we can easily clip spatial boundary and adding analysis outputs as map layers. The adjustable transparency in each layers was one of the things I liked most so far, as it allows comparison against Google's base map, observing the accuracy of data visually.
+This week provided a good opportunity to delve in both JavaScript and GEE as a new language and new tool. I found exploring through Google Earth Engine webpage particularly insightful, offering ready-made code, concept explanations, and analysis guides that is easily accessible and user friendly for a first time user. I found it particularly useful that we can easily clip spatial boundary, not needed to worry about projections and that analysis outputs can be added as map layers, etc. The adjustable transparency in each layers was one of the things I liked most so far, as it allows comparison against Google's base map, observing the accuracy of data visually.
 
-Despite, it has also raise my awareness of limitations. GEE is implying a noncommercial quota tier in April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly affect future project work progresses. I also found the fact that GEE does not support markdown style cell-by-cell execution, makes catching error harder and most importantly may use up my precious quotas if I run the code too many times. Although GEE's cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which may ocassionally be a problem.
+Despite, it has also raise my awareness of limitations. GEE is implying a noncommercial quota tier from April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly limit intensive workflows through GEE. I also found the fact that GEE does not support markdown style cell-by-cell execution, makes catching error harder and most importantly may use up my precious quotas if I run the code too many times. Although GEE's cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which may ocassionally be a problem.
 
 I have touched upon Google Earth before in my undergraduate field trip in Porto, Portugal for site analysis purposes. It was really useful back then for identifying features within the site, understanding the surrounding context, and getting a brief understanding of the site upon arrival. Yet, Google Earth is more of a passive observational tool, and so building on that, this week's learning of GEE gave me flashbacks from my previous studies. Still using a Google served platform, but able to delve deeper in remotely sensing applications.
 
