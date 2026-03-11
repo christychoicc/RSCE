@@ -2,12 +2,60 @@
 title: "Google Earth Engine"
 ---
 
-This section will look at Google Earth Engine, a geospatial analysis platform where remotely sensing satellite imagery is stored. It allows us to analyse data more efficiently.
+This section will look at using Google Earth Engine (GEE), a geospatial analysis platform where remotely sensing satellite imagery is stored. It allows us to analyse data more efficiently. The following will be using Delhi, India as a study area for exploring GEE data processing methods. Data is filtered to the 2021-06-01 to 2022-10-10 date period.
 
 ## Summary
 
+### Introduction to GEE
+
+::: {layout-ncol="1"}
+![GEE Platform (Source: )](images/w6_images/gee_platform.png){alt="UHI, Source: EARTH.ORG"}
+:::
+
+Server vs Client
+
+### Scale Factor
+
+### Filtering Image Collections (Reducer/ Reducing)
+
+The reducing method ee.Reducer()
+
+::: {layout-ncol="1"}
+![Reducer (Source: [GEE Tutorials](https://google-earth-engine.com/Interpreting-Image-Series/Filter-Map-Reduce/) )](images/w6_images/ee.reducer.median.png){alt="UHI, Source: EARTH.ORG"}
+:::
+
 ## Applications
 
-## Resources
+zoom in 1 = entire world
+
+zoom in 10 = city level
+
+zoom in 20 = buildings
+
+Load in Landsat 9 –\> obtained 6 images –\> too little
+
+So load Landsat 8 –\> more images –\> ok use
+
+::: {layout-ncol="1"}
+![GLCM Texture](images/w6_images/texture.png){alt="UHI, Source: EARTH.ORG"}
+:::
+
+::: {layout-ncol="1"}
+![PCA 1 and 2](images/w6_images/PCA_1_2.png){alt="UHI, Source: EARTH.ORG"}
+:::
+
+::: {layout-ncol="1"}
+![NDVI](images/w6_images/NDVI.png){alt="UHI, Source: EARTH.ORG"}
+:::
+
+::: {layout-ncol="1"}
+![NDVI over Time in Delhi](images/w6_images/ee-chart.png){alt="UHI, Source: EARTH.ORG"}
+:::
+
+Time-series analysis of mean NDVI in Delhi extracted November 2021 to May 2022 using Landsat 8 Surface Reflectance. Data gaps within the data series maybe due to data selection of \< 10% cloud cover. This figure captures seasonal differences of vegetation, offering insights of agricultural cycle and climate conditions in Delhi. The fluctuations of vegetation conditions peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise of NDVI values March, which maybe due to atmospheric noise of data rather than reflecting vegetation conditions? It continues to decline in May (hottest month of the year in Delhi) and thereafter.
+
+## Reflection
+
+Switching from manual data pre-processing in QGIS and SNAP to GEE has been a massive upgrade in saving time and really easing off the computational complexity.
 
 ## References
