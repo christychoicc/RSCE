@@ -1,3 +1,11 @@
 ---
 title: "Classification I"
 ---
+
+## Summary
+
+## Application
+
+## Reflection
+
+Establishing and testing an optimal set of complementary textural data for the best possible increase in land use/cover classification accuracy ([Kupidura, 2019](https://www.mdpi.com/2072-4292/11/10/1233#)).

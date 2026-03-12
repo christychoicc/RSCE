@@ -373,9 +373,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">5.1</span> Summary</a>
   <ul class="collapse">
 <li><a href="#introduction-to-gee" id="toc-introduction-to-gee" class="nav-link" data-scroll-target="#introduction-to-gee"><span class="header-section-number">5.1.1</span> Introduction to GEE</a></li>
-  <li><a href="#scale-factor" id="toc-scale-factor" class="nav-link" data-scroll-target="#scale-factor"><span class="header-section-number">5.1.2</span> Scale Factor</a></li>
-  <li><a href="#filtering-image-collections" id="toc-filtering-image-collections" class="nav-link" data-scroll-target="#filtering-image-collections"><span class="header-section-number">5.1.3</span> Filtering Image Collections</a></li>
-  <li><a href="#benefits-and-limitations" id="toc-benefits-and-limitations" class="nav-link" data-scroll-target="#benefits-and-limitations"><span class="header-section-number">5.1.4</span> Benefits and Limitations</a></li>
+  <li><a href="#data-pre-processing" id="toc-data-pre-processing" class="nav-link" data-scroll-target="#data-pre-processing"><span class="header-section-number">5.1.2</span> Data Pre-processing</a></li>
+  <li><a href="#benefits-and-limitations" id="toc-benefits-and-limitations" class="nav-link" data-scroll-target="#benefits-and-limitations"><span class="header-section-number">5.1.3</span> Benefits and Limitations</a></li>
   </ul>
 </li>
   <li>
@@ -407,25 +406,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>This section will look at using Google Earth Engine (GEE), a geospatial analysis platform where remotely sensing satellite imagery is stored. It allows us to process and analyse large data sets more efficiently. The following will be using Delhi, India as a study area for exploring GEE data processing methods, where data is filtered to the 2021-06-01 to 2022-10-10 date period.</p>
+</header><p>This section will look at using Google Earth Engine (GEE), a geospatial analysis platform where remotely sensing satellite imagery is stored. It allows easy access to high-performance computing resources to process and analyse very large data sets more efficiently. The following will be using Delhi, India as a study area for exploring GEE data processing methods.</p>
 <section id="summary" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="summary">
 <span class="header-section-number">5.1</span> Summary</h2>
 <section id="introduction-to-gee" class="level3" data-number="5.1.1"><h3 data-number="5.1.1" class="anchored" data-anchor-id="introduction-to-gee">
 <span class="header-section-number">5.1.1</span> Introduction to GEE</h3>
-<p>The below sums up the interface on GEE platform, where all the coding for processing and analysis takes place. In GEE, it employs a client-server architecture. Earth engine objects can be easily identified as a “proxy object” with anything starting with <code>ee</code> on clients side, where the local environment interacts and communicates with the server.</p>
+<p>The below sums up the interactive interface on GEE platform, where all the coding for processing and analysis takes place. In GEE, it employs a client-server architecture. Earth engine objects can be easily identified as a “proxy object” with anything starting with <code>ee</code> on clients side, where the local environment interacts and communicates with the server.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/gee_platform.png" class="img-fluid figure-img"></p>
-<figcaption>GEE Code Editor Interface (Source: )</figcaption></figure>
+<figcaption>GEE Interface (Source: )</figcaption></figure>
 </div>
 </div>
 </div>
 </div>
-</section><section id="scale-factor" class="level3" data-number="5.1.2"><h3 data-number="5.1.2" class="anchored" data-anchor-id="scale-factor">
-<span class="header-section-number">5.1.2</span> Scale Factor</h3>
-<p>In GEE, scale refers to pixel resolution. Images are stored in multi-resolution levels in image pyramids, where it selects the resolution level that is closest to our chosen band scale size (e.g.&nbsp;30 meter pixel for Landsat). The below will list scale factor math functions for most commonly used satellite sensors:</p>
+</section><section id="data-pre-processing" class="level3" data-number="5.1.2"><h3 data-number="5.1.2" class="anchored" data-anchor-id="data-pre-processing">
+<span class="header-section-number">5.1.2</span> Data Pre-processing</h3>
+<section id="scale-factor" class="level4" data-number="5.1.2.1"><h4 data-number="5.1.2.1" class="anchored" data-anchor-id="scale-factor">
+<span class="header-section-number">5.1.2.1</span> Scale Factor</h4>
+<p>In GEE, images are pre-processed and cut into 256x256 pixel tiles for fast and efficient access and visualisation (<a href="https://www.sciencedirect.com/science/article/pii/S0034425717302900">Gorelick et.al., 2017</a>). Scale refers to pixel resolution of images. Images are stored in multi-resolution levels in image pyramids, where it selects the spatial resolution that is closest to our chosen band scale (e.g.&nbsp;30 meter pixel for Landsat).</p>
+<p>Raw satellite pixel values are stored as integers to reduce storage size, therefore it needs to be converted to true values with the following math functions. The below lists math functions for most commonly used products:</p>
 <table class="caption-top table">
 <caption>Source: <a href="https://www.usgs.gov/faqs/how-do-i-use-a-scale-factor-landsat-level-2-science-products#:~:text=Frequently%20Asked%20Questions-,How%20do%20I%20use%20a%20scale%20factor%20with%20Landsat%20Level,0.0000275">USGS</a>, <a href="https://developers.google.com/earth-engine/datasets">Earth Engine Data Catalouge</a>
 </caption>
@@ -446,12 +448,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Multiply by 0.0001</td>
 </tr>
 <tr class="odd">
-<td>MODIS</td>
+<td>MODIS (MOD13Q1 NDVI/EVI and MOD13A1 NDVI/EVI)</td>
 <td>Multiply by 0.0001</td>
 </tr>
 </tbody>
-</table></section><section id="filtering-image-collections" class="level3" data-number="5.1.3"><h3 data-number="5.1.3" class="anchored" data-anchor-id="filtering-image-collections">
-<span class="header-section-number">5.1.3</span> Filtering Image Collections</h3>
+</table></section><section id="filtering-image-collections" class="level4" data-number="5.1.2.2"><h4 data-number="5.1.2.2" class="anchored" data-anchor-id="filtering-image-collections">
+<span class="header-section-number">5.1.2.2</span> Filtering Image Collections</h4>
 <p>The reducing method ( <code>ee.Reducer</code> ) are commonly used to aggregate pixel values using mean, median, sum or percentiles.</p>
 <p>To summarise pixel values within</p>
 <ul>
@@ -468,15 +470,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/ee.reducer.median.png" class="img-fluid figure-img"></p>
-<figcaption>Reducer (Source: <a href="https://google-earth-engine.com/Interpreting-Image-Series/Filter-Map-Reduce/">GEE Tutorials</a> )</figcaption></figure>
+<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
 </div>
 </div>
 </div>
 </div>
-</section><section id="benefits-and-limitations" class="level3" data-number="5.1.4"><h3 data-number="5.1.4" class="anchored" data-anchor-id="benefits-and-limitations">
-<span class="header-section-number">5.1.4</span> Benefits and Limitations</h3>
+</section></section><section id="benefits-and-limitations" class="level3" data-number="5.1.3"><h3 data-number="5.1.3" class="anchored" data-anchor-id="benefits-and-limitations">
+<span class="header-section-number">5.1.3</span> Benefits and Limitations</h3>
 <table class="caption-top table">
-<caption>Source: <a href="https://www.researchgate.net/figure/GEE-applications-LC-Land-Cover_fig8_344056372">Amani et. al., 2020</a>, <a href="https://andrewmaclachlan.github.io/CASA0023/">CASA0023</a>
+<caption>Source: <a href="https://www.researchgate.net/figure/GEE-applications-LC-Land-Cover_fig8_344056372">Amani et. al., 2020</a>, <a href="https://www.sciencedirect.com/science/article/pii/S0034425717302900">Gorelick et.al., 2017</a>, <a href="https://andrewmaclachlan.github.io/CASA0023/">CASA0023</a>
 </caption>
 <thead><tr class="header">
 <th></th>
@@ -498,9 +500,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></td>
 </tr>
 <tr class="even">
-<td>Data sets and Data Pre-processing</td>
+<td>Data and Data Pre-processing</td>
 <td><ul>
 <li><p>Large catalog of data sets (Landsat, Sentinel, MODIS, etc.)</p></li>
+<li><p>Up-to-date data, with close to 6,000 new scenes daily from ongoing missions, and most imagery available within 24 hours of acquisition</p></li>
 <li><p>Pre-processed data sets available</p></li>
 <li><p>Client side can upload, store and share data sets</p></li>
 <li><p>Available derivative products (e.g.&nbsp;NDVI)</p></li>
@@ -527,15 +530,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">5.2</span> Applications</h2>
 <section id="study-area-delhi-india" class="level3" data-number="5.2.1"><h3 data-number="5.2.1" class="anchored" data-anchor-id="study-area-delhi-india">
 <span class="header-section-number">5.2.1</span> Study Area: Delhi, India</h3>
+<p>To narrow down to the study area, a level 2 Shapefile from GAD4M and was clipped and filtered to Delhi using <code>.filter('GID_1 == "IND.25_1"');</code> within GEE. Data was filtered to the 2021-06-01 to 2022-10-10 date period.</p>
 <section id="texture" class="level4" data-number="5.2.1.1"><h4 data-number="5.2.1.1" class="anchored" data-anchor-id="texture">
 <span class="header-section-number">5.2.1.1</span> Texture</h4>
-<p>The GLCM texture highlighted high reflectance areas of urban land uses, industrial activities</p>
+<p>Texture analysis is found that it can significantly increase classification accuracy (classification will be covered in next chapter), therefore best practices often combine texture and spectral analysis for obtaining the best results (<a href="https://www.mdpi.com/2072-4292/11/10/1233#">Kupidura, 2019</a>). There are many methods for texture analysis methods, but this section, we will focus on using GLCM in GEE as discussed previously in <a href="https://christychoicc.github.io/RSCE/correction.html#texture">Correction</a>. The following highlighted high reflectance areas of urban land uses, industrial activities…</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/texture.png" class="img-fluid figure-img"></p>
-<figcaption>GLCM Texture</figcaption></figure>
+<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
 </div>
 </div>
 </div>
@@ -561,21 +565,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/PCA_1_2.png" class="img-fluid figure-img"></p>
-<figcaption>PCA 1 and 2</figcaption></figure>
+<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
 </div>
 </div>
 </div>
 </div>
 </section><section id="ndvi" class="level4" data-number="5.2.1.3"><h4 data-number="5.2.1.3" class="anchored" data-anchor-id="ndvi">
 <span class="header-section-number">5.2.1.3</span> NDVI</h4>
-<p>As discussed in <a href="https://christychoicc.github.io/RSCE/correction.html">Chapter 3: Correction</a>, NDVI is used as an indicator for vegetation in studies. Also capable for calculating band maths, GEE allows NDVI analysis and even having its own function:</p>
+<p>As discussed previously in <a href="https://christychoicc.github.io/RSCE/correction.html#normalised-difference-vegetation-index-ndvi">Correction</a>, NDVI is used as an indicator for vegetation in studies. Also capable for calculating band maths, GEE allows NDVI analysis and even having its own function for easy calculation:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> NDVI <span class="op">=</span> clip<span class="op">.</span><span class="fu">normalizedDifference</span>([SR_B5<span class="op">,</span> SR_B4])<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/NDVI.png" class="img-fluid figure-img"></p>
-<figcaption>NDVI</figcaption></figure>
+<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
 </div>
 </div>
 </div>
@@ -585,22 +589,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/ee-chart.png" class="img-fluid figure-img"></p>
-<figcaption>NDVI over Time in Delhi</figcaption></figure>
+<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
 </div>
 </div>
 </div>
 </div>
-<p>Having exploring around, I also found that GEE supports plotting graphs of time series data. The above time-series analysis of mean NDVI in Delhi used Landsat 8 Surface Reflectance data between October 2021 to May 2022. Data gaps within the data series maybe due to data selection of &lt; 10% cloud cover. This figure captures seasonal differences of vegetation, offering insights of agricultural cycle and climate conditions in Delhi. The fluctuations of vegetation conditions peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise of NDVI values March, which maybe due to atmospheric noise of data rather than reflecting vegetation conditions? It continues to decline in May (hottest month of the year in Delhi) and thereafter.</p>
-<p>GEE Code for this practical can be found <a href="https://code.earthengine.google.com/ff0bb6c3b77cf5aab59fd6f18da05f03">here</a>.</p>
+<p>Having exploring around, I also found that GEE supports plotting graphs of time series data, allowing an immediate understanding of an overall vegetation condition of our study area in this case. The above shows a time-series analysis of average NDVI in Delhi. Data gaps within the data series maybe due to data selection of &lt; 10% cloud cover. This figure captures seasonal differences of vegetation, offering insights of agricultural cycle and climate conditions in Delhi. The fluctuations of vegetation conditions peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise of NDVI values March, which maybe due to atmospheric noise of data rather than reflecting vegetation conditions? It continues to decline in May (hottest month of the year in Delhi) and thereafter.</p>
+<p>GEE Code for this practical can be found <a href="https://code.earthengine.google.com/cce3b32f442cce69c5831fa35a99f215">here</a>.</p>
 </section></section><section id="applications-of-gee-in-research" class="level3" data-number="5.2.2"><h3 data-number="5.2.2" class="anchored" data-anchor-id="applications-of-gee-in-research">
 <span class="header-section-number">5.2.2</span> Applications of GEE in Research</h3>
-<p>GEE has an extensive application coverage when it comes to research. The following shows a range of applications that GEE supports as well as satellite and sensors that are most commonly used with GEE:</p>
+<p>GEE are used across an extensive wide discipline when it comes to research applications. The following shows a range of applications that GEE supports as well as the satellite and sensors that are most commonly used with GEE:</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/gee_applications.png" class="img-fluid figure-img"></p>
-<figcaption>GEE Applications (Source: <a href="https://www.researchgate.net/figure/GEE-applications-LC-Land-Cover_fig8_344056372">Amani et. al., 2020</a>)</figcaption></figure>
+<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
 </div>
 </div>
 </div>
@@ -610,7 +614,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/satellite_sensors_most_mentioned_in_publications_gee_2011_22.jpg" class="img-fluid figure-img"></p>
-<figcaption>Satellites and Sensors with GEE (Source: <a href="https://www.mdpi.com/2072-4292/15/14/3675">Velastegui-Montoya et.al., 2023</a> )</figcaption></figure>
+<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
 </div>
 </div>
 </div>
