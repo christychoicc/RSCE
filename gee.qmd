@@ -88,7 +88,7 @@ A good practice I will always adopt is to **apply the Scale Factor first**, **re
 |                               |                                                                                                                                            | -   Limited amount of samples / features within classification methods                 |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
-: Source: [Amani et. al., 2020](https://www.researchgate.net/publication/344056372_Google_Earth_Engine_Cloud_Computing_Platform_for_Remote_Sensing_Big_Data_Applications_A_Comprehensive_Review), [Gorelick et.al., 2017](https://www.sciencedirect.com/science/article/pii/S0034425717302900), [CASA0023](https://andrewmaclachlan.github.io/CASA0023/)
+: Source: @amani2020, @gorelick2017, [CASA0023](https://andrewmaclachlan.github.io/CASA0023/)
 
 ## Applications
 
@@ -98,7 +98,7 @@ To narrow down to the study area, a level 2 Shapefile from GAD4M and was clipped
 
 #### Texture
 
-Texture analysis is found that it can significantly increase classification accuracy (classification will be covered in next chapter), therefore best practices often combine texture and spectral analysis for obtaining the best results ([Kupidura, 2019](https://www.mdpi.com/2072-4292/11/10/1233#)). There are many methods for texture analysis methods, but this section, we will focus on using GLCM in GEE as discussed previously in [Correction](https://christychoicc.github.io/RSCE/correction.html#texture). The following highlighted high reflectance areas of urban land uses, industrial activities...
+Texture analysis is found that it can significantly increase classification accuracy (classification will be covered in next chapter), therefore best practices often combine texture and spectral analysis for obtaining the best results [@kupidura2019]. There are many methods for texture analysis methods, but this section, we will focus on using GLCM in GEE as discussed previously in [Correction](https://christychoicc.github.io/RSCE/correction.html#texture). The following highlighted high reflectance areas of urban land uses, industrial activities...
 
 ::: {layout-ncol="1"}
 ![GLCM Texture](images/w6_images/texture.png)
@@ -141,7 +141,7 @@ GEE Code for this practical can be found [here](https://code.earthengine.google.
 The above covered briefly on the general workflow on different types of operations through GEE. As shown in the figure below, GEE allows taking analysis from simple mathematical functions to more complex image processing and machine learning method, which more on machine learning will be discussed in later chapters.
 
 ::: {layout-ncol="1"}
-![GEE Workflow (Source: [Amani et. al., 2020](https://www.researchgate.net/publication/344056372_Google_Earth_Engine_Cloud_Computing_Platform_for_Remote_Sensing_Big_Data_Applications_A_Comprehensive_Review))](images/w6_images/gee_usage.gif){#reference alt="GEE Workflow"}
+![GEE Workflow, Source: @amani2020](images/w6_images/gee_usage.gif){#reference alt="GEE Workflow"}
 :::
 
 ### Applications of GEE in Research
@@ -149,11 +149,11 @@ The above covered briefly on the general workflow on different types of operatio
 GEE are used across an extensive wide discipline when it comes to research applications. The following sums up a range of applications that GEE supports as well as the satellite products that are most commonly used with GEE:
 
 ::: {layout-ncol="1"}
-![GEE Applications (Source: [Amani et. al., 2020](https://www.researchgate.net/publication/344056372_Google_Earth_Engine_Cloud_Computing_Platform_for_Remote_Sensing_Big_Data_Applications_A_Comprehensive_Review))](images/w6_images/gee_applications.png)
+![GEE Applications, Source: @amani2020](images/w6_images/gee_applications.png)
 :::
 
 ::: {layout-ncol="1"}
-[![Remote Sensing Products Usage in GEE (Source [Velastegui-Montoya et.al, 2023](https://www.mdpi.com/2072-4292/15/14/3675))](images/w6_images/satellite_sensors_most_mentioned_in_publications_gee_2011_22.jpg)](https://www.mdpi.com/2072-4292/15/14/3675)
+[![Remote Sensing Products Usage in GEE, Source: @velastegui-montoya2023](images/w6_images/satellite_sensors_most_mentioned_in_publications_gee_2011_22.jpg)](https://www.mdpi.com/2072-4292/15/14/3675)
 :::
 
 ## Reflection

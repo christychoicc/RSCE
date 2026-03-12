@@ -73,6 +73,257 @@
             "title-short": "Google earth engine",
             "type": "article-journal",
             "volume": "202"
+        },
+        {
+            "DOI": "10.1109/JSTARS.2020.3021052",
+            "author": [
+                {
+                    "family": "Amani",
+                    "given": "Meisam"
+                },
+                {
+                    "family": "Ghorbanian",
+                    "given": "Arsalan"
+                },
+                {
+                    "family": "Ahmadi",
+                    "given": "S.Ali"
+                },
+                {
+                    "family": "Kakooei",
+                    "given": "Mohammad"
+                },
+                {
+                    "family": "Moghimi",
+                    "given": "Armin"
+                },
+                {
+                    "family": "Mirmazloumi",
+                    "given": "S. Mohammad"
+                },
+                {
+                    "family": "Alizadeh Moghaddam",
+                    "given": "Sayyed"
+                },
+                {
+                    "family": "Mahdavi",
+                    "given": "Sahel"
+                },
+                {
+                    "family": "Ghahremanloo",
+                    "given": "Masoud"
+                },
+                {
+                    "family": "Parsian",
+                    "given": "Saeid"
+                },
+                {
+                    "family": "Wu",
+                    "given": "Qiusheng"
+                },
+                {
+                    "family": "Brisco",
+                    "given": "B."
+                }
+            ],
+            "container-title": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+            "id": "amani2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        9,
+                        1
+                    ]
+                ]
+            },
+            "page": "5326-5350",
+            "title": "Google earth engine cloud computing platform for remote sensing big data applications: A comprehensive review",
+            "title-short": "Google earth engine cloud computing platform for remote sensing big data applications",
+            "type": "article-journal",
+            "volume": "13"
+        },
+        {
+            "DOI": "10.1016/j.rse.2017.06.031",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S0034425717302900",
+            "author": [
+                {
+                    "family": "Gorelick",
+                    "given": "Noel"
+                },
+                {
+                    "family": "Hancher",
+                    "given": "Matt"
+                },
+                {
+                    "family": "Dixon",
+                    "given": "Mike"
+                },
+                {
+                    "family": "Ilyushchenko",
+                    "given": "Simon"
+                },
+                {
+                    "family": "Thau",
+                    "given": "David"
+                },
+                {
+                    "family": "Moore",
+                    "given": "Rebecca"
+                }
+            ],
+            "container-title": "Big Remotely Sensed Data: tools, applications and experiences",
+            "id": "gorelick2017a",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        12,
+                        1
+                    ]
+                ]
+            },
+            "page": "18-27",
+            "title": "Google earth engine: Planetary-scale geospatial analysis for everyone",
+            "title-short": "Google earth engine",
+            "type": "article-journal",
+            "volume": "202"
+        },
+        {
+            "DOI": "10.3390/rs11101233",
+            "author": [
+                {
+                    "family": "Kupidura",
+                    "given": "Przemysław"
+                }
+            ],
+            "container-title": "Remote Sensing",
+            "id": "kupidura2019",
+            "issue": "10",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "1233",
+            "title": "The comparison of different methods of texture analysis for their efficacy for land use classification in satellite imagery",
+            "type": "article-journal",
+            "volume": "11"
+        },
+        {
+            "DOI": "10.1109/JSTARS.2020.3021052",
+            "author": [
+                {
+                    "family": "Amani",
+                    "given": "Meisam"
+                },
+                {
+                    "family": "Ghorbanian",
+                    "given": "Arsalan"
+                },
+                {
+                    "family": "Ahmadi",
+                    "given": "S.Ali"
+                },
+                {
+                    "family": "Kakooei",
+                    "given": "Mohammad"
+                },
+                {
+                    "family": "Moghimi",
+                    "given": "Armin"
+                },
+                {
+                    "family": "Mirmazloumi",
+                    "given": "S. Mohammad"
+                },
+                {
+                    "family": "Alizadeh Moghaddam",
+                    "given": "Sayyed"
+                },
+                {
+                    "family": "Mahdavi",
+                    "given": "Sahel"
+                },
+                {
+                    "family": "Ghahremanloo",
+                    "given": "Masoud"
+                },
+                {
+                    "family": "Parsian",
+                    "given": "Saeid"
+                },
+                {
+                    "family": "Wu",
+                    "given": "Qiusheng"
+                },
+                {
+                    "family": "Brisco",
+                    "given": "B."
+                }
+            ],
+            "container-title": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+            "id": "amani2020a",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        9,
+                        1
+                    ]
+                ]
+            },
+            "page": "5326-5350",
+            "title": "Google earth engine cloud computing platform for remote sensing big data applications: A comprehensive review",
+            "title-short": "Google earth engine cloud computing platform for remote sensing big data applications",
+            "type": "article-journal",
+            "volume": "13"
+        },
+        {
+            "DOI": "10.3390/rs15143675",
+            "author": [
+                {
+                    "family": "Velastegui-Montoya",
+                    "given": "Andrés"
+                },
+                {
+                    "family": "Montalván-Burbano",
+                    "given": "Néstor"
+                },
+                {
+                    "family": "Carrión-Mero",
+                    "given": "Paúl"
+                },
+                {
+                    "family": "Rivera-Torres",
+                    "given": "Hugo"
+                },
+                {
+                    "family": "Sadeck",
+                    "given": "Luís"
+                },
+                {
+                    "family": "Adami",
+                    "given": "Marcos"
+                }
+            ],
+            "container-title": "Remote Sensing",
+            "id": "velastegui-montoya2023",
+            "issue": "14",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "3675",
+            "title": "Google earth engine: A global analysis and future trends",
+            "title-short": "Google earth engine",
+            "type": "article-journal",
+            "volume": "15"
         }
     ],
     "project_biblios": [
