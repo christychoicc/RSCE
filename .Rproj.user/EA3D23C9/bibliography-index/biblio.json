@@ -324,6 +324,34 @@
             "title-short": "Google earth engine",
             "type": "article-journal",
             "volume": "15"
+        },
+        {
+            "URL": "https://www.nyc.gov/assets/climate/downloads/pdfs/OneNYC_2050_Strategic_Plan.pdf",
+            "author": [
+                {
+                    "family": "Nyc.gov"
+                }
+            ],
+            "id": "nyc.gov2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "title": "OneNYC 2050, BUILDING a STRONG AND FAIR CITY",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Nyc.gov"
+                }
+            ],
+            "id": "nyc.gov",
+            "title": "Extreme heat",
+            "type": ""
         }
     ],
     "project_biblios": [
