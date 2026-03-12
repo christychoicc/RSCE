@@ -842,6 +842,237 @@
             "id": "geetutorials",
             "title": "Gee-tutorials | interpreting image series |filter map reduce",
             "type": ""
+        },
+        {
+            "URL": "https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/tasseled-cap-function.htm#ESRI_SECTION1_6B9B732A91344B8782F925E4BE4ACA4F",
+            "author": [
+                {
+                    "family": "ArcGIS Pro"
+                }
+            ],
+            "id": "arcgispro",
+            "title": "Tasseled cap functionArcGIS pro | documentation",
+            "type": ""
+        },
+        {
+            "URL": "https://support.esri.com/en-us/gis-dictionary/tasseled-cap-transformation",
+            "author": [
+                {
+                    "family": "ESRI"
+                }
+            ],
+            "id": "esri",
+            "language": "en-us",
+            "title": "Tasseled cap transformation definition | GIS dictionary",
+            "type": ""
+        },
+        {
+            "URL": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-sentinel-2-comparison-sentinel-2-and-landsat",
+            "id": "usgsero2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        7,
+                        16
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "USGS EROS Archive - Sentinel-2 - Comparison of Sentinel-2 and Landsat | U.S. Geological Survey",
+            "type": ""
+        },
+        {
+            "URL": "https://gisgeography.com/sentinel-2-bands-combinations/",
+            "author": [
+                {
+                    "family": "GISGeography"
+                }
+            ],
+            "id": "gisgeography2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        4,
+                        22
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "title": "Sentinel 2 bands and combinations",
+            "type": ""
+        },
+        {
+            "URL": "https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution",
+            "author": [
+                {
+                    "family": "Earth Science Data Systems",
+                    "given": "NASA"
+                }
+            ],
+            "id": "earthsciencedatasystems2025",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025,
+                        12,
+                        18
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Resolution | NASA Earthdata",
+            "type": ""
+        },
+        {
+            "URL": "https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/active-instruments",
+            "author": [
+                {
+                    "family": "Earth Science Data Systems",
+                    "given": "NASA"
+                }
+            ],
+            "id": "earthsciencedatasystems2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        2,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Active Instruments | NASA Earthdata",
+            "type": ""
+        },
+        {
+            "URL": "https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/passive-instruments",
+            "author": [
+                {
+                    "family": "Earth Science Data Systems",
+                    "given": "NASA"
+                }
+            ],
+            "id": "earthsciencedatasystems2021a",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        2,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Passive Instruments | NASA Earthdata",
+            "type": ""
+        },
+        {
+            "URL": "https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/",
+            "author": [
+                {
+                    "family": "ESRI"
+                }
+            ],
+            "id": "esria",
+            "title": "Explore imagery - spectral resolution | documentation",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Tempfli",
+                    "given": "Klaus"
+                },
+                {
+                    "family": "Huurneman",
+                    "given": "G. C."
+                },
+                {
+                    "family": "Bakker",
+                    "given": "Wim"
+                },
+                {
+                    "family": "Janssen",
+                    "given": "L. L. F."
+                },
+                {
+                    "family": "Feringa",
+                    "given": "W. F."
+                },
+                {
+                    "family": "Gieske",
+                    "given": "Ambro"
+                },
+                {
+                    "family": "Grabmaier",
+                    "given": "K. A."
+                },
+                {
+                    "family": "Hecker",
+                    "given": "Christoph"
+                },
+                {
+                    "family": "Horn",
+                    "given": "John"
+                },
+                {
+                    "family": "Kerle",
+                    "given": "Norman"
+                },
+                {
+                    "family": "Meer",
+                    "given": "F. D."
+                },
+                {
+                    "family": "Parodi",
+                    "given": "Gabriel"
+                },
+                {
+                    "family": "Pohl",
+                    "given": "Christine"
+                },
+                {
+                    "family": "Reeves",
+                    "given": "C. V."
+                },
+                {
+                    "family": "Ruitenbeek",
+                    "given": "F. J. A."
+                },
+                {
+                    "family": "Schetselaar",
+                    "given": "Ernst"
+                },
+                {
+                    "family": "Weir",
+                    "given": "Michael"
+                },
+                {
+                    "family": "Westinga",
+                    "given": "Eduard"
+                },
+                {
+                    "family": "Woldai",
+                    "given": "Tsehaie"
+                }
+            ],
+            "id": "tempfli2009",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009,
+                        1,
+                        1
+                    ]
+                ]
+            },
+            "page": "56-85",
+            "title": "Principles of remote sensing : An introductory textbook.",
+            "title-short": "Principles of remote sensing ",
+            "type": "chapter"
         }
     ],
     "project_biblios": [

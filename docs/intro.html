@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -393,7 +413,6 @@ window.Quarto = {
   <li><a href="#tasseled-caps" id="toc-tasseled-caps" class="nav-link" data-scroll-target="#tasseled-caps"><span class="header-section-number">1.2.1</span> Tasseled Caps</a></li>
   </ul></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">1.3</span> Reflection</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">1.4</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -420,21 +439,21 @@ window.Quarto = {
 </header>
 
 
-<p>Remote sensing is not only satellite imagery but a system that allows us to obtain EO data through acquiring information from a distance using sensors on platforms. This section introduces types of sensors and resolutions of remote sensing data. The following study area of Lisboa, Portugal will demonstrate a workflow of analysing Earth Observations (EO) data processed through SNAP and R.</p>
+<p>Remote sensing is not only satellite imagery but a system that allows us to obtain EO data through acquiring information from a distance using sensors on platforms. This section introduces types of sensors and resolutions of remote sensing data. The following study area of Lisbon, Portugal will demonstrate a workflow of analysing Earth Observations (EO) data processed through SNAP and R.</p>
 <section id="summary" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.1</span> Summary</h2>
 <section id="types-of-sensor" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="types-of-sensor"><span class="header-section-number">1.1.1</span> Types of Sensor</h3>
 <p><strong>Passive Sensors</strong> detect energy emitted or reflected from the object by the sun. They mainly operate in the visible, infrared, thermal infrared, and microwave bands of the electromagnetic spectrum, mostly used to measure surface temperature, vegetation properties and other physical attributes. However, passive sensors cannot penetrate dense cloud cover, limiting areas with higher cloud rates.</p>
 <p><strong>Active Sensors</strong> emits energy and collect data based on changes in the return signal. Most active sensors have higher capabilities to penetrate atmospheric conditions. For example, the Synthetic Aperture Radar (SAR), has the ability to “see through cloud” as it operates with comparably longer wavelengths, allowing data collections during night hours. This allows them to be less dependent on sunlight which better handles atmospheric constraints.</p>
-<p>Overall, observations are shaped by the electromagnetic spectrum and its interactions between radiation, atmosphere, and Earth’s surface, where radiation can be absorbed, transmitted, or scattered (Tempfli <em>et al.</em>, 2009). To mitigate atmospheric scattering in imagery, atmospheric correction can be applied to remove these effects.</p>
+<p>Overall, observations are shaped by the electromagnetic spectrum and its interactions between radiation, atmosphere, and Earth’s surface, where radiation can be absorbed, transmitted, or scattered <span class="citation" data-cites="tempfli2009">(<a href="references.html#ref-tempfli2009" role="doc-biblioref">Tempfli et al. 2009</a>)</span>. To mitigate atmospheric scattering in imagery, atmospheric correction can be applied to remove these effects.</p>
 <div id="Fig_Passive_Active_Sensors" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w1_images/passive-instrument-illustration.png" class="img-fluid figure-img"></p>
-<figcaption>Passive Sensor (Source: <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/passive-instruments#:~:text=Unlike%20active%20instruments%2C%20which%20emit,emitted%20from%20the%20natural%20environment.&amp;text=Credit%3A%20NASA%20Earthdata.,in%20NASA%20Earth%20science%20data">NASA EARTHDATA</a>)</figcaption>
+<figcaption>Passive Sensor, Source: <span class="citation" data-cites="earthsciencedatasystems2021a">Earth Science Data Systems (<a href="references.html#ref-earthsciencedatasystems2021a" role="doc-biblioref">2021b</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -442,7 +461,7 @@ window.Quarto = {
 <div id="reference" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/w1_images/active-instrument-illustration.png" class="img-fluid figure-img"></p>
-<figcaption>Active Sensor (Source: <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/active-instruments#:~:text=Active%20instruments%20send%20out%20a,the%20atmosphere%20under%20most%20conditions">NASA EARTHDATA</a>)</figcaption>
+<figcaption>Active Sensor, Source: <span class="citation" data-cites="earthsciencedatasystems2021">Earth Science Data Systems (<a href="references.html#ref-earthsciencedatasystems2021" role="doc-biblioref">2021a</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -453,7 +472,7 @@ window.Quarto = {
 <h3 data-number="1.1.2" class="anchored" data-anchor-id="types-of-resolution"><span class="header-section-number">1.1.2</span> Types of Resolution</h3>
 <section id="spatial-resolution" class="level4" data-number="1.1.2.1">
 <h4 data-number="1.1.2.1" class="anchored" data-anchor-id="spatial-resolution"><span class="header-section-number">1.1.2.1</span> Spatial Resolution</h4>
-<p>The size of the raster grid cell per pixel, where it can range from metres to kilometres. The spatial resolution scale varies depending on specific observation and reasearch suitability, ranging from highest/finest resolution at 10m for buildings to the lowest/coarse at 100km for a global scale (NASA EARTHDATA).</p>
+<p>The size of the raster grid cell per pixel, where it can range from metres to kilometres. The spatial resolution scale varies depending on specific observation and reasearch suitability, ranging from highest/finest resolution at 10m for buildings to the lowest/coarse at 100km for a global scale.</p>
 </section>
 <section id="spectral-resolution" class="level4" data-number="1.1.2.2">
 <h4 data-number="1.1.2.2" class="anchored" data-anchor-id="spectral-resolution"><span class="header-section-number">1.1.2.2</span> Spectral Resolution</h4>
@@ -468,7 +487,7 @@ window.Quarto = {
 <p><a href="https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/"><img src="images/w1_images/electromagnetic_spectrum.png" class="img-fluid quarto-figure quarto-figure-left figure-img" alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)"></a></p>
 </figure>
 </div>
-<figcaption>Electromagnetic Spectrum and Satellite Sensor Capture Range (Source: [ESRI](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/))</figcaption>
+<figcaption>Electromagnetic Spectrum and Satellite Sensor Capture Range, Source: <span class="citation" data-cites="esria">ESRI (<a href="references.html#ref-esria" role="doc-biblioref">n.d.a</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -477,7 +496,7 @@ window.Quarto = {
 </section>
 <section id="temporal-resolution" class="level4" data-number="1.1.2.3">
 <h4 data-number="1.1.2.3" class="anchored" data-anchor-id="temporal-resolution"><span class="header-section-number">1.1.2.3</span> Temporal Resolution</h4>
-<p>The frequency of a sensor’s revisit in capturing the same observation area. The temporal resolution measurement period can vary from 1 to 16 days depending on the platform (NASA EARTHDATA <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution" class="uri">https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution</a>).</p>
+<p>The frequency of a sensor’s revisit in capturing the same observation area. The temporal resolution measurement period can vary from 1 to 16 days depending on the platform <span class="citation" data-cites="earthsciencedatasystems2025">(<a href="references.html#ref-earthsciencedatasystems2025" role="doc-biblioref">Earth Science Data Systems 2025</a>)</span>.</p>
 </section>
 <section id="radiometric-resolution" class="level4" data-number="1.1.2.4">
 <h4 data-number="1.1.2.4" class="anchored" data-anchor-id="radiometric-resolution"><span class="header-section-number">1.1.2.4</span> Radiometric Resolution</h4>
@@ -488,7 +507,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w1_images/remote-sensing-resolutions.png" class="img-fluid figure-img"></p>
-<figcaption>Remote Sensing Resolutions (Source: <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution">NASA EARTHDATA</a>)</figcaption>
+<figcaption>Remote Sensing Resolutions, Source: <span class="citation" data-cites="earthsciencedatasystems2025">Earth Science Data Systems (<a href="references.html#ref-earthsciencedatasystems2025" role="doc-biblioref">2025</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -499,8 +518,8 @@ window.Quarto = {
 </section>
 <section id="application" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="application"><span class="header-section-number">1.2</span> Application</h2>
-<p><strong>Study Area: Lisboa, Portugal</strong></p>
-<p>Satellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed with SNAP. Selecting the RGB-image it gives the <strong>True Natural Color</strong> combination of B4, B3 and B2. <strong>False Colour Composite</strong> of B8, B4 and B3 highlights healthy and unhealthy vegetation, with denser vegetation visualised as red and urban areas as white. <strong>Atmospheric Penetration</strong> of B12, B11 and B8A composites with no visible bands to penetrate atmospheric particles, highlighting vegetation in blue and urban areas as gray, cyan or purple. More can be found at <a href="https://gisgeography.com/sentinel-2-bands-combinations/">Sentinel 2 Bands and Combinations</a>.</p>
+<p><strong>Study Area: Lisbon, Portugal</strong></p>
+<p>Satellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed with SNAP. Selecting the RGB-image it gives the <strong>True Natural Color</strong> combination of B4, B3 and B2. <strong>False Colour Composite</strong> of B8, B4 and B3 highlights healthy and unhealthy vegetation, with denser vegetation visualised as red and urban areas as white. <strong>Atmospheric Penetration</strong> of B12, B11 and B8A composites with no visible bands to penetrate atmospheric particles, highlighting vegetation in blue and urban areas as gray, cyan or purple. More of Sentinel 2 Bands and Combinations can be found at <span class="citation" data-cites="gisgeography2019">GISGeography (<a href="references.html#ref-gisgeography2019" role="doc-biblioref">2019</a>)</span>.</p>
 <div id="Sentinel_Colour" class="quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
@@ -529,7 +548,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>The scatter plots of Sentinel-2 (B4, B8) and Landsat (B4, B5) showed the spectral relationship between Red and Near-infrared spectral feature space. Both pixel distribution showed low values of NIR absorption for water , low red and high NIR values for vegetation and correlated red and NIR values increases for urban areas, characterizing the land cover composition of Lisboa.</p>
+<p>The scatter plots of Sentinel-2 (B4, B8) and Landsat (B4, B5) showed the spectral relationship between Red and Near-infrared spectral feature space. Both pixel distribution showed low values of NIR absorption for water , low red and high NIR values for vegetation and correlated red and NIR values increases for urban areas, characterizing the land cover composition of Lisbon.</p>
 <div id="Scatterplot" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -552,7 +571,7 @@ window.Quarto = {
 </div>
 <section id="tasseled-caps" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="tasseled-caps"><span class="header-section-number">1.2.1</span> Tasseled Caps</h3>
-<p>Different combinations of multi-spectral bands to examine relationship between the bands, to highlight physical land features. It is commonly used to evaluate <strong>brightness</strong>, <strong>greenness</strong> and <strong>wetness</strong> for monitor vegetation growth cycles, soil and urban development ( reference - <a href="https://support.esri.com/en-us/gis-dictionary/tasseled-cap-transformation" class="uri">https://support.esri.com/en-us/gis-dictionary/tasseled-cap-transformation</a>).</p>
+<p>Different combinations of multi-spectral bands to examine relationship between the bands, to highlight physical land features. It is commonly used to evaluate <strong>brightness</strong>, <strong>greenness</strong> and <strong>wetness</strong> for monitor vegetation growth cycles, soil and urban development <span class="citation" data-cites="esri">(<a href="references.html#ref-esri" role="doc-biblioref">ESRI, n.d.b</a>)</span>.</p>
 <p>Applied Maths Band Equations:</p>
 <p><span class="math display">\[
 \begin{split}Brightness=0.3037(B2) + 0.2793(B3)+\\0.4743(B4)+0.5585(B8)+\\0.5082(B11)+0.1863(B12)\end{split}
@@ -564,7 +583,11 @@ window.Quarto = {
 \begin{split}Wetness=0.1509(B2)+0.1973(B3)\\+0.3279(B4)+0.3406(B8)\\-0.7112(B11)-0.4572(B12)\end{split}
 \]</span></p>
 <table class="caption-top table">
-<caption>Tasseled Cap Functions (Source: <a href="https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/tasseled-cap-function.htm#ESRI_SECTION1_6B9B732A91344B8782F925E4BE4ACA4F">ArcGIS Pro</a>)</caption>
+<caption>Tasseled Cap Functions, Source: <span class="citation" data-cites="arcgispro">ArcGIS Pro (<a href="references.html#ref-arcgispro" role="doc-biblioref">n.d.</a>)</span></caption>
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Tasseled Cap Transformation</th>
@@ -592,14 +615,14 @@ window.Quarto = {
 </tbody>
 </table>
 <p>The below two Sentinel-2 tasseled cap transformed imagery is adjusted for brightness, greenness and wetness between August and December 2025. Although there is no obvious land cover change, the comparisons have visualized some subtle hue changes within certain areas. Blue, red and pink areas of built up urban infrastructure (road networks, airport, coastal piers) and waters remained unchanged, while brown areas depicts the built up urban features. Greenness is distinguished by lighter blue and greens, highlighting areas with higher moisture and humibidity. Overall, vegetation coverage appears equivalent in both seasons</p>
-<p>Despite Lisboa’s Mediterranean climate, there is no fluctuation of seasonal vegetation coverage change. One interesting feature to look at is the Parque Florestal de Monsanto large urban forest, where the vegetation coverage has a very subtle brightness difference between August and December. With a high density of vegetation, the overlay of greenness and wetness detections also visualize moisture levels across time. Moving beyond the subtle variations in the visual interpretations, spectral reflectance across different bands will be looked at next.</p>
+<p>Despite Lisbon’s Mediterranean climate, there is no fluctuation of seasonal vegetation coverage change. One interesting feature to look at is the Parque Florestal de Monsanto large urban forest, where the vegetation coverage has a very subtle brightness difference between August and December. With a high density of vegetation, the overlay of greenness and wetness detections also visualize moisture levels across time. Moving beyond the subtle variations in the visual interpretations, spectral reflectance across different bands will be looked at next.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w1_images/tasseledcaps_sentinel.png" class="img-fluid figure-img"></p>
-<figcaption>Lisboa in August 2025 (Sentinel, Tasseled Cap Transformed)</figcaption>
+<figcaption>Lisbon in August 2025 (Sentinel, Tasseled Cap Transformed)</figcaption>
 </figure>
 </div>
 </div>
@@ -607,7 +630,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w1_images/tasseledcaps_sentinel_1229.png" class="img-fluid figure-img"></p>
-<figcaption>Lisboa in December 2025 (Sentinel, Tasseled Cap Transformed)</figcaption>
+<figcaption>Lisbon in December 2025 (Sentinel, Tasseled Cap Transformed)</figcaption>
 </figure>
 </div>
 </div>
@@ -633,7 +656,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w1_images/dmidS2LS7Comparison.png" class="img-fluid figure-img"></p>
-<figcaption>Spectral Reflectence Bands of Sentinel-2 and Landsat (Source: <a href="https://www.usgs.gov/centers/eros/science/usgs-eros-archive-sentinel-2-comparison-sentinel-2-and-landsat">USGS 2019</a>)</figcaption>
+<figcaption>Spectral Reflectence Bands of Sentinel-2 and Landsat, Source: <span class="citation" data-cites="usgsero2018"><span>“USGS EROS Archive - Sentinel-2 - Comparison of Sentinel-2 and Landsat | U.S. Geological Survey”</span> (<a href="references.html#ref-usgsero2018" role="doc-biblioref">2018</a>)</span></figcaption>
 </figure>
 </div>
 </div>
@@ -643,14 +666,42 @@ window.Quarto = {
 </section>
 <section id="reflection" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">1.3</span> Reflection</h2>
-<p>Beyond capturing Earth’s surface imagery, EO data functions as a powerful measurement tool. This has shifted my perspective from viewing satellite imagery primarily as visual reference material to recognizing it as a quantitative measurement instrument. Interpretation varies significantly depending on band selection, resampling methods, and processing techniques. EO has demonstrated potential for efficiently mapping vast areas for monitoring and early prediction, but this requires careful consideration of cloud coverage, noise, and systematic biases. Lisboa has been a strong study area, as it display features of coastal conditions where atmospheric effects influence satellite reflectance and interpretation. The analysis demonstrated the strength of multispectral signatures, where urban and greenspace land uses can be distinguished through spectral characteristics. Therefore, further understanding atmospheric correction and scattering effects is essential, as cloud coverage and particles redirect radiation, which weakens surface sensing and reducing data quality.</p>
-</section>
-<section id="references" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="references"><span class="header-section-number">1.4</span> References</h2>
-<p>Sentinel Data Source:</p>
-<p><a href="https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/auth?client_id=sh-5f8b630b-b083-49ed-b340-b8f01ecb81c4&amp;redirect_uri=https%3A%2F%2Fbrowser.dataspace.copernicus.eu%2F%3Fzoom%3D5%26lat%3D50.16282%26lng%3D20.78613%26demSource3D%3D%2522MAPZEN%2522%26cloudCoverage%3D30%26dateMode%3DSINGLE&amp;state=26c991f3-8c5e-487e-b23d-d5fe36fbabb7&amp;response_mode=fragment&amp;response_type=code&amp;scope=openid&amp;nonce=c67a4727-3008-4473-8b84-0a9304c87ce3&amp;code_challenge=ZGmOypxnXCivN18EjxS722lF4SDVSsskdcUb_zktYp4&amp;code_challenge_method=S256" class="uri">https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/auth?client_id=sh-5f8b630b-b083-49ed-b340-b8f01ecb81c4&amp;redirect_uri=https%3A%2F%2Fbrowser.dataspace.copernicus.eu%2F%3Fzoom%3D5%26lat%3D50.16282%26lng%3D20.78613%26demSource3D%3D%2522MAPZEN%2522%26cloudCoverage%3D30%26dateMode%3DSINGLE&amp;state=26c991f3-8c5e-487e-b23d-d5fe36fbabb7&amp;response_mode=fragment&amp;response_type=code&amp;scope=openid&amp;nonce=c67a4727-3008-4473-8b84-0a9304c87ce3&amp;code_challenge=ZGmOypxnXCivN18EjxS722lF4SDVSsskdcUb_zktYp4&amp;code_challenge_method=S256</a></p>
+<p>Beyond capturing Earth’s surface imagery, this week’s learning has shown me that EO data can be a powerful measurement tool. I’ve always been aware of satellite imagery accessed through tools like Google Maps, but never understood the underlying mechanics of how it actually works. And so, this week genuinely shifted my perspective of satellite imagery as data. Hearing the term “electromagnetic spectrum” takes me back to a song my GCSE Physics teacher used to show us, which was stuck in my head for a week:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/bjOGNVH3D4Y" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>While EO data showed potential for large-scale environmental monitoring and prediction purposes, interpretation varies significantly depending on band selection, resampling methods, and processing techniques, which may require careful considerations of cloud coverage, noise, and systematic biases.</p>
+<p>Lisbon has been a interesting study area, it displays features of both an urban forest and coastal conditions, where atmospheric effects influence satellite reflectance and interpretation. Furthermore, I remember visiting the Monsanto Forest Park in my GCSE art trip doing sketches, never imagining one day I’d be looking at it it through spectral lenses.</p>
+<p>The above multispectral analysis has demonstrated how urban and green space land uses can be distinguished through their spectral characteristics, which can be a very helpful tool for planning policy practices. However, it does poses limitations of data quality. Therefore, further understanding atmospheric correction and scattering effects is essential, as cloud coverage and particles redirect radiation, which weakens surface sensing and reducing data quality.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-arcgispro" class="csl-entry" role="listitem">
+ArcGIS Pro. n.d. <span>“Tasseled Cap Function<span></span>ArcGIS Pro | Documentation.”</span> <a href="https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/tasseled-cap-function.htm#ESRI_SECTION1_6B9B732A91344B8782F925E4BE4ACA4F">https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/tasseled-cap-function.htm#ESRI_SECTION1_6B9B732A91344B8782F925E4BE4ACA4F</a>.
+</div>
+<div id="ref-earthsciencedatasystems2021" class="csl-entry" role="listitem">
+Earth Science Data Systems, NASA. 2021a. <span>“Active Instruments | NASA Earthdata.”</span> <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/active-instruments">https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/active-instruments</a>.
+</div>
+<div id="ref-earthsciencedatasystems2021a" class="csl-entry" role="listitem">
+———. 2021b. <span>“Passive Instruments | NASA Earthdata.”</span> <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/passive-instruments">https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing/passive-instruments</a>.
+</div>
+<div id="ref-earthsciencedatasystems2025" class="csl-entry" role="listitem">
+———. 2025. <span>“Resolution | NASA Earthdata.”</span> <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution">https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/remote-sensing-resolution</a>.
+</div>
+<div id="ref-esria" class="csl-entry" role="listitem">
+ESRI. n.d.a. <span>“Explore Imagery - Spectral Resolution | Documentation.”</span> <a href="https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/">https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/</a>.
+</div>
+<div id="ref-esri" class="csl-entry" role="listitem">
+———. n.d.b. <span>“Tasseled Cap Transformation Definition | GIS Dictionary.”</span> <a href="https://support.esri.com/en-us/gis-dictionary/tasseled-cap-transformation">https://support.esri.com/en-us/gis-dictionary/tasseled-cap-transformation</a>.
+</div>
+<div id="ref-gisgeography2019" class="csl-entry" role="listitem">
+GISGeography. 2019. <span>“Sentinel 2 Bands and Combinations.”</span> <a href="https://gisgeography.com/sentinel-2-bands-combinations/">https://gisgeography.com/sentinel-2-bands-combinations/</a>.
+</div>
+<div id="ref-tempfli2009" class="csl-entry" role="listitem">
+Tempfli, Klaus, G. C. Huurneman, Wim Bakker, L. L. F. Janssen, W. F. Feringa, Ambro Gieske, K. A. Grabmaier, et al. 2009. <span>“Principles of Remote Sensing : An Introductory Textbook.”</span> In, 56–85.
+</div>
+<div id="ref-usgsero2018" class="csl-entry" role="listitem">
+<span>“USGS EROS Archive - Sentinel-2 - Comparison of Sentinel-2 and Landsat | U.S. Geological Survey.”</span> 2018. <a href="https://www.usgs.gov/centers/eros/science/usgs-eros-archive-sentinel-2-comparison-sentinel-2-and-landsat">https://www.usgs.gov/centers/eros/science/usgs-eros-archive-sentinel-2-comparison-sentinel-2-and-landsat</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
