@@ -406,7 +406,6 @@ div.csl-indent {
   </ul>
 </li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">5.3</span> Reflection</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5.4</span> References</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -438,7 +437,7 @@ div.csl-indent {
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/gee_platform.png" class="img-fluid figure-img"></p>
-<figcaption>GEE Interface (Source: <a href="https://developers.google.com/earth-engine/tutorials/community/beginners-cookbook">Google Earth Engine</a>)</figcaption></figure>
+<figcaption>GEE Interface, Source: <span class="citation" data-cites="googleearthengine2024">Google Earth Engine (<a href="references.html#ref-googleearthengine2024" role="doc-biblioref">2024</a>)</span></figcaption></figure>
 </div>
 </div>
 </div>
@@ -450,8 +449,12 @@ div.csl-indent {
 <p>In GEE, images are pre-processed and cut into 256x256 pixel tiles for fast and efficient access and visualisation <span class="citation" data-cites="gorelick2017">(<a href="references.html#ref-gorelick2017" role="doc-biblioref">Gorelick et al. 2017</a>)</span>. Scale refers to pixel resolution of images. Images are stored in multi-resolution levels in image pyramids, where it selects the spatial resolution that is closest to our chosen band scale (e.g.&nbsp;30 meter pixel for Landsat).</p>
 <p>Raw satellite pixel values are stored as integers to reduce storage size, therefore it needs to be converted to true values with the following math functions. The below lists math functions for most commonly used products:</p>
 <table class="caption-top table">
-<caption>Source: <a href="https://www.usgs.gov/faqs/how-do-i-use-a-scale-factor-landsat-level-2-science-products#:~:text=Frequently%20Asked%20Questions-,How%20do%20I%20use%20a%20scale%20factor%20with%20Landsat%20Level,0.0000275">USGS</a>, <a href="https://developers.google.com/earth-engine/datasets">Earth Engine Data Catalouge</a>
+<caption>Source: <span class="citation" data-cites="usgs">USGS (<a href="references.html#ref-usgs" role="doc-biblioref">n.d.</a>)</span>, <span class="citation" data-cites="earthenginedatacatalouge">Earth Engine Data Catalouge (<a href="references.html#ref-earthenginedatacatalouge" role="doc-biblioref">n.d.</a>)</span>
 </caption>
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
 <thead><tr class="header">
 <th>Satellite</th>
 <th>Math Function</th>
@@ -491,7 +494,7 @@ div.csl-indent {
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/ee.reducer.median.png" class="img-fluid figure-img"></p>
-<figcaption>Reducing (Source: <a href="https://google-earth-engine.com/Interpreting-Image-Series/Filter-Map-Reduce/">GEE Tutorials</a> )</figcaption></figure>
+<figcaption>Reducing (Source: <span class="citation" data-cites="geetutorials">GEE Tutorials (<a href="references.html#ref-geetutorials" role="doc-biblioref">n.d.</a>)</span>)</figcaption></figure>
 </div>
 </div>
 </div>
@@ -660,19 +663,29 @@ div.csl-indent {
 <p>Despite, it has also raise my awareness of limitations. GEE is implying a noncommercial quota tier from April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly limit intensive workflows as a student user. I also found the fact that GEE does not support markdown style cell-by-cell execution makes catching error harder. Although GEE’s cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which may ocassionally be a problem.</p>
 <p>I have touched upon Google Earth before in my undergraduate field trip in Porto, Portugal for site analysis purposes. It was really useful back then for identifying features within the site, understanding the surrounding context, and getting a brief understanding of the site upon arrival. Yet, Google Earth is more of a passive observational tool, and so building on that, this week’s learning of GEE gave me flashbacks from my previous studies. Still using a Google served platform, but able to delve deeper in remotely sensing applications.</p>
 <p>Overall, GEE provided more opportunities for advanced geospatial applications, I am excited to use GEE to do more cool analysis in the near future!</p>
-</section><section id="references" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="references">
-<span class="header-section-number">5.4</span> References</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-amani2020" class="csl-entry" role="listitem">
 Amani, Meisam, Arsalan Ghorbanian, S.Ali Ahmadi, Mohammad Kakooei, Armin Moghimi, S. Mohammad Mirmazloumi, Sayyed Alizadeh Moghaddam, et al. 2020. <span>“Google Earth Engine Cloud Computing Platform for Remote Sensing Big Data Applications: A Comprehensive Review.”</span> <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em> 13 (September): 5326–50. <a href="https://doi.org/10.1109/JSTARS.2020.3021052">https://doi.org/10.1109/JSTARS.2020.3021052</a>.
 </div>
+<div id="ref-earthenginedatacatalouge" class="csl-entry" role="listitem">
+Earth Engine Data Catalouge. n.d. <span>“Earth Engine Data Catalog.”</span> <a href="https://developers.google.com/earth-engine/datasets">https://developers.google.com/earth-engine/datasets</a>.
+</div>
+<div id="ref-geetutorials" class="csl-entry" role="listitem">
+GEE Tutorials. n.d. <span>“Gee-Tutorials | Interpreting Image Series |Filter Map Reduce.”</span> <a href="https://google-earth-engine.com/Interpreting-Image-Series/Filter-Map-Reduce/">https://google-earth-engine.com/Interpreting-Image-Series/Filter-Map-Reduce/</a>.
+</div>
+<div id="ref-googleearthengine2024" class="csl-entry" role="listitem">
+Google Earth Engine. 2024. <span>“Beginner’s Cookbook | Google Earth Engine.”</span> <a href="https://developers.google.com/earth-engine/tutorials/community/beginners-cookbook">https://developers.google.com/earth-engine/tutorials/community/beginners-cookbook</a>.
+</div>
 <div id="ref-gorelick2017" class="csl-entry" role="listitem">
 Gorelick, Noel, Matt Hancher, Mike Dixon, Simon Ilyushchenko, David Thau, and Rebecca Moore. 2017. <span>“Google Earth Engine: Planetary-Scale Geospatial Analysis for Everyone.”</span> <em>Big Remotely Sensed Data: Tools, Applications and Experiences</em> 202 (December): 18–27. <a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>.
 </div>
 <div id="ref-kupidura2019" class="csl-entry" role="listitem">
 Kupidura, Przemysław. 2019. <span>“The Comparison of Different Methods of Texture Analysis for Their Efficacy for Land Use Classification in Satellite Imagery.”</span> <em>Remote Sensing</em> 11 (10): 1233. <a href="https://doi.org/10.3390/rs11101233">https://doi.org/10.3390/rs11101233</a>.
+</div>
+<div id="ref-usgs" class="csl-entry" role="listitem">
+USGS. n.d. <span>“How Do i Use a Scale Factor with Landsat Level-2 Science Products? | u.s. Geological Survey.”</span> <a href="https://www.usgs.gov/faqs/how-do-i-use-a-scale-factor-landsat-level-2-science-products">https://www.usgs.gov/faqs/how-do-i-use-a-scale-factor-landsat-level-2-science-products</a>.
 </div>
 <div id="ref-velastegui-montoya2023" class="csl-entry" role="listitem">
 Velastegui-Montoya, Andrés, Néstor Montalván-Burbano, Paúl Carrión-Mero, Hugo Rivera-Torres, Luís Sadeck, and Marcos Adami. 2023. <span>“Google Earth Engine: A Global Analysis and Future Trends.”</span> <em>Remote Sensing</em> 15 (14): 3675. <a href="https://doi.org/10.3390/rs15143675">https://doi.org/10.3390/rs15143675</a>.

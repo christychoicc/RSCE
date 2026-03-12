@@ -739,6 +739,109 @@
             "title": "Integrating Satellite and Ground Measurements for Predicting Locations of Extreme Urban Heat",
             "type": "article-journal",
             "volume": "7"
+        },
+        {
+            "URL": "https://earth.org/data_visualization/urban-heat-islands/",
+            "author": [
+                {
+                    "family": "Earth.Org"
+                }
+            ],
+            "id": "earth.org2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "What Is an Urban Heat Island?",
+            "type": ""
+        },
+        {
+            "URL": "https://experience.arcgis.com/experience/6a3da7b920f248af961554bdf01d668b/page/Data-Explorer",
+            "author": [
+                {
+                    "family": "EJNYC"
+                }
+            ],
+            "id": "ejnyc",
+            "title": "EJNYC mapping tool",
+            "type": ""
+        },
+        {
+            "URL": "https://terra.nasa.gov/about/terra-instruments/modis",
+            "author": [
+                {
+                    "family": "Thome",
+                    "given": "Kurtis"
+                }
+            ],
+            "id": "thome2026",
+            "issued": {
+                "date-parts": [
+                    [
+                        2026
+                    ]
+                ]
+            },
+            "note": "Publisher: 610WebDev",
+            "title": "MODIS | terra",
+            "type": ""
+        },
+        {
+            "URL": "https://developers.google.com/earth-engine/tutorials/community/beginners-cookbook",
+            "author": [
+                {
+                    "family": "Google Earth Engine"
+                }
+            ],
+            "id": "googleearthengine2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "Beginner’s Cookbook | Google Earth Engine",
+            "type": ""
+        },
+        {
+            "URL": "https://www.usgs.gov/faqs/how-do-i-use-a-scale-factor-landsat-level-2-science-products",
+            "author": [
+                {
+                    "family": "USGS"
+                }
+            ],
+            "id": "usgs",
+            "title": "How do i use a scale factor with landsat level-2 science products? | u.s. Geological survey",
+            "type": ""
+        },
+        {
+            "URL": "https://developers.google.com/earth-engine/datasets",
+            "author": [
+                {
+                    "family": "Earth Engine Data Catalouge"
+                }
+            ],
+            "id": "earthenginedatacatalouge",
+            "language": "en",
+            "title": "Earth Engine Data Catalog",
+            "type": ""
+        },
+        {
+            "URL": "https://google-earth-engine.com/Interpreting-Image-Series/Filter-Map-Reduce/",
+            "author": [
+                {
+                    "family": "GEE Tutorials"
+                }
+            ],
+            "id": "geetutorials",
+            "title": "Gee-tutorials | interpreting image series |filter map reduce",
+            "type": ""
         }
     ],
     "project_biblios": [

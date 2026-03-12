@@ -11,7 +11,7 @@ This section will look at using Google Earth Engine (GEE), a geospatial analysis
 The below sums up the interactive interface on GEE platform, where all the coding for processing and analysis takes place. In GEE, it employs a client-server architecture. Earth engine objects can be easily identified as a "proxy object" with anything starting with `ee` on clients side, where the local environment interacts and communicates with the server.
 
 ::: {layout-ncol="1"}
-![GEE Interface (Source: [Google Earth Engine](https://developers.google.com/earth-engine/tutorials/community/beginners-cookbook))](images/w6_images/gee_platform.png)
+![GEE Interface, Source: @googleearthengine2024](images/w6_images/gee_platform.png)
 :::
 
 ### Data Pre-processing 
@@ -34,7 +34,7 @@ Raw satellite pixel values are stored as integers to reduce storage size, theref
 | MODIS (MOD13Q1 NDVI/EVI and MOD13A1 NDVI/EVI) | Multiply by 0.0001                                         |
 +-----------------------------------------------+------------------------------------------------------------+
 
-: Source: [USGS](https://www.usgs.gov/faqs/how-do-i-use-a-scale-factor-landsat-level-2-science-products#:~:text=Frequently%20Asked%20Questions-,How%20do%20I%20use%20a%20scale%20factor%20with%20Landsat%20Level,0.0000275), [Earth Engine Data Catalouge](https://developers.google.com/earth-engine/datasets)
+: Source: @usgs, @earthenginedatacatalouge
 
 #### Filtering Image Collections
 
@@ -55,7 +55,7 @@ A good practice I will always adopt is to **apply the Scale Factor first**, **re
 :::
 
 ::: {layout-ncol="1"}
-![Reducing (Source: [GEE Tutorials](https://google-earth-engine.com/Interpreting-Image-Series/Filter-Map-Reduce/) )](images/w6_images/ee.reducer.median.png)
+![Reducing (Source: @geetutorials)](images/w6_images/ee.reducer.median.png)
 :::
 
 ### Benefits and Limitations
@@ -167,5 +167,3 @@ Despite, it has also raise my awareness of limitations. GEE is implying a noncom
 I have touched upon Google Earth before in my undergraduate field trip in Porto, Portugal for site analysis purposes. It was really useful back then for identifying features within the site, understanding the surrounding context, and getting a brief understanding of the site upon arrival. Yet, Google Earth is more of a passive observational tool, and so building on that, this week's learning of GEE gave me flashbacks from my previous studies. Still using a Google served platform, but able to delve deeper in remotely sensing applications.
 
 Overall, GEE provided more opportunities for advanced geospatial applications, I am excited to use GEE to do more cool analysis in the near future!
-
-## References
