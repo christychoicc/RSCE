@@ -14,7 +14,7 @@ The below sums up the interactive interface on GEE platform, where all the codin
 ![GEE Interface, Source: @googleearthengine2024](images/w6_images/gee_platform.png)
 :::
 
-### Data Pre-processing 
+### Data Pre-processing
 
 #### Scale Factor
 
@@ -98,7 +98,7 @@ To narrow down to the study area, a level 2 Shapefile from GAD4M and was clipped
 
 #### Texture
 
-Texture analysis is found that it can significantly increase classification accuracy (classification will be covered in next chapter), therefore best practices often combine texture and spectral analysis for obtaining the best results [@kupidura2019]. There are many methods for texture analysis methods, but this section, we will focus on using GLCM in GEE as discussed previously in [Correction](https://christychoicc.github.io/RSCE/correction.html#texture). The following highlighted high reflectance areas of urban land uses, industrial activities...
+Texture analysis was found that it can significantly increase classification accuracy (classification will be covered in next chapter), therefore best practices often combine texture and spectral analysis for obtaining the best results [@kupidura2019]. There are many methods for texture analysis methods, but this section, we will focus on using GLCM as discussed previously in [Correction](https://christychoicc.github.io/RSCE/correction.html#texture). GEE is capable for conducting texture analysis, the following highlighted high reflectance areas of urban land uses and featuring areas of industrial activities.
 
 ::: {layout-ncol="1"}
 ![GLCM Texture](images/w6_images/texture.png)
@@ -129,7 +129,7 @@ var NDVI = clip.normalizedDifference([SR_B5, SR_B4]);
 :::
 
 ::: {layout-ncol="1"}
-![Average NDVI over time in Delhi ](images/w6_images/ee-chart.png)
+![Average NDVI over time in Delhi](images/w6_images/ee-chart.png)
 :::
 
 Having exploring around, I also found that GEE supports plotting graphs of time series data, allowing an immediate understanding of an overall vegetation condition of our study area in this case. The above shows a time-series analysis of average NDVI in Delhi. Data gaps within the data series maybe due to data selection of \< 10% cloud cover. This figure captures seasonal differences of vegetation, offering insights of agricultural cycle and climate conditions in Delhi. The fluctuations of vegetation conditions peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise of NDVI values March, which maybe due to atmospheric noise of data rather than reflecting vegetation conditions? It continues to decline in May (hottest month of the year in Delhi) and thereafter.
@@ -141,7 +141,7 @@ GEE Code for this practical can be found [here](https://code.earthengine.google.
 The above covered briefly on the general workflow on different types of operations through GEE. As shown in the figure below, GEE allows taking analysis from simple mathematical functions to more complex image processing and machine learning method, which more on machine learning will be discussed in later chapters.
 
 ::: {layout-ncol="1"}
-![GEE Workflow, Source: @amani2020](images/w6_images/gee_usage.gif){#reference alt="GEE Workflow"}
+![GEE Workflow](images/w6_images/gee_usage.gif){#reference}
 :::
 
 ### Applications of GEE in Research
@@ -153,7 +153,7 @@ GEE are used across an extensive wide discipline when it comes to research appli
 :::
 
 ::: {layout-ncol="1"}
-[![Remote Sensing Products Usage in GEE, Source: @velastegui-montoya2023](images/w6_images/satellite_sensors_most_mentioned_in_publications_gee_2011_22.jpg)](https://www.mdpi.com/2072-4292/15/14/3675)
+[![Remote Sensing Products Usage in GEE, Source: ](images/w6_images/satellite_sensors_most_mentioned_in_publications_gee_2011_22.jpg)](https://www.mdpi.com/2072-4292/15/14/3675)
 :::
 
 ## Reflection
