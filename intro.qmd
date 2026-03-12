@@ -134,8 +134,6 @@ Beyond capturing Earth's surface imagery, this week's learning has shown me that
 
 {{< video https://youtu.be/bjOGNVH3D4Y >}}
 
-While EO data showed potential for large-scale environmental monitoring and prediction purposes, interpretation varies significantly depending on band selection, resampling methods, and processing techniques, which may require careful considerations of cloud coverage, noise, and systematic biases.
-
 Lisbon has been a interesting study area, it displays features of both an urban forest and coastal conditions, where atmospheric effects influence satellite reflectance and interpretation. Furthermore, I remember visiting the Monsanto Forest Park in my GCSE art trip doing sketches, never imagining one day I'd be looking at it it through spectral lenses.
 
-The above multispectral analysis has demonstrated how urban and green space land uses can be distinguished through their spectral characteristics, which can be a very helpful tool for planning policy practices. However, it does poses limitations of data quality. Therefore, further understanding atmospheric correction and scattering effects is essential, as cloud coverage and particles redirect radiation, which weakens surface sensing and reducing data quality.
+While EO data showed potential for large-scale environmental monitoring and prediction purposes, interpretation varies significantly depending on band selection, resampling methods, and processing techniques, which may require careful considerations of cloud coverage, noise, and systematic biases. As demonstrated through the analysis of urban and green space land uses above, multispectral analysis can be a very helpful tool for planning policy practices. However, it does poses limitations of data quality. Therefore, further understanding atmospheric correction and scattering effects is essential, as cloud coverage and particles redirect radiation, which weakens surface sensing and reducing data quality.
