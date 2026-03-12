@@ -27,6 +27,52 @@
             "title": "Literate programming",
             "type": "article-journal",
             "volume": "27"
+        },
+        {
+            "DOI": "10.1016/j.rse.2017.06.031",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S0034425717302900",
+            "author": [
+                {
+                    "family": "Gorelick",
+                    "given": "Noel"
+                },
+                {
+                    "family": "Hancher",
+                    "given": "Matt"
+                },
+                {
+                    "family": "Dixon",
+                    "given": "Mike"
+                },
+                {
+                    "family": "Ilyushchenko",
+                    "given": "Simon"
+                },
+                {
+                    "family": "Thau",
+                    "given": "David"
+                },
+                {
+                    "family": "Moore",
+                    "given": "Rebecca"
+                }
+            ],
+            "container-title": "Big Remotely Sensed Data: tools, applications and experiences",
+            "id": "gorelick2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        12,
+                        1
+                    ]
+                ]
+            },
+            "page": "18-27",
+            "title": "Google earth engine: Planetary-scale geospatial analysis for everyone",
+            "title-short": "Google earth engine",
+            "type": "article-journal",
+            "volume": "202"
         }
     ],
     "project_biblios": [

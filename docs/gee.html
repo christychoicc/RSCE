@@ -52,7 +52,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -381,7 +401,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">5.2</span> Applications</a>
   <ul class="collapse">
 <li><a href="#study-area-delhi-india" id="toc-study-area-delhi-india" class="nav-link" data-scroll-target="#study-area-delhi-india"><span class="header-section-number">5.2.1</span> Study Area: Delhi, India</a></li>
-  <li><a href="#applications-of-gee-in-research" id="toc-applications-of-gee-in-research" class="nav-link" data-scroll-target="#applications-of-gee-in-research"><span class="header-section-number">5.2.2</span> Applications of GEE in Research</a></li>
+  <li><a href="#gee-workflow" id="toc-gee-workflow" class="nav-link" data-scroll-target="#gee-workflow"><span class="header-section-number">5.2.2</span> GEE Workflow</a></li>
+  <li><a href="#applications-of-gee-in-research" id="toc-applications-of-gee-in-research" class="nav-link" data-scroll-target="#applications-of-gee-in-research"><span class="header-section-number">5.2.3</span> Applications of GEE in Research</a></li>
   </ul>
 </li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">5.3</span> Reflection</a></li>
@@ -417,7 +438,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/gee_platform.png" class="img-fluid figure-img"></p>
-<figcaption>GEE Interface (Source: )</figcaption></figure>
+<figcaption>GEE Interface (Source: <a href="https://developers.google.com/earth-engine/tutorials/community/beginners-cookbook">Google Earth Engine</a>)</figcaption></figure>
 </div>
 </div>
 </div>
@@ -426,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">5.1.2</span> Data Pre-processing</h3>
 <section id="scale-factor" class="level4" data-number="5.1.2.1"><h4 data-number="5.1.2.1" class="anchored" data-anchor-id="scale-factor">
 <span class="header-section-number">5.1.2.1</span> Scale Factor</h4>
-<p>In GEE, images are pre-processed and cut into 256x256 pixel tiles for fast and efficient access and visualisation (<a href="https://www.sciencedirect.com/science/article/pii/S0034425717302900">Gorelick et.al., 2017</a>). Scale refers to pixel resolution of images. Images are stored in multi-resolution levels in image pyramids, where it selects the spatial resolution that is closest to our chosen band scale (e.g.&nbsp;30 meter pixel for Landsat).</p>
+<p>In GEE, images are pre-processed and cut into 256x256 pixel tiles for fast and efficient access and visualisation <span class="citation" data-cites="gorelick2017">(<a href="references.html#ref-gorelick2017" role="doc-biblioref">Gorelick et al. 2017</a>)</span>. Scale refers to pixel resolution of images. Images are stored in multi-resolution levels in image pyramids, where it selects the spatial resolution that is closest to our chosen band scale (e.g.&nbsp;30 meter pixel for Landsat).</p>
 <p>Raw satellite pixel values are stored as integers to reduce storage size, therefore it needs to be converted to true values with the following math functions. The below lists math functions for most commonly used products:</p>
 <table class="caption-top table">
 <caption>Source: <a href="https://www.usgs.gov/faqs/how-do-i-use-a-scale-factor-landsat-level-2-science-products#:~:text=Frequently%20Asked%20Questions-,How%20do%20I%20use%20a%20scale%20factor%20with%20Landsat%20Level,0.0000275">USGS</a>, <a href="https://developers.google.com/earth-engine/datasets">Earth Engine Data Catalouge</a>
@@ -470,7 +491,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/ee.reducer.median.png" class="img-fluid figure-img"></p>
-<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
+<figcaption>Reducing (Source: <a href="https://google-earth-engine.com/Interpreting-Image-Series/Filter-Map-Reduce/">GEE Tutorials</a> )</figcaption></figure>
 </div>
 </div>
 </div>
@@ -478,7 +499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section></section><section id="benefits-and-limitations" class="level3" data-number="5.1.3"><h3 data-number="5.1.3" class="anchored" data-anchor-id="benefits-and-limitations">
 <span class="header-section-number">5.1.3</span> Benefits and Limitations</h3>
 <table class="caption-top table">
-<caption>Source: <a href="https://www.researchgate.net/figure/GEE-applications-LC-Land-Cover_fig8_344056372">Amani et. al., 2020</a>, <a href="https://www.sciencedirect.com/science/article/pii/S0034425717302900">Gorelick et.al., 2017</a>, <a href="https://andrewmaclachlan.github.io/CASA0023/">CASA0023</a>
+<caption>Source: <a href="https://www.researchgate.net/publication/344056372_Google_Earth_Engine_Cloud_Computing_Platform_for_Remote_Sensing_Big_Data_Applications_A_Comprehensive_Review">Amani et. al., 2020</a>, <a href="https://www.sciencedirect.com/science/article/pii/S0034425717302900">Gorelick et.al., 2017</a>, <a href="https://andrewmaclachlan.github.io/CASA0023/">CASA0023</a>
 </caption>
 <thead><tr class="header">
 <th></th>
@@ -539,14 +560,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/texture.png" class="img-fluid figure-img"></p>
-<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
+<figcaption>GLCM Texture</figcaption></figure>
 </div>
 </div>
 </div>
 </div>
 </section><section id="pca" class="level4" data-number="5.2.1.2"><h4 data-number="5.2.1.2" class="anchored" data-anchor-id="pca">
 <span class="header-section-number">5.2.1.2</span> PCA</h4>
-<p>GEE is also capable for conducting PCA analysis, but slightly more complex than doing it through R. Looking at the list of PCA values, the first 2 values answered around 93% of total variance of the study area. Therefore, combining these two bands, it is able to distinguish most land types within our study area.</p>
+<p>GEE is also capable for conducting PCA analysis which was discussed earlier in <a href="https://christychoicc.github.io/RSCE/correction.html#pca">Correction</a>, but slightly more complex than doing it through R. Looking at the list of PCA values, the first 2 values answered around 93% of total variance of the study area. Therefore, combining these two bands, it is able to distinguish most land types within our study area.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>List (21 elements)
@@ -565,7 +586,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/PCA_1_2.png" class="img-fluid figure-img"></p>
-<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
+<figcaption>PCA 1 and 2</figcaption></figure>
 </div>
 </div>
 </div>
@@ -579,7 +600,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/NDVI.png" class="img-fluid figure-img"></p>
-<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
+<figcaption>NDVI</figcaption></figure>
 </div>
 </div>
 </div>
@@ -589,22 +610,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/ee-chart.png" class="img-fluid figure-img"></p>
-<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
+<figcaption>Average NDVI over time in Delhi</figcaption></figure>
 </div>
 </div>
 </div>
 </div>
 <p>Having exploring around, I also found that GEE supports plotting graphs of time series data, allowing an immediate understanding of an overall vegetation condition of our study area in this case. The above shows a time-series analysis of average NDVI in Delhi. Data gaps within the data series maybe due to data selection of &lt; 10% cloud cover. This figure captures seasonal differences of vegetation, offering insights of agricultural cycle and climate conditions in Delhi. The fluctuations of vegetation conditions peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise of NDVI values March, which maybe due to atmospheric noise of data rather than reflecting vegetation conditions? It continues to decline in May (hottest month of the year in Delhi) and thereafter.</p>
 <p>GEE Code for this practical can be found <a href="https://code.earthengine.google.com/cce3b32f442cce69c5831fa35a99f215">here</a>.</p>
-</section></section><section id="applications-of-gee-in-research" class="level3" data-number="5.2.2"><h3 data-number="5.2.2" class="anchored" data-anchor-id="applications-of-gee-in-research">
-<span class="header-section-number">5.2.2</span> Applications of GEE in Research</h3>
-<p>GEE are used across an extensive wide discipline when it comes to research applications. The following shows a range of applications that GEE supports as well as the satellite and sensors that are most commonly used with GEE:</p>
+</section></section><section id="gee-workflow" class="level3" data-number="5.2.2"><h3 data-number="5.2.2" class="anchored" data-anchor-id="gee-workflow">
+<span class="header-section-number">5.2.2</span> GEE Workflow</h3>
+<p>The above covered briefly on the general workflow on different types of operations through GEE. As shown in the figure below, GEE allows taking analysis from simple mathematical functions to more complex image processing and machine learning method, which more on machine learning will be discussed in later chapters.</p>
+<div class="quarto-layout-panel" data-layout-ncol="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="reference" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="images/w6_images/gee_usage.gif" class="img-fluid figure-img"></p>
+<figcaption>GEE Workflow (Source: <a href="https://www.researchgate.net/publication/344056372_Google_Earth_Engine_Cloud_Computing_Platform_for_Remote_Sensing_Big_Data_Applications_A_Comprehensive_Review">Amani et. al., 2020</a>)</figcaption></figure>
+</div>
+</div>
+</div>
+</div>
+</section><section id="applications-of-gee-in-research" class="level3" data-number="5.2.3"><h3 data-number="5.2.3" class="anchored" data-anchor-id="applications-of-gee-in-research">
+<span class="header-section-number">5.2.3</span> Applications of GEE in Research</h3>
+<p>GEE are used across an extensive wide discipline when it comes to research applications. The following sums up a range of applications that GEE supports as well as the satellite products that are most commonly used with GEE:</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/w6_images/gee_applications.png" class="img-fluid figure-img"></p>
-<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
+<figcaption>GEE Applications (Source: <a href="https://www.researchgate.net/publication/344056372_Google_Earth_Engine_Cloud_Computing_Platform_for_Remote_Sensing_Big_Data_Applications_A_Comprehensive_Review">Amani et. al., 2020</a>)</figcaption></figure>
 </div>
 </div>
 </div>
@@ -613,8 +647,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/w6_images/satellite_sensors_most_mentioned_in_publications_gee_2011_22.jpg" class="img-fluid figure-img"></p>
-<figcaption>UHI, Source: EARTH.ORG</figcaption></figure>
+<figure class="figure"><p><a href="https://www.mdpi.com/2072-4292/15/14/3675"><img src="images/w6_images/satellite_sensors_most_mentioned_in_publications_gee_2011_22.jpg" class="img-fluid figure-img"></a></p>
+<figcaption>Remote Sensing Products Usage in GEE (Source [Velastegui-Montoya et.al, 2023](https://www.mdpi.com/2072-4292/15/14/3675))</figcaption></figure>
 </div>
 </div>
 </div>
@@ -623,13 +657,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">5.3</span> Reflection</h2>
 <p>Switching from manual data pre-processing in QGIS and SNAP to GEE has really been a massive upgrade in saving time and really easing off the computational complexity by a lot .</p>
 <p>This week provided a good opportunity to delve in both JavaScript and GEE as a new language and new tool. I found exploring through Google Earth Engine webpage particularly insightful, offering ready-made code, concept explanations, and analysis guides that is easily accessible and user friendly for a first time user. I found it particularly useful that we can easily clip spatial boundary, not needed to worry about projections and that analysis outputs can be added as map layers, etc. The adjustable transparency in each layers was one of the things I liked most so far, as it allows comparison against Google’s base map, observing the accuracy of data visually.</p>
-<p>Despite, it has also raise my awareness of limitations. GEE is implying a noncommercial quota tier from April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly limit intensive workflows through GEE. I also found the fact that GEE does not support markdown style cell-by-cell execution, makes catching error harder and most importantly may use up my precious quotas if I run the code too many times. Although GEE’s cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which may ocassionally be a problem.</p>
+<p>Despite, it has also raise my awareness of limitations. GEE is implying a noncommercial quota tier from April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly limit intensive workflows as a student user. I also found the fact that GEE does not support markdown style cell-by-cell execution makes catching error harder. Although GEE’s cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which may ocassionally be a problem.</p>
 <p>I have touched upon Google Earth before in my undergraduate field trip in Porto, Portugal for site analysis purposes. It was really useful back then for identifying features within the site, understanding the surrounding context, and getting a brief understanding of the site upon arrival. Yet, Google Earth is more of a passive observational tool, and so building on that, this week’s learning of GEE gave me flashbacks from my previous studies. Still using a Google served platform, but able to delve deeper in remotely sensing applications.</p>
 <p>Overall, GEE provided more opportunities for advanced geospatial applications, I am excited to use GEE to do more cool analysis in the near future!</p>
 </section><section id="references" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="references">
 <span class="header-section-number">5.4</span> References</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-gorelick2017" class="csl-entry" role="listitem">
+Gorelick, Noel, Matt Hancher, Mike Dixon, Simon Ilyushchenko, David Thau, and Rebecca Moore. 2017. <span>“Google Earth Engine: Planetary-Scale Geospatial Analysis for Everyone.”</span> <em>Big Remotely Sensed Data: Tools, Applications and Experiences</em> 202 (December): 18–27. <a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>.
+</div>
+</div>
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

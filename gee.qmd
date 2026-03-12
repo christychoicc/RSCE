@@ -11,14 +11,14 @@ This section will look at using Google Earth Engine (GEE), a geospatial analysis
 The below sums up the interactive interface on GEE platform, where all the coding for processing and analysis takes place. In GEE, it employs a client-server architecture. Earth engine objects can be easily identified as a "proxy object" with anything starting with `ee` on clients side, where the local environment interacts and communicates with the server.
 
 ::: {layout-ncol="1"}
-![GEE Interface (Source: )](images/w6_images/gee_platform.png)
+![GEE Interface (Source: [Google Earth Engine](https://developers.google.com/earth-engine/tutorials/community/beginners-cookbook))](images/w6_images/gee_platform.png)
 :::
 
 ### Data Pre-processing 
 
 #### Scale Factor
 
-In GEE, images are pre-processed and cut into 256x256 pixel tiles for fast and efficient access and visualisation ([Gorelick et.al., 2017](https://www.sciencedirect.com/science/article/pii/S0034425717302900)). Scale refers to pixel resolution of images. Images are stored in multi-resolution levels in image pyramids, where it selects the spatial resolution that is closest to our chosen band scale (e.g. 30 meter pixel for Landsat).
+In GEE, images are pre-processed and cut into 256x256 pixel tiles for fast and efficient access and visualisation [@gorelick2017]. Scale refers to pixel resolution of images. Images are stored in multi-resolution levels in image pyramids, where it selects the spatial resolution that is closest to our chosen band scale (e.g. 30 meter pixel for Landsat).
 
 Raw satellite pixel values are stored as integers to reduce storage size, therefore it needs to be converted to true values with the following math functions. The below lists math functions for most commonly used products:
 
@@ -55,7 +55,7 @@ A good practice I will always adopt is to **apply the Scale Factor first**, **re
 :::
 
 ::: {layout-ncol="1"}
-![UHI, Source: EARTH.ORG](images/w6_images/ee.reducer.median.png)
+![Reducing (Source: [GEE Tutorials](https://google-earth-engine.com/Interpreting-Image-Series/Filter-Map-Reduce/) )](images/w6_images/ee.reducer.median.png)
 :::
 
 ### Benefits and Limitations
@@ -88,7 +88,7 @@ A good practice I will always adopt is to **apply the Scale Factor first**, **re
 |                               |                                                                                                                                            | -   Limited amount of samples / features within classification methods                 |
 +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
-: Source: [Amani et. al., 2020](https://www.researchgate.net/figure/GEE-applications-LC-Land-Cover_fig8_344056372), [Gorelick et.al., 2017](https://www.sciencedirect.com/science/article/pii/S0034425717302900), [CASA0023](https://andrewmaclachlan.github.io/CASA0023/)
+: Source: [Amani et. al., 2020](https://www.researchgate.net/publication/344056372_Google_Earth_Engine_Cloud_Computing_Platform_for_Remote_Sensing_Big_Data_Applications_A_Comprehensive_Review), [Gorelick et.al., 2017](https://www.sciencedirect.com/science/article/pii/S0034425717302900), [CASA0023](https://andrewmaclachlan.github.io/CASA0023/)
 
 ## Applications
 
@@ -101,19 +101,19 @@ To narrow down to the study area, a level 2 Shapefile from GAD4M and was clipped
 Texture analysis is found that it can significantly increase classification accuracy (classification will be covered in next chapter), therefore best practices often combine texture and spectral analysis for obtaining the best results ([Kupidura, 2019](https://www.mdpi.com/2072-4292/11/10/1233#)). There are many methods for texture analysis methods, but this section, we will focus on using GLCM in GEE as discussed previously in [Correction](https://christychoicc.github.io/RSCE/correction.html#texture). The following highlighted high reflectance areas of urban land uses, industrial activities...
 
 ::: {layout-ncol="1"}
-![UHI, Source: EARTH.ORG](images/w6_images/texture.png)
+![GLCM Texture](images/w6_images/texture.png)
 :::
 
 #### PCA
 
-GEE is also capable for conducting PCA analysis, but slightly more complex than doing it through R. Looking at the list of PCA values, the first 2 values answered around 93% of total variance of the study area. Therefore, combining these two bands, it is able to distinguish most land types within our study area.
+GEE is also capable for conducting PCA analysis which was discussed earlier in [Correction](https://christychoicc.github.io/RSCE/correction.html#pca), but slightly more complex than doing it through R. Looking at the list of PCA values, the first 2 values answered around 93% of total variance of the study area. Therefore, combining these two bands, it is able to distinguish most land types within our study area.
 
 ```{r, echo=FALSE}
 cat(readLines("gee/pca.txt"), sep = "\n")
 ```
 
 ::: {layout-ncol="1"}
-![UHI, Source: EARTH.ORG](images/w6_images/PCA_1_2.png)
+![PCA 1 and 2](images/w6_images/PCA_1_2.png)
 :::
 
 #### NDVI
@@ -125,27 +125,35 @@ var NDVI = clip.normalizedDifference([SR_B5, SR_B4]);
 ```
 
 ::: {layout-ncol="1"}
-![UHI, Source: EARTH.ORG](images/w6_images/NDVI.png)
+![NDVI](images/w6_images/NDVI.png)
 :::
 
 ::: {layout-ncol="1"}
-![UHI, Source: EARTH.ORG](images/w6_images/ee-chart.png)
+![Average NDVI over time in Delhi ](images/w6_images/ee-chart.png)
 :::
 
 Having exploring around, I also found that GEE supports plotting graphs of time series data, allowing an immediate understanding of an overall vegetation condition of our study area in this case. The above shows a time-series analysis of average NDVI in Delhi. Data gaps within the data series maybe due to data selection of \< 10% cloud cover. This figure captures seasonal differences of vegetation, offering insights of agricultural cycle and climate conditions in Delhi. The fluctuations of vegetation conditions peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise of NDVI values March, which maybe due to atmospheric noise of data rather than reflecting vegetation conditions? It continues to decline in May (hottest month of the year in Delhi) and thereafter.
 
 GEE Code for this practical can be found [here](https://code.earthengine.google.com/cce3b32f442cce69c5831fa35a99f215).
 
-### Applications of GEE in Research
+### GEE Workflow
 
-GEE are used across an extensive wide discipline when it comes to research applications. The following shows a range of applications that GEE supports as well as the satellite and sensors that are most commonly used with GEE:
+The above covered briefly on the general workflow on different types of operations through GEE. As shown in the figure below, GEE allows taking analysis from simple mathematical functions to more complex image processing and machine learning method, which more on machine learning will be discussed in later chapters.
 
 ::: {layout-ncol="1"}
-![UHI, Source: EARTH.ORG](images/w6_images/gee_applications.png)
+![GEE Workflow (Source: [Amani et. al., 2020](https://www.researchgate.net/publication/344056372_Google_Earth_Engine_Cloud_Computing_Platform_for_Remote_Sensing_Big_Data_Applications_A_Comprehensive_Review))](images/w6_images/gee_usage.gif){#reference alt="GEE Workflow"}
+:::
+
+### Applications of GEE in Research
+
+GEE are used across an extensive wide discipline when it comes to research applications. The following sums up a range of applications that GEE supports as well as the satellite products that are most commonly used with GEE:
+
+::: {layout-ncol="1"}
+![GEE Applications (Source: [Amani et. al., 2020](https://www.researchgate.net/publication/344056372_Google_Earth_Engine_Cloud_Computing_Platform_for_Remote_Sensing_Big_Data_Applications_A_Comprehensive_Review))](images/w6_images/gee_applications.png)
 :::
 
 ::: {layout-ncol="1"}
-![UHI, Source: EARTH.ORG](images/w6_images/satellite_sensors_most_mentioned_in_publications_gee_2011_22.jpg)
+[![Remote Sensing Products Usage in GEE (Source [Velastegui-Montoya et.al, 2023](https://www.mdpi.com/2072-4292/15/14/3675))](images/w6_images/satellite_sensors_most_mentioned_in_publications_gee_2011_22.jpg)](https://www.mdpi.com/2072-4292/15/14/3675)
 :::
 
 ## Reflection
@@ -154,7 +162,7 @@ Switching from manual data pre-processing in QGIS and SNAP to GEE has really bee
 
 This week provided a good opportunity to delve in both JavaScript and GEE as a new language and new tool. I found exploring through Google Earth Engine webpage particularly insightful, offering ready-made code, concept explanations, and analysis guides that is easily accessible and user friendly for a first time user. I found it particularly useful that we can easily clip spatial boundary, not needed to worry about projections and that analysis outputs can be added as map layers, etc. The adjustable transparency in each layers was one of the things I liked most so far, as it allows comparison against Google's base map, observing the accuracy of data visually.
 
-Despite, it has also raise my awareness of limitations. GEE is implying a noncommercial quota tier from April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly limit intensive workflows through GEE. I also found the fact that GEE does not support markdown style cell-by-cell execution, makes catching error harder and most importantly may use up my precious quotas if I run the code too many times. Although GEE's cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which may ocassionally be a problem.
+Despite, it has also raise my awareness of limitations. GEE is implying a noncommercial quota tier from April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly limit intensive workflows as a student user. I also found the fact that GEE does not support markdown style cell-by-cell execution makes catching error harder. Although GEE's cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which may ocassionally be a problem.
 
 I have touched upon Google Earth before in my undergraduate field trip in Porto, Portugal for site analysis purposes. It was really useful back then for identifying features within the site, understanding the surrounding context, and getting a brief understanding of the site upon arrival. Yet, Google Earth is more of a passive observational tool, and so building on that, this week's learning of GEE gave me flashbacks from my previous studies. Still using a Google served platform, but able to delve deeper in remotely sensing applications.
 
