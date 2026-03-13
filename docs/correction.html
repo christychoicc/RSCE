@@ -17,7 +17,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -515,7 +535,7 @@ NDVI = \frac{NIR - Red}{NIR + Red}
 </div>
 </section><section id="texture" class="level3" data-number="3.2.3"><h3 data-number="3.2.3" class="anchored" data-anchor-id="texture">
 <span class="header-section-number">3.2.3</span> Texture</h3>
-<p>Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.</p>
+<p>Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). This approach have been widely used for land use and land cover classification. It was found that it can significantly increase classification accuracy (will be covered in later chapters), therefore, best practices often combine texture and spectral analysis for obtaining the best results <span class="citation" data-cites="kupidura2019">(<a href="references.html#ref-kupidura2019" role="doc-biblioref">Kupidura 2019</a>)</span>. Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.</p>
 <p>Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting textures:</p>
 <p><span class="math display">\[
 \rho = (\text{pixel\_value} \times 0.0000275) - 0.2
@@ -530,6 +550,7 @@ NDVI = \frac{NIR - Red}{NIR + Red}
 </div>
 </div>
 </div>
+<p>GLCM is indeed commonly used, yet it may not always be the most suitable solution. As mentioned in <span class="citation" data-cites="kupidura2019">Kupidura (<a href="references.html#ref-kupidura2019" role="doc-biblioref">2019</a>)</span> study, GLCM may distort classification when it comes into an “edge effect”, which considering granulometric analysis maybe more of a sensible alternative. Given this, GEE is valuable because it enables texture exploration, but methodological choice still remains an important consideration.</p>
 </section><section id="pca" class="level3" data-number="3.2.4"><h3 data-number="3.2.4" class="anchored" data-anchor-id="pca">
 <span class="header-section-number">3.2.4</span> PCA</h3>
 <p>PCA allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information. PCA summary of 8 spectral bands and 8 texture variables shows:</p>
@@ -548,8 +569,8 @@ Cumulative Proportion  0.99978 0.99995 1.00000 1.000e+00</code></pre>
 </div>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 38%">
+<col style="width: 61%">
 </colgroup>
 <thead><tr class="header">
 <th>Components</th>
@@ -607,6 +628,11 @@ Cumulative Proportion  0.99978 0.99995 1.00000 1.000e+00</code></pre>
 <span class="header-section-number">3.4</span> References</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-kupidura2019" class="csl-entry" role="listitem">
+Kupidura, Przemysław. 2019. <span>“The Comparison of Different Methods of Texture Analysis for Their Efficacy for Land Use Classification in Satellite Imagery.”</span> <em>Remote Sensing</em> 11 (10): 1233. <a href="https://doi.org/10.3390/rs11101233">https://doi.org/10.3390/rs11101233</a>.
+</div>
+</div>
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

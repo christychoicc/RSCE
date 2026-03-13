@@ -76,7 +76,7 @@ NDVI uses Near-Infrared (NIR) and Red spectral bands to display vegetation which
 
 ### Texture
 
-Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces' distinct structural patterns (e.g. bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.
+Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces' distinct structural patterns (e.g. bumpiness, smoothness, jaggedness). This approach have been widely used for land use and land cover classification. It was found that it can significantly increase classification accuracy (will be covered in later chapters), therefore, best practices often combine texture and spectral analysis for obtaining the best results [@kupidura2019]. Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.
 
 Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting textures:
 
@@ -88,6 +88,8 @@ $$
 ![8 GLCM Textures of Hong Kong](images/w3_images/glcm_all_metrics.png)
 :::
 
+GLCM is indeed commonly used, yet it may not always be the most suitable solution. As mentioned in @kupidura2019 study, GLCM may distort classification when it comes into an "edge effect", which considering granulometric analysis maybe more of a sensible alternative. Given this, GEE is valuable because it enables texture exploration, but methodological choice still remains an important consideration.
+
 ### PCA
 
 PCA allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information. PCA summary of 8 spectral bands and 8 texture variables shows:
@@ -96,11 +98,15 @@ PCA allows reduction of multi-spectral data into uncorrelated, smaller dimension
 cat(readLines("correction/pca_summary.txt"), sep = "\n")
 ```
 
-| Components | Explaination |
-|----|----|
-| Standard Deviation | Spread of data |
-| Proportion of Variance | Proportion of data retained from the original data set |
-| Cumulative Proportion | Proportion of total variance of the original data set |
++----------------------------------+--------------------------------------------------------+
+| Components                       | Explaination                                           |
++==================================+========================================================+
+| Standard Deviation               | Spread of data                                         |
++----------------------------------+--------------------------------------------------------+
+| Proportion of Variance           | Proportion of data retained from the original data set |
++----------------------------------+--------------------------------------------------------+
+| Cumulative Proportion            | Proportion of total variance of the original data set  |
++----------------------------------+--------------------------------------------------------+
 
 In this case, PC1 to PC4 explains most of the variations. Looking at cumulative proportion, 91% of spectral variance can be identified in the first 4 principle components. This is a very helpful measure as it allows higher efficiency in analysis, including most of total variance while reducing 16 layers to 4 without loosing much information.
 

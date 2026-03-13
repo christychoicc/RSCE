@@ -1073,6 +1073,38 @@
             "title": "Principles of remote sensing : An introductory textbook.",
             "title-short": "Principles of remote sensing ",
             "type": "chapter"
+        },
+        {
+            "DOI": "10.1080/09715010.2023.2292280",
+            "URL": "https://doi.org/10.1080/09715010.2023.2292280",
+            "author": [
+                {
+                    "family": "Roy",
+                    "given": "Srija"
+                },
+                {
+                    "family": "Chintalacheruvu",
+                    "given": "Madhusudana Rao"
+                }
+            ],
+            "container-title": "ISH Journal of Hydraulic Engineering",
+            "id": "roy2024",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024,
+                        3,
+                        14
+                    ]
+                ]
+            },
+            "note": "_eprint: https://doi.org/10.1080/09715010.2023.2292280",
+            "page": "228-244",
+            "title": "Enhanced morphometric analysis for soil erosion susceptibility mapping in the godavari river basin, india: Leveraging google earth engine and principal component analysis",
+            "title-short": "Enhanced morphometric analysis for soil erosion susceptibility mapping in the godavari river basin, india",
+            "type": "article-journal",
+            "volume": "30"
         }
     ],
     "project_biblios": [

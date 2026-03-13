@@ -479,13 +479,13 @@ div.csl-indent {
 </table></section><section id="filtering-image-collections" class="level4" data-number="5.1.2.2"><h4 data-number="5.1.2.2" class="anchored" data-anchor-id="filtering-image-collections">
 <span class="header-section-number">5.1.2.2</span> Filtering Image Collections</h4>
 <p>The reducing method ( <code>ee.Reducer</code> ) are commonly used to aggregate pixel values using mean, median, sum or percentiles.</p>
-<p>To summarise pixel values within</p>
+<p>To summarise pixel values within…</p>
 <ul>
 <li><p><code>image.reduceRegion</code>, one region, suitable for NDVI, rainfall, etc.</p></li>
 <li><p><code>image.reduce.Regions</code>, multiple regions, suitable for land use cover</p></li>
 <li><p><code>image.reduce.Neighbourhood</code>, within the neighbourhood, suitable for terrain texture processing</p></li>
 </ul>
-<p>Taking the median out of a stack of images is often the most common practice as it provides a simple and quite reliable summary of a time series data. However, its is also just a “good enough” approach and does not necessarily be the most suitable approach. In some cases, considering using percentiles maybe a more sensible approach than median. Selecting a higher percentile such as the 75th to 90th percentile range may better capture conditions and interpret more meaningful results.</p>
+<p>Taking the median out of a stack of images is often the most common practice as it provides a simple and quite reliable summary of time series data. However, its is also just a “good enough” approach and does not necessarily be the most suitable approach. In some cases, considering using percentiles maybe a more sensible approach than median. Selecting a higher percentile such as the 75th to 90th percentile range may better capture conditions and interpret more meaningful results.</p>
 <div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
 <p>A good practice I will always adopt is to <strong>apply the Scale Factor first</strong>, <strong>reducing image by region(s) or neighbourhood</strong>, then take the <strong>mean</strong> (when there is a few images) <strong>or median</strong> (when there is a big stack of images) <strong>depending on the volume of images obtained.</strong></p>
 </div>
@@ -554,10 +554,14 @@ div.csl-indent {
 <span class="header-section-number">5.2</span> Applications</h2>
 <section id="study-area-delhi-india" class="level3" data-number="5.2.1"><h3 data-number="5.2.1" class="anchored" data-anchor-id="study-area-delhi-india">
 <span class="header-section-number">5.2.1</span> Study Area: Delhi, India</h3>
-<p>To narrow down to the study area, a level 2 Shapefile from GAD4M and was clipped and filtered to Delhi using <code>.filter('GID_1 == "IND.25_1"');</code> within GEE. Data was filtered to the 2021-06-01 to 2022-10-10 date period.</p>
+<p>This section explains GEE’s key benefit of higher analysis efficiency from defining our study area to analysis without extensive local pre-processing. It allows uploading a shapefile to be clipped and filtered directly using <code>.filter('GID_1 == "IND.25_1"');</code>. Under the same interface, it is also able to derive texture, PCA bands and NDVI time series analysis, enabling a workflow from acquiring data to initial interpretation of findings before processing further analysis or classification.</p>
 <section id="texture" class="level4" data-number="5.2.1.1"><h4 data-number="5.2.1.1" class="anchored" data-anchor-id="texture">
 <span class="header-section-number">5.2.1.1</span> Texture</h4>
-<p>Texture analysis was found that it can significantly increase classification accuracy (classification will be covered in next chapter), therefore best practices often combine texture and spectral analysis for obtaining the best results <span class="citation" data-cites="kupidura2019">(<a href="references.html#ref-kupidura2019" role="doc-biblioref">Kupidura 2019</a>)</span>. There are many methods for texture analysis methods, but this section, we will focus on using GLCM as discussed previously in <a href="https://christychoicc.github.io/RSCE/correction.html#texture">Correction</a>. GEE is capable for conducting texture analysis, the following highlighted high reflectance areas of urban land uses and featuring areas of industrial activities.</p>
+<p>There are many methods for texture analysis methods, but this section, we will focus on using GLCM as discussed previously in <a href="https://christychoicc.github.io/RSCE/correction.html#texture">Correction</a>.</p>
+<div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
+<p>GEE is capable for conducting texture analysis efficiently</p>
+</div>
+<p>This method through GEE highlighted high reflectance areas of urban land uses and featuring areas associated with industrial activities.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -570,7 +574,14 @@ div.csl-indent {
 </div>
 </section><section id="pca" class="level4" data-number="5.2.1.2"><h4 data-number="5.2.1.2" class="anchored" data-anchor-id="pca">
 <span class="header-section-number">5.2.1.2</span> PCA</h4>
-<p>GEE is also capable for conducting PCA analysis which was discussed earlier in <a href="https://christychoicc.github.io/RSCE/correction.html#pca">Correction</a>, but slightly more complex than doing it through R. Looking at the list of PCA values, the first 2 values answered around 93% of total variance of the study area. Therefore, combining these two bands, it is able to distinguish most land types within our study area.</p>
+<p>GEE is also capable for conducting PCA analysis which was discussed earlier in <a href="https://christychoicc.github.io/RSCE/correction.html#pca">Correction</a>.</p>
+<div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
+<p>GEE addresses limitations of high computational costs and large memory requirments when processing PCA <span class="citation" data-cites="roy2024">(<a href="references.html#ref-roy2024" role="doc-biblioref">Roy and Chintalacheruvu 2024</a>)</span></p>
+</div>
+<div style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;">
+<p>It can be slightly more complex than processing it through R</p>
+</div>
+<p>Computed through GEE, the first 2 values answered around 93% of total variance. Therefore, combining these two bands, the map layer below is able to distinguish clearly most land types within our study area.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>List (21 elements)
@@ -596,7 +607,11 @@ div.csl-indent {
 </div>
 </section><section id="ndvi" class="level4" data-number="5.2.1.3"><h4 data-number="5.2.1.3" class="anchored" data-anchor-id="ndvi">
 <span class="header-section-number">5.2.1.3</span> NDVI</h4>
-<p>As discussed previously in <a href="https://christychoicc.github.io/RSCE/correction.html#normalised-difference-vegetation-index-ndvi">Correction</a>, NDVI is used as an indicator for vegetation in studies. Also capable for calculating band maths, GEE allows NDVI analysis and even having its own function for easy calculation:</p>
+<p>As discussed previously in <a href="https://christychoicc.github.io/RSCE/correction.html#normalised-difference-vegetation-index-ndvi">Correction</a>, NDVI is used as an indicator for vegetation in studies.</p>
+<div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
+<p>GEE is capable of calculating band maths, allowing extension to broader analysis, mapping and temporal visualisations</p>
+</div>
+<p>In this case, it does even have its own function for easy calculation of NDVI:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> NDVI <span class="op">=</span> clip<span class="op">.</span><span class="fu">normalizedDifference</span>([SR_B5<span class="op">,</span> SR_B4])<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
@@ -608,6 +623,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<p>Having exploring around, I also found that GEE supports plotting graphs of time series data, allowing an immediate understanding of an overall vegetation condition of our study area in this case.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -618,11 +634,14 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Having exploring around, I also found that GEE supports plotting graphs of time series data, allowing an immediate understanding of an overall vegetation condition of our study area in this case. The above shows a time-series analysis of average NDVI in Delhi. Data gaps within the data series maybe due to data selection of &lt; 10% cloud cover. This figure captures seasonal differences of vegetation, offering insights of agricultural cycle and climate conditions in Delhi. The fluctuations of vegetation conditions peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise of NDVI values March, which maybe due to atmospheric noise of data rather than reflecting vegetation conditions? It continues to decline in May (hottest month of the year in Delhi) and thereafter.</p>
+<div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
+<p>GEE’s plotting function is very useful for identifying any anomalies or data quality issues before further analysis</p>
+</div>
+<p>The above shows a time-series analysis of average NDVI in Delhi. Data gaps within the series maybe due to selection of &lt; 10% cloud cover. The time series captures seasonal vegetation patterns, offering insights into Delhi’s agricultural cycles and climate conditions. The fluctuations of NDVI values peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise observed in March, which may reflect atmospheric noise of data rather than vegetation conditions. NDVI continues to decline in the hottest season of Delhi in May and thereafter.</p>
 <p>GEE Code for this practical can be found <a href="https://code.earthengine.google.com/cce3b32f442cce69c5831fa35a99f215">here</a>.</p>
 </section></section><section id="gee-workflow" class="level3" data-number="5.2.2"><h3 data-number="5.2.2" class="anchored" data-anchor-id="gee-workflow">
 <span class="header-section-number">5.2.2</span> GEE Workflow</h3>
-<p>The above covered briefly on the general workflow on different types of operations through GEE. As shown in the figure below, GEE allows taking analysis from simple mathematical functions to more complex image processing and machine learning method, which more on machine learning will be discussed in later chapters.</p>
+<p>The above methods have linked with applications in literature. As shown in the figure below, GEE allows taking analysis from simple mathematical functions to more complex image processing and machine learning method, more on machine learning will be discussed in later chapters.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -635,7 +654,7 @@ div.csl-indent {
 </div>
 </section><section id="applications-of-gee-in-research" class="level3" data-number="5.2.3"><h3 data-number="5.2.3" class="anchored" data-anchor-id="applications-of-gee-in-research">
 <span class="header-section-number">5.2.3</span> Applications of GEE in Research</h3>
-<p>GEE are used across an extensive wide discipline when it comes to research applications. The following sums up a range of applications that GEE supports as well as the satellite products that are most commonly used with GEE:</p>
+<p>GEE are used across an extensive wide discipline when it comes to research applications. It benefits does not limit to only accessibility to its breadth of data, but also its ability to process data across large spatial and temporal extents. This makes GEE particularly valuable for long-term monitoring and comparative studies. The following sums up a range of applications that GEE supports as well as the satellite products that are most commonly used with GEE:</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -650,8 +669,8 @@ div.csl-indent {
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://www.mdpi.com/2072-4292/15/14/3675"><img src="images/w6_images/satellite_sensors_most_mentioned_in_publications_gee_2011_22.jpg" class="img-fluid figure-img"></a></p>
-<figcaption>Remote Sensing Products Usage in GEE, Source:</figcaption></figure>
+<figure class="figure"><p><a href="https://www.mdpi.com/2072-4292/15/14/3675"><img src="images/w6_images/main_rs_applications_studied_in-gee.jpg" class="img-fluid figure-img"></a></p>
+<figcaption>Trend of Publication Studies with GEE, Source: <span class="citation" data-cites="velastegui-montoya2023">Velastegui-Montoya et al. (<a href="references.html#ref-velastegui-montoya2023" role="doc-biblioref">2023</a>)</span></figcaption></figure>
 </div>
 </div>
 </div>
@@ -660,7 +679,7 @@ div.csl-indent {
 <span class="header-section-number">5.3</span> Reflection</h2>
 <p>Switching from manual data pre-processing in QGIS and SNAP to GEE has really been a massive upgrade in saving time and really easing off the computational complexity by a lot .</p>
 <p>This week provided a good opportunity to delve in both JavaScript and GEE as a new language and new tool. I found exploring through Google Earth Engine webpage particularly insightful, offering ready-made code, concept explanations, and analysis guides that is easily accessible and user friendly for a first time user. I found it particularly useful that we can easily clip spatial boundary, not needed to worry about projections and that analysis outputs can be added as map layers, etc. The adjustable transparency in each layers was one of the things I liked most so far, as it allows comparison against Google’s base map, observing the accuracy of data visually.</p>
-<p>It has also raise my awareness for the limitations for non-commerical usage. GEE is implying a noncommercial quota tier from April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly limit intensive workflows as a student user (especially for community tier). I also found the fact that GEE does not support markdown style cell-by-cell execution makes catching error harder for me. Although GEE’s cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which may ocassionally be a problem.</p>
+<p>It has also raised my awareness for limitations in non-commerical usage. GEE is implying a noncommercial quota tier from April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly limit intensive workflows as a student user (especially at a community tier). I also found the fact that GEE does not support markdown style cell-by-cell execution makes catching error harder for me. Although GEE’s cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which may ocassionally be a problem.</p>
 <p>I have touched upon Google Earth before in my undergraduate field trip in Porto, Portugal for site analysis purposes. It was really useful back then for identifying features within the site, understanding the surrounding context, and getting a brief understanding of the site upon arrival. Yet, Google Earth is more of a passive observational tool, and so building on that, this week’s learning of GEE gave me flashbacks from my previous studies. Still using a Google served platform, but able to delve deeper in remotely sensing applications.</p>
 <p>Overall, GEE provided more opportunities for advanced geospatial applications, I am excited to use GEE to do more cool analysis in the near future!</p>
 
@@ -681,11 +700,14 @@ Google Earth Engine. 2024. <span>“Beginner’s Cookbook | Google Earth Engine.
 <div id="ref-gorelick2017" class="csl-entry" role="listitem">
 Gorelick, Noel, Matt Hancher, Mike Dixon, Simon Ilyushchenko, David Thau, and Rebecca Moore. 2017. <span>“Google Earth Engine: Planetary-Scale Geospatial Analysis for Everyone.”</span> <em>Big Remotely Sensed Data: Tools, Applications and Experiences</em> 202 (December): 18–27. <a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>.
 </div>
-<div id="ref-kupidura2019" class="csl-entry" role="listitem">
-Kupidura, Przemysław. 2019. <span>“The Comparison of Different Methods of Texture Analysis for Their Efficacy for Land Use Classification in Satellite Imagery.”</span> <em>Remote Sensing</em> 11 (10): 1233. <a href="https://doi.org/10.3390/rs11101233">https://doi.org/10.3390/rs11101233</a>.
+<div id="ref-roy2024" class="csl-entry" role="listitem">
+Roy, Srija, and Madhusudana Rao Chintalacheruvu. 2024. <span>“Enhanced Morphometric Analysis for Soil Erosion Susceptibility Mapping in the Godavari River Basin, India: Leveraging Google Earth Engine and Principal Component Analysis.”</span> <em>ISH Journal of Hydraulic Engineering</em> 30 (2): 228–44. <a href="https://doi.org/10.1080/09715010.2023.2292280">https://doi.org/10.1080/09715010.2023.2292280</a>.
 </div>
 <div id="ref-usgs" class="csl-entry" role="listitem">
 USGS. n.d. <span>“How Do i Use a Scale Factor with Landsat Level-2 Science Products? | u.s. Geological Survey.”</span> <a href="https://www.usgs.gov/faqs/how-do-i-use-a-scale-factor-landsat-level-2-science-products">https://www.usgs.gov/faqs/how-do-i-use-a-scale-factor-landsat-level-2-science-products</a>.
+</div>
+<div id="ref-velastegui-montoya2023" class="csl-entry" role="listitem">
+Velastegui-Montoya, Andrés, Néstor Montalván-Burbano, Paúl Carrión-Mero, Hugo Rivera-Torres, Luís Sadeck, and Marcos Adami. 2023. <span>“Google Earth Engine: A Global Analysis and Future Trends.”</span> <em>Remote Sensing</em> 15 (14): 3675. <a href="https://doi.org/10.3390/rs15143675">https://doi.org/10.3390/rs15143675</a>.
 </div>
 </div>
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">

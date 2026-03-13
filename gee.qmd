@@ -40,7 +40,7 @@ Raw satellite pixel values are stored as integers to reduce storage size, theref
 
 The reducing method ( `ee.Reducer` ) are commonly used to aggregate pixel values using mean, median, sum or percentiles.
 
-To summarise pixel values within
+To summarise pixel values within...
 
 -   `image.reduceRegion`, one region, suitable for NDVI, rainfall, etc.
 
@@ -48,7 +48,7 @@ To summarise pixel values within
 
 -   `image.reduce.Neighbourhood`, within the neighbourhood, suitable for terrain texture processing
 
-Taking the median out of a stack of images is often the most common practice as it provides a simple and quite reliable summary of a time series data. However, its is also just a "good enough" approach and does not necessarily be the most suitable approach. In some cases, considering using percentiles maybe a more sensible approach than median. Selecting a higher percentile such as the 75th to 90th percentile range may better capture conditions and interpret more meaningful results.
+Taking the median out of a stack of images is often the most common practice as it provides a simple and quite reliable summary of time series data. However, its is also just a "good enough" approach and does not necessarily be the most suitable approach. In some cases, considering using percentiles maybe a more sensible approach than median. Selecting a higher percentile such as the 75th to 90th percentile range may better capture conditions and interpret more meaningful results.
 
 ::: {style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;"}
 A good practice I will always adopt is to **apply the Scale Factor first**, **reducing image by region(s) or neighbourhood**, then take the **mean** (when there is a few images) **or median** (when there is a big stack of images) **depending on the volume of images obtained.**
@@ -94,11 +94,17 @@ A good practice I will always adopt is to **apply the Scale Factor first**, **re
 
 ### Study Area: Delhi, India
 
-To narrow down to the study area, a level 2 Shapefile from GAD4M and was clipped and filtered to Delhi using `.filter('GID_1 == "IND.25_1"');` within GEE. Data was filtered to the 2021-06-01 to 2022-10-10 date period.
+This section explains GEE's key benefit of higher analysis efficiency from defining our study area to analysis without extensive local pre-processing. It allows uploading a shapefile to be clipped and filtered directly using `.filter('GID_1 == "IND.25_1"');`. Under the same interface, it is also able to derive texture, PCA bands and NDVI time series analysis, enabling a workflow from acquiring data to initial interpretation of findings before processing further analysis or classification.
 
 #### Texture
 
-Texture analysis was found that it can significantly increase classification accuracy (classification will be covered in next chapter), therefore best practices often combine texture and spectral analysis for obtaining the best results [@kupidura2019]. There are many methods for texture analysis methods, but this section, we will focus on using GLCM as discussed previously in [Correction](https://christychoicc.github.io/RSCE/correction.html#texture). GEE is capable for conducting texture analysis, the following highlighted high reflectance areas of urban land uses and featuring areas of industrial activities.
+There are many methods for texture analysis methods, but this section, we will focus on using GLCM as discussed previously in [Correction](https://christychoicc.github.io/RSCE/correction.html#texture).
+
+::: {style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;"}
+GEE is capable for conducting texture analysis efficiently
+:::
+
+This method through GEE highlighted high reflectance areas of urban land uses and featuring areas associated with industrial activities.
 
 ::: {layout-ncol="1"}
 ![GLCM Texture](images/w6_images/texture.png)
@@ -106,7 +112,17 @@ Texture analysis was found that it can significantly increase classification acc
 
 #### PCA
 
-GEE is also capable for conducting PCA analysis which was discussed earlier in [Correction](https://christychoicc.github.io/RSCE/correction.html#pca), but slightly more complex than doing it through R. Looking at the list of PCA values, the first 2 values answered around 93% of total variance of the study area. Therefore, combining these two bands, it is able to distinguish most land types within our study area.
+GEE is also capable for conducting PCA analysis which was discussed earlier in [Correction](https://christychoicc.github.io/RSCE/correction.html#pca).
+
+::: {style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;"}
+GEE addresses limitations of high computational costs and large memory requirments when processing PCA [@roy2024]
+:::
+
+::: {style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;"}
+It can be slightly more complex than processing it through R
+:::
+
+Computed through GEE, the first 2 values answered around 93% of total variance. Therefore, combining these two bands, the map layer below is able to distinguish clearly most land types within our study area.
 
 ```{r, echo=FALSE}
 cat(readLines("gee/pca.txt"), sep = "\n")
@@ -118,7 +134,13 @@ cat(readLines("gee/pca.txt"), sep = "\n")
 
 #### NDVI
 
-As discussed previously in [Correction](https://christychoicc.github.io/RSCE/correction.html#normalised-difference-vegetation-index-ndvi), NDVI is used as an indicator for vegetation in studies. Also capable for calculating band maths, GEE allows NDVI analysis and even having its own function for easy calculation:
+As discussed previously in [Correction](https://christychoicc.github.io/RSCE/correction.html#normalised-difference-vegetation-index-ndvi), NDVI is used as an indicator for vegetation in studies.
+
+::: {style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;"}
+GEE is capable of calculating band maths, allowing extension to broader analysis, mapping and temporal visualisations
+:::
+
+In this case, it does even have its own function for easy calculation of NDVI:
 
 ``` javascript
 var NDVI = clip.normalizedDifference([SR_B5, SR_B4]);
@@ -128,17 +150,23 @@ var NDVI = clip.normalizedDifference([SR_B5, SR_B4]);
 ![NDVI](images/w6_images/NDVI.png)
 :::
 
+Having exploring around, I also found that GEE supports plotting graphs of time series data, allowing an immediate understanding of an overall vegetation condition of our study area in this case.
+
 ::: {layout-ncol="1"}
 ![Average NDVI over time in Delhi](images/w6_images/ee-chart.png)
 :::
 
-Having exploring around, I also found that GEE supports plotting graphs of time series data, allowing an immediate understanding of an overall vegetation condition of our study area in this case. The above shows a time-series analysis of average NDVI in Delhi. Data gaps within the data series maybe due to data selection of \< 10% cloud cover. This figure captures seasonal differences of vegetation, offering insights of agricultural cycle and climate conditions in Delhi. The fluctuations of vegetation conditions peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise of NDVI values March, which maybe due to atmospheric noise of data rather than reflecting vegetation conditions? It continues to decline in May (hottest month of the year in Delhi) and thereafter.
+::: {style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;"}
+GEE's plotting function is very useful for identifying any anomalies or data quality issues before further analysis
+:::
+
+The above shows a time-series analysis of average NDVI in Delhi. Data gaps within the series maybe due to selection of \< 10% cloud cover. The time series captures seasonal vegetation patterns, offering insights into Delhi's agricultural cycles and climate conditions. The fluctuations of NDVI values peaked just before November before declining to around 0.35 to 0.4 during cooler seasons. There is an unusual sharp rise observed in March, which may reflect atmospheric noise of data rather than vegetation conditions. NDVI continues to decline in the hottest season of Delhi in May and thereafter.
 
 GEE Code for this practical can be found [here](https://code.earthengine.google.com/cce3b32f442cce69c5831fa35a99f215).
 
 ### GEE Workflow
 
-The above covered briefly on the general workflow on different types of operations through GEE. As shown in the figure below, GEE allows taking analysis from simple mathematical functions to more complex image processing and machine learning method, which more on machine learning will be discussed in later chapters.
+The above methods have linked with applications in literature. As shown in the figure below, GEE allows taking analysis from simple mathematical functions to more complex image processing and machine learning method, more on machine learning will be discussed in later chapters.
 
 ::: {layout-ncol="1"}
 ![GEE Workflow](images/w6_images/gee_usage.gif){#reference}
@@ -146,14 +174,14 @@ The above covered briefly on the general workflow on different types of operatio
 
 ### Applications of GEE in Research
 
-GEE are used across an extensive wide discipline when it comes to research applications. The following sums up a range of applications that GEE supports as well as the satellite products that are most commonly used with GEE:
+GEE are used across an extensive wide discipline when it comes to research applications. It benefits does not limit to only accessibility to its breadth of data, but also its ability to process data across large spatial and temporal extents. This makes GEE particularly valuable for long-term monitoring and comparative studies. The following sums up a range of applications that GEE supports as well as the satellite products that are most commonly used with GEE:
 
 ::: {layout-ncol="1"}
 ![GEE Applications, Source: @amani2020](images/w6_images/gee_applications.png)
 :::
 
 ::: {layout-ncol="1"}
-[![Remote Sensing Products Usage in GEE, Source: ](images/w6_images/satellite_sensors_most_mentioned_in_publications_gee_2011_22.jpg)](https://www.mdpi.com/2072-4292/15/14/3675)
+[![Trend of Publication Studies with GEE, Source: @velastegui-montoya2023](images/w6_images/main_rs_applications_studied_in-gee.jpg)](https://www.mdpi.com/2072-4292/15/14/3675)
 :::
 
 ## Reflection
@@ -162,7 +190,7 @@ Switching from manual data pre-processing in QGIS and SNAP to GEE has really bee
 
 This week provided a good opportunity to delve in both JavaScript and GEE as a new language and new tool. I found exploring through Google Earth Engine webpage particularly insightful, offering ready-made code, concept explanations, and analysis guides that is easily accessible and user friendly for a first time user. I found it particularly useful that we can easily clip spatial boundary, not needed to worry about projections and that analysis outputs can be added as map layers, etc. The adjustable transparency in each layers was one of the things I liked most so far, as it allows comparison against Google's base map, observing the accuracy of data visually.
 
-It has also raise my awareness for the limitations for non-commerical usage. GEE is implying a noncommercial quota tier from April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly limit intensive workflows as a student user (especially for community tier). I also found the fact that GEE does not support markdown style cell-by-cell execution makes catching error harder for me. Although GEE's cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which may ocassionally be a problem.
+It has also raised my awareness for limitations in non-commerical usage. GEE is implying a noncommercial quota tier from April 2026, capping free Earth Engine Compute Units (EECUs) on a monthly basis, which may possibly limit intensive workflows as a student user (especially at a community tier). I also found the fact that GEE does not support markdown style cell-by-cell execution makes catching error harder for me. Although GEE's cloud computing capabilities makes it a very effective tool for remotely sensing analysis, but it also means that it is entirely dependent on stable internet connection, which may ocassionally be a problem.
 
 I have touched upon Google Earth before in my undergraduate field trip in Porto, Portugal for site analysis purposes. It was really useful back then for identifying features within the site, understanding the surrounding context, and getting a brief understanding of the site upon arrival. Yet, Google Earth is more of a passive observational tool, and so building on that, this week's learning of GEE gave me flashbacks from my previous studies. Still using a Google served platform, but able to delve deeper in remotely sensing applications.
 
