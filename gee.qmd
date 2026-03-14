@@ -65,7 +65,7 @@ A good practice I will always adopt is to **apply the Scale Factor first**, **re
 +===============================+============================================================================================================================================+========================================================================================+
 | Cloud-based Platform          | -   Free for non-commercial use                                                                                                            | -   Depend on internet access, cannot be used offline                                  |
 |                               |                                                                                                                                            |                                                                                        |
-|                               | -   Process remotely sensing data across large spatial and temporal scales                                                                 | -   Takes longer to download processed data                                            |
+|                               | -   Process remotely sensing data across large spatial and temporal scales (40 years archive)                                              | -   Takes longer to download processed data                                            |
 |                               |                                                                                                                                            |                                                                                        |
 |                               | -   Fast filtering and sorting allows easier search in large image collections                                                             |                                                                                        |
 |                               |                                                                                                                                            |                                                                                        |
@@ -181,7 +181,7 @@ GEE are used across an extensive wide discipline when it comes to research appli
 :::
 
 ::: {layout-ncol="1"}
-[![Trend of Publication Studies with GEE, Source: @velastegui-montoya2023](images/w6_images/main_rs_applications_studied_in-gee.jpg)](https://www.mdpi.com/2072-4292/15/14/3675)
+[![Trend of Publication Studies with GEE, Source: ](images/w6_images/main_rs_applications_studied_in-gee.jpg)](https://www.mdpi.com/2072-4292/15/14/3675)
 :::
 
 ## Reflection

@@ -2,10 +2,49 @@
 title: "Classification I"
 ---
 
+This section will focus on using machine learning techniques of classification.
+
 ## Summary
+
+### Correction with GEE
+
+Using the code `QA60` to get quality cloud cover bands
+
+### Machine Learning 
+
+Selected polygons by drawing them on the map...
+
+Ways of supervised classification: Classification and Regression Tree (CART), RandomForest, NaiveBayes, SVM
+
+Classes: urban_low, urban_high, water, grass, forest, bare_earth
+
+::: {#CHUNKNAME layout-ncol="2"}
+![CART](images/w7_images/CART.png)
+
+![Random Forest](images/w7_images/RF.png){#reference}
+:::
+
+::: {layout-ncol="1"}
+![RF Pixel](images/w7_images/RF_PIXEL.png){alt="GLCM Texture"}
+:::
+
+Out of Bag Error: 11.7%
+
+Resubstitution Accuracy: 99.7%
+
+Validation Overall Accuracy: 88.1%
+
+| Machine Learning | Type | Description | Benefits | Limitations |
+|----|----|----|----|----|
+| Classification and Regression Tree (CART) | Supervised |  |  |  |
+| Random Forest (RF) | Supervised |  |  |  |
+| k-means clustering | Unsupervised |  |  |  |
+| ISODATA |  |  |  |  |
 
 ## Application
 
 ## Reflection
+
+Getting global administrative unit layers `ADM2_CODE` so quickly and easily in GEE.
 
 Establishing and testing an optimal set of complementary textural data for the best possible increase in land use/cover classification accuracy ([Kupidura, 2019](https://www.mdpi.com/2072-4292/11/10/1233#)).
