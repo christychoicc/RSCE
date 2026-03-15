@@ -33,13 +33,13 @@ The below will discuss some commonly used classification methods:
 
 : Source: @zhao2024, @pande2024, @magidi2021
 
-**Study Area: Shenzhen, China**
+#### Study Area: Shenzhen, China
 
 Sentinel-2 Surface Reflectance Harmonized data was loaded for minimal cloud cover and processed with cloud masking. To reduce cloud coverage and atmospheric noise, a median composite was taken from the time series, leaving raw spectral bands to be used for identifying LULCC. In this case, 6 land cover classes were defined as `urban_low`, `water`, `urban_high`, `grass`, `bare_earth`, and `forest` and merged into a feature collection for training.
 
 The practical first applied Classification and Regression Tree (CART), which produced an initial classification result. Moving to Random Forest (RF), data were split into training and testing sets for 70% and 30% respectively. The pixel-based RF approach produced a more reliable classification as it used more pixels data within polygons which improved model performance.
 
-![Classification Decision Tree, Source @f2-ear](images/w7_images/Screenshot 2026-03-15 181703.png)
+![Classification Decision Tree, Source @f2-ear](images/w7_images/Screenshot%202026-03-15%20181703.png)
 
 ::: {#CHUNKNAME layout-ncol="2"}
 ![CART](images/w7_images/CART.png)
@@ -69,17 +69,17 @@ GEE code for this practical can be found [here](https://code.earthengine.google.
 
 ## Application
 
-Machine learning models have been widely recommended for land use classification and change detections mapping\[@pande2022\]. LULCC analysis is a major application of remote sensing classification because it allows researchers to examine spatial patterns, identify and monitor temporal changes over time. These workflows can be analysed efficiently over GEE, making it exceptionally useful for environmental monitoring, urban expansion research and agricultural assessment applications[@pande2024].
+Machine learning models have been widely recommended for land use classification and change detections mapping[@pande2022]. LULCC analysis is a major application of remote sensing classification because it allows researchers to examine spatial patterns, identify and monitor temporal changes over time. These workflows can be analysed efficiently over GEE, making it exceptionally useful for environmental monitoring, urban expansion research and agricultural assessment applications[@pande2024].
 
 Studies also show that classification accuracy depends not only on the classifier itself, but also on input better information and features. In addition to spectral bands, studies often incorporate bands combinations and derived features such as NDVI, MNDWI, and texture measures. @zhao2024 used a standard GEE-based workflow of LULCC, while @kupidura2019 indicated that combining spectral and textural information can improve classification accuracy, especially where classes have similar spectral signatures and when higher resolution imagery is used. This suggests that improving the feature set may be as important as changing the classifier.
 
 ::: {layout-ncol="1"}
-![Methodology for LULCC with GEE, Source @zhao2024](images/w7_images/LULCSS_methodologgy_GEE.jpg){alt="RF Pixel"}
+![RF Pixel](images/w7_images/LULCSS_methodologgy_GEE.jpg)
 :::
 
 Although more advanced machine-learning methods can sometimes achieve higher accuracy (e.g. deep learning algorithms), they often involve a trade-off in lower interpretability. Therefore, supervised classifiers such as CART, Random Forest, and SVM remain widely used in remote sensing analysis as they are easier to apply, able to work with smaller training datasets, and able to achieve decent classification accuracy.
 
-![Accuracy Trade-off in Machine Learning Classification Algorithms, Source: @sheykhmousa2020](images/w7_images/ml_algorithm_tradeoff.png){alt="Accuracy Trade-off in Machine Learning Classification Algorithms"}
+![Accuracy Trade-off in Machine Learning Classification Algorithms](images/w7_images/ml_algorithm_tradeoff.png)
 
 ## Reflection
 

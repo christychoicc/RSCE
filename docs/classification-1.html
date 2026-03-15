@@ -472,7 +472,9 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p><strong>Study Area: Shenzhen, China</strong></p>
+</section>
+<section id="study-area-shenzhen-china" class="level4" data-number="6.1.1.2">
+<h4 data-number="6.1.1.2" class="anchored" data-anchor-id="study-area-shenzhen-china"><span class="header-section-number">6.1.1.2</span> Study Area: Shenzhen, China</h4>
 <p>Sentinel-2 Surface Reflectance Harmonized data was loaded for minimal cloud cover and processed with cloud masking. To reduce cloud coverage and atmospheric noise, a median composite was taken from the time series, leaving raw spectral bands to be used for identifying LULCC. In this case, 6 land cover classes were defined as <code>urban_low</code>, <code>water</code>, <code>urban_high</code>, <code>grass</code>, <code>bare_earth</code>, and <code>forest</code> and merged into a feature collection for training.</p>
 <p>The practical first applied Classification and Regression Tree (CART), which produced an initial classification result. Moving to Random Forest (RF), data were split into training and testing sets for 70% and 30% respectively. The pixel-based RF approach produced a more reliable classification as it used more pixels data within polygons which improved model performance.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -529,7 +531,7 @@ div.csl-indent {
 </section>
 <section id="application" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="application"><span class="header-section-number">6.2</span> Application</h2>
-<p>Machine learning models have been widely recommended for land use classification and change detections mapping[<span class="citation" data-cites="pande2022">Pande (<a href="references.html#ref-pande2022" role="doc-biblioref">2022</a>)</span>]. LULCC analysis is a major application of remote sensing classification because it allows researchers to examine spatial patterns, identify and monitor temporal changes over time. These workflows can be analysed efficiently over GEE, making it exceptionally useful for environmental monitoring, urban expansion research and agricultural assessment applications<span class="citation" data-cites="pande2024">(<a href="references.html#ref-pande2024" role="doc-biblioref">Pande et al. 2024</a>)</span>.</p>
+<p>Machine learning models have been widely recommended for land use classification and change detections mapping<span class="citation" data-cites="pande2022">(<a href="references.html#ref-pande2022" role="doc-biblioref">Pande 2022</a>)</span>. LULCC analysis is a major application of remote sensing classification because it allows researchers to examine spatial patterns, identify and monitor temporal changes over time. These workflows can be analysed efficiently over GEE, making it exceptionally useful for environmental monitoring, urban expansion research and agricultural assessment applications<span class="citation" data-cites="pande2024">(<a href="references.html#ref-pande2024" role="doc-biblioref">Pande et al. 2024</a>)</span>.</p>
 <p>Studies also show that classification accuracy depends not only on the classifier itself, but also on input better information and features. In addition to spectral bands, studies often incorporate bands combinations and derived features such as NDVI, MNDWI, and texture measures. <span class="citation" data-cites="zhao2024">Zhao et al. (<a href="references.html#ref-zhao2024" role="doc-biblioref">2024</a>)</span> used a standard GEE-based workflow of LULCC, while <span class="citation" data-cites="kupidura2019">Kupidura (<a href="references.html#ref-kupidura2019" role="doc-biblioref">2019</a>)</span> indicated that combining spectral and textural information can improve classification accuracy, especially where classes have similar spectral signatures and when higher resolution imagery is used. This suggests that improving the feature set may be as important as changing the classifier.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
@@ -537,7 +539,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w7_images/LULCSS_methodologgy_GEE.jpg" class="img-fluid figure-img"></p>
-<figcaption>Methodology for LULCC with GEE, Source <span class="citation" data-cites="zhao2024">Zhao et al. (<a href="references.html#ref-zhao2024" role="doc-biblioref">2024</a>)</span></figcaption>
+<figcaption>RF Pixel</figcaption>
 </figure>
 </div>
 </div>
@@ -547,7 +549,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w7_images/ml_algorithm_tradeoff.png" class="img-fluid figure-img"></p>
-<figcaption>Accuracy Trade-off in Machine Learning Classification Algorithms, Source: <span class="citation" data-cites="sheykhmousa2020">Sheykhmousa and Mahdianpari (<a href="references.html#ref-sheykhmousa2020" role="doc-biblioref">2020</a>)</span></figcaption>
+<figcaption>Accuracy Trade-off in Machine Learning Classification Algorithms</figcaption>
 </figure>
 </div>
 </section>
