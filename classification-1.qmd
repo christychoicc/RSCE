@@ -14,28 +14,6 @@ Machine learning plays an important role in LULCC, fostering automation, scalabi
 Enable effective land management strategies, environmental conservation, sustainable planning and policy making [@pande2024; @zhao2024]
 :::
 
-**Study Area: Shenzhen, China**
-
-Sentinel-2 Surface Reflectance Harmonized data was loaded for minimal cloud cover and processed with cloud masking. To reduce cloud coverage and atmospheric noise, a median composite was taken from the time series, leaving raw spectral bands to be used for identifying LULCC. In this case, 6 land cover classes were defined as `urban_low`, `water`, `urban_high`, `grass`, `bare_earth`, and `forest` and merged into a feature collection for training.
-
-The practical first applied Classification and Regression Tree (CART), which produced an initial classification result. Moving to Random Forest (RF), data were split into training and testing sets for 70% and 30% respectively. The pixel-based RF approach produced a more reliable classification as it used more pixels data within polygons which improved model performance.
-
-![Classification Decision Tree, Source @f2-ear](images/w7_images/Screenshot 2026-03-15 181703.png)
-
-::: {#CHUNKNAME layout-ncol="2"}
-![CART](images/w7_images/CART.png)
-
-![RF](images/w7_images/RF.png){#reference}
-:::
-
-::: {layout-ncol="1"}
-![RF Pixel](images/w7_images/RF_PIXEL.png)
-:::
-
-In the final output, I acquired a 11.7% random forest out of bag error estimate and a resubstitution accuracy of 99.7%. However, my validation overall accuracy of 88.1% indicates a 11.6% difference between training and testing which signaled some mild overfitting, I assume it maybe caused by some spectral confusion between urban and forest pixel values?
-
-GEE code for this practical can be found [here](https://code.earthengine.google.com/0e536642eb70fc39e65513fb5eca24bc).
-
 #### Classification Techniques
 
 There are two main types of classification,
@@ -55,6 +33,28 @@ The below will discuss some commonly used classification methods:
 
 : Source: @zhao2024, @pande2024, @magidi2021
 
+**Study Area: Shenzhen, China**
+
+Sentinel-2 Surface Reflectance Harmonized data was loaded for minimal cloud cover and processed with cloud masking. To reduce cloud coverage and atmospheric noise, a median composite was taken from the time series, leaving raw spectral bands to be used for identifying LULCC. In this case, 6 land cover classes were defined as `urban_low`, `water`, `urban_high`, `grass`, `bare_earth`, and `forest` and merged into a feature collection for training.
+
+The practical first applied Classification and Regression Tree (CART), which produced an initial classification result. Moving to Random Forest (RF), data were split into training and testing sets for 70% and 30% respectively. The pixel-based RF approach produced a more reliable classification as it used more pixels data within polygons which improved model performance.
+
+![Classification Decision Tree, Source @f2-ear](images/w7_images/Screenshot 2026-03-15 181703.png)
+
+::: {#CHUNKNAME layout-ncol="2"}
+![CART](images/w7_images/CART.png)
+
+![RF](images/w7_images/RF.png){#reference}
+:::
+
+Comparing both outputs, both have been able to capture a broadly correct pattern of land covers. RF resulted a less fragmented classification than CART, which is likely to be driven from the results derived from multiple decision trees, allowing lower sensitivity to noise and overfitting in comparison to the one tree CART.
+
+::: {layout-ncol="1"}
+![RF Pixel](images/w7_images/RF_PIXEL.png)
+:::
+
+In the final output, I acquired a 11.7% random forest out of bag error estimate and a resubstitution accuracy of 99.7%. However, my validation overall accuracy of 88.1% indicates a 11.6% difference between training and testing which signals some mild overfitting, I assume it maybe caused by some spectral confusion of surface reflectance between urban_high and urban_low pixel values? In the study area Shenzhen, the heterogeneous urban landscape with diverse land covers within a small area is very likely to produce overlapping spectral signatures. This brings in one of the limitations of classification with spectral values, where `urban_high`, `urban_low` and `bare_earth` classes in reality may not be as distinguishable as others of `forest` and `water` even under pixel random forest. Therefore, I believe carefully defined classes and feature selection is as important as choosing the suitable method for classification, and further support with texture analysis could be considered for better accuracy (maybe consider using OBIA...).
+
 ::: {style="border: 1px solid #ddd; border-left: 4px solid #e0a800; padding: 10px 15px; color: #e0a800; border-radius: 4px; margin-bottom: 15px;"}
 **Note that accuracy can be determined by...**
 
@@ -62,6 +62,8 @@ The below will discuss some commonly used classification methods:
 
 -   It can be influenced by several factors, such as the choice of classifier, the quality of training data, terrain heterogeneity, dataset used, and the reference maps [@zhao2024].
 :::
+
+GEE code for this practical can be found [here](https://code.earthengine.google.com/0e536642eb70fc39e65513fb5eca24bc).
 
 ## Application
 
