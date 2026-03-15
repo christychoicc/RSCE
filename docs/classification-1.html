@@ -419,7 +419,7 @@ div.csl-indent {
 <h4 data-number="6.1.1.1" class="anchored" data-anchor-id="classification-techniques"><span class="header-section-number">6.1.1.1</span> Classification Techniques</h4>
 <p>There are two main types of classification,</p>
 <ul>
-<li><p><strong>Supervised</strong>: Learning patterns with knowledge and pre-defined spectral characteristics labeled for each class</p></li>
+<li><p><strong>Supervised</strong>: Learn patterns with knowledge and pre-defined spectral characteristics labeled for each class</p></li>
 <li><p><strong>Unsupervised</strong>: Learn patterns without pre-defined set of labeled training data</p></li>
 </ul>
 <p>The below will discuss some commonly used classification methods:</p>
@@ -514,12 +514,13 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>In the final output, I acquired a 11.7% random forest out of bag error estimate and a resubstitution accuracy of 99.7%. However, my validation overall accuracy of 88.1% indicates a 11.6% difference between training and testing which signals some mild overfitting, I assume it maybe caused by some spectral confusion of surface reflectance between urban_high and urban_low pixel values? In the study area Shenzhen, the heterogeneous urban landscape with diverse land covers within a small area is very likely to produce overlapping spectral signatures. This brings in one of the limitations of classification with spectral values, where <code>urban_high</code>, <code>urban_low</code> and <code>bare_earth</code> classes in reality may not be as distinguishable as others of <code>forest</code> and <code>water</code> even under pixel random forest. Therefore, I believe carefully defined classes and feature selection is as important as choosing the suitable method for classification, and further support with texture analysis could be considered for better accuracy (maybe consider using OBIA…).</p>
+<p>In the final output, I acquired a 11.7% random forest out of bag error estimate and a resubstitution accuracy of 99.7%. However, my validation overall accuracy of 88.1% indicates a 11.6% difference between training and testing which signals some mild overfitting, I assume it maybe caused by some spectral confusion of surface reflectance between urban_high and urban_low pixel values? In the study area Shenzhen, the heterogeneous urban landscape with diverse land covers within a small area is very likely to produce overlapping spectral signatures. This brings in one of the limitations of classification with spectral values only, where <code>urban_high</code>, <code>urban_low</code> and <code>bare_earth</code> classes in reality may not be as distinguishable as others of <code>forest</code> and <code>water</code> even under pixel random forest. Therefore, I believe carefully defined classes and feature selection is as important as choosing the suitable method for classification, and further support with texture analysis could be considered for better accuracy (maybe consider using OBIA…).</p>
 <div style="border: 1px solid #ddd; border-left: 4px solid #e0a800; padding: 10px 15px; color: #e0a800; border-radius: 4px; margin-bottom: 15px;">
 <p><strong>Note that accuracy can be determined by…</strong></p>
 <ul>
 <li><p>Selection of training data size and algorithm used for classification</p></li>
 <li><p>It can be influenced by several factors, such as the choice of classifier, the quality of training data, terrain heterogeneity, dataset used, and the reference maps <span class="citation" data-cites="zhao2024">(<a href="references.html#ref-zhao2024" role="doc-biblioref">Zhao et al. 2024</a>)</span>.</p></li>
+<li><p>Feature selection too perhaps!!</p></li>
 </ul>
 </div>
 <p>GEE code for this practical can be found <a href="https://code.earthengine.google.com/0e536642eb70fc39e65513fb5eca24bc">here</a>.</p>
