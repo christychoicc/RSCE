@@ -32,7 +32,7 @@ Random Forest, train test and split pixels –\> give higher accuracy
 ![RF Pixel](images/w7_images/RF_PIXEL.png)
 :::
 
-In the final output, I acquired a 11.7% random forest out of bag error estimate and a resubstitution accuracy of 99.7%. However, my validation overall accuracy of 88.1% indicates a 11.6% difference between training and testing which signaled some mild overfitting, I assume it is caused by some spectral confusion between urban and forest pixel values?
+In the final output, I acquired a 11.7% random forest out of bag error estimate and a resubstitution accuracy of 99.7%. However, my validation overall accuracy of 88.1% indicates a 11.6% difference between training and testing which signaled some mild overfitting, I assume it maybe caused by some spectral confusion between urban and forest pixel values?
 
 GEE code for this practical can be found [here](https://code.earthengine.google.com/0e536642eb70fc39e65513fb5eca24bc).
 
@@ -42,13 +42,13 @@ There are two main types of classification, supervised and unsupervised.
 
 | Machine Learning | Type | Description | Benefits | Limitations | When to use? |
 |----|----|----|----|----|----|
-| Classification and Regression Tree (CART) | Supervised | Uses a decision tree using `classifier.smileCart` method | Can handle an enormous size of high resolution datasets without sacrificing processing performance | Prone to overfitting the model; Sensitive to changes in the training datasets which leads to comparably lower accuracy | Land cover (surface water) |
+| Classification and Regression Tree (CART) | Supervised | Uses a decision tree using `classifier.smileCart` method | Can handle an enormous size of high resolution datasets without sacrificing processing performance | Prone to overfitting the model; Sensitive to changes in the training datasets which leads to comparably lower accuracy | Land cover (crop, water, urban, forests) |
 | Random Forest (RF) | Supervised | Generate numerous decision trees by randomly sampling variables and training datasets (often use 20 as a minimum) | High efficiency and accuracy, |  | Land cover (vegetation, urban, barren) environmental monitoring and land management applications |
 | Support Vector Machine (SVM) | Supervised |  | Computationally efficient; Works well in high-dimensional areas with distinct margin of separation between classes | Difficult to use, interpret and fine-tune; Require lengthy training period for large datasets, can underestimate urban/ built-up classes | Land cover (surface water) |
 | k-means clustering | Unsupervised |  |  |  |  |
 | ISODATA |  |  |  |  |  |
 
-: Source: @zhao2024
+: Source: @zhao2024, @pande2024
 
 ::: {style="border: 1px solid #ddd; border-left: 4px solid #e0a800; padding: 10px 15px; color: #e0a800; border-radius: 4px; margin-bottom: 15px;"}
 **Note that accuracy can be determined by...**
@@ -60,17 +60,21 @@ There are two main types of classification, supervised and unsupervised.
 
 ## Application
 
-The application of machine learning is widely used among remote sensing analysis, typically LULCSS, but studies also incoporate other spectral bands combinations such as NDVI, MNDWI, etc. for training, allowing identifying changes over time. The following shows a workflow for application:
+***"Machine learning models have been strongly recommended for classification land use and change detections maps"** [@pande2022]*
+
+LULCC analysis is a major application of remote sensing classification because it allows researchers to examine spatial patterns, identify and monitor temporal changes over time. These workflows can be analysed efficiently over GEE, making it exceptionally useful for environmental monitoring, urban expansion research and agricultural assessment applications[@pande2024].
+
+Although there are many other machine learning approaches that can provide higher accuracy classification, yet there are also trade off problems of loss of interpretability as shown below. Therefore, this positioned decision-tree-based methods such as CART, SVM and Random Forest oftenly more suitable methods as they can classify satellite imagery into land cover classes, and is easier to use, smaller training datasets and able to achieve a good accuracy.
+
+![Accuracy Trade-off in Machine Learning Classification Algorithms, Source: @sheykhmousa2020](images/w7_images/ml_algorithm_tradeoff.png)
+
+However, exisiting studies showed that classification does not depend only on the classifier itself, but also on features. @zhao2024 presented a standard GEE-based workflow for LULCC classification, where another study by @yao2022 extended this by combining Sentinel-2 spectral bands, NDVI time-series reconstruction, and Sentinel-1 radar polarization features. Their study compared random forest, object-oriented classification, deep neural learning, and an RF+DNN approach, showing that more advanced workflows can improve classification when feature space is carefully designed. This suggests that although CART and RF are strong baseline approaches, more complex landscapes such as crop or mixed land-cover systems may benefit from temporal information and multi-source data rather than relying only on single-date spectral reflectance.
 
 ::: {layout-ncol="1"}
 ![Methodology for LULCC with GEE, Source @zhao2024](images/w7_images/LULCSS_methodologgy_GEE.jpg){alt="RF Pixel"}
 :::
 
-LULCC analysis is essential for understanding environmental, ecological, and societal impacts, where the revolution of GEE, it allows identifying and quantifying LULCC, examing spatial patterns and assessing any temporal changes over time [@pande2024]. –\> can gain insights to the dynamic land use patterns and their implication, which CART can be used to understand the driving factors behind these changes.
-
-The CART model is largely used in land cover classification, taining the model using labeled satellite imagery data can accurately classify land cover classes, such as crops, forests, water bodies, and built-up urban areas [@pande2024].
-
-@dou2021 mentioned using time series images (TSI) to improve classification. It was found that NDI can enhance different classes by making full use of spectral bands, which is used to analyse each temporal image.
+Time-series analysis is particularly important for monitoring applications where classes change over time. @dou2021 showed that time-series imagery (TSI) and normalized difference indices can improve class discrimination by making full use of spectral bands. This is especially relevant in vegetation and crop studies, where phenological patterns can help distinguish land-cover classes that maybe confused in pixel-based classification. Overall, these show that remote sensing applications can integrating temporal, spectral, and radar information for improving both accuracy and interpretability.
 
 ::: {layout-ncol="1"}
 ![Time Series Data NDI, Source: @dou2021](images/w7_images/timeseriesdata.jpg){alt="RF Pixel"}
@@ -82,7 +86,7 @@ How quickly and easily it is to load in vector data of level 2 Global Administra
 
 Information extraction with AI (machine learning)
 
-I also find using Google Earth on the side quite useful to increase the accuracy of drawing polygons.
+I also find using Google Earth on the side quite useful to increase the accuracy of drawing polygons. Additionally, reading through @pande2022 study, I also found out that I can also select with points instead of drawing polygons, which can be more accurate and time saving and will trying using this next time.
 
 Establishing and testing an optimal set of complementary textural data for the best possible increase in land use/cover classification accuracy ([Kupidura, 2019](https://www.mdpi.com/2072-4292/11/10/1233#)).
 

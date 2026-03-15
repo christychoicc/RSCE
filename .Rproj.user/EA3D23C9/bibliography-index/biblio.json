@@ -1270,6 +1270,102 @@
             "title": "Time series remote sensing image classification framework using combination of deep learning and multiple classifiers system",
             "type": "article-journal",
             "volume": "103"
+        },
+        {
+            "DOI": "10.3390/rs14122758",
+            "URL": "https://www.mdpi.com/2072-4292/14/12/2758",
+            "author": [
+                {
+                    "family": "Yao",
+                    "given": "Jinxi"
+                },
+                {
+                    "family": "Wu",
+                    "given": "Ji"
+                },
+                {
+                    "family": "Xiao",
+                    "given": "Chengzhi"
+                },
+                {
+                    "family": "Zhang",
+                    "given": "Zhi"
+                },
+                {
+                    "family": "Li",
+                    "given": "Jianzhong"
+                }
+            ],
+            "container-title": "Remote Sensing",
+            "id": "yao2022",
+            "issue": "12",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "2758",
+            "title": "The Classification Method Study of Crops Remote Sensing with Deep Learning, Machine Learning, and Google Earth Engine",
+            "type": "article-journal",
+            "volume": "14"
+        },
+        {
+            "DOI": "10.1080/10106049.2022.2086622",
+            "URL": "https://doi.org/10.1080/10106049.2022.2086622",
+            "author": [
+                {
+                    "family": "Pande",
+                    "given": "Chaitanya B."
+                }
+            ],
+            "container-title": "Geocarto International",
+            "id": "pande2022",
+            "issue": "26",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        12,
+                        13
+                    ]
+                ]
+            },
+            "note": "_eprint: https://doi.org/10.1080/10106049.2022.2086622",
+            "page": "13860-13880",
+            "title": "Land use/land cover and change detection mapping in rahuri watershed area (MS), india using the google earth engine and machine learning approach",
+            "type": "article-journal",
+            "volume": "37"
+        },
+        {
+            "DOI": "10.1109/JSTARS.2020.3026724",
+            "author": [
+                {
+                    "family": "Sheykhmousa",
+                    "given": "Reza M"
+                },
+                {
+                    "family": "Mahdianpari",
+                    "given": "Masoud"
+                }
+            ],
+            "container-title": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+            "id": "sheykhmousa2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        10,
+                        1
+                    ]
+                ]
+            },
+            "title": "Support vector machine vs. Random forest for remote sensing image classification: A meta-analysis and systematic review",
+            "title-short": "Support vector machine vs. Random forest for remote sensing image classification",
+            "type": "article-journal"
         }
     ],
     "project_biblios": [
