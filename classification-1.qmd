@@ -11,24 +11,22 @@ This section will build up the knowledge of GEE from last chapter and focus on u
 Machine learning plays an important role in LULCC, fostering automation, scalability, and improved accuracy. By learning complex patterns from satellite imagery, these algorithms can effectively identify different land types. They also handle large datasets efficiently, making it easier to track land use changes over time.
 
 ::: {style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;"}
-Understand the dynamic nature of landscapes, enabling effective land management strategies, environmental conservation, sustainable planning and policy making [@pande2024; @zhao2024]
+Enable effective land management strategies, environmental conservation, sustainable planning and policy making [@pande2024; @zhao2024]
 :::
 
-#### Study Area: Shenzhen, China
+**Study Area: Shenzhen, China**
 
-Data was loaded for minimal cloud cover and processed with cloud masking, and through taking the median pixel values across the time series data, where clouds and other atmospheric noises will be removed, leaving raw spectral bands to be used for identifying LULCC.
+Sentinel-2 Surface Reflectance Harmonized data was loaded for minimal cloud cover and processed with cloud masking. To reduce cloud coverage and atmospheric noise, a median composite was taken from the time series, leaving raw spectral bands to be used for identifying LULCC. In this case, 6 land cover classes were defined as `urban_low`, `water`, `urban_high`, `grass`, `bare_earth`, and `forest` and merged into a feature collection for training.
 
-In this case, 6 land use classes were defined as `urban_low`, `water`, `urban_high`, `grass`, `bare_earth`, and `forest`.
+The practical first applied Classification and Regression Tree (CART), which produced an initial classification result. Moving to Random Forest (RF), data were split into training and testing sets for 70% and 30% respectively. The pixel-based RF approach produced a more reliable classification as it used more pixels data within polygons which improved model performance.
 
-Data was divided into 70% training and 30% testing splits.
+![Classification Decision Tree, Source @f2-ear](images/w7_images/Screenshot 2026-03-15 181703.png)
 
 ::: {#CHUNKNAME layout-ncol="2"}
 ![CART](images/w7_images/CART.png)
 
-![Random Forest](images/w7_images/RF.png){#reference}
+![RF](images/w7_images/RF.png){#reference}
 :::
-
-Random Forest, train test and split pixels –\> give higher accuracy
 
 ::: {layout-ncol="1"}
 ![RF Pixel](images/w7_images/RF_PIXEL.png)
@@ -40,14 +38,20 @@ GEE code for this practical can be found [here](https://code.earthengine.google.
 
 #### Classification Techniques
 
-There are two main types of classification, supervised and unsupervised.
+There are two main types of classification,
+
+-   **Supervised**: Learning patterns with knowledge and pre-defined spectral characteristics labeled for each class
+
+-   **Unsupervised**: Learn patterns without pre-defined set of labeled training data
+
+The below will discuss some commonly used classification methods:
 
 | Machine Learning | Type | Description | Benefits | Limitations |
-|----|----|----|----|----|
-| Classification and Regression Tree (CART) | Supervised | Uses a decision tree using `classifier.smileCart` method | Can handle an enormous size of high resolution datasets without sacrificing processing performance | Prone to overfitting the model; Sensitive to changes in the training datasets which leads to comparably lower accuracy |
+|---------------|---------------|---------------|---------------|---------------|
+| Classification and Regression Tree (CART) | Supervised | One single decision tree that splits pixels into groups and predict a class | Can handle an enormous size of high resolution datasets without sacrificing processing performance | Prone to overfitting the model; Sensitive to changes in the training datasets which leads to comparably lower accuracy |
 | Random Forest (RF) | Supervised | Generate numerous decision trees by randomly sampling variables and training datasets (often use 20 as a minimum) | High efficiency and accuracy; Easy to use; Able to learn booth simple and complex classification functions | May over-fit the training data which limits providing better accuracy |
-| Support Vector Machine (SVM) | Supervised |  | Computationally efficient; Works well with high-dimensionality with distinct margin of separation between classes | Difficult to use, interpret and fine-tune; Require lengthy training period for large datasets, can underestimate urban/ built-up classes |
-| k-means clustering | Unsupervised |  |  |  |
+| Support Vector Machine (SVM) | Supervised | Separate two classes of training data by finding a optimal boundary (separating hyperplane) | Computationally efficient; Works well with high-dimensionality with distinct margin of separation between classes | Difficult to use, interpret and fine-tune; Require lengthy training period for large datasets, can underestimate urban/ built-up classes |
+| K-means clustering | Unsupervised | Group pixels near each other into clusters in the spectral space |  |  |
 
 : Source: @zhao2024, @pande2024, @magidi2021
 
@@ -61,28 +65,24 @@ There are two main types of classification, supervised and unsupervised.
 
 ## Application
 
-***"Machine learning models have been strongly recommended for classification land use and change detections maps"** [@pande2022]*
+Machine learning models have been widely recommended for land use classification and change detections mapping\[@pande2022\]. LULCC analysis is a major application of remote sensing classification because it allows researchers to examine spatial patterns, identify and monitor temporal changes over time. These workflows can be analysed efficiently over GEE, making it exceptionally useful for environmental monitoring, urban expansion research and agricultural assessment applications[@pande2024].
 
-LULCC analysis is a major application of remote sensing classification because it allows researchers to examine spatial patterns, identify and monitor temporal changes over time. These workflows can be analysed efficiently over GEE, making it exceptionally useful for environmental monitoring, urban expansion research and agricultural assessment applications[@pande2024].
-
-Exisiting studies showed that classification also incorporate other spectral bands combinations such as NDVI, MNDWI, etc. @zhao2024 presented a standard GEE-based workflow of LULCC, where another study by @yao2022 extended this by comparing random forest, object-oriented classification, deep neural learning, and an RF+DNN approach, showing that more advanced workflows can improve classification. This suggests that although CART and RF are strong baseline approaches, more complex landscapes such as crop or mixed land-cover systems may benefit from temporal information and multi-sour
+Studies also show that classification accuracy depends not only on the classifier itself, but also on input better information and features. In addition to spectral bands, studies often incorporate bands combinations and derived features such as NDVI, MNDWI, and texture measures. @zhao2024 used a standard GEE-based workflow of LULCC, while @kupidura2019 indicated that combining spectral and textural information can improve classification accuracy, especially where classes have similar spectral signatures and when higher resolution imagery is used. This suggests that improving the feature set may be as important as changing the classifier.
 
 ::: {layout-ncol="1"}
 ![Methodology for LULCC with GEE, Source @zhao2024](images/w7_images/LULCSS_methodologgy_GEE.jpg){alt="RF Pixel"}
 :::
 
-Although there are rising adoptation of machine learning approaches that provides higher accuracy classification (e.g. deep learning algorithms, etc), yet there are also trade off problems of loss of interpretability as shown below. Therefore, this positioned decision-tree-based methods such as CART, SVM and Random Forest as more suitable methods as they can classify satellite imagery into land cover classes, and is easier to use, smaller training datasets and able to achieve a decent accuracy.
+Although more advanced machine-learning methods can sometimes achieve higher accuracy (e.g. deep learning algorithms), they often involve a trade-off in lower interpretability. Therefore, supervised classifiers such as CART, Random Forest, and SVM remain widely used in remote sensing analysis as they are easier to apply, able to work with smaller training datasets, and able to achieve decent classification accuracy.
 
 ![Accuracy Trade-off in Machine Learning Classification Algorithms, Source: @sheykhmousa2020](images/w7_images/ml_algorithm_tradeoff.png){alt="Accuracy Trade-off in Machine Learning Classification Algorithms"}
 
 ## Reflection
 
-Building upon last week's learning, I learnt how quickly and easily it is to load in vector data of level 2 Global Administrative Units Layers (GAUL) within GEE!!
+Building on last week's introduction to GEE, this week deepened my understanding of how to train and test datasets for LULCC. I also experienced how vector data can be loaded from the Global Administrative Units Layers (GAUL) within GEE which simplified the workflow compared to managing files locally.
 
-To increase the accuracy of my training data, I found it incredibly useful to use high-resolution Google Earth imagery on the side as a reference while drawing polygons. Furthermore, reading through @pande2022 and @sheykhmousa2020, I learned about the trade-off between using points and polygons. While selecting points is highly specific and allows constraints of keeping validation points at least 100m away from training data to reduce spatial autocorrelation, it can be very time-consuming. Therefore, drawing polygons is a more generally more efficient and better choice for training large volume of data.
+To increase the accuracy of my training data, I found it incredibly useful to use Google Earth (high-resolution imagery) on the side as a visual reference while drawing polygons. Furthermore, reading through @pande2022 and @sheykhmousa2020 also made me think more critically about the trade-off between using points and polygons. While selecting points is highly specific, reduce spatial autocorrelation and provide precise validation, polygons are often more efficient when handling large training datasets.
 
-Establishing and testing an optimal set of complementary textural data for the best possible increase in land use/cover classification accuracy ([Kupidura, 2019](https://www.mdpi.com/2072-4292/11/10/1233#)).
+In a broader policy context, these classification techniques can be very informative for decision-making purposes. From monitoring urban sprawl and heat islands to tracking deforestation and supporting disaster response, but its useful extent also depends on institutional considerations...
 
-These ML techniques can be useful in tracking urban sprawl, urban heat islands, deforestation, agricultural monitoring. disaster and flood mapping......
-
-Object-based image analysis –\> also a common remote sensing classification –\> look more into it...
+Although the above discussed methods can accurately extract spectral pixel values, yet in reality, analysing spectral values may also produce noise which reduces our overall accuracy. Therefore, considering Object-Based Image Analysis (OBIA) may enable a more holistic understanding and higher accuracy of classification, which will be covered in next chapter.
