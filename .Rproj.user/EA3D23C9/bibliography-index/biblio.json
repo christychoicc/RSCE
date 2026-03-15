@@ -1411,6 +1411,99 @@
             "language": "en-GB",
             "title": "F2 - earth engine fundamentals and applications - EEFA - live document",
             "type": ""
+        },
+        {
+            "DOI": "10.3390/rs13101891",
+            "URL": "https://www.mdpi.com/2072-4292/13/10/1891",
+            "author": [
+                {
+                    "family": "Zhou",
+                    "given": "Huoyan"
+                },
+                {
+                    "family": "Fu",
+                    "given": "Liyong"
+                },
+                {
+                    "family": "Sharma",
+                    "given": "Ram P."
+                },
+                {
+                    "family": "Lei",
+                    "given": "Yuancai"
+                },
+                {
+                    "family": "Guo",
+                    "given": "Jinping"
+                }
+            ],
+            "container-title": "Remote Sensing",
+            "id": "zhou2021",
+            "issue": "10",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "1891",
+            "title": "A Hybrid Approach of Combining Random Forest with Texture Analysis and VDVI for Desert Vegetation Mapping Based on UAV RGB Data",
+            "type": "article-journal",
+            "volume": "13"
+        },
+        {
+            "DOI": "10.1038/s41598-020-74215-5",
+            "URL": "https://www.nature.com/articles/s41598-020-74215-5",
+            "author": [
+                {
+                    "family": "Campos-Taberner",
+                    "given": "Manuel"
+                },
+                {
+                    "family": "García-Haro",
+                    "given": "Francisco Javier"
+                },
+                {
+                    "family": "Martínez",
+                    "given": "Beatriz"
+                },
+                {
+                    "family": "Izquierdo-Verdiguier",
+                    "given": "Emma"
+                },
+                {
+                    "family": "Atzberger",
+                    "given": "Clement"
+                },
+                {
+                    "family": "Camps-Valls",
+                    "given": "Gustau"
+                },
+                {
+                    "family": "Gilabert",
+                    "given": "María Amparo"
+                }
+            ],
+            "container-title": "Scientific Reports",
+            "id": "campos-taberner2020",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        10,
+                        14
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "17188",
+            "title": "Understanding deep learning in land use classification based on Sentinel-2 time series",
+            "type": "article-journal",
+            "volume": "10"
         }
     ],
     "project_biblios": [
