@@ -411,6 +411,7 @@ div.csl-indent {
 <h2 data-number="6.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.1</span> Summary</h2>
 <section id="machine-learning" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="machine-learning"><span class="header-section-number">6.1.1</span> Machine Learning</h3>
+<p>Machine learning plays an important role in LULCC, fostering automation, scalability, and improved accuracy. By learning complex patterns from satellite imagery, these algorithms can effectively identify different land types. They also handle large datasets efficiently, making it easier to track land use changes over time.</p>
 <div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
 <p>Understand the dynamic nature of landscapes, enabling effective land management strategies, environmental conservation, sustainable planning and policy making <span class="citation" data-cites="pande2024 zhao2024">(<a href="references.html#ref-pande2024" role="doc-biblioref">Pande et al. 2024</a>; <a href="references.html#ref-zhao2024" role="doc-biblioref">Zhao et al. 2024</a>)</span></p>
 </div>
@@ -452,21 +453,20 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>In the final output, I acquired a 11.7% random forest out of bag error estimate and a resubstitution accuracy of 99.7%. However, my validation overall accuracy of 88.1% indicates a 11.6% difference between training and testing which signaled some mild overfitting, I assume it is caused by some spectral confusion between urban and forest pixel values?</p>
+<p>In the final output, I acquired a 11.7% random forest out of bag error estimate and a resubstitution accuracy of 99.7%. However, my validation overall accuracy of 88.1% indicates a 11.6% difference between training and testing which signaled some mild overfitting, I assume it maybe caused by some spectral confusion between urban and forest pixel values?</p>
 <p>GEE code for this practical can be found <a href="https://code.earthengine.google.com/0e536642eb70fc39e65513fb5eca24bc">here</a>.</p>
 </section>
 <section id="classification-techniques" class="level4" data-number="6.1.1.2">
 <h4 data-number="6.1.1.2" class="anchored" data-anchor-id="classification-techniques"><span class="header-section-number">6.1.1.2</span> Classification Techniques</h4>
 <p>There are two main types of classification, supervised and unsupervised.</p>
 <table class="caption-top table">
-<caption>Source: <span class="citation" data-cites="zhao2024">Zhao et al. (<a href="references.html#ref-zhao2024" role="doc-biblioref">2024</a>)</span></caption>
+<caption>Source: <span class="citation" data-cites="zhao2024">Zhao et al. (<a href="references.html#ref-zhao2024" role="doc-biblioref">2024</a>)</span>, <span class="citation" data-cites="pande2024">Pande et al. (<a href="references.html#ref-pande2024" role="doc-biblioref">2024</a>)</span>, <span class="citation" data-cites="magidi2021">Magidi et al. (<a href="references.html#ref-magidi2021" role="doc-biblioref">2021</a>)</span></caption>
 <colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -475,7 +475,6 @@ div.csl-indent {
 <th>Description</th>
 <th>Benefits</th>
 <th>Limitations</th>
-<th>When to use?</th>
 </tr>
 </thead>
 <tbody>
@@ -485,36 +484,24 @@ div.csl-indent {
 <td>Uses a decision tree using <code>classifier.smileCart</code> method</td>
 <td>Can handle an enormous size of high resolution datasets without sacrificing processing performance</td>
 <td>Prone to overfitting the model; Sensitive to changes in the training datasets which leads to comparably lower accuracy</td>
-<td>Land cover (surface water)</td>
 </tr>
 <tr class="even">
 <td>Random Forest (RF)</td>
 <td>Supervised</td>
 <td>Generate numerous decision trees by randomly sampling variables and training datasets (often use 20 as a minimum)</td>
-<td>High efficiency and accuracy,</td>
-<td></td>
-<td>Land cover (vegetation, urban, barren) environmental monitoring and land management applications</td>
+<td>High efficiency and accuracy; Easy to use; Able to learn booth simple and complex classification functions</td>
+<td>May over-fit the training data which limits providing better accuracy</td>
 </tr>
 <tr class="odd">
 <td>Support Vector Machine (SVM)</td>
 <td>Supervised</td>
 <td></td>
-<td>Computationally efficient; Works well in high-dimensional areas with distinct margin of separation between classes</td>
+<td>Computationally efficient; Works well with high-dimensionality with distinct margin of separation between classes</td>
 <td>Difficult to use, interpret and fine-tune; Require lengthy training period for large datasets, can underestimate urban/ built-up classes</td>
-<td>Land cover (surface water)</td>
 </tr>
 <tr class="even">
 <td>k-means clustering</td>
 <td>Unsupervised</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>ISODATA</td>
-<td></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -533,7 +520,9 @@ div.csl-indent {
 </section>
 <section id="application" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="application"><span class="header-section-number">6.2</span> Application</h2>
-<p>The application of machine learning is widely used among remote sensing analysis, typically LULCSS, but studies also incoporate other spectral bands combinations such as NDVI, MNDWI, etc. for training, allowing identifying changes over time. The following shows a workflow for application:</p>
+<p><em><strong>“Machine learning models have been strongly recommended for classification land use and change detections maps”</strong> <span class="citation" data-cites="pande2022">(<a href="references.html#ref-pande2022" role="doc-biblioref">Pande 2022</a>)</span></em></p>
+<p>LULCC analysis is a major application of remote sensing classification because it allows researchers to examine spatial patterns, identify and monitor temporal changes over time. These workflows can be analysed efficiently over GEE, making it exceptionally useful for environmental monitoring, urban expansion research and agricultural assessment applications<span class="citation" data-cites="pande2024">(<a href="references.html#ref-pande2024" role="doc-biblioref">Pande et al. 2024</a>)</span>.</p>
+<p>Exisiting studies showed that classification also incorporate other spectral bands combinations such as NDVI, MNDWI, etc. <span class="citation" data-cites="zhao2024">Zhao et al. (<a href="references.html#ref-zhao2024" role="doc-biblioref">2024</a>)</span> presented a standard GEE-based workflow of LULCC, where another study by <span class="citation" data-cites="yao2022">Yao et al. (<a href="references.html#ref-yao2022" role="doc-biblioref">2022</a>)</span> extended this by comparing random forest, object-oriented classification, deep neural learning, and an RF+DNN approach, showing that more advanced workflows can improve classification. This suggests that although CART and RF are strong baseline approaches, more complex landscapes such as crop or mixed land-cover systems may benefit from temporal information and multi-sour</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -546,38 +535,38 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>LULCC analysis is essential for understanding environmental, ecological, and societal impacts, where the revolution of GEE, it allows identifying and quantifying LULCC, examing spatial patterns and assessing any temporal changes over time <span class="citation" data-cites="pande2024">(<a href="references.html#ref-pande2024" role="doc-biblioref">Pande et al. 2024</a>)</span>. –&gt; can gain insights to the dynamic land use patterns and their implication, which CART can be used to understand the driving factors behind these changes.</p>
-<p>The CART model is largely used in land cover classification, taining the model using labeled satellite imagery data can accurately classify land cover classes, such as crops, forests, water bodies, and built-up urban areas <span class="citation" data-cites="pande2024">(<a href="references.html#ref-pande2024" role="doc-biblioref">Pande et al. 2024</a>)</span>.</p>
-<p><span class="citation" data-cites="dou2021">Dou et al. (<a href="references.html#ref-dou2021" role="doc-biblioref">2021</a>)</span> mentioned using time series images (TSI) to improve classification. It was found that NDI can enhance different classes by making full use of spectral bands, which is used to analyse each temporal image.</p>
-<div class="quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p>Although there are rising adoptation of machine learning approaches that provides higher accuracy classification (e.g.&nbsp;deep learning algorithms, etc), yet there are also trade off problems of loss of interpretability as shown below. Therefore, this positioned decision-tree-based methods such as CART, SVM and Random Forest as more suitable methods as they can classify satellite imagery into land cover classes, and is easier to use, smaller training datasets and able to achieve a decent accuracy.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/w7_images/timeseriesdata.jpg" class="img-fluid figure-img"></p>
-<figcaption>Time Series Data NDI, Source: <span class="citation" data-cites="dou2021">Dou et al. (<a href="references.html#ref-dou2021" role="doc-biblioref">2021</a>)</span></figcaption>
+<p><img src="images/w7_images/ml_algorithm_tradeoff.png" class="img-fluid figure-img"></p>
+<figcaption>Accuracy Trade-off in Machine Learning Classification Algorithms, Source: <span class="citation" data-cites="sheykhmousa2020">Sheykhmousa and Mahdianpari (<a href="references.html#ref-sheykhmousa2020" role="doc-biblioref">2020</a>)</span></figcaption>
 </figure>
-</div>
-</div>
-</div>
 </div>
 </section>
 <section id="reflection" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.3</span> Reflection</h2>
-<p>How quickly and easily it is to load in vector data of level 2 Global Administrative Units Layers (GAUL) within GEE!!</p>
-<p>Information extraction with AI (machine learning)</p>
-<p>I also find using Google Earth on the side quite useful to increase the accuracy of drawing polygons.</p>
+<p>Building upon last week’s learning, I learnt how quickly and easily it is to load in vector data of level 2 Global Administrative Units Layers (GAUL) within GEE!!</p>
+<p>To increase the accuracy of my training data, I found it incredibly useful to use high-resolution Google Earth imagery on the side as a reference while drawing polygons. Furthermore, reading through <span class="citation" data-cites="pande2022">Pande (<a href="references.html#ref-pande2022" role="doc-biblioref">2022</a>)</span> and <span class="citation" data-cites="sheykhmousa2020">Sheykhmousa and Mahdianpari (<a href="references.html#ref-sheykhmousa2020" role="doc-biblioref">2020</a>)</span>, I learned about the trade-off between using points and polygons. While selecting points is highly specific and allows constraints of keeping validation points at least 100m away from training data to reduce spatial autocorrelation, it can be very time-consuming. Therefore, drawing polygons is a more generally more efficient and better choice for training large volume of data.</p>
 <p>Establishing and testing an optimal set of complementary textural data for the best possible increase in land use/cover classification accuracy (<a href="https://www.mdpi.com/2072-4292/11/10/1233#">Kupidura, 2019</a>).</p>
 <p>These ML techniques can be useful in tracking urban sprawl, urban heat islands, deforestation, agricultural monitoring. disaster and flood mapping……</p>
 <p>Object-based image analysis –&gt; also a common remote sensing classification –&gt; look more into it…</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-dou2021" class="csl-entry" role="listitem">
-Dou, Peng, Huanfeng Shen, Zhiwei Li, and Xiaobin Guan. 2021. <span>“Time Series Remote Sensing Image Classification Framework Using Combination of Deep Learning and Multiple Classifiers System.”</span> <em>International Journal of Applied Earth Observation and Geoinformation</em> 103 (December): 102477. <a href="https://doi.org/10.1016/j.jag.2021.102477">https://doi.org/10.1016/j.jag.2021.102477</a>.
+<div id="ref-magidi2021" class="csl-entry" role="listitem">
+Magidi, James, Luxon Nhamo, Sylvester Mpandeli, and Tafadzwanashe Mabhaudhi. 2021. <span>“Application of the Random Forest Classifier to Map Irrigated Areas Using Google Earth Engine.”</span> <em>Remote Sensing</em> 13 (5): 876. <a href="https://doi.org/10.3390/rs13050876">https://doi.org/10.3390/rs13050876</a>.
+</div>
+<div id="ref-pande2022" class="csl-entry" role="listitem">
+Pande, Chaitanya B. 2022. <span>“Land Use/Land Cover and Change Detection Mapping in Rahuri Watershed Area (MS), India Using the Google Earth Engine and Machine Learning Approach.”</span> <em>Geocarto International</em> 37 (26): 13860–80. <a href="https://doi.org/10.1080/10106049.2022.2086622">https://doi.org/10.1080/10106049.2022.2086622</a>.
 </div>
 <div id="ref-pande2024" class="csl-entry" role="listitem">
 Pande, Chaitanya B., Pranaya Diwate, Israel R. Orimoloye, Lariyah Mohd Sidek, Arun Pratap Mishra, Kanak N. Moharir, Subodh Chandra Pal, Fahad Alshehri, and Abebe Debele Tolche. 2024. <span>“Impact of Land Use/Land Cover Changes on Evapotranspiration and Model Accuracy Using Google Earth Engine and Classification and Regression Tree Modeling.”</span> <em>Geomatics, Natural Hazards and Risk</em> 15 (1): 2290350. <a href="https://doi.org/10.1080/19475705.2023.2290350">https://doi.org/10.1080/19475705.2023.2290350</a>.
+</div>
+<div id="ref-sheykhmousa2020" class="csl-entry" role="listitem">
+Sheykhmousa, Reza M, and Masoud Mahdianpari. 2020. <span>“Support Vector Machine Vs. Random Forest for Remote Sensing Image Classification: A Meta-Analysis and Systematic Review.”</span> <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, October. <a href="https://doi.org/10.1109/JSTARS.2020.3026724">https://doi.org/10.1109/JSTARS.2020.3026724</a>.
+</div>
+<div id="ref-yao2022" class="csl-entry" role="listitem">
+Yao, Jinxi, Ji Wu, Chengzhi Xiao, Zhi Zhang, and Jianzhong Li. 2022. <span>“The Classification Method Study of Crops Remote Sensing with Deep Learning, Machine Learning, and Google Earth Engine.”</span> <em>Remote Sensing</em> 14 (12): 2758. <a href="https://doi.org/10.3390/rs14122758">https://doi.org/10.3390/rs14122758</a>.
 </div>
 <div id="ref-zhao2024" class="csl-entry" role="listitem">
 Zhao, Zhewen, Fakhrul Islam, Liaqat Ali Waseem, Aqil Tariq, Muhammad Nawaz, Ijaz Ul Islam, Tehmina Bibi, et al. 2024. <span>“Comparison of Three Machine Learning Algorithms Using Google Earth Engine for Land Use Land Cover Classification.”</span> <em>Rangeland Ecology &amp; Management</em> 92 (January): 129–37. <a href="https://doi.org/10.1016/j.rama.2023.10.007">https://doi.org/10.1016/j.rama.2023.10.007</a>.

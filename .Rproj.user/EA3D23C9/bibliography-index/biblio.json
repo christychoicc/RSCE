@@ -1366,6 +1366,44 @@
             "title": "Support vector machine vs. Random forest for remote sensing image classification: A meta-analysis and systematic review",
             "title-short": "Support vector machine vs. Random forest for remote sensing image classification",
             "type": "article-journal"
+        },
+        {
+            "DOI": "10.3390/rs13050876",
+            "URL": "https://www.mdpi.com/2072-4292/13/5/876",
+            "author": [
+                {
+                    "family": "Magidi",
+                    "given": "James"
+                },
+                {
+                    "family": "Nhamo",
+                    "given": "Luxon"
+                },
+                {
+                    "family": "Mpandeli",
+                    "given": "Sylvester"
+                },
+                {
+                    "family": "Mabhaudhi",
+                    "given": "Tafadzwanashe"
+                }
+            ],
+            "container-title": "Remote Sensing",
+            "id": "magidi2021",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "876",
+            "title": "Application of the Random Forest Classifier to Map Irrigated Areas Using Google Earth Engine",
+            "type": "article-journal",
+            "volume": "13"
         }
     ],
     "project_biblios": [
