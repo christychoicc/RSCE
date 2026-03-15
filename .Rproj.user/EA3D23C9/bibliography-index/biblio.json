@@ -1105,6 +1105,171 @@
             "title-short": "Enhanced morphometric analysis for soil erosion susceptibility mapping in the godavari river basin, india",
             "type": "article-journal",
             "volume": "30"
+        },
+        {
+            "DOI": "10.1080/19475705.2023.2290350",
+            "URL": "https://doi.org/10.1080/19475705.2023.2290350",
+            "author": [
+                {
+                    "family": "Pande",
+                    "given": "Chaitanya B."
+                },
+                {
+                    "family": "Diwate",
+                    "given": "Pranaya"
+                },
+                {
+                    "family": "Orimoloye",
+                    "given": "Israel R."
+                },
+                {
+                    "family": "Sidek",
+                    "given": "Lariyah Mohd"
+                },
+                {
+                    "family": "Pratap Mishra",
+                    "given": "Arun"
+                },
+                {
+                    "family": "Moharir",
+                    "given": "Kanak N."
+                },
+                {
+                    "family": "Pal",
+                    "given": "Subodh Chandra"
+                },
+                {
+                    "family": "Alshehri",
+                    "given": "Fahad"
+                },
+                {
+                    "family": "Tolche",
+                    "given": "Abebe Debele"
+                }
+            ],
+            "container-title": "Geomatics, Natural Hazards and Risk",
+            "id": "pande2024",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024,
+                        12,
+                        31
+                    ]
+                ]
+            },
+            "note": "_eprint: https://doi.org/10.1080/19475705.2023.2290350",
+            "page": "2290350",
+            "title": "Impact of land use/land cover changes on evapotranspiration and model accuracy using google earth engine and classification and regression tree modeling",
+            "type": "article-journal",
+            "volume": "15"
+        },
+        {
+            "DOI": "10.1016/j.rama.2023.10.007",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S1550742423001227",
+            "author": [
+                {
+                    "family": "Zhao",
+                    "given": "Zhewen"
+                },
+                {
+                    "family": "Islam",
+                    "given": "Fakhrul"
+                },
+                {
+                    "family": "Waseem",
+                    "given": "Liaqat Ali"
+                },
+                {
+                    "family": "Tariq",
+                    "given": "Aqil"
+                },
+                {
+                    "family": "Nawaz",
+                    "given": "Muhammad"
+                },
+                {
+                    "family": "Islam",
+                    "given": "Ijaz Ul"
+                },
+                {
+                    "family": "Bibi",
+                    "given": "Tehmina"
+                },
+                {
+                    "family": "Rehman",
+                    "given": "Nazir Ur"
+                },
+                {
+                    "family": "Ahmad",
+                    "given": "Waqar"
+                },
+                {
+                    "family": "Aslam",
+                    "given": "Rana Waqar"
+                },
+                {
+                    "family": "Raza",
+                    "given": "Danish"
+                },
+                {
+                    "family": "Hatamleh",
+                    "given": "Wesam Atef"
+                }
+            ],
+            "container-title": "Rangeland Ecology & Management",
+            "id": "zhao2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024,
+                        1,
+                        1
+                    ]
+                ]
+            },
+            "page": "129-137",
+            "title": "Comparison of three machine learning algorithms using google earth engine for land use land cover classification",
+            "type": "article-journal",
+            "volume": "92"
+        },
+        {
+            "DOI": "10.1016/j.jag.2021.102477",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S0303243421001847",
+            "author": [
+                {
+                    "family": "Dou",
+                    "given": "Peng"
+                },
+                {
+                    "family": "Shen",
+                    "given": "Huanfeng"
+                },
+                {
+                    "family": "Li",
+                    "given": "Zhiwei"
+                },
+                {
+                    "family": "Guan",
+                    "given": "Xiaobin"
+                }
+            ],
+            "container-title": "International Journal of Applied Earth Observation and Geoinformation",
+            "id": "dou2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        12,
+                        1
+                    ]
+                ]
+            },
+            "page": "102477",
+            "title": "Time series remote sensing image classification framework using combination of deep learning and multiple classifiers system",
+            "type": "article-journal",
+            "volume": "103"
         }
     ],
     "project_biblios": [
