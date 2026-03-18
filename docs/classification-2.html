@@ -501,11 +501,21 @@ div.csl-indent {
 </section>
 <section id="accuracy-assessment" class="level3" data-number="7.1.3">
 <h3 data-number="7.1.3" class="anchored" data-anchor-id="accuracy-assessment"><span class="header-section-number">7.1.3</span> Accuracy Assessment</h3>
+<p>The purpose of accuracy assessment is to estimate the error and uncertainty of classification; Resampling procedures such as bootstrapping and cross-validation can be used to estimate map accuracy and associated uncertainty <span class="citation" data-cites="lyons2018">(<a href="references.html#ref-lyons2018" role="doc-biblioref">Lyons et al. 2018</a>)</span>.</p>
 <ul>
-<li><p><strong>Precision</strong>:</p></li>
-<li><p><strong>Recall</strong>:</p></li>
+<li><p><strong>Precision</strong>: Also known as the producer’s accuracy TP / TP +FN, it refers to the proportion of pixels that is classified a class that is actually correct and represents the ground truth.</p></li>
+<li><p><strong>Recall</strong>: Also known as the user’s accuracy TP / TP+FP, it refers to the proportion of pixels that the classification are representing that class in reality.</p></li>
+<li><p><strong>Overall Accuracy</strong>: Trade-off between <strong>Precision</strong> and <strong>Recall</strong>, they can never be both good as our data is imbalanced.</p></li>
+<li><p><strong>F1 score</strong>: The harmonic mean between precision and recall, ranging from 0 to 1 (closer to 1 indicates better performance)</p>
+<div style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;">
+<p>Note that accuracy assessment do not account for spatial autocorrelation!! Achieving a higher overall accuracy score does not always mean that the classification model is better…</p>
+</div>
+<div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
+<p>A workflow I will adopt: Class Definition → Pre-processing → Train Test Split or Spatial Cross Validation → Pixel Assignment (unmix and constrained fractions ; OBIA) → Accuracy Assessment</p>
+</div></li>
 </ul>
 <p>GEE code for this practical can be found <a href="https://code.earthengine.google.com/d2e91e9860c2c56319e3de61bbebb8b0">here</a>.</p>
+<p>More on Accuracy Assessment can be found <a href="https://mlu-explain.github.io/precision-recall/">here</a>.</p>
 </section>
 </section>
 <section id="applications" class="level2" data-number="7.2">
@@ -518,6 +528,9 @@ div.csl-indent {
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-ge2014" class="csl-entry" role="listitem">
 Ge, Yong, Yuehong Chen, Sanping Li, and Yu Jiang. 2014. <span>“Vectorial Boundary-Based Sub-Pixel Mapping Method for Remote-Sensing Imagery.”</span> <em>International Journal of Remote Sensing</em> 35 (5): 1756–68. <a href="https://doi.org/10.1080/01431161.2014.882034">https://doi.org/10.1080/01431161.2014.882034</a>.
+</div>
+<div id="ref-lyons2018" class="csl-entry" role="listitem">
+Lyons, Mitchell B., David A. Keith, Stuart R. Phinn, Tanya J. Mason, and Jane Elith. 2018. <span>“A Comparison of Resampling Methods for Remote Sensing Classification and Accuracy Assessment.”</span> <em>Remote Sensing of Environment</em> 208 (April): 145–53. <a href="https://doi.org/10.1016/j.rse.2018.02.026">https://doi.org/10.1016/j.rse.2018.02.026</a>.
 </div>
 <div id="ref-maclachlan2017" class="csl-entry" role="listitem">
 MacLachlan, Andrew, Gareth Roberts, Eloise Biggs, and Bryan Boruff. 2017. <span>“Subpixel Land-Cover Classification for Improved Urban Area Estimates Using Landsat.”</span> <em>International Journal of Remote Sensing</em> 38 (20): 5763–92. <a href="https://doi.org/10.1080/01431161.2017.1346403">https://doi.org/10.1080/01431161.2017.1346403</a>.

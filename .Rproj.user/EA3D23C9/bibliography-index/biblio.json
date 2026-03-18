@@ -1619,6 +1619,47 @@
             "title": "Object-Based Informal Settlement Mapping in Google Earth Engine Using the Integration of Sentinel-1, Sentinel-2, and PlanetScope Satellite Data",
             "type": "article-journal",
             "volume": "12"
+        },
+        {
+            "DOI": "10.1016/j.rse.2018.02.026",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S0034425718300324",
+            "author": [
+                {
+                    "family": "Lyons",
+                    "given": "Mitchell B."
+                },
+                {
+                    "family": "Keith",
+                    "given": "David A."
+                },
+                {
+                    "family": "Phinn",
+                    "given": "Stuart R."
+                },
+                {
+                    "family": "Mason",
+                    "given": "Tanya J."
+                },
+                {
+                    "family": "Elith",
+                    "given": "Jane"
+                }
+            ],
+            "container-title": "Remote Sensing of Environment",
+            "id": "lyons2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        4,
+                        1
+                    ]
+                ]
+            },
+            "page": "145-153",
+            "title": "A comparison of resampling methods for remote sensing classification and accuracy assessment",
+            "type": "article-journal",
+            "volume": "208"
         }
     ],
     "project_biblios": [
