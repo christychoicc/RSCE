@@ -8,9 +8,9 @@ This section will extend on classification algorithms in GEE from last chapter. 
 
 ### Sub Pixel Analysis
 
-Classification methods face challenges in urban environments because of spatial heterogeneity and spectral similarity between neighboring urban and non-urban land uses. With Landsat’s 30 m spatial resolution, individual pixels often contain mixtures of surfaces such as buildings, roads, and vegetation, which can lead to overestimation of urban land uses[@maclachlan2017]. Sub-pixel analysis addresses this mixed-pixel problem by estimating the fractional proportion of different land cover within each pixel, based on the assumption that land cover composition varies continuously across space [@ge2014]. This method provides a finer representation of land cover and can improve classification accuracy in comparison to assigning each pixel to a defined class. The below shows shenzhen under sub-pixel analysis. In the rapidly urbanising and spatially complex setting of Shenzhen, sub-pixel identifies the degree at which land cover dominates within each pixel, raising accuracy of the landscape.
+Classification methods face challenges in urban environments because of spatial heterogeneity and spectral similarity between neighboring urban and non-urban land uses. With Landsat’s 30 m spatial resolution, individual pixels often contain mixtures of surfaces such as buildings, roads, and vegetation, which can lead to overestimation of urban land uses[@maclachlan2017]. Sub-pixel analysis addresses this mixed-pixel problem by estimating the fractional proportion of different land cover within each pixel, based on the assumption that land cover composition varies continuously across space [@ge2014]. This method provides a finer representation of land cover and can improve classification accuracy in comparison to assigning each pixel to a defined class. The below shows Shenzhen under sub-pixel analysis.
 
-![Sub-pixel Classification](images/w8_images/sz_reclass.png)
+![Constrained Fraction Sub-pixel Classification; Red: Urban High, Blue: Urban Low, Green: Water, Dark Green: Forest](images/w8_images/sz_constrained_frac.png)
 
 ### Object-Based Image Analysis (OBIA)
 
@@ -23,9 +23,9 @@ However, studies have noted that under or overestimation of land cover of Landsa
 The below shows Shenzhen under `neighborhoodSize` values of 50 and 256. A smaller neighborhood size can preserve finer details, whereas a larger neighborhood size will show borader clusterings.
 
 ::: {#CHUNKNAME layout-ncol="2"}
-![Super-pixel Classification - SNIC Neighborhood Scale 50](images/w8_images/sz_class_50.png){alt="CART"}
+![OBIA Classification - Neighborhood Scale 50](images/w8_images/sz_class_50.png){alt="CART"}
 
-![Super-pixel Classification - SNIC Neighborhood Scale 256](images/w8_images/sz_class_256.png){#reference alt="RF"}
+![OBIA Classification - Neighborhood Scale 256](images/w8_images/sz_class_256.png){#reference alt="RF"}
 :::
 
 +-----------------------------+--------------------------------------------------------------------------+--------------------------------------------------------+
@@ -37,28 +37,26 @@ The below shows Shenzhen under `neighborhoodSize` values of 50 and 256. A smalle
 |                             |                                                                          |                                                        |
 |                             | -   gives class fractions                                                | -    harder to validate                                |
 |                             |                                                                          |                                                        |
-|                             | -   useful in messy urban areas                                          | -   harder to explain                                  |
+|                             | -   Useful for heterogeneous urban areas                                 | -   harder to explain                                  |
 |                             |                                                                          |                                                        |
 |                             |                                                                          | -   hardening can reduce the benefits                  |
 +-----------------------------+--------------------------------------------------------------------------+--------------------------------------------------------+
-| Object-based Image Analysis | -   smoother map                                                         | -   depends on segmentation quality                    |
+| Object-based Image Analysis | -   Able to incoporate spectral, spatial and contextual characteristics  | -   depends on segmentation quality                    |
 |                             |                                                                          |                                                        |
-|                             | -   easier to interpret                                                  | -   parameters matter                                  |
+|                             | <!-- -->                                                                 | -   parameters matter                                  |
 |                             |                                                                          |                                                        |
-|                             | -   uses object features                                                 | -   may merge small details                            |
+|                             | -   Computationally cheaper, uses less memory (in comparison to k-means) | -   may merge small details                            |
 |                             |                                                                          |                                                        |
-|                             | -   often better for final presentation                                  | -   can oversimplify                                   |
+|                             |                                                                          | -   can oversimplify                                   |
 |                             |                                                                          |                                                        |
-|                             | -   Able to incoporate spectral, spatial and contextual characteristics  | -   Texture analysis may be limited in distinguishment |
-|                             |                                                                          |                                                        |
-|                             | -   Computationally cheaper, uses less memory (in comparison to k-means) |                                                        |
+|                             |                                                                          | -   Texture analysis may be limited in distinguishment |
 +-----------------------------+--------------------------------------------------------------------------+--------------------------------------------------------+
 
 ### Accuracy Assessment
 
--   Precision
+-   **Precision**:
 
--   Recall
+-   **Recall**:
 
 GEE code for this practical can be found [here](https://code.earthengine.google.com/d2e91e9860c2c56319e3de61bbebb8b0).
 

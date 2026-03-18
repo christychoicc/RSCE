@@ -413,11 +413,11 @@ div.csl-indent {
 <h2 data-number="7.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.1</span> Summary</h2>
 <section id="sub-pixel-analysis" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="sub-pixel-analysis"><span class="header-section-number">7.1.1</span> Sub Pixel Analysis</h3>
-<p>Classification methods face challenges in urban environments because of spatial heterogeneity and spectral similarity between neighboring urban and non-urban land uses. With Landsat’s 30 m spatial resolution, individual pixels often contain mixtures of surfaces such as buildings, roads, and vegetation, which can lead to overestimation of urban land uses<span class="citation" data-cites="maclachlan2017">(<a href="references.html#ref-maclachlan2017" role="doc-biblioref">MacLachlan et al. 2017</a>)</span>. Sub-pixel analysis addresses this mixed-pixel problem by estimating the fractional proportion of different land cover within each pixel, based on the assumption that land cover composition varies continuously across space <span class="citation" data-cites="ge2014">(<a href="references.html#ref-ge2014" role="doc-biblioref">Ge et al. 2014</a>)</span>. This method provides a finer representation of land cover and can improve classification accuracy in comparison to assigning each pixel to a defined class. The below shows shenzhen under sub-pixel analysis. In the rapidly urbanising and spatially complex setting of Shenzhen, sub-pixel identifies the degree at which land cover dominates within each pixel, raising accuracy of the landscape.</p>
+<p>Classification methods face challenges in urban environments because of spatial heterogeneity and spectral similarity between neighboring urban and non-urban land uses. With Landsat’s 30 m spatial resolution, individual pixels often contain mixtures of surfaces such as buildings, roads, and vegetation, which can lead to overestimation of urban land uses<span class="citation" data-cites="maclachlan2017">(<a href="references.html#ref-maclachlan2017" role="doc-biblioref">MacLachlan et al. 2017</a>)</span>. Sub-pixel analysis addresses this mixed-pixel problem by estimating the fractional proportion of different land cover within each pixel, based on the assumption that land cover composition varies continuously across space <span class="citation" data-cites="ge2014">(<a href="references.html#ref-ge2014" role="doc-biblioref">Ge et al. 2014</a>)</span>. This method provides a finer representation of land cover and can improve classification accuracy in comparison to assigning each pixel to a defined class. The below shows Shenzhen under sub-pixel analysis.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/w8_images/sz_reclass.png" class="img-fluid figure-img"></p>
-<figcaption>Sub-pixel Classification</figcaption>
+<p><img src="images/w8_images/sz_constrained_frac.png" class="img-fluid figure-img"></p>
+<figcaption>Constrained Fraction Sub-pixel Classification; Red: Urban High, Blue: Urban Low, Green: Water, Dark Green: Forest</figcaption>
 </figure>
 </div>
 </section>
@@ -433,7 +433,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w8_images/sz_class_50.png" class="img-fluid figure-img"></p>
-<figcaption>Super-pixel Classification - SNIC Neighborhood Scale 50</figcaption>
+<figcaption>OBIA Classification - Neighborhood Scale 50</figcaption>
 </figure>
 </div>
 </div>
@@ -441,7 +441,7 @@ div.csl-indent {
 <div id="reference" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/w8_images/sz_class_256.png" class="img-fluid figure-img"></p>
-<figcaption>Super-pixel Classification - SNIC Neighborhood Scale 256</figcaption>
+<figcaption>OBIA Classification - Neighborhood Scale 256</figcaption>
 </figure>
 </div>
 </div>
@@ -467,7 +467,7 @@ div.csl-indent {
 <li><p>good for mixed pixels</p></li>
 <li><p>good for Landsat</p></li>
 <li><p>gives class fractions</p></li>
-<li><p>useful in messy urban areas</p></li>
+<li><p>Useful for heterogeneous urban areas</p></li>
 </ul></td>
 <td><ul>
 <li>noisy-looking output</li>
@@ -482,12 +482,11 @@ div.csl-indent {
 <tr class="even">
 <td>Object-based Image Analysis</td>
 <td><ul>
-<li><p>smoother map</p></li>
-<li><p>easier to interpret</p></li>
-<li><p>uses object features</p></li>
-<li><p>often better for final presentation</p></li>
-<li><p>Able to incoporate spectral, spatial and contextual characteristics</p></li>
-<li><p>Computationally cheaper, uses less memory (in comparison to k-means)</p></li>
+<li>Able to incoporate spectral, spatial and contextual characteristics</li>
+</ul>
+<!-- -->
+<ul>
+<li>Computationally cheaper, uses less memory (in comparison to k-means)</li>
 </ul></td>
 <td><ul>
 <li><p>depends on segmentation quality</p></li>
@@ -503,8 +502,8 @@ div.csl-indent {
 <section id="accuracy-assessment" class="level3" data-number="7.1.3">
 <h3 data-number="7.1.3" class="anchored" data-anchor-id="accuracy-assessment"><span class="header-section-number">7.1.3</span> Accuracy Assessment</h3>
 <ul>
-<li><p>Precision</p></li>
-<li><p>Recall</p></li>
+<li><p><strong>Precision</strong>:</p></li>
+<li><p><strong>Recall</strong>:</p></li>
 </ul>
 <p>GEE code for this practical can be found <a href="https://code.earthengine.google.com/d2e91e9860c2c56319e3de61bbebb8b0">here</a>.</p>
 </section>
