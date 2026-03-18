@@ -1542,6 +1542,83 @@
             "title": "Subpixel land-cover classification for improved urban area estimates using landsat",
             "type": "article-journal",
             "volume": "38"
+        },
+        {
+            "DOI": "10.1080/01431161.2014.882034",
+            "URL": "https://doi.org/10.1080/01431161.2014.882034",
+            "author": [
+                {
+                    "family": "Ge",
+                    "given": "Yong"
+                },
+                {
+                    "family": "Chen",
+                    "given": "Yuehong"
+                },
+                {
+                    "family": "Li",
+                    "given": "Sanping"
+                },
+                {
+                    "family": "Jiang",
+                    "given": "Yu"
+                }
+            ],
+            "container-title": "International Journal of Remote Sensing",
+            "id": "ge2014",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014,
+                        3,
+                        4
+                    ]
+                ]
+            },
+            "note": "_eprint: https://doi.org/10.1080/01431161.2014.882034",
+            "page": "1756-1768",
+            "title": "Vectorial boundary-based sub-pixel mapping method for remote-sensing imagery",
+            "type": "article-journal",
+            "volume": "35"
+        },
+        {
+            "DOI": "10.3390/land12010099",
+            "URL": "https://www.mdpi.com/2073-445X/12/1/99",
+            "author": [
+                {
+                    "family": "Matarira",
+                    "given": "Dadirai"
+                },
+                {
+                    "family": "Mutanga",
+                    "given": "Onisimo"
+                },
+                {
+                    "family": "Naidu",
+                    "given": "Maheshvari"
+                },
+                {
+                    "family": "Vizzari",
+                    "given": "Marco"
+                }
+            ],
+            "container-title": "Land",
+            "id": "matarira2023",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        1
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "99",
+            "title": "Object-Based Informal Settlement Mapping in Google Earth Engine Using the Integration of Sentinel-1, Sentinel-2, and PlanetScope Satellite Data",
+            "type": "article-journal",
+            "volume": "12"
         }
     ],
     "project_biblios": [

@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -356,8 +376,9 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">7.1</span> Summary</a>
   <ul class="collapse">
-  <li><a href="#object-based-image-analysis" id="toc-object-based-image-analysis" class="nav-link" data-scroll-target="#object-based-image-analysis"><span class="header-section-number">7.1.1</span> Object-Based Image Analysis</a></li>
-  <li><a href="#accuracy-assessment" id="toc-accuracy-assessment" class="nav-link" data-scroll-target="#accuracy-assessment"><span class="header-section-number">7.1.2</span> Accuracy Assessment</a></li>
+  <li><a href="#sub-pixel-analysis" id="toc-sub-pixel-analysis" class="nav-link" data-scroll-target="#sub-pixel-analysis"><span class="header-section-number">7.1.1</span> Sub Pixel Analysis</a></li>
+  <li><a href="#object-based-image-analysis-obia" id="toc-object-based-image-analysis-obia" class="nav-link" data-scroll-target="#object-based-image-analysis-obia"><span class="header-section-number">7.1.2</span> Object-Based Image Analysis (OBIA)</a></li>
+  <li><a href="#accuracy-assessment" id="toc-accuracy-assessment" class="nav-link" data-scroll-target="#accuracy-assessment"><span class="header-section-number">7.1.3</span> Accuracy Assessment</a></li>
   </ul></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">7.2</span> Applications</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">7.3</span> Reflection</a></li>
@@ -387,13 +408,105 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>This section will extend on classification algorithms in GEE from last chapter. Focusing on sub-pixel analysis anmd object-based analysis, the following will continue using Shenzhen, China as the study area.</p>
 <section id="summary" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.1</span> Summary</h2>
-<section id="object-based-image-analysis" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="object-based-image-analysis"><span class="header-section-number">7.1.1</span> Object-Based Image Analysis</h3>
+<section id="sub-pixel-analysis" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="sub-pixel-analysis"><span class="header-section-number">7.1.1</span> Sub Pixel Analysis</h3>
+<p>Classification methods face challenges in urban environments because of spatial heterogeneity and spectral similarity between neighboring urban and non-urban land uses. With Landsat’s 30 m spatial resolution, individual pixels often contain mixtures of surfaces such as buildings, roads, and vegetation, which can lead to overestimation of urban land uses<span class="citation" data-cites="maclachlan2017">(<a href="references.html#ref-maclachlan2017" role="doc-biblioref">MacLachlan et al. 2017</a>)</span>. Sub-pixel analysis addresses this mixed-pixel problem by estimating the fractional proportion of different land cover within each pixel, based on the assumption that land cover composition varies continuously across space <span class="citation" data-cites="ge2014">(<a href="references.html#ref-ge2014" role="doc-biblioref">Ge et al. 2014</a>)</span>. This method provides a finer representation of land cover and can improve classification accuracy in comparison to assigning each pixel to a defined class. The below shows shenzhen under sub-pixel analysis. In the rapidly urbanising and spatially complex setting of Shenzhen, sub-pixel identifies the degree at which land cover dominates within each pixel, raising accuracy of the landscape.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/w8_images/sz_reclass.png" class="img-fluid figure-img"></p>
+<figcaption>Sub-pixel Classification</figcaption>
+</figure>
+</div>
 </section>
-<section id="accuracy-assessment" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="accuracy-assessment"><span class="header-section-number">7.1.2</span> Accuracy Assessment</h3>
+<section id="object-based-image-analysis-obia" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="object-based-image-analysis-obia"><span class="header-section-number">7.1.2</span> Object-Based Image Analysis (OBIA)</h3>
+<p>OBIA groups similar neighboring pixels as objects. It is found applied frequently for capturing heterogeneity in fragmented urban landscapes. There are three segmentation algorithm that can be implemented with GEE, this includes K-means, G-means and Simple Non-Iterative Clustering (SNIC).</p>
+<p>SNIC is an efficient algorithm that groups similar pixels and identify potential, individual objects. It is computation efficient as it cluster pixels based on defined parameters, visits pixels only once and clusters pixels without iterations. Classification is primarily driven by three main parameters of <code>compactness</code>, <code>connectivity</code> and <code>neighborhoodSize</code><span class="citation" data-cites="matarira2023">(<a href="references.html#ref-matarira2023" role="doc-biblioref">Matarira et al. 2023</a>)</span>. Through averaged spectral values, SNIC reduces noise and classification errors.</p>
+<p>However, studies have noted that under or overestimation of land cover of Landsat’s 30m spatial resolution can persist regardless of the segmentation methods. Therefore OBIA should be understood as improving the representation of spatial heterogeneity rather than correcting for resolution bias. Considering higher resolution imagery such as Sentinel-2 can be a choice, but it is also important to note that there is no method to completely remove heterogeneity.</p>
+<p>The below shows Shenzhen under <code>neighborhoodSize</code> values of 50 and 256. A smaller neighborhood size can preserve finer details, whereas a larger neighborhood size will show borader clusterings.</p>
+<div id="CHUNKNAME" class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/w8_images/sz_class_50.png" class="img-fluid figure-img"></p>
+<figcaption>Super-pixel Classification - SNIC Neighborhood Scale 50</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="reference" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/w8_images/sz_class_256.png" class="img-fluid figure-img"></p>
+<figcaption>Super-pixel Classification - SNIC Neighborhood Scale 256</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 46%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Strengths</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sub-pixel Analysis</td>
+<td><ul>
+<li><p>good for mixed pixels</p></li>
+<li><p>good for Landsat</p></li>
+<li><p>gives class fractions</p></li>
+<li><p>useful in messy urban areas</p></li>
+</ul></td>
+<td><ul>
+<li>noisy-looking output</li>
+</ul>
+<!-- -->
+<ul>
+<li><p>harder to validate</p></li>
+<li><p>harder to explain</p></li>
+<li><p>hardening can reduce the benefits</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Object-based Image Analysis</td>
+<td><ul>
+<li><p>smoother map</p></li>
+<li><p>easier to interpret</p></li>
+<li><p>uses object features</p></li>
+<li><p>often better for final presentation</p></li>
+<li><p>Able to incoporate spectral, spatial and contextual characteristics</p></li>
+<li><p>Computationally cheaper, uses less memory (in comparison to k-means)</p></li>
+</ul></td>
+<td><ul>
+<li><p>depends on segmentation quality</p></li>
+<li><p>parameters matter</p></li>
+<li><p>may merge small details</p></li>
+<li><p>can oversimplify</p></li>
+<li><p>Texture analysis may be limited in distinguishment</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="accuracy-assessment" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="accuracy-assessment"><span class="header-section-number">7.1.3</span> Accuracy Assessment</h3>
+<ul>
+<li><p>Precision</p></li>
+<li><p>Recall</p></li>
+</ul>
+<p>GEE code for this practical can be found <a href="https://code.earthengine.google.com/d2e91e9860c2c56319e3de61bbebb8b0">here</a>.</p>
 </section>
 </section>
 <section id="applications" class="level2" data-number="7.2">
@@ -403,6 +516,17 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="7.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">7.3</span> Reflection</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ge2014" class="csl-entry" role="listitem">
+Ge, Yong, Yuehong Chen, Sanping Li, and Yu Jiang. 2014. <span>“Vectorial Boundary-Based Sub-Pixel Mapping Method for Remote-Sensing Imagery.”</span> <em>International Journal of Remote Sensing</em> 35 (5): 1756–68. <a href="https://doi.org/10.1080/01431161.2014.882034">https://doi.org/10.1080/01431161.2014.882034</a>.
+</div>
+<div id="ref-maclachlan2017" class="csl-entry" role="listitem">
+MacLachlan, Andrew, Gareth Roberts, Eloise Biggs, and Bryan Boruff. 2017. <span>“Subpixel Land-Cover Classification for Improved Urban Area Estimates Using Landsat.”</span> <em>International Journal of Remote Sensing</em> 38 (20): 5763–92. <a href="https://doi.org/10.1080/01431161.2017.1346403">https://doi.org/10.1080/01431161.2017.1346403</a>.
+</div>
+<div id="ref-matarira2023" class="csl-entry" role="listitem">
+Matarira, Dadirai, Onisimo Mutanga, Maheshvari Naidu, and Marco Vizzari. 2023. <span>“Object-Based Informal Settlement Mapping in Google Earth Engine Using the Integration of Sentinel-1, Sentinel-2, and PlanetScope Satellite Data.”</span> <em>Land</em> 12 (1): 99. <a href="https://doi.org/10.3390/land12010099">https://doi.org/10.3390/land12010099</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

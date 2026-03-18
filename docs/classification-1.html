@@ -461,7 +461,7 @@ div.csl-indent {
 <td>Supervised</td>
 <td>Separate two classes of training data by finding a optimal boundary (separating hyperplane)</td>
 <td>Computationally efficient; Works well with high-dimensionality with distinct margin of separation between classes</td>
-<td>Difficult to use, interpret and fine-tune; Require lengthy training period for large datasets, can underestimate urban/ built-up classes</td>
+<td>Difficult to use, interpret and tune kernels; Require lengthy training period for large datasets, can underestimate urban/ built-up classes</td>
 </tr>
 <tr class="even">
 <td>K-means clustering</td>
@@ -518,7 +518,7 @@ div.csl-indent {
 </div>
 <p>In the final output, I acquired a 11.7% random forest out of bag error estimate and a resubstitution accuracy of 99.7%. However, my validation overall accuracy of 88.1% indicates a 11.6% difference between training and testing which signals some mild overfitting, I assume it maybe caused by some spectral confusion of surface reflectance between urban_high and urban_low pixel values? In the study area Shenzhen, the heterogeneous urban landscape with diverse land covers within a small area is very likely to produce overlapping spectral signatures. This brings in one of the limitations of classification with spectral values only, where <code>urban_high</code>, <code>urban_low</code> and <code>bare_earth</code> classes in reality may not be as distinguishable as others of <code>forest</code> and <code>water</code> even under pixel random forest. Therefore, I believe carefully defined classes and feature selection is as important as choosing the suitable method for classification, and further support with texture analysis could be considered for better accuracy (maybe consider using OBIA…).</p>
 <div style="border: 1px solid #ddd; border-left: 4px solid #e0a800; padding: 10px 15px; color: #e0a800; border-radius: 4px; margin-bottom: 15px;">
-<p><strong>Note that accuracy can be determined by…</strong></p>
+<p><strong>Accuracy can be determined by…</strong></p>
 <ul>
 <li><p>Selection of training data size and algorithm used for classification</p></li>
 <li><p>It can be influenced by several factors, such as the choice of classifier, the quality of training data, terrain heterogeneity, dataset used, and the reference maps <span class="citation" data-cites="zhao2024">(<a href="references.html#ref-zhao2024" role="doc-biblioref">Zhao et al. 2024</a>)</span>.</p></li>
