@@ -1504,6 +1504,44 @@
             "title": "Understanding deep learning in land use classification based on Sentinel-2 time series",
             "type": "article-journal",
             "volume": "10"
+        },
+        {
+            "DOI": "10.1080/01431161.2017.1346403",
+            "URL": "https://doi.org/10.1080/01431161.2017.1346403",
+            "author": [
+                {
+                    "family": "MacLachlan",
+                    "given": "Andrew"
+                },
+                {
+                    "family": "Roberts",
+                    "given": "Gareth"
+                },
+                {
+                    "family": "Biggs",
+                    "given": "Eloise"
+                },
+                {
+                    "family": "Boruff",
+                    "given": "Bryan"
+                }
+            ],
+            "container-title": "International Journal of Remote Sensing",
+            "id": "maclachlan2017",
+            "issue": "20",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        10,
+                        18
+                    ]
+                ]
+            },
+            "page": "5763-5792",
+            "title": "Subpixel land-cover classification for improved urban area estimates using landsat",
+            "type": "article-journal",
+            "volume": "38"
         }
     ],
     "project_biblios": [

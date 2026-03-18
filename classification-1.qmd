@@ -56,7 +56,7 @@ Comparing both outputs, both have been able to capture a broadly correct pattern
 In the final output, I acquired a 11.7% random forest out of bag error estimate and a resubstitution accuracy of 99.7%. However, my validation overall accuracy of 88.1% indicates a 11.6% difference between training and testing which signals some mild overfitting, I assume it maybe caused by some spectral confusion of surface reflectance between urban_high and urban_low pixel values? In the study area Shenzhen, the heterogeneous urban landscape with diverse land covers within a small area is very likely to produce overlapping spectral signatures. This brings in one of the limitations of classification with spectral values only, where `urban_high`, `urban_low` and `bare_earth` classes in reality may not be as distinguishable as others of `forest` and `water` even under pixel random forest. Therefore, I believe carefully defined classes and feature selection is as important as choosing the suitable method for classification, and further support with texture analysis could be considered for better accuracy (maybe consider using OBIA...).
 
 ::: {style="border: 1px solid #ddd; border-left: 4px solid #e0a800; padding: 10px 15px; color: #e0a800; border-radius: 4px; margin-bottom: 15px;"}
-**Note that accuracy can be determined by...**
+**Accuracy can be determined by...**
 
 -   Selection of training data size and algorithm used for classification
 

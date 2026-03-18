@@ -2,11 +2,57 @@
 title: "Classification II"
 ---
 
+This section will extend on classification algorithms in GEE from last chapter. Focusing on sub-pixel analysis anmd object-based analysis, the following will continue using Shenzhen, China as the study area.
+
 ## Summary
 
-### Object-Based Image Analysis
+### Sub Pixel Analysis
+
+Classification methods faces challenges due to spatial heterogeneity and the spectral similarity between neighboring urban and non-urban land uses between pixels. Landsat tends to overestimate urban areas because its 30m resolution often captures a mix of different land types (e.g. urban, grass, and roads all in one pixel) [@maclachlan2017]. This sub-pixel heterogeneity creates a bias that needs to be accounted for in order to obtain an accurate classification of landcover.
+
+![Sub-pixel Classification](images/w8_images/sz_reclass.png)
+
+### Object-Based Image Analysis (OBIA)
+
+OBIA groups similar neighboring pixels as objects.
+
+SNIC algorithm –\> basically a neighbouring average –\> culstering pixels into sub pixels it averaged the spectral values pixels with .mean –\> do this to account for/ reduce errors which improved accuracy but research says landsat still under or overestimate urban areas in subpixel cus 30 m reso too large and so OBIA is valuable to improving accuracy bit they may not remove all biases due to landsat sopatial reso –\> can consider using higher reso like sentinel 2.
+
+::: {#CHUNKNAME layout-ncol="2"}
+![Super-pixel Classification - SNIC Neighborhood Scale 50](images/w8_images/sz_class_50.png){alt="CART"}
+
+![Super-pixel Classification - SNIC Neighborhood Scale 256](images/w8_images/sz_class_256.png){#reference alt="RF"}
+:::
+
++-----------------------------+-----------------------------------------+----------------------------------------+
+| Method                      | Strengths                               | Limitations                            |
++=============================+=========================================+========================================+
+| Sub-pixel Analysis          | -   good for mixed pixels               | -   noisy-looking output               |
+|                             |                                         |                                        |
+|                             | -   good for Landsat                    | <!-- -->                               |
+|                             |                                         |                                        |
+|                             | -   gives class fractions               | -    harder to validate                |
+|                             |                                         |                                        |
+|                             | -   useful in messy urban areas         | -   harder to explain                  |
+|                             |                                         |                                        |
+|                             |                                         | -   hardening can reduce the benefits  |
++-----------------------------+-----------------------------------------+----------------------------------------+
+| Object-based Image Analysis | -   smoother map                        | -   depends on segmentation quality    |
+|                             |                                         |                                        |
+|                             | -   easier to interpret                 | -   parameters matter                  |
+|                             |                                         |                                        |
+|                             | -   uses object features                | -   may merge small details            |
+|                             |                                         |                                        |
+|                             | -   often better for final presentation | -   can oversimplify                   |
++-----------------------------+-----------------------------------------+----------------------------------------+
 
 ### Accuracy Assessment
+
+-   Precision
+
+-   Recall
+
+GEE code for this practical can be found [here](https://code.earthengine.google.com/d2e91e9860c2c56319e3de61bbebb8b0).
 
 ## Applications
 
