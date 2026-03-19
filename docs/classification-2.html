@@ -95,6 +95,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -413,7 +442,7 @@ div.csl-indent {
 <h2 data-number="7.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.1</span> Summary</h2>
 <section id="sub-pixel-analysis" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="sub-pixel-analysis"><span class="header-section-number">7.1.1</span> Sub Pixel Analysis</h3>
-<p>Classification methods face challenges in urban environments because of spatial heterogeneity and spectral similarity between neighboring urban and non-urban land uses. With Landsat’s 30 m spatial resolution, individual pixels often contain mixtures of surfaces such as buildings, roads, and vegetation, which can lead to overestimation of urban land uses<span class="citation" data-cites="maclachlan2017">(<a href="references.html#ref-maclachlan2017" role="doc-biblioref">MacLachlan et al. 2017</a>)</span>. Sub-pixel analysis addresses this mixed-pixel problem by estimating the fractional proportion of different land cover within each pixel, based on the assumption that land cover composition varies continuously across space <span class="citation" data-cites="ge2014">(<a href="references.html#ref-ge2014" role="doc-biblioref">Ge et al. 2014</a>)</span>. This method provides a finer representation of land cover and can improve classification accuracy in comparison to assigning each pixel to a defined class. The below shows Shenzhen under sub-pixel analysis.</p>
+<p>What I found most useful this week was learning that pixel-based classification methods can struggle in urban environments. In a city like Shenzhen, land cover is highly spatially heterogeneous and many neighboring surfaces are spectrally similar. With Landsat’s 30 m spatial resolution, individual pixels often contain mixtures of surfaces such as buildings, roads, and vegetation, which can lead to under and overestimation of urban land uses<span class="citation" data-cites="maclachlan2017">(<a href="references.html#ref-maclachlan2017" role="doc-biblioref">MacLachlan et al. 2017</a>)</span>. This made sub-pixel analysis particularly interesting to me, because instead of classifying each pixel into one class, it is able to estimate the fractional composition of land cover within each pixel<span class="citation" data-cites="ge2014">(<a href="references.html#ref-ge2014" role="doc-biblioref">Ge et al. 2014</a>)</span>. This is especially useful in urban areas, where mixed pixels are unavoidable. Despite, it poses limitations. Although sub-pixel analysis provides a finer representation of land cover, the output can look noisy and harder to interpret, and some of its advantages may be reduced once fractions are hardened into discrete classes. The below shows Shenzhen under sub-pixel analysis:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w8_images/sz_constrained_frac.png" class="img-fluid figure-img"></p>
@@ -423,10 +452,8 @@ div.csl-indent {
 </section>
 <section id="object-based-image-analysis-obia" class="level3" data-number="7.1.2">
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="object-based-image-analysis-obia"><span class="header-section-number">7.1.2</span> Object-Based Image Analysis (OBIA)</h3>
-<p>OBIA groups similar neighboring pixels as objects. It is found applied frequently for capturing heterogeneity in fragmented urban landscapes. There are three segmentation algorithm that can be implemented with GEE, this includes K-means, G-means and Simple Non-Iterative Clustering (SNIC).</p>
-<p>SNIC is an efficient algorithm that groups similar pixels and identify potential, individual objects. It is computation efficient as it cluster pixels based on defined parameters, visits pixels only once and clusters pixels without iterations. Classification is primarily driven by three main parameters of <code>compactness</code>, <code>connectivity</code> and <code>neighborhoodSize</code><span class="citation" data-cites="matarira2023">(<a href="references.html#ref-matarira2023" role="doc-biblioref">Matarira et al. 2023</a>)</span>. Through averaged spectral values, SNIC reduces noise and classification errors.</p>
-<p>However, studies have noted that under or overestimation of land cover of Landsat’s 30m spatial resolution can persist regardless of the segmentation methods. Therefore OBIA should be understood as improving the representation of spatial heterogeneity rather than correcting for resolution bias. Considering higher resolution imagery such as Sentinel-2 can be a choice, but it is also important to note that there is no method to completely remove heterogeneity.</p>
-<p>The below shows Shenzhen under <code>neighborhoodSize</code> values of 50 and 256. A smaller neighborhood size can preserve finer details, whereas a larger neighborhood size will show borader clusterings.</p>
+<p>OBIA approaches classification differently by grouping neighboring pixels as objects rather than treating each pixel independently. Segmentation methods such as K-means and SNIC showed how classification can incorporate not only spectral information but also spatial and contextual characteristics. SNIC is comparatively more effective as it is computationally efficient and reduces noise through averaging spectral values, yet its performance depends strongly on segmentation parameters such as <code>compactness</code>, <code>connectivity</code> and <code>neighborhoodSize</code><span class="citation" data-cites="matarira2023">(<a href="references.html#ref-matarira2023" role="doc-biblioref">Matarira et al. 2023</a>)</span>. What stood out is that OBIA improves the representation of spatial heterogeneity, however it does not correct resolution biases. This is important to awknowledge as method choice can improve classification, there is no method to completely remove heterogeneity.</p>
+<p>The below shows Shenzhen under <code>neighborhoodSize</code> values of 50 and 256. A smaller neighborhood size can preserve finer details, whereas a larger neighborhood size will show borader clustering:</p>
 <div id="CHUNKNAME" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -448,52 +475,48 @@ div.csl-indent {
 </div>
 </div>
 <table class="caption-top table">
+<caption>Source: <span class="citation" data-cites="saba2023">Saba et al. (<a href="references.html#ref-saba2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="myint2013">Myint et al. (<a href="references.html#ref-myint2013" role="doc-biblioref">2013</a>)</span></caption>
 <colgroup>
-<col style="width: 18%">
-<col style="width: 46%">
-<col style="width: 34%">
+<col style="width: 9%">
+<col style="width: 29%">
+<col style="width: 38%">
+<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Method</th>
 <th>Strengths</th>
 <th>Limitations</th>
+<th>When to use?</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Sub-pixel Analysis</td>
 <td><ul>
-<li><p>good for mixed pixels</p></li>
-<li><p>good for Landsat</p></li>
-<li><p>gives class fractions</p></li>
-<li><p>Useful for heterogeneous urban areas</p></li>
+<li>Advantageous for complex heterogeneous land cover</li>
 </ul></td>
 <td><ul>
-<li>noisy-looking output</li>
-</ul>
-<!-- -->
-<ul>
-<li><p>harder to validate</p></li>
-<li><p>harder to explain</p></li>
-<li><p>hardening can reduce the benefits</p></li>
+<li><p>Perpetuates mixed pixels problem</p></li>
+<li><p>Fractional classes made it difficult to integrate with GIS</p></li>
+<li><p>Difficult to compare results across space through time</p></li>
+</ul></td>
+<td><ul>
+<li>Helpful when using medium resolution imagery (e.g.&nbsp;Landsat)</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>Object-based Image Analysis</td>
 <td><ul>
-<li>Able to incoporate spectral, spatial and contextual characteristics</li>
-</ul>
-<!-- -->
-<ul>
-<li>Computationally cheaper, uses less memory (in comparison to k-means)</li>
+<li>Able to incorporate spectral, spatial and contextual characteristics to reduce noise</li>
 </ul></td>
 <td><ul>
-<li><p>depends on segmentation quality</p></li>
-<li><p>parameters matter</p></li>
-<li><p>may merge small details</p></li>
-<li><p>can oversimplify</p></li>
-<li><p>Texture analysis may be limited in distinguishment</p></li>
+<li><p>Accuracy and quality of these algorithms depends on the type, spatio-temporal and spectral resolution of the data</p></li>
+<li><p>Impossible for low spatial resolution and difficult for medium spatial resolution imagery</p></li>
+<li><p>Can be computation memory intensive especially over large areas or with detailed segmentation</p></li>
+</ul></td>
+<td><ul>
+<li>More applicable to high resolution imagery (e.g.&nbsp;Sentinel 2)</li>
 </ul></td>
 </tr>
 </tbody>
@@ -503,15 +526,17 @@ div.csl-indent {
 <h3 data-number="7.1.3" class="anchored" data-anchor-id="accuracy-assessment"><span class="header-section-number">7.1.3</span> Accuracy Assessment</h3>
 <p>The purpose of accuracy assessment is to estimate the error and uncertainty of classification; Resampling procedures such as bootstrapping and cross-validation can be used to estimate map accuracy and associated uncertainty <span class="citation" data-cites="lyons2018">(<a href="references.html#ref-lyons2018" role="doc-biblioref">Lyons et al. 2018</a>)</span>.</p>
 <ul>
-<li><p><strong>Precision</strong>: Also known as the producer’s accuracy TP / TP +FN, it refers to the proportion of pixels that is classified a class that is actually correct and represents the ground truth.</p></li>
-<li><p><strong>Recall</strong>: Also known as the user’s accuracy TP / TP+FP, it refers to the proportion of pixels that the classification are representing that class in reality.</p></li>
+<li><p><strong>Precision</strong>: Also known as the user’s accuracy <span class="math inline">\(\frac{\text{TP}}{\text{TP} + \text{FN}}\)</span>, it refers to the proportion of pixels that is classified a class that is actually correct and represents the ground truth.</p></li>
+<li><p><strong>Recall</strong>: Also known as the producer’s accuracy <span class="math inline">\(\frac{\text{TP}}{\text{TP} + \text{FP}}\)</span>, it refers to the proportion of pixels that the classification are representing that class in reality.</p></li>
 <li><p><strong>Overall Accuracy</strong>: Trade-off between <strong>Precision</strong> and <strong>Recall</strong>, they can never be both good as our data is imbalanced.</p></li>
 <li><p><strong>F1 score</strong>: The harmonic mean between precision and recall, ranging from 0 to 1 (closer to 1 indicates better performance)</p>
 <div style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;">
 <p>Note that accuracy assessment do not account for spatial autocorrelation!! Achieving a higher overall accuracy score does not always mean that the classification model is better…</p>
 </div>
 <div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
-<p>A workflow I will adopt: Class Definition → Pre-processing → Train Test Split or Spatial Cross Validation → Pixel Assignment (Sub-pixel ; OBIA) → Accuracy Assessment</p>
+<p>A workflow I will adopt:</p>
+<p><strong>Class Definition → Pre-processing → Spatial Cross Validation (or Train Test Split) → Pixel Assignment (Sub-pixel ; OBIA) → Accuracy Assessment</strong></p>
+<p>For now, I am leaning more towards Spatial Cross Validation, because spatial classification seems more likely to provide a more realistic estimate than a simple random train-test split.</p>
 </div></li>
 </ul>
 <p>GEE code for this practical can be found <a href="https://code.earthengine.google.com/d2e91e9860c2c56319e3de61bbebb8b0">here</a>.</p>
@@ -537,6 +562,12 @@ MacLachlan, Andrew, Gareth Roberts, Eloise Biggs, and Bryan Boruff. 2017. <span>
 </div>
 <div id="ref-matarira2023" class="csl-entry" role="listitem">
 Matarira, Dadirai, Onisimo Mutanga, Maheshvari Naidu, and Marco Vizzari. 2023. <span>“Object-Based Informal Settlement Mapping in Google Earth Engine Using the Integration of Sentinel-1, Sentinel-2, and PlanetScope Satellite Data.”</span> <em>Land</em> 12 (1): 99. <a href="https://doi.org/10.3390/land12010099">https://doi.org/10.3390/land12010099</a>.
+</div>
+<div id="ref-myint2013" class="csl-entry" role="listitem">
+Myint, Soe W., Victor Mesev, Dale Quattrochi, and Elizabeth A. Wentz. 2013. <span>“Urban Image Classification: Per-Pixel Classifiers, Sub-Pixel Analysis, Object-Based Image Analysis, and Geospatial Methods: Chapter - 10.”</span> <em>Urban Remote Sensing: Evolution, History, Current State-of-Art, and Future Vision</em>, June. <a href="https://ntrs.nasa.gov/citations/20140012911">https://ntrs.nasa.gov/citations/20140012911</a>.
+</div>
+<div id="ref-saba2023" class="csl-entry" role="listitem">
+Saba, Sumbal Bahar, Muhammad Ali, Syed Ali Turab, Muhammad Waseem, and Shah Faisal. 2023. <span>“Comparison of Pixel, Sub-Pixel and Object-Based Image Analysis Techniques for Co-Seismic Landslides Detection in Seismically Active Area in Lesser Himalaya, Pakistan.”</span> <em>Natural Hazards</em> 115 (3): 2383–98. <a href="https://doi.org/10.1007/s11069-022-05642-y">https://doi.org/10.1007/s11069-022-05642-y</a>.
 </div>
 </div>
 </section>

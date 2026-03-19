@@ -1660,6 +1660,85 @@
             "title": "A comparison of resampling methods for remote sensing classification and accuracy assessment",
             "type": "article-journal",
             "volume": "208"
+        },
+        {
+            "DOI": "10.1007/s11069-022-05642-y",
+            "URL": "https://doi.org/10.1007/s11069-022-05642-y",
+            "author": [
+                {
+                    "family": "Saba",
+                    "given": "Sumbal Bahar"
+                },
+                {
+                    "family": "Ali",
+                    "given": "Muhammad"
+                },
+                {
+                    "family": "Turab",
+                    "given": "Syed Ali"
+                },
+                {
+                    "family": "Waseem",
+                    "given": "Muhammad"
+                },
+                {
+                    "family": "Faisal",
+                    "given": "Shah"
+                }
+            ],
+            "container-title": "Natural Hazards",
+            "id": "saba2023",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        2,
+                        1
+                    ]
+                ]
+            },
+            "page": "2383-2398",
+            "title": "Comparison of pixel, sub-pixel and object-based image analysis techniques for co-seismic landslides detection in seismically active area in lesser himalaya, pakistan",
+            "type": "article-journal",
+            "volume": "115"
+        },
+        {
+            "URL": "https://ntrs.nasa.gov/citations/20140012911",
+            "author": [
+                {
+                    "family": "Myint",
+                    "given": "Soe W."
+                },
+                {
+                    "family": "Mesev",
+                    "given": "Victor"
+                },
+                {
+                    "family": "Quattrochi",
+                    "given": "Dale"
+                },
+                {
+                    "family": "Wentz",
+                    "given": "Elizabeth A."
+                }
+            ],
+            "container-title": "Urban Remote Sensing: Evolution, History, Current State-of-Art, and Future Vision",
+            "id": "myint2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013,
+                        6,
+                        21
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "Number: M14-4090",
+            "title": "Urban Image Classification: Per-Pixel Classifiers, Sub-Pixel Analysis, Object-Based Image Analysis, and Geospatial Methods: Chapter - 10",
+            "title-short": "Urban Image Classification",
+            "type": "article-journal"
         }
     ],
     "project_biblios": [
