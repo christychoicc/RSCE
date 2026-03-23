@@ -409,7 +409,10 @@ window.Quarto = {
   <li><a href="#object-based-image-analysis-obia" id="toc-object-based-image-analysis-obia" class="nav-link" data-scroll-target="#object-based-image-analysis-obia"><span class="header-section-number">7.1.2</span> Object-Based Image Analysis (OBIA)</a></li>
   <li><a href="#accuracy-assessment" id="toc-accuracy-assessment" class="nav-link" data-scroll-target="#accuracy-assessment"><span class="header-section-number">7.1.3</span> Accuracy Assessment</a></li>
   </ul></li>
-  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">7.2</span> Applications</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">7.2</span> Applications</a>
+  <ul class="collapse">
+  <li><a href="#gee-pre-classified-products" id="toc-gee-pre-classified-products" class="nav-link" data-scroll-target="#gee-pre-classified-products"><span class="header-section-number">7.2.1</span> GEE Pre-classified Products</a></li>
+  </ul></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">7.3</span> Reflection</a></li>
   </ul>
 </nav>
@@ -453,14 +456,15 @@ window.Quarto = {
 <section id="object-based-image-analysis-obia" class="level3" data-number="7.1.2">
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="object-based-image-analysis-obia"><span class="header-section-number">7.1.2</span> Object-Based Image Analysis (OBIA)</h3>
 <p>OBIA approaches classification differently by grouping neighboring pixels as objects rather than treating each pixel independently. Segmentation methods such as K-means and SNIC showed how classification can incorporate not only spectral information but also spatial and contextual characteristics. SNIC is comparatively more effective as it is computationally efficient and reduces noise through averaging spectral values, yet its performance depends strongly on segmentation parameters such as <code>compactness</code>, <code>connectivity</code> and <code>neighborhoodSize</code><span class="citation" data-cites="matarira2023">(<a href="references.html#ref-matarira2023" role="doc-biblioref">Matarira et al. 2023</a>)</span>. What stood out is that OBIA improves the representation of spatial heterogeneity, however it does not correct resolution biases. This is important to awknowledge as method choice can improve classification, there is no method to completely remove heterogeneity.</p>
-<p>The below shows Shenzhen under <code>neighborhoodSize</code> values of 50 and 256. A smaller neighborhood size can preserve finer details, whereas a larger neighborhood size will show borader clustering:</p>
+<p>The below shows Shenzhen under <code>neighborhoodSize</code> values of 50 and 256. The neighbourhood size controls the scale which pixels are groupped into objects in classification. A smaller neighborhood size can preserve finer details, whereas a larger neighborhood size will show borader clustering:<br>
+</p>
 <div id="CHUNKNAME" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w8_images/sz_class_50.png" class="img-fluid figure-img"></p>
-<figcaption>OBIA Classification - Neighborhood Scale 50</figcaption>
+<figcaption>CART</figcaption>
 </figure>
 </div>
 </div>
@@ -468,7 +472,7 @@ window.Quarto = {
 <div id="reference" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/w8_images/sz_class_256.png" class="img-fluid figure-img"></p>
-<figcaption>OBIA Classification - Neighborhood Scale 256</figcaption>
+<figcaption>RF</figcaption>
 </figure>
 </div>
 </div>
@@ -531,7 +535,7 @@ window.Quarto = {
 <li><p><strong>Overall Accuracy</strong>: Trade-off between <strong>Precision</strong> and <strong>Recall</strong>, they can never be both good as our data is imbalanced.</p></li>
 <li><p><strong>F1 score</strong>: The harmonic mean between precision and recall, ranging from 0 to 1 (closer to 1 indicates better performance)</p>
 <div style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;">
-<p>Note that accuracy assessment do not account for spatial autocorrelation!! Achieving a higher overall accuracy score does not always mean that the classification model is better…</p>
+<p>Note that accuracy assessment do not account for <strong>spatial autocorrelation</strong>!! Achieving a higher overall accuracy score does not always mean that the classification model is better…</p>
 </div>
 <div style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;">
 <p>A workflow I will adopt:</p>
@@ -545,6 +549,10 @@ window.Quarto = {
 </section>
 <section id="applications" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">7.2</span> Applications</h2>
+<section id="gee-pre-classified-products" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="gee-pre-classified-products"><span class="header-section-number">7.2.1</span> GEE Pre-classified Products</h3>
+<p>GEE makes pre-classified products easy to access through the Earth Engine Data Catalog. For land use and land cover change analysis, <a href="https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1">Dynamic World V1</a> and <a href="https://developers.google.com/earth-engine/datasets/catalog/ESA_WorldCover_v200#bands">ESA WorldCover 10 m v200</a> can be used as general land classifiers. The <a href="https://developers.google.com/earth-engine/datasets/catalog/RUB_RUBCLIM_LCZ_global_lcz_map_latest#bands">Global Map of Local Climate Zones</a> (LCZ) adds a different perspective by classifying areas according to urban form and surface structure, which makes it more useful for analysing neighbourhood types, urban morphology and urban climate patterns than simple land-cover. Beyond these, GEE also includes built-environment datasets such as <a href="https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_Research_open-buildings_v3_polygons">Open Buildings V3 Polygons</a> for building-level analysis and <a href="https://developers.google.com/earth-engine/datasets/catalog/TIGER_2016_Roads">TIGER: US Census Roads</a> for road data but is limited to the US.</p>
+</section>
 </section>
 <section id="reflection" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">7.3</span> Reflection</h2>
