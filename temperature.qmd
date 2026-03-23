@@ -2,8 +2,3 @@
 title: "Temperature"
 ---
 
-## Summary
-
-## Application
-
-## Reflection

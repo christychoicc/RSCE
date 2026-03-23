@@ -19,9 +19,9 @@ OBIA approaches classification differently by grouping neighboring pixels as obj
 The below shows Shenzhen under `neighborhoodSize` values of 50 and 256. A smaller neighborhood size can preserve finer details, whereas a larger neighborhood size will show borader clustering:
 
 ::: {#CHUNKNAME layout-ncol="2"}
-![OBIA Classification - Neighborhood Scale 50](images/w8_images/sz_class_50.png){alt="CART"}
+![CART](images/w8_images/sz_class_50.png)
 
-![OBIA Classification - Neighborhood Scale 256](images/w8_images/sz_class_256.png){#reference alt="RF"}
+![RF](images/w8_images/sz_class_256.png){#reference}
 :::
 
 +-----------------------------+------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
@@ -55,7 +55,7 @@ The purpose of accuracy assessment is to estimate the error and uncertainty of c
 -   **F1 score**: The harmonic mean between precision and recall, ranging from 0 to 1 (closer to 1 indicates better performance)
 
     ::: {style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;"}
-    Note that accuracy assessment do not account for spatial autocorrelation!! Achieving a higher overall accuracy score does not always mean that the classification model is better...
+    Note that accuracy assessment do not account for **spatial autocorrelation**!! Achieving a higher overall accuracy score does not always mean that the classification model is better...
     :::
 
     ::: {style="border: 1px solid #ddd; border-left: 4px solid #5cb85c; padding: 10px 15px; color: #5cb85c; border-radius: 4px; margin-bottom: 15px;"}
@@ -72,4 +72,10 @@ More on Accuracy Assessment can be found [here](https://mlu-explain.github.io/pr
 
 ## Applications
 
+### GEE Pre-classified Products
+
+GEE makes pre-classified products easy to access through the Earth Engine Data Catalog. For land use and land cover change analysis, [Dynamic World V1](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1) and [ESA WorldCover 10 m v200](https://developers.google.com/earth-engine/datasets/catalog/ESA_WorldCover_v200#bands) can be used as general land classifiers. The [Global Map of Local Climate Zones](https://developers.google.com/earth-engine/datasets/catalog/RUB_RUBCLIM_LCZ_global_lcz_map_latest#bands) (LCZ) adds a different perspective by classifying areas according to urban form and surface structure, which makes it more useful for analysing neighbourhood types, urban morphology and urban climate patterns than for simple land-cover mapping. Beyond these, GEE also includes built-environment datasets such as [Open Buildings V3 Polygons](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_Research_open-buildings_v3_polygons) for building-level analysis and [TIGER: US Census Roads](https://developers.google.com/earth-engine/datasets/catalog/TIGER_2016_Roads) for road data but is limited to the US.
+
 ## Reflection
+
+This week made me realise that classification is not only about improving accuracy, but about choosing a representation of the city that is appropriate to the question being asked. In principle, EO-derived classification could contribute much more directly to policy, especially in areas such as informal settlement monitoring, green infrastructure planning and urban expansion management, but in practice this integration is constrained by data resolution, access to reliable training data, transferability between cities, and the fact that classification outputs can still be difficult for non-specialists to interpret. I found OBIA particularly interesting because it feels closer to how planners actually read urban space, as clusters, neighbourhoods and built forms rather than isolated pixels, while sub-pixel analysis was useful in a different way because it showed that medium-resolution imagery can still produce meaningful urban information if we accept that cities are mixtures rather than clean categories. For my own work, the most useful takeaway is that there is no universally “best” classifier: the method has to match the spatial complexity of the city, the resolution of the imagery, and the kind of evidence needed for decision-making. That is probably the most important insight from this week, because it shifts classification from being a purely technical step to being a methodological choice with real consequences for how urban problems are understood.
