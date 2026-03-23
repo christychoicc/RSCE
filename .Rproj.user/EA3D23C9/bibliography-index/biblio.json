@@ -1739,6 +1739,49 @@
             "title": "Urban Image Classification: Per-Pixel Classifiers, Sub-Pixel Analysis, Object-Based Image Analysis, and Geospatial Methods: Chapter - 10",
             "title-short": "Urban Image Classification",
             "type": "article-journal"
+        },
+        {
+            "DOI": "10.1080/17538947.2023.2246945",
+            "URL": "https://doi.org/10.1080/17538947.2023.2246945",
+            "author": [
+                {
+                    "family": "Li",
+                    "given": "Shuxu"
+                },
+                {
+                    "family": "Zhou",
+                    "given": "Zheng"
+                },
+                {
+                    "family": "Ma",
+                    "given": "Rongfei"
+                },
+                {
+                    "family": "Liu",
+                    "given": "Shishi"
+                },
+                {
+                    "family": "Guan",
+                    "given": "Qingfeng"
+                }
+            ],
+            "container-title": "International Journal of Digital Earth",
+            "id": "li2023",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        10,
+                        2
+                    ]
+                ]
+            },
+            "note": "_eprint: https://doi.org/10.1080/17538947.2023.2246945",
+            "page": "3222-3238",
+            "title": "Extracting subpixel vegetation NDVI time series for evaluating the mixed pixel effect on GPP estimation in urban areas",
+            "type": "article-journal",
+            "volume": "16"
         }
     ],
     "project_biblios": [

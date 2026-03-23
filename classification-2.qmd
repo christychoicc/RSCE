@@ -44,7 +44,7 @@ The below shows Shenzhen under `neighborhoodSize` values of 50 and 256. The neig
 
 ### Accuracy Assessment
 
-The purpose of accuracy assessment is to estimate the error and uncertainty of classification; Resampling procedures such as bootstrapping and cross-validation can be used to estimate map accuracy and associated uncertainty [@lyons2018].
+The purpose of accuracy assessment is to estimate the error and uncertainty of classification. Resampling procedures such as bootstrapping and cross-validation can be used to estimate map accuracy and associated uncertainty [@lyons2018].
 
 -   **Precision**: Also known as the user's accuracy $\frac{\text{TP}}{\text{TP} + \text{FN}}$, it refers to the proportion of pixels that is classified a class that is actually correct and represents the ground truth.
 
@@ -72,8 +72,16 @@ More on Accuracy Assessment can be found [here](https://mlu-explain.github.io/pr
 
 ## Applications
 
+### Taking it further...
+
+While sub-pixel analysis is most commonly used with land cover classification, @li2023 highlighted its value for biophysical estimation. The study demonstrated that sub-pixel NDVI extraction produces noticeably different vegetation productivity estimates compared to pixel by pixel approaches. This matters because NDVI time series are typically derived from medium-resolution imagery, where fragmented and heterogeneous urban land cover means vegetation to be captured mixed with other... within pixels. Under such context, this is not a minor inconvenience, it is a systematic source of bias that standard classification workflows do not address.
+
+In heterogeneous urban environments, sub-pixel NDVI extraction can improve the representation of vegetation by reducing mixed-pixel bias, providing more reliable vegetation monitoring and productivity estimates.
+
+Sub-pixel NDVI extraction in urban areas demonstrates that GPP estimates derived from medium-resolution imagery may be systematically biased when pixels contain both vegetated and impervious surfaces. Li et al. (2023) show that sub-pixel unmixing can substantially correct for this, producing more reliable productivity figures than pixel-level methods assume. This has direct policy relevance: urban carbon accounting, vegetation assessment, and green infrastructure planning increasingly depend on satellite-derived productivity estimates. If those estimates are built on uncorrected mixed-pixel data, the classification-stage errors propagate silently into the environmental assessments that ultimately inform planning decisions on the ground.
+
 ### GEE Pre-classified Products
 
-GEE makes pre-classified products easy to access through the Earth Engine Data Catalog. For land use and land cover change analysis, [Dynamic World V1](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1) and [ESA WorldCover 10 m v200](https://developers.google.com/earth-engine/datasets/catalog/ESA_WorldCover_v200#bands) can be used as general land classifiers. The [Global Map of Local Climate Zones](https://developers.google.com/earth-engine/datasets/catalog/RUB_RUBCLIM_LCZ_global_lcz_map_latest#bands) (LCZ) adds a different perspective by classifying areas according to urban form and surface structure, which makes it more useful for analysing neighbourhood types, urban morphology and urban climate patterns than simple land-cover. Beyond these, GEE also includes built-environment datasets such as [Open Buildings V3 Polygons](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_Research_open-buildings_v3_polygons) for building-level analysis and [TIGER: US Census Roads](https://developers.google.com/earth-engine/datasets/catalog/TIGER_2016_Roads) for road data but is limited to the US.
+GEE has pre-classified products easy to access through the Earth Engine Data Catalog. For land use and land cover change analysis, [Dynamic World V1](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1) and [ESA WorldCover 10 m v200](https://developers.google.com/earth-engine/datasets/catalog/ESA_WorldCover_v200#bands) can be used as general land classifiers. The [Global Map of Local Climate Zones](https://developers.google.com/earth-engine/datasets/catalog/RUB_RUBCLIM_LCZ_global_lcz_map_latest#bands) (LCZ) adds a different perspective by classifying areas according to urban form and surface structure, which makes it more useful for analysing neighbourhood types, urban morphology and urban climate patterns than simple land-cover. Beyond these, GEE also includes building datasets such as [Open Buildings V3 Polygons](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_Research_open-buildings_v3_polygons) for building-level analysis and [TIGER: US Census Roads](https://developers.google.com/earth-engine/datasets/catalog/TIGER_2016_Roads) for road data but is limited to the US.
 
 ## Reflection

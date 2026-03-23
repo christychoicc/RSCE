@@ -34,6 +34,8 @@ book:
     - gee.qmd
     - classification-1.qmd
     - classification-2.qmd
+    - temperature.qmd
+    - summary.qmd
     - references.qmd
 
 
