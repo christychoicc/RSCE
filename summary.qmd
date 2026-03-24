@@ -11,11 +11,9 @@ This comes to the end of my learning diary, and what a three months it has been!
 Our group project aims to build on the existing dashboard: [**Map: How much energy can you generate?**](https://www.energia.barcelona/en/generate-energy/generar-energia/map-how-much-energy-can-you-generate) by integrating an Earth Observation approach to identify where photovoltaic solar installations should be prioritised, supporting more targeted decision-making and help Barcelona to accelerate progress towards its wider energy, climate, and equity goals.
 
 ::: {style="margin: 1rem 0;"}
-<iframe
-    src="https://christychoicc.github.io/RSCE_GROUP"
-    width="100%"
-    height="600"
-    style="border:1px solid #ddd; border-radius:8px;"> </iframe>
+<iframe src="https://christychoicc.github.io/RSCE_GROUP" width="100%" height="600" style="border:1px solid #ddd; border-radius:8px;">
+
+</iframe>
 :::
 
 View the full presentation: [here](https://christychoicc.github.io/RSCE_GROUP/)
