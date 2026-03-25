@@ -1817,6 +1817,81 @@
             "title-short": "WorldView-2 Data for Hierarchical Object-Based Urban Land Cover Classification in Kigali",
             "type": "article-journal",
             "volume": "11"
+        },
+        {
+            "DOI": "10.3390/atmos12091146",
+            "URL": "https://www.mdpi.com/2073-4433/12/9/1146",
+            "author": [
+                {
+                    "family": "Ma",
+                    "given": "Lei"
+                },
+                {
+                    "family": "Zhu",
+                    "given": "Xiaoxiang"
+                },
+                {
+                    "family": "Qiu",
+                    "given": "Chunping"
+                },
+                {
+                    "family": "Blaschke",
+                    "given": "Thomas"
+                },
+                {
+                    "family": "Li",
+                    "given": "Manchun"
+                }
+            ],
+            "container-title": "Atmosphere",
+            "id": "ma2021",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        9
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "1146",
+            "title": "Advances of Local Climate Zone Mapping and Its Practice Using Object-Based Image Analysis",
+            "type": "article-journal",
+            "volume": "12"
+        },
+        {
+            "DOI": "10.1016/j.ecolind.2023.110772",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S1470160X23009147",
+            "author": [
+                {
+                    "family": "Zhang",
+                    "given": "Lei"
+                },
+                {
+                    "family": "Zhang",
+                    "given": "Ming"
+                },
+                {
+                    "family": "Wang",
+                    "given": "Qian"
+                }
+            ],
+            "container-title": "Ecological Indicators",
+            "id": "zhang2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        10,
+                        1
+                    ]
+                ]
+            },
+            "page": "110772",
+            "title": "Monitoring of subpixel impervious surface dynamics using seasonal time series landsat 8 OLI imagery",
+            "type": "article-journal",
+            "volume": "154"
         }
     ],
     "project_biblios": [
