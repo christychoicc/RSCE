@@ -19,9 +19,9 @@ OBIA approaches classification differently by grouping neighboring pixels as obj
 The below shows Shenzhen under `neighborhoodSize` values of 50 and 256. The neighbourhood size controls the scale which pixels are groupped into objects in classification. A smaller neighborhood size can preserve finer details, whereas a larger neighborhood size will show borader clustering:\
 
 ::: {#CHUNKNAME layout-ncol="2"}
-![CART](images/w8_images/sz_class_50.png)
+![Neighbourhood Size 50](images/w8_images/sz_class_50.png)
 
-![RF](images/w8_images/sz_class_256.png){#reference}
+![Neighbourhood Size 256](images/w8_images/sz_class_256.png){#reference}
 :::
 
 +-----------------------------+------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
@@ -74,7 +74,7 @@ More on Accuracy Assessment can be found [here](https://mlu-explain.github.io/pr
 
 ### Approaches
 
-Sub-pixel analysis and OBIA have been applied across a range of land cover and monitoring contexts, yet the choice of methods tends to depend on spatial resolution of available imagery. Literature shows that object-based image analysis is often used for understanding urban form in a way that is more meaningful than pixel-by-pixel land-cover labels. Geographic Object-Based Image Analysis (GEOBIA) workflow in GEE has been used to identify informal settlements by integrating Sentinel-1, Sentinel-2 and PlanetScope imagery, showing how texture and object-based spatial context can improve the identification of morphologically complex settlement patterns [@matarira2023]. This makes OBIA especially useful to understand the spatial pattern and structure of urban areas beyond pure land cover. Similarly, in a study focusing on Local Climate Zone, @ma2021 showed that object-based approaches can support classification of urban surface structure and cover consistently. Object-based approaches have the potential to delve into more details of internal spatial structure even if overall classification accuracy (OA) is not as high.
+Sub-pixel analysis and OBIA have been applied across a range of land cover and monitoring contexts, yet the choice of methods tends to depend on spatial resolution of available imagery. Literature shows that object-based image analysis is often used for understanding urban form in a way that is more meaningful than pixel-by-pixel land-cover labels. Geographic Object-Based Image Analysis (GEOBIA) workflow in GEE has been used to identify informal settlements by integrating Sentinel-1, Sentinel-2 and PlanetScope imagery, showing how texture and object-based spatial context can improve the identification of morphologically complex settlement patterns [@matarira2023]. This makes OBIA especially useful to understand the spatial pattern and structure of urban areas beyond pure land cover. Similarly, @ma2021 showed that object-based approaches can support the classification of urban surface structure and cover, while also capturing more detailed internal spatial structure even when overall classification accuracy (OA) is not as high.
 
 Sub-pixel methods are applied more often for needs to estimate estimate endmember proportions or fractional surface cover through time series. @zhang2023 developed a seasonal approach for monitoring sub pixel impervious surface dynamics with Landsat 8, which is useful as urban change often happens gradually over time. This makes sub-pixel analysis a more sensible approach when estimating a fractional surface proportion rather than assign each pixel to a fixed class. Similarly, @li2023 also showed that extracting sub pixel vegetation NDVI time series in urban areas can change estimates of vegetation productivity, suggesting that these fractional approaches does not only influences land cover classification but also the environmental indicators derived from it.
 

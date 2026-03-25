@@ -361,8 +361,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">8.1</span> Summary</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">8.2</span> Applications</a></li>
+  <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">8.3</span> Reflections</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -387,8 +395,95 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>This section will go through assessing temperature research through GEE. The following will use Bangkok, Thailand as a case study area.</p>
+<section id="summary" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">8.1</span> Summary</h2>
+<p>Try to look at different LST mapping under different climates.</p>
+<p>Hot humid rainy climate Bangkok Thailand</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/w9_images/before_QA_PIXEL.png" class="img-fluid figure-img"></p>
+<figcaption>Landsat LST</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/w9_images/MODIS_LST.png" class="img-fluid figure-img"></p>
+<figcaption>MODIS, Aqua and Terra</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>extremely hot dessert climate</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/w9_images/LANDSAT_LST.png" class="img-fluid figure-img"></p>
+<figcaption>Landsat LST</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/w9_images/MODIS.png" class="img-fluid figure-img"></p>
+<figcaption>MODIS, Aqua and Terra</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/w9_images/LST_CHART.png" class="img-fluid figure-img"></p>
+<figcaption>LST Chart</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/w9_images/compare.png" class="img-fluid figure-img"></p>
+<figcaption>Average Temperature Comparison Across Time (Maricopa and Pima)</figcaption>
+</figure>
+</div>
+<p>GEE code for this practical can be found <a href="https://code.earthengine.google.com/0c9f8558f28a429a32895861098c6ecb">here</a>.</p>
+</section>
+<section id="applications" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">8.2</span> Applications</h2>
+</section>
+<section id="reflections" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">8.3</span> Reflections</h2>
+<p>During my exploration, I also found out that cloud covers can affect temperature.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/w9_images/before_QA_PIXEL.png" class="img-fluid figure-img"></p>
+<figcaption>Filtered Cloud Cover</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="reference" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/w9_images/QA_PIXELED.png" class="img-fluid figure-img"></p>
+<figcaption>QA PIXELS</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
