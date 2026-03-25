@@ -37,6 +37,7 @@ book:
     - temperature.qmd
     - summary.qmd
     - references.qmd
+  favicon: "images/favicon.ico"
 
 
 bibliography: references.bib

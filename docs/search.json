@@ -294,7 +294,7 @@
     "href": "temperature.html",
     "title": "8  Temperature",
     "section": "",
-    "text": "8.1 Summary\nThis section will go through assessing temperature research through GEE. The following will use Bangkok, Thailand as a case study area.\nTry to look at different LST mapping under different climates.\nHot humid rainy climate Bangkok Thailand\nextremely hot dessert climate\nGEE code for this practical can be found here.",
+    "text": "8.1 Summary\nThis section will go through assessing temperature research through GEE.\nTry to look at different LST mapping under different climates.\nHot humid rainy climate Bangkok Thailand\nextremely hot dessert climate\nGEE code for this practical can be found here.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Temperature</span>"
     ]
@@ -304,7 +304,7 @@
     "href": "temperature.html#summary",
     "title": "8  Temperature",
     "section": "",
-    "text": "Landsat LST\n\n\n\n\n\n\n\nMODIS, Aqua and Terra\n\n\n\n\n\n\n\n\n\n\n\n\nLandsat LST\n\n\n\n\n\n\n\nMODIS, Aqua and Terra\n\n\n\n\n\n\n\n\nLST Chart\n\n\n\n\n\nAverage Temperature Comparison Across Time (Maricopa and Pima)",
+    "text": "Neighbourhood Size 50\n\n\n\n\n\n\n\nNeighbourhood Size 256\n\n\n\n\n\n\n\n\n\n\n\n\nNeighbourhood Size 50\n\n\n\n\n\n\n\nNeighbourhood Size 256\n\n\n\n\n\n\n\n\nLST Chart\n\n\n\n\n\nAverage Temperature Comparison Across Time (Maricopa and Pima)",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Temperature</span>"
     ]
@@ -324,7 +324,7 @@
     "href": "temperature.html#reflections",
     "title": "8  Temperature",
     "section": "8.3 Reflections",
-    "text": "8.3 Reflections\nDuring my exploration, I also found out that cloud covers can affect temperature.\n\n\n\n\n\n\nFiltered Cloud Cover\n\n\n\n\n\n\n\nQA PIXELS",
+    "text": "8.3 Reflections\nDuring my exploration, I also found out that cloud covers can affect temperature.\n\n\n\n\n\n\nNeighbourhood Size 50\n\n\n\n\n\n\n\nNeighbourhood Size 256",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Temperature</span>"
     ]

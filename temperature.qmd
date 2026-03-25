@@ -2,7 +2,7 @@
 title: "Temperature"
 ---
 
-This section will go through assessing temperature research through GEE. The following will use Bangkok, Thailand as a case study area.
+This section will go through assessing temperature research through GEE.
 
 ## Summary
 
@@ -11,17 +11,17 @@ Try to look at different LST mapping under different climates.
 Hot humid rainy climate Bangkok Thailand
 
 ::: {layout-ncol="2"}
-![Landsat LST](images/w9_images/before_QA_PIXEL.png){alt="Neighbourhood Size 50"}
+![Neighbourhood Size 50](images/w9_images/before_QA_PIXEL.png)
 
-![MODIS, Aqua and Terra](images/w9_images/MODIS_LST.png){alt="Neighbourhood Size 256"}
+![Neighbourhood Size 256](images/w9_images/MODIS_LST.png)
 :::
 
 extremely hot dessert climate
 
 ::: {layout-ncol="2"}
-![Landsat LST](images/w9_images/LANDSAT_LST.png){alt="Neighbourhood Size 50"}
+![Neighbourhood Size 50](images/w9_images/LANDSAT_LST.png)
 
-![MODIS, Aqua and Terra](images/w9_images/MODIS.png){alt="Neighbourhood Size 256"}
+![Neighbourhood Size 256](images/w9_images/MODIS.png)
 :::
 
 ![LST Chart](images/w9_images/LST_CHART.png)
@@ -37,7 +37,7 @@ GEE code for this practical can be found [here](https://code.earthengine.google.
 During my exploration, I also found out that cloud covers can affect temperature.
 
 ::: {layout-ncol="2"}
-![Filtered Cloud Cover](images/w9_images/before_QA_PIXEL.png){alt="Neighbourhood Size 50"}
+![Neighbourhood Size 50](images/w9_images/before_QA_PIXEL.png)
 
-![QA PIXELS](images/w9_images/QA_PIXELED.png){#reference alt="Neighbourhood Size 256"}
+![Neighbourhood Size 256](images/w9_images/QA_PIXELED.png){#reference}
 :::
