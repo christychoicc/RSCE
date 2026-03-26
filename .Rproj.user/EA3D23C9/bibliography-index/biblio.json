@@ -2285,6 +2285,82 @@
             "title": "The impact of temporal aggregation of land surface temperature data for surface urban heat island (SUHI) monitoring",
             "type": "article-journal",
             "volume": "134"
+        },
+        {
+            "DOI": "10.1080/01431161.2012.716548",
+            "author": [
+                {
+                    "family": "Sobrino",
+                    "given": "Jose"
+                },
+                {
+                    "family": "Oltra-Carrió",
+                    "given": "R."
+                },
+                {
+                    "family": "Sòria Barres",
+                    "given": "Guillem"
+                },
+                {
+                    "family": "Jimenez",
+                    "given": "Juan-Carlos"
+                },
+                {
+                    "family": "Franch",
+                    "given": "B."
+                },
+                {
+                    "family": "Hidalgo",
+                    "given": "Valentina"
+                },
+                {
+                    "family": "Mattar",
+                    "given": "Cristian"
+                },
+                {
+                    "family": "Julien",
+                    "given": "Yves"
+                },
+                {
+                    "family": "Cuenca",
+                    "given": "Juan"
+                },
+                {
+                    "family": "Romaguera",
+                    "given": "M."
+                },
+                {
+                    "family": "Gómez",
+                    "given": "J."
+                },
+                {
+                    "family": "Miguel",
+                    "given": "Eduardo"
+                },
+                {
+                    "family": "Bianchi",
+                    "given": "Remo"
+                },
+                {
+                    "family": "Paganini",
+                    "given": "Marc"
+                }
+            ],
+            "container-title": "International Journal of Remote Sensing",
+            "id": "sobrino2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013,
+                        5,
+                        1
+                    ]
+                ]
+            },
+            "page": "3177",
+            "title": "Evaluation of the surface urban heat island effect in the city of madrid by thermal remote sensing",
+            "type": "article-journal",
+            "volume": "34"
         }
     ],
     "project_biblios": [

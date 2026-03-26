@@ -2,15 +2,13 @@
 title: "Temperature"
 ---
 
-This section will be focused on using Google Earth Engine to explore land surface temperature (LST) and compare how thermal patterns vary across different climates, spatial scales and satellite products. What stood out most to me was that temperature mapping is not only about identifying hot areas, but also about understanding how resolution, cloud cover and scale shape what can actually be observed.
-
-Building upon the early chapters of discussing Urban Heat Island Effect in [Policy](https://christychoicc.github.io/RSCE/policy.html), this section will focus on land surface temperature......
+This section will be focused on using Google Earth Engine to explore land surface temperature (LST) and compare how thermal patterns vary across different climates, spatial scales and satellite products. Building upon the early chapters of discussing Urban Heat Island Effect (UHI) in [Policy](https://christychoicc.github.io/RSCE/policy.html), this section will also look at how land surface temperature can be used to mitigate UHI and policy relevance.
 
 ## Summary
 
 ### Land Surface Temperature
 
-Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences vegetation growth [@li2023a]. Urbanisation, increasing population has caused more land surfaces to be covered with concrete, asphalt and other impervious materials that absorb and retain heat, which contributes to higher land surface temperatures within our urban environments.
+Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences vegetation growth [@li2023a]. Urbanisation, increasing population has caused more land surfaces to be covered with concrete, asphalt and other impervious materials that absorb and retain heat. This contributes to higher land surface temperatures within our urban environments, which is a matter policy makers and global goals want to resolve.
 
 #### LST in GEE
 
@@ -24,7 +22,7 @@ Bangkok is characterised with a hot, humid and rainy summer climate. The map bel
 ![MODIS, Aqua and Terra LST](images/w9_images/MODIS_LST.png)
 :::
 
-Arizona in contrast has an extremely hot desert climate. It shows much more extensive high temperature patterns, suggesting a greater extent of hot, consistent with dry surfaces and less cooling influence from the Sonoran Desert.
+Arizona in contrast has an extremely hot desert climate. It shows much more extensive high temperature patterns, suggesting a greater extent of hot, consistent with dry surfaces and less cooling influences from the Sonoran Desert.
 
 ::: {layout-ncol="2"}
 ![Landsat 8 LST](images/w9_images/LANDSAT_LST.png)
@@ -46,11 +44,15 @@ Comparing the two time series chart, Bangkok appears more discontinuous which is
 MODIS is more useful for plotting time series due to it high observation frequency, yet the trade off here is that when we get to plot time series we will simultaneously lose the spatial element...
 :::
 
-Zooming into Arizona, I initially wanted to compare all level 2 administrative units, however, GEE returned the error message “Response size exceeds limit”. I narrowed the analysis to two districts so it is more manageable for GEE. Looking at Maricopa and Pima, both counties show very high summer LST values, with peaks above 50°C, where Maricopa appears slightly hotter overall. This demonstrated the ability to zoom into smaller spatial units, allowing finer thermal variation on county levels to be observed and compared for patterns that may be not seen under a broader regional scale.
+**Focusing on one study area now...**
+
+Zooming into Arizona, I initially wanted to compare all level 2 administrative units in one chart, but GEE returned the error message “Response size exceeds limit”, so I narrowed the analysis to two counties, Maricopa and Pima, to make it more manageable. The chart showed that temperatures in both counties stayed consistently high, with the minimum sitting around 30°C and the maximum going above 50°C. Therefore, I adjusted the temperature range so that the visualisation better reflects the actual distribution of values rather than on a less suitable range. This highlighted how this can shape and ease how thermal patterns are interpreted.
+
+This also made me think of using reducer percentile function `reducer: ee.Reducer.percentile([10, 20, 30, 40, 50, 60, 70, 80, 90]` or a calculated "Discomfort Index" category based on temperature data can be a more appropriate choice ([CASA0023](https://andrewmaclachlan.github.io/CASA0023/))[@sobrino2013]. This will allow the visualisation range to be based on the distribution of values rather than manually choosing the thresholds by hand.
 
 ![Average Temperature Comparison Across Time (Maricopa and Pima)](images/w9_images/compare.png)
 
-Looking at the chart it shows that the minimum temperature between the time series is a bit over 30 as a minimum and max temperature exceeding 50. Therefore, try changing minimum maximum temperature below,
+This also showed the importance of scale in temperature analysis. At the broader regional scale, Arizona can appear relatively uniform as an extremely hot desert environment, but looking at county-level time series made finer thermal variation easier to identify. This smaller comparison showed that even within the same wider climate setting, temperature profiles are not identical and can vary over time. It also taught me something practical about the limits of GEE, since trying to include all level 2 units at once resulted in the “Response size exceeds limit” error. In that sense, the limitation was not only technical but also methodological, because it forced me to simplify the analysis and think more carefully about which scale of comparison was actually most useful. This suggests that the way results are interpreted depends heavily on the spatial unit chosen, and that broader summaries may hide local thermal differences that become clearer when the analysis is narrowed down.
 
 ::: {layout-ncol="2"}
 ![Selected Level 2 Districts Under Minimum 30°C Maximum 60°C](images/w9_images/level2.png){alt="Landsat LST"}
@@ -84,15 +86,15 @@ GEE code for this practical can be found [here](https://code.earthengine.google.
 
 ### Urban Heat Island Effect
 
-Temperature analysis has been widely used in literature to study urban heat island (UHI) and surface urban heat island (SUHI) to supporting planning decisions.
+#### Approaches
 
-#### Policy
+Temperature analysis has been widely used in literature to study urban heat island (UHI) and surface urban heat island (SUHI) to supporting planning decisions. Studies have incorporate land cover patterns to identify any influences in temperature. Very relevant to planning, UHI and SUHI studies are often linked to questions of heat exposure, green infrastructure, and climate adaptation.
 
-Furthermore, studies have incorporate land cover patterns to identify any influences in temperature.
+#### Policy Relevance
 
 ### Methodological Limitations
 
-Remote sensing approaches are widely recognised for improving understanding of the spatial and temporal variability of urban climate over the long term. Yet it does have limitations, particularly in data accuracy, as satellites capture surface conditions indirectly and cloud cover can distort the reliability of thermal imagery. Most use temporally composite products, typically from MODIS, to reduce missing data impacted by cloud cover. Alternatively, some studies focus on nighttime thermal imagery as higher daytime solar radiation is likely to increase boundary-layer instability and cloud formation, making observations less consistent [@hu2013]. As seen below, night time has relatively fewer black pixels of missing or masked data.
+Remote sensing approaches are widely recognised for improving understanding of the spatial and temporal variability of urban climate over the long term. Yet it does have limitations, particularly in data accuracy, as satellites capture surface conditions indirectly and cloud cover can distort the reliability of thermal imagery. Most use temporally composite products, typically from MODIS, to reduce missing data impacted by cloud cover. Alternatively, some studies focus on nighttime thermal imagery as higher daytime solar radiation is likely to increase boundary-layer instability and cloud formation, making observations less consistent [@hu2013]. As seen below, night time has relatively fewer black pixels of missing or masked data:
 
 ![Day and Night Differences in LST, Source: @hu2013](images/w9_images/daynight.jpg)
 
@@ -108,7 +110,7 @@ Remote sensing approaches are widely recognised for improving understanding of t
 
 ## Reflections
 
-During my exploration in GEE, I realised how cloud coverage can affect temperature outputs. Comparing the two cloud removing approaches has showed me how different pre-processing nethods can affect temperature outputs. Using cloud cover filter still left a suspicious cool edge on the left side of the city, whereas the QA_PIXEL mask removed that area entirely, suggesting it was likely to be clouds instead of a real temperature pattern. This make me realise that filtering cloud cover is not always "the best" choice, especially in this case for temperature analysis as cloud coverage can still remain in parts of the image. Given that, pixel level masking seems to be a better option for more reliable outputs, yet it also creates a trade off in reducing the amount of usable data...
+I am really stressing over clouds here. During my exploration in GEE, I realised how cloud coverage can really affect temperature outputs. Comparing the two cloud removing approaches has showed me how different pre-processing nethods can affect temperature outputs. Using cloud cover filter still left a suspicious cool edge on the left side of the city, whereas the QA_PIXEL mask removed that area entirely, suggesting it was likely to be clouds instead of a real temperature pattern. This make me realise that filtering cloud cover is not always "the best" choice, especially in this case for temperature analysis as cloud coverage can still remain in parts of the image. Given that, pixel level masking seems to be a better option for more reliable outputs, yet it also creates a trade off in reducing the amount of usable data...
 
 ::: {layout-ncol="2"}
 ![Cloud Cover Filter](images/w9_images/before_QA_PIXEL.png){alt="Landsat LST"}
@@ -116,4 +118,4 @@ During my exploration in GEE, I realised how cloud coverage can affect temperatu
 ![QA Pixel](images/w9_images/QA_PIXELED.png){alt="MODIS, Aqua and Terra"}
 :::
 
-Apart from atmospheric effects, LST also depends on a many other decisions, including scale, data processing methods and interpretation. Even with these limitations, it is still a useful tool for studying climate adaptation, environmental justice, urban planning and potentially public health, especially when combined with demographic or land-cover data. I feel like there is still a lot more to explore with LST, such as LST with NDVI, NDWI, NDBI and NMDI, etc. and it is something I would be interested in exploring further in the future.
+Apart from atmospheric effects, LST also depends on a many other decisions, including scale, data processing methods and interpretation. Even with these limitations, it is still a useful tool for studying climate adaptation, environmental justice, urban planning and potentially public health, especially when combined with demographic or land-cover data. I feel like there is still a lot more to explore with LST, such as LST with NDVI, NDWI, NDBI and NMDI, etc. and is definitely something I would be interested in exploring further in the near future.
