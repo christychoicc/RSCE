@@ -8,25 +8,33 @@ This section will go through assessing temperature research through GEE.
 
 Try to look at different LST mapping under different climates.
 
-Hot humid rainy climate Bangkok Thailand
+Bangkok Thailand is characterise by a hot humid rainy climate
 
 ::: {layout-ncol="2"}
-![Neighbourhood Size 50](images/w9_images/before_QA_PIXEL.png)
+![Landsat LST](images/w9_images/before_QA_PIXEL.png)
 
-![Neighbourhood Size 256](images/w9_images/MODIS_LST.png)
+![MODIS, Aqua and Terra](images/w9_images/MODIS_LST.png)
 :::
 
-extremely hot dessert climate
+Astonia, USA is characterised by an extremely hot dessert climate.
 
 ::: {layout-ncol="2"}
-![Neighbourhood Size 50](images/w9_images/LANDSAT_LST.png)
+![Landsat LST](images/w9_images/LANDSAT_LST.png)
 
-![Neighbourhood Size 256](images/w9_images/MODIS.png)
+![MODIS, Aqua and Terra](images/w9_images/MODIS.png)
 :::
 
 ![LST Chart](images/w9_images/LST_CHART.png)
 
 ![Average Temperature Comparison Across Time (Maricopa and Pima)](images/w9_images/compare.png)
+
+Looking at the chart it shows that the minimum temperature between the time series is a bit over 30 as a minimum and max temperature exceeding 50. Therefore, try changing minimum maximum temperature below,
+
+::: {layout-ncol="2"}
+![Level 2 minimum 30 maximum 60](images/w9_images/level2.png){alt="Landsat LST"}
+
+![Level 2 with minimum 20 maximum 50](images/w9_images/level1_zoom.png){alt="MODIS, Aqua and Terra"}
+:::
 
 GEE code for this practical can be found [here](https://code.earthengine.google.com/0c9f8558f28a429a32895861098c6ecb).
 
@@ -37,7 +45,7 @@ GEE code for this practical can be found [here](https://code.earthengine.google.
 During my exploration, I also found out that cloud covers can affect temperature.
 
 ::: {layout-ncol="2"}
-![Neighbourhood Size 50](images/w9_images/before_QA_PIXEL.png)
+![Filtered Cloud Cover](images/w9_images/before_QA_PIXEL.png)
 
-![Neighbourhood Size 256](images/w9_images/QA_PIXELED.png){#reference}
+![QA PIXEL](images/w9_images/QA_PIXELED.png){#reference}
 :::
