@@ -6,6 +6,10 @@ This section will go through assessing temperature research through GEE.
 
 ## Summary
 
+### Land Surface Temperature
+
+Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences the rate and timing of vegetation growth [@li2023a].
+
 Try to look at different LST mapping under different climates.
 
 Bangkok Thailand is characterise by a hot humid rainy climate
@@ -38,7 +42,41 @@ Looking at the chart it shows that the minimum temperature between the time seri
 
 GEE code for this practical can be found [here](https://code.earthengine.google.com/0c9f8558f28a429a32895861098c6ecb).
 
++-----------+-----------------------------------------------------------------------------------------------------------------+
+| Strengths | Limitations                                                                                                     |
++===========+=================================================================================================================+
+|           | -   Highly depends on atmospheric correction (Cloud coverage can affect accuracy, see Reflection section below) |
+|           |                                                                                                                 |
+|           | -   Difficult to separate surface temperature, surface emissivity and atmospheric effects                       |
+|           |                                                                                                                 |
+|           | -   Represents radiometric temperature (surface) not physical temperature                                       |
+|           |                                                                                                                 |
+|           | -   Mixed pixels makes it harder to interpret over heterogeneous surfaces                                       |
+|           |                                                                                                                 |
+|           | -   Surface temperature changes quickly and varies across different times of the day, making validation harder  |
+|           |                                                                                                                 |
+|           |     (Validation methods: T-based / R-based / Intercomparison Method / Bibliometric Analysis)                    |
++-----------+-----------------------------------------------------------------------------------------------------------------+
+
+: Sources: @li2013, @li2023a
+
+### Urban Heat Island Effect 
+
+Impacts
+
+Policy
+
 ## Applications
+
+### LST Products
+
+| Resolution | Products | Typical Spatial Resolution |
+|----|----|----|
+| Low | ASTER, Landsat | 90 m, 30 m |
+| Medium | MODIS, with EOS/Aqua and Terra | 1 km |
+| High | LSA-SAF (MSG/SEVIRI), GOES-R ABI, Copernicus Global Land Service / GlobTemperature | 3–5 km, 2–10 km, 0.05° |
+
+: Sources: @li2023a
 
 ## Reflections
 
@@ -49,3 +87,5 @@ During my exploration, I also found out that cloud covers can affect temperature
 
 ![QA PIXEL](images/w9_images/QA_PIXELED.png){#reference}
 :::
+
+Temporal resolution is also a point to consider blablabla... temp change quickly coz

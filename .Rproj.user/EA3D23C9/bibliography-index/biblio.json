@@ -1892,6 +1892,258 @@
             "title": "Monitoring of subpixel impervious surface dynamics using seasonal time series landsat 8 OLI imagery",
             "type": "article-journal",
             "volume": "154"
+        },
+        {
+            "DOI": "10.1029/2022RG000777",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1029/2022RG000777",
+            "author": [
+                {
+                    "family": "Li",
+                    "given": "Zhao-Liang"
+                },
+                {
+                    "family": "Wu",
+                    "given": "Hua"
+                },
+                {
+                    "family": "Duan",
+                    "given": "Si-Bo"
+                },
+                {
+                    "family": "Zhao",
+                    "given": "Wei"
+                },
+                {
+                    "family": "Ren",
+                    "given": "Huazhong"
+                },
+                {
+                    "family": "Liu",
+                    "given": "Xiangyang"
+                },
+                {
+                    "family": "Leng",
+                    "given": "Pei"
+                },
+                {
+                    "family": "Tang",
+                    "given": "Ronglin"
+                },
+                {
+                    "family": "Ye",
+                    "given": "Xin"
+                },
+                {
+                    "family": "Zhu",
+                    "given": "Jinshun"
+                },
+                {
+                    "family": "Sun",
+                    "given": "Yingwei"
+                },
+                {
+                    "family": "Si",
+                    "given": "Menglin"
+                },
+                {
+                    "family": "Liu",
+                    "given": "Meng"
+                },
+                {
+                    "family": "Li",
+                    "given": "Jiahao"
+                },
+                {
+                    "family": "Zhang",
+                    "given": "Xia"
+                },
+                {
+                    "family": "Shang",
+                    "given": "Guofei"
+                },
+                {
+                    "family": "Tang",
+                    "given": "Bo-Hui"
+                },
+                {
+                    "family": "Yan",
+                    "given": "Guangjian"
+                },
+                {
+                    "family": "Zhou",
+                    "given": "Chenghu"
+                }
+            ],
+            "container-title": "Reviews of Geophysics",
+            "id": "li2023a",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2022RG000777",
+            "page": "e2022RG000777",
+            "title": "Satellite Remote Sensing of Global Land Surface Temperature: Definition, Methods, Products, and Applications",
+            "title-short": "Satellite Remote Sensing of Global Land Surface Temperature",
+            "type": "article-journal",
+            "volume": "61"
+        },
+        {
+            "DOI": "10.1029/2022RG000777",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1029/2022RG000777",
+            "author": [
+                {
+                    "family": "Li",
+                    "given": "Zhao-Liang"
+                },
+                {
+                    "family": "Wu",
+                    "given": "Hua"
+                },
+                {
+                    "family": "Duan",
+                    "given": "Si-Bo"
+                },
+                {
+                    "family": "Zhao",
+                    "given": "Wei"
+                },
+                {
+                    "family": "Ren",
+                    "given": "Huazhong"
+                },
+                {
+                    "family": "Liu",
+                    "given": "Xiangyang"
+                },
+                {
+                    "family": "Leng",
+                    "given": "Pei"
+                },
+                {
+                    "family": "Tang",
+                    "given": "Ronglin"
+                },
+                {
+                    "family": "Ye",
+                    "given": "Xin"
+                },
+                {
+                    "family": "Zhu",
+                    "given": "Jinshun"
+                },
+                {
+                    "family": "Sun",
+                    "given": "Yingwei"
+                },
+                {
+                    "family": "Si",
+                    "given": "Menglin"
+                },
+                {
+                    "family": "Liu",
+                    "given": "Meng"
+                },
+                {
+                    "family": "Li",
+                    "given": "Jiahao"
+                },
+                {
+                    "family": "Zhang",
+                    "given": "Xia"
+                },
+                {
+                    "family": "Shang",
+                    "given": "Guofei"
+                },
+                {
+                    "family": "Tang",
+                    "given": "Bo-Hui"
+                },
+                {
+                    "family": "Yan",
+                    "given": "Guangjian"
+                },
+                {
+                    "family": "Zhou",
+                    "given": "Chenghu"
+                }
+            ],
+            "container-title": "Reviews of Geophysics",
+            "id": "li2023b",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2022RG000777",
+            "page": "e2022RG000777",
+            "title": "Satellite Remote Sensing of Global Land Surface Temperature: Definition, Methods, Products, and Applications",
+            "title-short": "Satellite Remote Sensing of Global Land Surface Temperature",
+            "type": "article-journal",
+            "volume": "61"
+        },
+        {
+            "DOI": "10.1016/j.rse.2012.12.008",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S0034425712004749",
+            "author": [
+                {
+                    "family": "Li",
+                    "given": "Zhao-Liang"
+                },
+                {
+                    "family": "Tang",
+                    "given": "Bo-Hui"
+                },
+                {
+                    "family": "Wu",
+                    "given": "Hua"
+                },
+                {
+                    "family": "Ren",
+                    "given": "Huazhong"
+                },
+                {
+                    "family": "Yan",
+                    "given": "Guangjian"
+                },
+                {
+                    "family": "Wan",
+                    "given": "Zhengming"
+                },
+                {
+                    "family": "Trigo",
+                    "given": "Isabel F."
+                },
+                {
+                    "family": "Sobrino",
+                    "given": "José A."
+                }
+            ],
+            "container-title": "Remote Sensing of Environment",
+            "id": "li2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013,
+                        4,
+                        15
+                    ]
+                ]
+            },
+            "page": "14-37",
+            "title": "Satellite-derived land surface temperature: Current status and perspectives",
+            "title-short": "Satellite-derived land surface temperature",
+            "type": "article-journal",
+            "volume": "131"
         }
     ],
     "project_biblios": [
