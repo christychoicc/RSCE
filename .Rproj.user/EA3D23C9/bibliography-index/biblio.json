@@ -2144,6 +2144,60 @@
             "title-short": "Satellite-derived land surface temperature",
             "type": "article-journal",
             "volume": "131"
+        },
+        {
+            "DOI": "10.3390/land6020038",
+            "URL": "https://www.mdpi.com/2073-445X/6/2/38",
+            "author": [
+                {
+                    "family": "Rasul",
+                    "given": "Azad"
+                },
+                {
+                    "family": "Balzter",
+                    "given": "Heiko"
+                },
+                {
+                    "family": "Smith",
+                    "given": "Claire"
+                },
+                {
+                    "family": "Remedios",
+                    "given": "John"
+                },
+                {
+                    "family": "Adamu",
+                    "given": "Bashir"
+                },
+                {
+                    "family": "Sobrino",
+                    "given": "José A."
+                },
+                {
+                    "family": "Srivanit",
+                    "given": "Manat"
+                },
+                {
+                    "family": "Weng",
+                    "given": "Qihao"
+                }
+            ],
+            "container-title": "Land",
+            "id": "rasul2017",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        6
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "38",
+            "title": "A Review on Remote Sensing of Urban Heat and Cool Islands",
+            "type": "article-journal",
+            "volume": "6"
         }
     ],
     "project_biblios": [
