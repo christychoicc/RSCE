@@ -1,6 +1,6 @@
 # Welcome ! {.unnumbered}
 
-Hello and welcome to my page on Remote Sensing. This page is an online learning diary for CASA Remotely Sensing Cities and Environments 25/26. This learning diary records my week-by-week progress, reflections, and applications as I engage with new concepts, methods, and case studies in remote sensing. Through application sections each week, I want to step out of my comfort zone and explore unfamiliar cities and environments to broaden my geographic perspective.
+Hello and welcome to my page on Remote Sensing. This page is an online learning diary for CASA0023 Remotely Sensing Cities and Environments 25/26. This learning diary records my week-by-week progress, reflections, and applications as I engage with new concepts, methods, and case studies in remote sensing. Through application sections each week, I want to step out of my comfort zone and explore unfamiliar cities and environments to broaden my geographic perspective.
 
 ## About me
 
@@ -23,3 +23,4 @@ Each chapter will be covering contents taught in the corresponding week:
 5.  Google Earth Engine
 6.  Classification I
 7.  Classification II
+8.  Temperature
