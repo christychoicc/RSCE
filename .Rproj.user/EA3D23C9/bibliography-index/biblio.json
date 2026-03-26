@@ -2361,6 +2361,39 @@
             "title": "Evaluation of the surface urban heat island effect in the city of madrid by thermal remote sensing",
             "type": "article-journal",
             "volume": "34"
+        },
+        {
+            "DOI": "10.1016/j.ecolind.2023.110772",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S1470160X23009147",
+            "author": [
+                {
+                    "family": "Zhang",
+                    "given": "Lei"
+                },
+                {
+                    "family": "Zhang",
+                    "given": "Ming"
+                },
+                {
+                    "family": "Wang",
+                    "given": "Qian"
+                }
+            ],
+            "container-title": "Ecological Indicators",
+            "id": "zhang2023a",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        10,
+                        1
+                    ]
+                ]
+            },
+            "page": "110772",
+            "title": "Monitoring of subpixel impervious surface dynamics using seasonal time series landsat 8 OLI imagery",
+            "type": "article-journal",
+            "volume": "154"
         }
     ],
     "project_biblios": [
