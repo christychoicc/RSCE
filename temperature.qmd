@@ -8,13 +8,13 @@ This section will go through how to conduct temperature research through GEE. Bu
 
 ### Land Surface Temperature
 
-Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences the rate and timing of vegetation growth [@li2023a]. Urbanisation, increasing population has caused more land surfaces to be covered with concrete, asphalt and other impervious materials that absorb and retain heat, which contributes to higher land surface temperatures within our urban environments.
+Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences vegetation growth [@li2023a]. Urbanisation, increasing population has caused more land surfaces to be covered with concrete, asphalt and other impervious materials that absorb and retain heat, which contributes to higher land surface temperatures within our urban environments.
 
 #### LST in GEE
 
-The below compares the difference between Landsat and MODIS for temperature analysis. Landsat gave much more spatial detail, which made it easier to see finer scale thermal variation within urban areas, while MODIS seemed more useful for broader temporal monitoring because of its more frequent observations. Taking it further, I have been quite curious to look at how thermal patterns varies across different climate and urban forms. So the following will inspect Bangkok, Thailand and Astonia, USA under Landsat 8 and MODIS LST.
+The below compares the difference between Landsat and MODIS for temperature analysis with a temperature range between 20°C and 55°C. Landsat gave much more spatial detail, which made it easier to identify finer scale thermal variation and smaller hot and cooler patterns within urban areas. In contrast, MODIS is more coarse, useful for broader wider scale temporal monitoring with its more frequent observations. Taking it further, I have been quite curious to look at how thermal patterns varies across different climate and urban forms. So the following will inspect Bangkok, Thailand (city scale) and Arizona, USA (state scale) under Landsat 8 and MOD
 
-Bangkok is characterised by a hot, humid and rainy climate in summer.
+Bangkok is characterised with a hot, humid and rainy summer climate, which appears to have a more mixed and fragmented temperature pattern, with greater small-scale variation across the urban area.
 
 ::: {layout-ncol="2"}
 ![Landsat 8 LST](images/w9_images/before_QA_PIXEL.png)
@@ -22,7 +22,7 @@ Bangkok is characterised by a hot, humid and rainy climate in summer.
 ![MODIS, Aqua and Terra LST](images/w9_images/MODIS_LST.png)
 :::
 
-Astonia is characterised by an extremely hot dessert climate in summer.
+Arizona in contrast has an extremely hot desert climate. It shows much more extensive high temperature patterns, suggesting a greater extent of hot, consistent with dry surfaces and less cooling influence from the Sonoran Desert.
 
 ::: {layout-ncol="2"}
 ![Landsat 8 LST](images/w9_images/LANDSAT_LST.png)
@@ -32,19 +32,19 @@ Astonia is characterised by an extremely hot dessert climate in summer.
 
 #### Time Series
 
+Comparing the two time series chart, Bangkok appears more discontinuous which is likely to reflect missing data from observations containing clouds, which makes sense in a humid and rainy environment. Arizona in contrast has more dense and continuous values with higher temperature and reflecting more of a seasonal trend. This comparison showed temperature analysis also depends on availability and quality of observations under different atmospheric conditions.
+
 ::: {layout-ncol="2"}
 ![Bangkok Time Series ](images/w9_images/bkk_CHART.png){alt="Landsat LST"}
 
-![Astonia Time Series](images/w9_images/LST_CHART.png){alt="MODIS, Aqua and Terra LST"}
+![Arizona Time Series](images/w9_images/LST_CHART.png){alt="MODIS, Aqua and Terra LST"}
 :::
 
 ::: {style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;"}
 Note that for MODIS the trade off here is that we get to plot time series but we simultaneously will lose the spatial element...
 :::
 
-Moving our focus to Astonia,
-
-I wanted to run the all level 2 in the chart however, GEE says "Error generating chart: Response size exceeds limit" and so I narrowed down to two districts for comparison. Selected Maricopa and Pima below......
+Zooming into Arizona, I initially wanted to compare all level 2 administrative units, however, GEE returned the error message “Response size exceeds limit” so I narrowed the analysis to two districts so it is more manageable for GEE. Looking at Maricopa and Pima, both counties show very high summer LST values, with peaks above 50°C, where Maricopa appears slightly hotter overall. This demonstrated the ability to zoom into smaller spatial units, allowing finer thermal variation on county levels to be observed and compared for patterns that may be not seen under a broader regional scale.
 
 ![Average Temperature Comparison Across Time (Maricopa and Pima)](images/w9_images/compare.png)
 

@@ -428,11 +428,11 @@ div.csl-indent {
 <h2 data-number="8.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">8.1</span> Summary</h2>
 <section id="land-surface-temperature" class="level3" data-number="8.1.1">
 <h3 data-number="8.1.1" class="anchored" data-anchor-id="land-surface-temperature"><span class="header-section-number">8.1.1</span> Land Surface Temperature</h3>
-<p>Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences the rate and timing of vegetation growth <span class="citation" data-cites="li2023a">(<a href="references.html#ref-li2023a" role="doc-biblioref">Li et al. 2023</a>)</span>. Urbanisation, increasing population has caused more land surfaces to be covered with concrete, asphalt and other impervious materials that absorb and retain heat, which contributes to higher land surface temperatures within our urban environments.</p>
+<p>Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences vegetation growth <span class="citation" data-cites="li2023a">(<a href="references.html#ref-li2023a" role="doc-biblioref">Li et al. 2023</a>)</span>. Urbanisation, increasing population has caused more land surfaces to be covered with concrete, asphalt and other impervious materials that absorb and retain heat, which contributes to higher land surface temperatures within our urban environments.</p>
 <section id="lst-in-gee" class="level4" data-number="8.1.1.1">
 <h4 data-number="8.1.1.1" class="anchored" data-anchor-id="lst-in-gee"><span class="header-section-number">8.1.1.1</span> LST in GEE</h4>
-<p>The below compares the difference between Landsat and MODIS for temperature analysis. Landsat gave much more spatial detail, which made it easier to see finer scale thermal variation within urban areas, while MODIS seemed more useful for broader temporal monitoring because of its more frequent observations. Taking it further, I have been quite curious to look at how thermal patterns varies across different climate and urban forms. So the following will inspect Bangkok, Thailand and Astonia, USA under Landsat 8 and MODIS LST.</p>
-<p>Bangkok is characterised by a hot, humid and rainy climate in summer.</p>
+<p>The below compares the difference between Landsat and MODIS for temperature analysis with a temperature range between 20°C and 55°C. Landsat gave much more spatial detail, which made it easier to identify finer scale thermal variation and smaller hot and cooler patterns within urban areas. In contrast, MODIS is more coarse, useful for broader wider scale temporal monitoring with its more frequent observations. Taking it further, I have been quite curious to look at how thermal patterns varies across different climate and urban forms. So the following will inspect Bangkok, Thailand (city scale) and Arizona, USA (state scale) under Landsat 8 and MOD</p>
+<p>Bangkok is characterised with a hot, humid and rainy summer climate, which appears to have a more mixed and fragmented temperature pattern, with greater small-scale variation across the urban area.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -453,7 +453,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Astonia is characterised by an extremely hot dessert climate in summer.</p>
+<p>Arizona in contrast has an extremely hot desert climate. It shows much more extensive high temperature patterns, suggesting a greater extent of hot, consistent with dry surfaces and less cooling influence from the Sonoran Desert.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -477,6 +477,7 @@ div.csl-indent {
 </section>
 <section id="time-series" class="level4" data-number="8.1.1.2">
 <h4 data-number="8.1.1.2" class="anchored" data-anchor-id="time-series"><span class="header-section-number">8.1.1.2</span> Time Series</h4>
+<p>Comparing the two time series chart, Bangkok appears more discontinuous which is likely to reflect missing data from observations containing clouds, which makes sense in a humid and rainy environment. Arizona in contrast has more dense and continuous values with higher temperature and reflecting more of a seasonal trend. This comparison showed temperature analysis also depends on availability and quality of observations under different atmospheric conditions.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -491,7 +492,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w9_images/LST_CHART.png" class="img-fluid figure-img"></p>
-<figcaption>Astonia Time Series</figcaption>
+<figcaption>Arizona Time Series</figcaption>
 </figure>
 </div>
 </div>
@@ -500,8 +501,7 @@ div.csl-indent {
 <div style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;">
 <p>Note that for MODIS the trade off here is that we get to plot time series but we simultaneously will lose the spatial element…</p>
 </div>
-<p>Moving our focus to Astonia,</p>
-<p>I wanted to run the all level 2 in the chart however, GEE says “Error generating chart: Response size exceeds limit” and so I narrowed down to two districts for comparison. Selected Maricopa and Pima below……</p>
+<p>Zooming into Arizona, I initially wanted to compare all level 2 administrative units, however, GEE returned the error message “Response size exceeds limit” so I narrowed the analysis to two districts so it is more manageable for GEE. Looking at Maricopa and Pima, both counties show very high summer LST values, with peaks above 50°C, where Maricopa appears slightly hotter overall. This demonstrated the ability to zoom into smaller spatial units, allowing finer thermal variation on county levels to be observed and compared for patterns that may be not seen under a broader regional scale.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w9_images/compare.png" class="img-fluid figure-img"></p>
