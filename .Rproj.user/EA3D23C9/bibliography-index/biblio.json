@@ -2394,6 +2394,126 @@
             "title": "Monitoring of subpixel impervious surface dynamics using seasonal time series landsat 8 OLI imagery",
             "type": "article-journal",
             "volume": "154"
+        },
+        {
+            "DOI": "10.1016/j.buildenv.2023.111130",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S0360132323011575",
+            "author": [
+                {
+                    "family": "Patel",
+                    "given": "Shikha"
+                },
+                {
+                    "family": "Indraganti",
+                    "given": "Madhavi"
+                },
+                {
+                    "family": "Jawarneh",
+                    "given": "Rana N."
+                }
+            ],
+            "container-title": "Building and Environment",
+            "id": "patel2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024,
+                        2,
+                        1
+                    ]
+                ]
+            },
+            "page": "111130",
+            "title": "A comprehensive systematic review: Impact of land use/ land cover (LULC) on land surface temperatures (LST) and outdoor thermal comfort",
+            "title-short": "A comprehensive systematic review",
+            "type": "article-journal",
+            "volume": "249"
+        },
+        {
+            "DOI": "10.1080/01431161.2012.716548",
+            "URL": "https://doi.org/10.1080/01431161.2012.716548",
+            "author": [
+                {
+                    "family": "Sobrino",
+                    "given": "José A."
+                },
+                {
+                    "family": "Oltra-Carrió",
+                    "given": "Rosa"
+                },
+                {
+                    "family": "Sòria",
+                    "given": "Guillem"
+                },
+                {
+                    "family": "Jiménez-Muñoz",
+                    "given": "Juan Carlos"
+                },
+                {
+                    "family": "Franch",
+                    "given": "Belén"
+                },
+                {
+                    "family": "Hidalgo",
+                    "given": "Victoria"
+                },
+                {
+                    "family": "Mattar",
+                    "given": "Cristian"
+                },
+                {
+                    "family": "Julien",
+                    "given": "Yves"
+                },
+                {
+                    "family": "Cuenca",
+                    "given": "Juan"
+                },
+                {
+                    "family": "Romaguera",
+                    "given": "Mireia"
+                },
+                {
+                    "family": "Gómez",
+                    "given": "J. Antonio"
+                },
+                {
+                    "family": "De Miguel",
+                    "given": "Eduardo"
+                },
+                {
+                    "family": "Bianchi",
+                    "given": "Remo"
+                },
+                {
+                    "family": "Paganini",
+                    "given": "Marc"
+                }
+            ],
+            "container-title": "International Journal of Remote Sensing",
+            "id": "sobrino2013a",
+            "issue": "9-10",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013,
+                        5,
+                        1
+                    ]
+                ]
+            },
+            "note": "_eprint: https://doi.org/10.1080/01431161.2012.716548",
+            "page": "3177-3192",
+            "title": "Evaluation of the surface urban heat island effect in the city of madrid by thermal remote sensing",
+            "type": "article-journal",
+            "volume": "34"
+        },
+        {
+            "URL": "https://www.copernicus.eu/en/news/news/observer-how-copernicus-supports-eu-policies-urban-climate-adaptation",
+            "id": "observer",
+            "title": "OBSERVER: How copernicus supports EU policies for urban climate adaptation | copernicus",
+            "title-short": "OBSERVER",
+            "type": ""
         }
     ],
     "project_biblios": [
