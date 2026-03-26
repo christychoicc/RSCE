@@ -35,9 +35,9 @@ Arizona in contrast has an extremely hot desert climate. It shows much more exte
 Comparing the two time series chart, Bangkok appears more discontinuous which is likely to reflect missing data from observations containing clouds, which makes sense in a humid and rainy environment. Arizona in contrast has more dense and continuous values with higher temperature and reflecting more of a seasonal trend. This comparison showed temperature analysis also depends on availability and quality of observations under different atmospheric conditions.
 
 ::: {layout-ncol="2"}
-![Bangkok Time Series](images/w9_images/LST_CHART.png){alt="Landsat LST"}
+![Bangkok MODIS Time Series](images/w9_images/LST_CHART.png){alt="Landsat LST"}
 
-![Arizona Time Series](images/w9_images/A_LST_CHART.png){alt="MODIS, Aqua and Terra LST"}
+![Arizona MODIS Time Series](images/w9_images/A_LST_CHART.png){alt="MODIS, Aqua and Terra LST"}
 :::
 
 ::: {style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;"}
@@ -53,9 +53,9 @@ This also made me think of using reducer percentile function `reducer: ee.Reduce
 ![Average Temperature Comparison Across Time (Maricopa and Pima)](images/w9_images/compare.png)
 
 ::: {layout-ncol="2"}
-![Selected Level 2 Districts Under Minimum 30°C Maximum 60°C](images/w9_images/level2.png){alt="Landsat LST"}
+![Maricopa and Pima Under Minimum 30°C Maximum 60°C](images/w9_images/level2.png){alt="Landsat LST"}
 
-![Selected Level 2 Districts Under Minimum 20°C Maximum 50°C](images/w9_images/level1_zoom.png){alt="MODIS, Aqua and Terra"}
+![Maricopa and Pima Under Minimum 20°C Maximum 50°C](images/w9_images/level1_zoom.png){alt="MODIS, Aqua and Terra"}
 :::
 
 GEE code for this practical can be found [here](https://code.earthengine.google.com/0c9f8558f28a429a32895861098c6ecb).
