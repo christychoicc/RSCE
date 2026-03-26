@@ -8,13 +8,13 @@ This section will be focused on using Google Earth Engine to explore land surfac
 
 ### Land Surface Temperature
 
-Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences vegetation growth [@li2023a]. Urbanisation, increasing population has caused more land surfaces to be covered with concrete, asphalt and other impervious materials that absorb and retain heat. This raises land surface temperatures in cities, which is a growing concern for policymakers and global sustainability goals.
+Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences vegetation growth [@li2023a]. Urbanisation and increasing population has caused more land surfaces to be covered with concrete, asphalt and other impervious materials that absorb and retain heat. This raises land surface temperatures in cities, which is a growing concern for policymakers and global sustainability goals.
 
 #### LST in GEE
 
-The below compares the difference between Landsat and MODIS for temperature analysis with a temperature range between 20°C and 55°C. Landsat gave much more spatial detail, which made it easier to identify finer scale thermal variation and smaller hot and cooler patterns within urban areas. In contrast, MODIS is more coarse, useful for broader wider scale temporal monitoring with its more frequent observations. Taking it further, I have been quite curious to look at how thermal patterns vary across different climate and urban forms. So the following will inspect Bangkok, Thailand (city scale) and Arizona, USA (state scale) LST under Landsat 8 and MODIS.
+The below compares the difference between Landsat and MODIS for temperature analysis with a temperature range between 20°C and 55°C. Landsat gave much more spatial detail, which made it easier to identify finer scale thermal variation and smaller hot and cooler patterns within urban areas. In contrast, MODIS is more coarse, useful for broader wider scale temporal monitoring. Taking it further, I have been quite curious to look at how thermal patterns vary across different climate and urban forms. So the following will inspect Bangkok, Thailand (city scale) and Arizona, USA (state scale) LST under Landsat 8 and MODIS.
 
-Bangkok is characterised with a hot, humid and rainy summer climate. The map below showed mixed and fragmented temperature pattern, with greater small-scale variation across the urban area.
+Bangkok is characterised with a hot, humid and rainy summer climate. The map below showed mixed and fragmented temperature pattern, with more small scale variation across the urban area.
 
 ::: {layout-ncol="2"}
 ![Landsat 8 LST](images/w9_images/before_QA_PIXEL.png)
@@ -46,7 +46,7 @@ MODIS is more useful for plotting time series due to it high observation frequen
 
 **Focusing on a smaller study area ...**
 
-Zooming into Arizona, I initially wanted to compare all level 2 administrative units in one chart, but GEE returned the error message “Response size exceeds limit”, so I narrowed the analysis to two counties, Maricopa and Pima to make it more manageable. The chart showed that temperatures in both counties stayed consistently high, with the minimum at around 30°C and the maximum above 55°C. Therefore, I adjusted the collected temperature range so that the visualisation better reflects the actual distribution of values rather than a less suitable range. This highlighted how this can shape and ease how thermal patterns are interpreted.
+Zooming into Arizona, I initially wanted to compare all level 2 administrative units in one chart, but GEE returned the error message “Response size exceeds limit”, so I narrowed the analysis to two counties, Maricopa and Pima to make it more manageable. The chart showed that temperatures in both counties stayed consistently high, with the minimum at around 30°C and the maximum above 55°C. Therefore, I adjusted the collected temperature range so that the visualisation better reflects the actual distribution of values rather than a less suitable range.
 
 This also made me think of using reducer percentile function `reducer: ee.Reducer.percentile([10, 20, 30, 40, 50, 60, 70, 80, 90]` or a calculated "Discomfort Index" category based on temperature data instead may be a more appropriate choice ([CASA0023](https://andrewmaclachlan.github.io/CASA0023/))[@sobrino2013]. This will allow the visualisation range to be based on the distribution of values rather than manually choosing the thresholds by hand.
 
