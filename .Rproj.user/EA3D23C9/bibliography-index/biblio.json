@@ -2198,6 +2198,35 @@
             "title": "A Review on Remote Sensing of Urban Heat and Cool Islands",
             "type": "article-journal",
             "volume": "6"
+        },
+        {
+            "DOI": "10.1016/j.rse.2013.02.022",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S0034425713000631",
+            "author": [
+                {
+                    "family": "Hu",
+                    "given": "Leiqiu"
+                },
+                {
+                    "family": "Brunsell",
+                    "given": "Nathaniel A."
+                }
+            ],
+            "container-title": "Remote Sensing of Environment",
+            "id": "hu2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013,
+                        7,
+                        1
+                    ]
+                ]
+            },
+            "page": "162-174",
+            "title": "The impact of temporal aggregation of land surface temperature data for surface urban heat island (SUHI) monitoring",
+            "type": "article-journal",
+            "volume": "134"
         }
     ],
     "project_biblios": [

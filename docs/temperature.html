@@ -423,16 +423,16 @@ div.csl-indent {
 </header>
 
 
-<p>This section will go through how to conduct temperature research through GEE. Building upon the early chapters of discussing Urban Heat Island Effect in <a href="https://christychoicc.github.io/RSCE/policy.html">Policy</a>, this section will……</p>
+<p>This section will go through how to conduct temperature research through GEE. Building upon the early chapters of discussing Urban Heat Island Effect in <a href="https://christychoicc.github.io/RSCE/policy.html">Policy</a>, this section will focus on land surface temperature……</p>
 <section id="summary" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">8.1</span> Summary</h2>
 <section id="land-surface-temperature" class="level3" data-number="8.1.1">
 <h3 data-number="8.1.1" class="anchored" data-anchor-id="land-surface-temperature"><span class="header-section-number">8.1.1</span> Land Surface Temperature</h3>
-<p>Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences the rate and timing of vegetation growth <span class="citation" data-cites="li2023a">(<a href="references.html#ref-li2023a" role="doc-biblioref">Li et al. 2023</a>)</span>.</p>
+<p>Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences the rate and timing of vegetation growth <span class="citation" data-cites="li2023a">(<a href="references.html#ref-li2023a" role="doc-biblioref">Li et al. 2023</a>)</span>. Urbanisation, increasing population has caused more land surfaces to be covered with concrete, asphalt and other impervious materials that absorb and retain heat, which contributes to higher land surface temperatures within our urban environments.</p>
 <section id="lst-in-gee" class="level4" data-number="8.1.1.1">
 <h4 data-number="8.1.1.1" class="anchored" data-anchor-id="lst-in-gee"><span class="header-section-number">8.1.1.1</span> LST in GEE</h4>
-<p>The below compares the difference between Landsat and MODIS for temperature analysis. Landsat gave much more spatial detail, which made it easier to see finer scale thermal variation within urban areas, while MODIS seemed more useful for broader temporal monitoring because of its more frequent observations.</p>
-<p>I have been quite curious to look at how thermal patterns varies across different climate and urban forms. Bangkok, Thailand is characterised by a hot, humid and rainy climate in summer.</p>
+<p>The below compares the difference between Landsat and MODIS for temperature analysis. Landsat gave much more spatial detail, which made it easier to see finer scale thermal variation within urban areas, while MODIS seemed more useful for broader temporal monitoring because of its more frequent observations. Taking it further, I have been quite curious to look at how thermal patterns varies across different climate and urban forms. So the following will inspect Bangkok, Thailand and Astonia, USA under Landsat 8 and MODIS LST.</p>
+<p>Bangkok is characterised by a hot, humid and rainy climate in summer.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -453,7 +453,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Astonia, USA is characterised by an extremely hot dessert climate in summer.</p>
+<p>Astonia is characterised by an extremely hot dessert climate in summer.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -562,7 +562,7 @@ div.csl-indent {
 </section>
 <section id="urban-heat-island-effect" class="level3" data-number="8.1.2">
 <h3 data-number="8.1.2" class="anchored" data-anchor-id="urban-heat-island-effect"><span class="header-section-number">8.1.2</span> Urban Heat Island Effect</h3>
-<p>Temperature analysis has been widely used in literature to study surface urban heat island (SUHI) and supporting planning decisions.</p>
+<p>Temperature analysis has been widely used in literature to study urban heat island (UHI) and surface urban heat island (SUHI) to supporting planning decisions.</p>
 <section id="impacts" class="level4" data-number="8.1.2.1">
 <h4 data-number="8.1.2.1" class="anchored" data-anchor-id="impacts"><span class="header-section-number">8.1.2.1</span> Impacts</h4>
 <table class="caption-top table">
@@ -603,6 +603,8 @@ div.csl-indent {
 </section>
 <section id="applications" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">8.2</span> Applications</h2>
+<p>Remote sensing approaches are widely recognised for improving understanding of the spatial and temporal variability of urban climate over the long term. Yet it does have limitations, particularly in data accuracy, as satellites capture surface conditions indirectly and cloud cover can distort the reliability of thermal imagery. Some studies focus on nighttime thermal imagery as higher daytime solar radiation is likely to increase boundary-layer instability and cloud formation, making observations less consistent <span class="citation" data-cites="hu2013">(<a href="references.html#ref-hu2013" role="doc-biblioref">Hu and Brunsell 2013</a>)</span>. Others use temporally composited products, typically from MODIS, to reduce missing data impacted by cloud cover.</p>
+<p>Furthermore, studies have incorporate land cover patterns to identify any influences in temperature.</p>
 <section id="lst-products" class="level3" data-number="8.2.1">
 <h3 data-number="8.2.1" class="anchored" data-anchor-id="lst-products"><span class="header-section-number">8.2.1</span> LST Products</h3>
 <table class="caption-top table">
@@ -646,7 +648,7 @@ div.csl-indent {
 </section>
 <section id="reflections" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">8.3</span> Reflections</h2>
-<p>During my exploration in GEE, I realised how cloud coverage can affect temperature outputs. Comparing the two cloud removing approaches has showed me how different pre-processing nethods can affect temperature outputs. Using cloud cover filter still left a suspicious cool edge on the left side of the city, whereas the QA_PIXEL mask removed that area entirely, suggesting it was likely to be clouds instead of a real temperature pattern. This make me realise that filtering by overall cloud cover is not always “the best” choice, especially in this case for temperature analysis as cloud coverage can still remain in parts of the image. Given that, pixel level masking seems to be a better option for more reliable outputs, yet it also creates a trade off in reducing the amount of usable data…</p>
+<p>During my exploration in GEE, I realised how cloud coverage can affect temperature outputs. Comparing the two cloud removing approaches has showed me how different pre-processing nethods can affect temperature outputs. Using cloud cover filter still left a suspicious cool edge on the left side of the city, whereas the QA_PIXEL mask removed that area entirely, suggesting it was likely to be clouds instead of a real temperature pattern. This make me realise that filtering cloud cover is not always “the best” choice, especially in this case for temperature analysis as cloud coverage can still remain in parts of the image. Given that, pixel level masking seems to be a better option for more reliable outputs, yet it also creates a trade off in reducing the amount of usable data…</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -671,6 +673,9 @@ div.csl-indent {
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-hu2013" class="csl-entry" role="listitem">
+Hu, Leiqiu, and Nathaniel A. Brunsell. 2013. <span>“The Impact of Temporal Aggregation of Land Surface Temperature Data for Surface Urban Heat Island (SUHI) Monitoring.”</span> <em>Remote Sensing of Environment</em> 134 (July): 162–74. <a href="https://doi.org/10.1016/j.rse.2013.02.022">https://doi.org/10.1016/j.rse.2013.02.022</a>.
+</div>
 <div id="ref-li2013" class="csl-entry" role="listitem">
 Li, Zhao-Liang, Bo-Hui Tang, Hua Wu, Huazhong Ren, Guangjian Yan, Zhengming Wan, Isabel F. Trigo, and José A. Sobrino. 2013. <span>“Satellite-Derived Land Surface Temperature: Current Status and Perspectives.”</span> <em>Remote Sensing of Environment</em> 131 (April): 14–37. <a href="https://doi.org/10.1016/j.rse.2012.12.008">https://doi.org/10.1016/j.rse.2012.12.008</a>.
 </div>

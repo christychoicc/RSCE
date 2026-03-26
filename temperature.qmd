@@ -2,19 +2,19 @@
 title: "Temperature"
 ---
 
-This section will go through how to conduct temperature research through GEE. Building upon the early chapters of discussing Urban Heat Island Effect in [Policy](https://christychoicc.github.io/RSCE/policy.html), this section will......
+This section will go through how to conduct temperature research through GEE. Building upon the early chapters of discussing Urban Heat Island Effect in [Policy](https://christychoicc.github.io/RSCE/policy.html), this section will focus on land surface temperature......
 
 ## Summary
 
 ### Land Surface Temperature
 
-Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences the rate and timing of vegetation growth [@li2023a].
+Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences the rate and timing of vegetation growth [@li2023a]. Urbanisation, increasing population has caused more land surfaces to be covered with concrete, asphalt and other impervious materials that absorb and retain heat, which contributes to higher land surface temperatures within our urban environments.
 
 #### LST in GEE
 
-The below compares the difference between Landsat and MODIS for temperature analysis. Landsat gave much more spatial detail, which made it easier to see finer scale thermal variation within urban areas, while MODIS seemed more useful for broader temporal monitoring because of its more frequent observations.
+The below compares the difference between Landsat and MODIS for temperature analysis. Landsat gave much more spatial detail, which made it easier to see finer scale thermal variation within urban areas, while MODIS seemed more useful for broader temporal monitoring because of its more frequent observations. Taking it further, I have been quite curious to look at how thermal patterns varies across different climate and urban forms. So the following will inspect Bangkok, Thailand and Astonia, USA under Landsat 8 and MODIS LST.
 
-I have been quite curious to look at how thermal patterns varies across different climate and urban forms. Bangkok, Thailand is characterised by a hot, humid and rainy climate in summer.
+Bangkok is characterised by a hot, humid and rainy climate in summer.
 
 ::: {layout-ncol="2"}
 ![Landsat 8 LST](images/w9_images/before_QA_PIXEL.png)
@@ -22,7 +22,7 @@ I have been quite curious to look at how thermal patterns varies across differen
 ![MODIS, Aqua and Terra LST](images/w9_images/MODIS_LST.png)
 :::
 
-Astonia, USA is characterised by an extremely hot dessert climate in summer.
+Astonia is characterised by an extremely hot dessert climate in summer.
 
 ::: {layout-ncol="2"}
 ![Landsat 8 LST](images/w9_images/LANDSAT_LST.png)
@@ -80,7 +80,7 @@ GEE code for this practical can be found [here](https://code.earthengine.google.
 
 ### Urban Heat Island Effect 
 
-Temperature analysis has been widely used in literature to study surface urban heat island (SUHI) and supporting planning decisions.
+Temperature analysis has been widely used in literature to study urban heat island (UHI) and surface urban heat island (SUHI) to supporting planning decisions.
 
 #### Impacts
 
@@ -102,6 +102,10 @@ Temperature analysis has been widely used in literature to study surface urban h
 
 ## Applications
 
+Remote sensing approaches are widely recognised for improving understanding of the spatial and temporal variability of urban climate over the long term. Yet it does have limitations, particularly in data accuracy, as satellites capture surface conditions indirectly and cloud cover can distort the reliability of thermal imagery. Some studies focus on nighttime thermal imagery as higher daytime solar radiation is likely to increase boundary-layer instability and cloud formation, making observations less consistent [@hu2013]. Others use temporally composited products, typically from MODIS, to reduce missing data impacted by cloud cover.
+
+Furthermore, studies have incorporate land cover patterns to identify any influences in temperature.
+
 ### LST Products
 
 | Resolution | Products | Spatial Resolution | Temporal Resolution |
@@ -114,7 +118,7 @@ Temperature analysis has been widely used in literature to study surface urban h
 
 ## Reflections
 
-During my exploration in GEE, I realised how cloud coverage can affect temperature outputs. Comparing the two cloud removing approaches has showed me how different pre-processing nethods can affect temperature outputs. Using cloud cover filter still left a suspicious cool edge on the left side of the city, whereas the QA_PIXEL mask removed that area entirely, suggesting it was likely to be clouds instead of a real temperature pattern. This make me realise that filtering by overall cloud cover is not always "the best" choice, especially in this case for temperature analysis as cloud coverage can still remain in parts of the image. Given that, pixel level masking seems to be a better option for more reliable outputs, yet it also creates a trade off in reducing the amount of usable data...
+During my exploration in GEE, I realised how cloud coverage can affect temperature outputs. Comparing the two cloud removing approaches has showed me how different pre-processing nethods can affect temperature outputs. Using cloud cover filter still left a suspicious cool edge on the left side of the city, whereas the QA_PIXEL mask removed that area entirely, suggesting it was likely to be clouds instead of a real temperature pattern. This make me realise that filtering cloud cover is not always "the best" choice, especially in this case for temperature analysis as cloud coverage can still remain in parts of the image. Given that, pixel level masking seems to be a better option for more reliable outputs, yet it also creates a trade off in reducing the amount of usable data...
 
 ::: {layout-ncol="2"}
 ![Cloud Cover Filter](images/w9_images/before_QA_PIXEL.png){alt="Landsat LST"}
