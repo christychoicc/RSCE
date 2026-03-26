@@ -2,7 +2,9 @@
 title: "Temperature"
 ---
 
-This section will go through how to conduct temperature research through GEE. Building upon the early chapters of discussing Urban Heat Island Effect in [Policy](https://christychoicc.github.io/RSCE/policy.html), this section will focus on land surface temperature......
+This section will be focused on using Google Earth Engine to explore land surface temperature (LST) and compare how thermal patterns vary across different climates, spatial scales and satellite products. What stood out most to me was that temperature mapping is not only about identifying hot areas, but also about understanding how resolution, cloud cover and scale shape what can actually be observed.
+
+Building upon the early chapters of discussing Urban Heat Island Effect in [Policy](https://christychoicc.github.io/RSCE/policy.html), this section will focus on land surface temperature......
 
 ## Summary
 
@@ -12,9 +14,9 @@ Land Surface Temperature (LST) is a parameter that reflects land-atmosphere inte
 
 #### LST in GEE
 
-The below compares the difference between Landsat and MODIS for temperature analysis with a temperature range between 20°C and 55°C. Landsat gave much more spatial detail, which made it easier to identify finer scale thermal variation and smaller hot and cooler patterns within urban areas. In contrast, MODIS is more coarse, useful for broader wider scale temporal monitoring with its more frequent observations. Taking it further, I have been quite curious to look at how thermal patterns varies across different climate and urban forms. So the following will inspect Bangkok, Thailand (city scale) and Arizona, USA (state scale) under Landsat 8 and MOD
+The below compares the difference between Landsat and MODIS for temperature analysis with a temperature range between 20°C and 55°C. Landsat gave much more spatial detail, which made it easier to identify finer scale thermal variation and smaller hot and cooler patterns within urban areas. In contrast, MODIS is more coarse, useful for broader wider scale temporal monitoring with its more frequent observations. Taking it further, I have been quite curious to look at how thermal patterns varies across different climate and urban forms. So the following will inspect Bangkok, Thailand (city scale) and Arizona, USA (state scale) LST under Landsat 8 and MODIS.
 
-Bangkok is characterised with a hot, humid and rainy summer climate, which appears to have a more mixed and fragmented temperature pattern, with greater small-scale variation across the urban area.
+Bangkok is characterised with a hot, humid and rainy summer climate. The map below showed mixed and fragmented temperature pattern, with greater small-scale variation across the urban area.
 
 ::: {layout-ncol="2"}
 ![Landsat 8 LST](images/w9_images/before_QA_PIXEL.png)
@@ -35,16 +37,16 @@ Arizona in contrast has an extremely hot desert climate. It shows much more exte
 Comparing the two time series chart, Bangkok appears more discontinuous which is likely to reflect missing data from observations containing clouds, which makes sense in a humid and rainy environment. Arizona in contrast has more dense and continuous values with higher temperature and reflecting more of a seasonal trend. This comparison showed temperature analysis also depends on availability and quality of observations under different atmospheric conditions.
 
 ::: {layout-ncol="2"}
-![Bangkok Time Series ](images/w9_images/bkk_CHART.png){alt="Landsat LST"}
+![Bangkok Time Series](images/w9_images/LST_CHART.png){alt="Landsat LST"}
 
-![Arizona Time Series](images/w9_images/LST_CHART.png){alt="MODIS, Aqua and Terra LST"}
+![Arizona Time Series](images/w9_images/A_LST_CHART.png){alt="MODIS, Aqua and Terra LST"}
 :::
 
 ::: {style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;"}
-Note that for MODIS the trade off here is that we get to plot time series but we simultaneously will lose the spatial element...
+MODIS is more useful for plotting time series due to it high observation frequency, yet the trade off here is that when we get to plot time series we will simultaneously lose the spatial element...
 :::
 
-Zooming into Arizona, I initially wanted to compare all level 2 administrative units, however, GEE returned the error message “Response size exceeds limit” so I narrowed the analysis to two districts so it is more manageable for GEE. Looking at Maricopa and Pima, both counties show very high summer LST values, with peaks above 50°C, where Maricopa appears slightly hotter overall. This demonstrated the ability to zoom into smaller spatial units, allowing finer thermal variation on county levels to be observed and compared for patterns that may be not seen under a broader regional scale.
+Zooming into Arizona, I initially wanted to compare all level 2 administrative units, however, GEE returned the error message “Response size exceeds limit”. I narrowed the analysis to two districts so it is more manageable for GEE. Looking at Maricopa and Pima, both counties show very high summer LST values, with peaks above 50°C, where Maricopa appears slightly hotter overall. This demonstrated the ability to zoom into smaller spatial units, allowing finer thermal variation on county levels to be observed and compared for patterns that may be not seen under a broader regional scale.
 
 ![Average Temperature Comparison Across Time (Maricopa and Pima)](images/w9_images/compare.png)
 
@@ -59,7 +61,7 @@ Looking at the chart it shows that the minimum temperature between the time seri
 GEE code for this practical can be found [here](https://code.earthengine.google.com/0c9f8558f28a429a32895861098c6ecb).
 
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Strengths                                                                             | Limitations                                                                                                                                                                                                                                                                 |
+| LST Strengths                                                                         | LST Limitations                                                                                                                                                                                                                                                             |
 +=======================================================================================+=============================================================================================================================================================================================================================================================================+
 | -   Allows direct comparison of multi-temporal LST images without modifications       | -   Highly dependent on atmospheric correction (Cloud coverage can affect accuracy, see [Reflection](https://christychoicc.github.io/RSCE/temperature.html#reflections) section below) and is difficult to separate surface temperature, emissivity and atmospheric effects |
 |                                                                                       |                                                                                                                                                                                                                                                                             |
@@ -78,35 +80,23 @@ GEE code for this practical can be found [here](https://code.earthengine.google.
 
 : Sources: @li2013, @li2023a, @rasul2017
 
-### Urban Heat Island Effect 
+## Applications
+
+### Urban Heat Island Effect
 
 Temperature analysis has been widely used in literature to study urban heat island (UHI) and surface urban heat island (SUHI) to supporting planning decisions.
 
-#### Impacts
-
-+-------------+-----------------------------------------------------------------------------------------+
-|             | Impacts                                                                                 |
-+=============+=========================================================================================+
-| Social      | -   Health implications such as respiratory illnesses, etc.                             |
-|             |                                                                                         |
-|             | -   Negatively impact the vulnerable population (people of old age, autoimmunity, etc.) |
-|             |                                                                                         |
-|             | -   Increase mortality rates                                                            |
-+-------------+-----------------------------------------------------------------------------------------+
-| Economic    |                                                                                         |
-+-------------+-----------------------------------------------------------------------------------------+
-| Environment |                                                                                         |
-+-------------+-----------------------------------------------------------------------------------------+
-
 #### Policy
-
-## Applications
-
-Remote sensing approaches are widely recognised for improving understanding of the spatial and temporal variability of urban climate over the long term. Yet it does have limitations, particularly in data accuracy, as satellites capture surface conditions indirectly and cloud cover can distort the reliability of thermal imagery. Some studies focus on nighttime thermal imagery as higher daytime solar radiation is likely to increase boundary-layer instability and cloud formation, making observations less consistent [@hu2013]. Others use temporally composited products, typically from MODIS, to reduce missing data impacted by cloud cover.
 
 Furthermore, studies have incorporate land cover patterns to identify any influences in temperature.
 
-### LST Products
+### Methodological Limitations
+
+Remote sensing approaches are widely recognised for improving understanding of the spatial and temporal variability of urban climate over the long term. Yet it does have limitations, particularly in data accuracy, as satellites capture surface conditions indirectly and cloud cover can distort the reliability of thermal imagery. Most use temporally composite products, typically from MODIS, to reduce missing data impacted by cloud cover. Alternatively, some studies focus on nighttime thermal imagery as higher daytime solar radiation is likely to increase boundary-layer instability and cloud formation, making observations less consistent [@hu2013]. As seen below, night time has relatively fewer black pixels of missing or masked data.
+
+![Day and Night Differences in LST, Source: @hu2013](images/w9_images/daynight.jpg)
+
+### Products for LST
 
 | Resolution | Products | Spatial Resolution | Temporal Resolution |
 |----|----|----|----|
