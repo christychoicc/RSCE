@@ -2,7 +2,7 @@
 title: "Temperature"
 ---
 
-This section will go through assessing temperature research through GEE.
+This section will go through how to conduct temperature research through GEE. Building upon the early chapters of discussing Urban Heat Island Effect in [Policy](https://christychoicc.github.io/RSCE/policy.html), this section will......
 
 ## Summary
 
@@ -10,9 +10,11 @@ This section will go through assessing temperature research through GEE.
 
 Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences the rate and timing of vegetation growth [@li2023a].
 
+### LST in GEE
+
 Try to look at different LST mapping under different climates.
 
-Bangkok Thailand is characterise by a hot humid rainy climate
+Bangkok, Thailand is characterised by a hot, humid and rainy climate in summer.
 
 ::: {layout-ncol="2"}
 ![Landsat LST](images/w9_images/before_QA_PIXEL.png)
@@ -20,7 +22,7 @@ Bangkok Thailand is characterise by a hot humid rainy climate
 ![MODIS, Aqua and Terra](images/w9_images/MODIS_LST.png)
 :::
 
-Astonia, USA is characterised by an extremely hot dessert climate.
+Astonia, USA is characterised by an extremely hot dessert climate in summer.
 
 ::: {layout-ncol="2"}
 ![Landsat LST](images/w9_images/LANDSAT_LST.png)
@@ -29,6 +31,12 @@ Astonia, USA is characterised by an extremely hot dessert climate.
 :::
 
 ![LST Chart](images/w9_images/LST_CHART.png)
+
+::: {style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;"}
+Note that for MODIS the trade off here is that we get to plot time series but we simultaneously will lose the spatial element...
+:::
+
+I wanted to run the all level 2 in the chart however, GEE says "Error generating chart: Response size exceeds limit" and so I narrowed down to two districts for comparison. Selected Maricopa and Pima below......
 
 ![Average Temperature Comparison Across Time (Maricopa and Pima)](images/w9_images/compare.png)
 
@@ -42,50 +50,58 @@ Looking at the chart it shows that the minimum temperature between the time seri
 
 GEE code for this practical can be found [here](https://code.earthengine.google.com/0c9f8558f28a429a32895861098c6ecb).
 
-+-----------+-----------------------------------------------------------------------------------------------------------------+
-| Strengths | Limitations                                                                                                     |
-+===========+=================================================================================================================+
-|           | -   Highly depends on atmospheric correction (Cloud coverage can affect accuracy, see Reflection section below) |
-|           |                                                                                                                 |
-|           | -   Difficult to separate surface temperature, surface emissivity and atmospheric effects                       |
-|           |                                                                                                                 |
-|           | -   Represents radiometric temperature (surface) not physical temperature                                       |
-|           |                                                                                                                 |
-|           | -   Mixed pixels makes it harder to interpret over heterogeneous surfaces                                       |
-|           |                                                                                                                 |
-|           | -   Surface temperature changes quickly and varies across different times of the day, making validation harder  |
-|           |                                                                                                                 |
-|           |     (Validation methods: T-based / R-based / Intercomparison Method / Bibliometric Analysis)                    |
-+-----------+-----------------------------------------------------------------------------------------------------------------+
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Strengths | Limitations                                                                                                                                                                                            |
++===========+========================================================================================================================================================================================================+
+|           | -   Highly dependent on atmospheric correction (Cloud coverage can affect accuracy, see Reflection section below) and is difficult to separate surface temperature, emissivity and atmospheric effects |
+|           |                                                                                                                                                                                                        |
+|           | -   Represents radiometric temperature (surface) not physical temperature                                                                                                                              |
+|           |                                                                                                                                                                                                        |
+|           | -   Spatial discontinuity, where cannot penetrate through clouds there will be missing LST values                                                                                                      |
+|           |                                                                                                                                                                                                        |
+|           | -   Mixed pixels makes it harder to interpret over heterogeneous surfaces                                                                                                                              |
+|           |                                                                                                                                                                                                        |
+|           | -   Short time span limiting long time series analysis                                                                                                                                                 |
+|           |                                                                                                                                                                                                        |
+|           | -   Limited spatiotemporal comparability and difficult validation, as surface temperature changes quickly across time and observation conditions                                                       |
+|           |                                                                                                                                                                                                        |
+|           |     (Validation methods: T-based / R-based / Intercomparison Method / Bibliometric Analysis)                                                                                                           |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 : Sources: @li2013, @li2023a
 
 ### Urban Heat Island Effect 
 
-Impacts
+#### Impacts
 
-Policy
+|             | Impacts |
+|-------------|---------|
+| Social      |         |
+| Economic    |         |
+| Environment |         |
+
+#### Policy
 
 ## Applications
 
 ### LST Products
 
-| Resolution | Products | Typical Spatial Resolution |
-|----|----|----|
-| Low | ASTER, Landsat | 90 m, 30 m |
-| Medium | MODIS, with EOS/Aqua and Terra | 1 km |
-| High | LSA-SAF (MSG/SEVIRI), GOES-R ABI, Copernicus Global Land Service / GlobTemperature | 3–5 km, 2–10 km, 0.05° |
+| Resolution | Products | Spatial Resolution | Temporal Resolution |
+|----|----|----|----|
+| Low | ASTER, Landsat Band 10 | 90 m, 30 m | 16 days revisit |
+| Medium | MODIS, with Aqua and Terra | 1 km | Terra: N to S morning and Aqua: S to N afternoon, 1-2 days with 2 images a day |
+| High | LSA-SAF (MSG/SEVIRI), GOES-R ABI, Copernicus Global Land Service / GlobTemperature | 3–5 km, 2–10 km, 0.05° |  |
 
 : Sources: @li2023a
 
 ## Reflections
 
-During my exploration, I also found out that cloud covers can affect temperature.
+During my exploration in GEE, I also realised how cloud coverage can affect temperature outputs. Comparing the two cloud removing approaches has showed me how different pre-processing nethods can affect temperature outputs. Using cloud cover filter still left a suspicious cool edge on the left side of the city, whereas the QA_PIXEL mask removed that area entirely, suggesting it was likely to be clouds instead of a real temperature pattern. This made me realise that filtering by overall cloud cover is not always "the best" choice, especially in this case for temperature analysis, as cloud coverage can still remain in parts of the image. Given that, pixel level masking seems to be a better option for more reliable outputs, yet it also creates a trade-off in reducing the amount of usable data...
 
 ::: {layout-ncol="2"}
-![Filtered Cloud Cover](images/w9_images/before_QA_PIXEL.png)
+![Cloud Cover Filter](images/w9_images/before_QA_PIXEL.png){alt="Landsat LST"}
 
-![QA PIXEL](images/w9_images/QA_PIXELED.png){#reference}
+![QA Pixel](images/w9_images/QA_PIXELED.png){alt="MODIS, Aqua and Terra"}
 :::
 
-Temporal resolution is also a point to consider blablabla... temp change quickly coz
+I feel like there is still a lot more to explore with LST, especially in terms of temporal resolution of images, atmospheric effects, and pre-processing methods in shaping the outputs, etc., probably something I would want to look into more later.

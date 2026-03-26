@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -367,8 +387,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">8.1</span> Summary</a></li>
-  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">8.2</span> Applications</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">8.1</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#land-surface-temperature" id="toc-land-surface-temperature" class="nav-link" data-scroll-target="#land-surface-temperature"><span class="header-section-number">8.1.1</span> Land Surface Temperature</a></li>
+  <li><a href="#lst-in-gee" id="toc-lst-in-gee" class="nav-link" data-scroll-target="#lst-in-gee"><span class="header-section-number">8.1.2</span> LST in GEE</a></li>
+  <li><a href="#urban-heat-island-effect" id="toc-urban-heat-island-effect" class="nav-link" data-scroll-target="#urban-heat-island-effect"><span class="header-section-number">8.1.3</span> Urban Heat Island Effect</a></li>
+  </ul></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">8.2</span> Applications</a>
+  <ul class="collapse">
+  <li><a href="#lst-products" id="toc-lst-products" class="nav-link" data-scroll-target="#lst-products"><span class="header-section-number">8.2.1</span> LST Products</a></li>
+  </ul></li>
   <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">8.3</span> Reflections</a></li>
   </ul>
 </nav>
@@ -396,11 +424,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This section will go through assessing temperature research through GEE.</p>
+<p>This section will go through how to conduct temperature research through GEE. Building upon the early chapters of discussing Urban Heat Island Effect in <a href="https://christychoicc.github.io/RSCE/policy.html">Policy</a>, this section will……</p>
 <section id="summary" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">8.1</span> Summary</h2>
+<section id="land-surface-temperature" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="land-surface-temperature"><span class="header-section-number">8.1.1</span> Land Surface Temperature</h3>
+<p>Land Surface Temperature (LST) is a parameter that reflects land-atmosphere interactions from regional to global scales as well as an indicator that influences the rate and timing of vegetation growth <span class="citation" data-cites="li2023a">(<a href="references.html#ref-li2023a" role="doc-biblioref">Li et al. 2023</a>)</span>.</p>
+</section>
+<section id="lst-in-gee" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="lst-in-gee"><span class="header-section-number">8.1.2</span> LST in GEE</h3>
 <p>Try to look at different LST mapping under different climates.</p>
-<p>Bangkok Thailand is characterise by a hot humid rainy climate</p>
+<p>Bangkok, Thailand is characterised by a hot, humid and rainy climate in summer.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -421,7 +455,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Astonia, USA is characterised by an extremely hot dessert climate.</p>
+<p>Astonia, USA is characterised by an extremely hot dessert climate in summer.</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -448,6 +482,10 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>LST Chart</figcaption>
 </figure>
 </div>
+<div style="border: 1px solid #ddd; border-left: 4px solid #d9534f; padding: 10px 15px; color: #d9534f; border-radius: 4px; margin-bottom: 15px;">
+<p>Note that for MODIS the trade off here is that we get to plot time series but we simultaneously will lose the spatial element…</p>
+</div>
+<p>I wanted to run the all level 2 in the chart however, GEE says “Error generating chart: Response size exceeds limit” and so I narrowed down to two districts for comparison. Selected Maricopa and Pima below……</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w9_images/compare.png" class="img-fluid figure-img"></p>
@@ -476,35 +514,143 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>GEE code for this practical can be found <a href="https://code.earthengine.google.com/0c9f8558f28a429a32895861098c6ecb">here</a>.</p>
+<table class="caption-top table">
+<caption>Sources: <span class="citation" data-cites="li2013">Li et al. (<a href="references.html#ref-li2013" role="doc-biblioref">2013</a>)</span>, <span class="citation" data-cites="li2023a">Li et al. (<a href="references.html#ref-li2023a" role="doc-biblioref">2023</a>)</span></caption>
+<colgroup>
+<col style="width: 5%">
+<col style="width: 94%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Strengths</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><ul>
+<li><p>Highly dependent on atmospheric correction (Cloud coverage can affect accuracy, see Reflection section below) and is difficult to separate surface temperature, emissivity and atmospheric effects</p></li>
+<li><p>Represents radiometric temperature (surface) not physical temperature</p></li>
+<li><p>Spatial discontinuity, where cannot penetrate through clouds there will be missing LST values</p></li>
+<li><p>Mixed pixels makes it harder to interpret over heterogeneous surfaces</p></li>
+<li><p>Short time span limiting long time series analysis</p></li>
+<li><p>Limited spatiotemporal comparability and difficult validation, as surface temperature changes quickly across time and observation conditions</p>
+<p>(Validation methods: T-based / R-based / Intercomparison Method / Bibliometric Analysis)</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="urban-heat-island-effect" class="level3" data-number="8.1.3">
+<h3 data-number="8.1.3" class="anchored" data-anchor-id="urban-heat-island-effect"><span class="header-section-number">8.1.3</span> Urban Heat Island Effect</h3>
+<section id="impacts" class="level4" data-number="8.1.3.1">
+<h4 data-number="8.1.3.1" class="anchored" data-anchor-id="impacts"><span class="header-section-number">8.1.3.1</span> Impacts</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Impacts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Social</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Economic</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Environment</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="policy" class="level4" data-number="8.1.3.2">
+<h4 data-number="8.1.3.2" class="anchored" data-anchor-id="policy"><span class="header-section-number">8.1.3.2</span> Policy</h4>
+</section>
+</section>
 </section>
 <section id="applications" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">8.2</span> Applications</h2>
+<section id="lst-products" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="lst-products"><span class="header-section-number">8.2.1</span> LST Products</h3>
+<table class="caption-top table">
+<caption>Sources: <span class="citation" data-cites="li2023a">Li et al. (<a href="references.html#ref-li2023a" role="doc-biblioref">2023</a>)</span></caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Resolution</th>
+<th>Products</th>
+<th>Spatial Resolution</th>
+<th>Temporal Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low</td>
+<td>ASTER, Landsat Band 10</td>
+<td>90 m, 30 m</td>
+<td>16 days revisit</td>
+</tr>
+<tr class="even">
+<td>Medium</td>
+<td>MODIS, with Aqua and Terra</td>
+<td>1 km</td>
+<td>Terra: N to S morning and Aqua: S to N afternoon, 1-2 days with 2 images a day</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>LSA-SAF (MSG/SEVIRI), GOES-R ABI, Copernicus Global Land Service / GlobTemperature</td>
+<td>3–5 km, 2–10 km, 0.05°</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="reflections" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="reflections"><span class="header-section-number">8.3</span> Reflections</h2>
-<p>During my exploration, I also found out that cloud covers can affect temperature.</p>
+<p>During my exploration in GEE, I also realised how cloud coverage can affect temperature outputs. Comparing the two cloud removing approaches has showed me how different pre-processing nethods can affect temperature outputs. Using cloud cover filter still left a suspicious cool edge on the left side of the city, whereas the QA_PIXEL mask removed that area entirely, suggesting it was likely to be clouds instead of a real temperature pattern. This made me realise that filtering by overall cloud cover is not always “the best” choice, especially in this case for temperature analysis, as cloud coverage can still remain in parts of the image. Given that, pixel level masking seems to be a better option for more reliable outputs, yet it also creates a trade-off in reducing the amount of usable data…</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w9_images/before_QA_PIXEL.png" class="img-fluid figure-img"></p>
-<figcaption>Filtered Cloud Cover</figcaption>
+<figcaption>Cloud Cover Filter</figcaption>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="reference" class="quarto-figure quarto-figure-center anchored">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w9_images/QA_PIXELED.png" class="img-fluid figure-img"></p>
-<figcaption>QA PIXEL</figcaption>
+<figcaption>QA Pixel</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
+<p>I feel like there is still a lot more to explore with LST, especially in terms of temporal resolution of images, atmospheric effects, and pre-processing methods in shaping the outputs, etc., probably something I would want to look into more later.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-li2013" class="csl-entry" role="listitem">
+Li, Zhao-Liang, Bo-Hui Tang, Hua Wu, Huazhong Ren, Guangjian Yan, Zhengming Wan, Isabel F. Trigo, and José A. Sobrino. 2013. <span>“Satellite-Derived Land Surface Temperature: Current Status and Perspectives.”</span> <em>Remote Sensing of Environment</em> 131 (April): 14–37. <a href="https://doi.org/10.1016/j.rse.2012.12.008">https://doi.org/10.1016/j.rse.2012.12.008</a>.
+</div>
+<div id="ref-li2023a" class="csl-entry" role="listitem">
+Li, Zhao-Liang, Hua Wu, Si-Bo Duan, Wei Zhao, Huazhong Ren, Xiangyang Liu, Pei Leng, et al. 2023. <span>“Satellite Remote Sensing of Global Land Surface Temperature: Definition, Methods, Products, and Applications.”</span> <em>Reviews of Geophysics</em> 61 (1): e2022RG000777. <a href="https://doi.org/10.1029/2022RG000777">https://doi.org/10.1029/2022RG000777</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
