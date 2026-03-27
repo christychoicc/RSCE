@@ -50,7 +50,7 @@ Merging and joining data sets feathers the images together, which creates seamle
 ![Tiles Selection (Obtained from: [USGS](https://earthexplorer.usgs.gov/))](images/w3_images/rgb_merge_comparison.png)
 :::
 
-The plot below compares spectral behaviours to capture different surface features. Each band operates at a different wavelength, with Bands 1–7 at 30m resolution and finer at 15m for Band 8. Study by [Wang et.al.](https://www.researchgate.net/publication/233783774_Sensitivity_studies_of_the_moisture_effects_on_MODIS_SWIR_reflectance_and_vegetation_water_indices) (2008) disussed reflection of SWIR wavelengths responds highly to both soil moisture and leaf water content, where combining NIR and SWIR are useful measures in detecting vegetation moisture conditions, helpful in distinguishing types of land uses. These spectral characteristics provided useful insights for understanding our study area before analysis. More about Landsat bands: [USGS](https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites).
+The plot below compares spectral behaviours to capture different surface features. Each band operates at a different wavelength, with Bands 1–7 at 30m resolution and finer at 15m for Band 8. Study by [Wang et.al.](https://www.researchgate.net/publication/233783774_Sensitivity_studies_of_the_moisture_effects_on_MODIS_SWIR_reflectance_and_vegetation_water_indices) (2008) discussed reflection of SWIR wavelengths responds highly to both soil moisture and leaf water content, where combining NIR and SWIR are useful measures in detecting vegetation moisture conditions, helpful in distinguishing types of land uses. These spectral characteristics provided useful insights for understanding our study area before analysis. More about Landsat bands: [USGS](https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites).
 
 ::: {layout-ncol="1"}
 ![Landsat 8-9 Spectral Bands](images/w3_images/landsat_bands_panel3.png)
@@ -98,11 +98,15 @@ PCA allows reduction of multi-spectral data into uncorrelated, smaller dimension
 cat(readLines("correction/pca_summary.txt"), sep = "\n")
 ```
 
-| Components | Explaination |
-|----|----|
-| Standard Deviation | Spread of data |
-| Proportion of Variance | Proportion of data retained from the original data set |
-| Cumulative Proportion | Proportion of total variance of the original data set |
++----------------------------------+--------------------------------------------------------+
+| Components                       | Explaination                                           |
++==================================+========================================================+
+| Standard Deviation               | Spread of data                                         |
++----------------------------------+--------------------------------------------------------+
+| Proportion of Variance           | Proportion of data retained from the original data set |
++----------------------------------+--------------------------------------------------------+
+| Cumulative Proportion            | Proportion of total variance of the original data set  |
++----------------------------------+--------------------------------------------------------+
 
 In this case, PC1 to PC4 explains most of the variations. Looking at cumulative proportion, 91% of spectral variance can be identified in the first 4 principle components. This is a very helpful measure as it allows higher efficiency in analysis, including most of total variance while reducing 16 layers to 4 without loosing much information.
 

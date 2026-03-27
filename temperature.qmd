@@ -33,9 +33,9 @@ Bangkok, with its hot, humid and rainy climate, showed a much more fragmented th
 Comparing the MODIS time series, Bangkok appeared more discontinuous, which I think is likely to be related to missing observations caused by cloud cover in its humid and rainy environment. Arizona, in contrast, showed denser and more continuous values, with a clearer seasonal trend and generally higher temperatures. This made me realise that temperature analysis is not only about climate differences, but also about the availability and quality of observations under different atmospheric conditions.
 
 ::: {layout-ncol="2"}
-![Bangkok MODIS Time Series](images/w9_images/LST_CHART.png){alt="Landsat LST"}
+![Landsat LST](images/w9_images/LST_CHART.png)
 
-![Arizona MODIS Time Series](images/w9_images/A_LST_CHART.png){alt="MODIS, Aqua and Terra LST"}
+![MODIS, Aqua and Terra LST](images/w9_images/A_LST_CHART.png)
 :::
 
 ::: {style="border: 1px solid #ddd; border-left: 4px solid #e0a800; padding: 10px 15px; color: #e0a800; border-radius: 4px; margin-bottom: 15px;"}
@@ -51,9 +51,9 @@ This also made me think of perhaps using reducer percentile function `reducer: e
 ![Average Temperature Comparison Across Time (Maricopa and Pima)](images/w9_images/compare.png)
 
 ::: {layout-ncol="2"}
-![Maricopa and Pima Under Minimum 30°C Maximum 60°C](images/w9_images/level2.png){alt="Landsat LST"}
+![Landsat LST](images/w9_images/level2.png)
 
-![Maricopa and Pima Under Minimum 20°C Maximum 50°C](images/w9_images/level1_zoom.png){alt="MODIS, Aqua and Terra"}
+![MODIS, Aqua and Terra](images/w9_images/level1_zoom.png)
 :::
 
 GEE code for this practical can be found [here](https://code.earthengine.google.com/0c9f8558f28a429a32895861098c6ecb).
@@ -82,20 +82,23 @@ GEE code for this practical can be found [here](https://code.earthengine.google.
 
 Land surface temperature (LST) has been widely applied in urban climate studies to understand urban heat patterns, especially the Surface Urban Heat Island (SUHI) effect. @almeida2021 note that Voogt and Oke (2003) proposed SUHI as a sub-classification of UHI, specifically addressing surface temperature differences between urban and rural areas. More recent studies seem to emphasise how land cover composition drives these patterns, vegetation cools surfaces while impervious cover heats them, and this relationship appears consistently across cities in very different climates [@shi2021]. Despite these spatial patterns, findings across studies rarely agree directly, because climate context, urban form, and sensor choice all shape what LST actually observes.
 
-![Urban and Non-urban, Source: @shi2021](images/w9_images/urban_nonurban.jpg)
+![Urban and Non-urban LST, Source: @shi2021](images/w9_images/urban_nonurban.jpg)
 
-There are limitations methodologically. Satellites measure surface conditions indirectly and most cannot penetrate cloud cover, leaving gaps in thermal time series. Satellites measure surface conditions indirectly and cannot penetrate cloud cover, leaving gaps in thermal time series. To address this, most researchers composite MODIS LST products over extended periods to reduce missing data. However, @hu2013 found that this inflates daytime SUHI values more than nighttime ones, with the effect growing the longer the compositing period. I think this explains why some studies prefer using nighttime imagery, as higher daytime solar radiation increases boundary layer instability and cloud formation, making daytime observations less stable. As seen below, nighttime imagery contains relatively fewer black pixels of missing or masked data:
+There are limitations methodologically. Satellites measure surface conditions indirectly and most cannot penetrate cloud cover, leaving gaps in thermal time series. To address this, most researchers composite MODIS LST products over extended periods to reduce missing data. However, @hu2013 found that this inflates daytime SUHI values more than nighttime ones, with the effect growing the longer the compositing period. I think this explains why some studies prefer using nighttime imagery, as higher daytime solar radiation increases boundary layer instability and cloud formation, making daytime observations less stable. As seen below, nighttime imagery contains relatively fewer black pixels of missing or masked data:
 
-![Day and Night Differences in LST, Source: @hu2013](images/w9_images/daynight.jpg){alt="Day and Night Differences in LST"}
+![Day and Night Differences in LST](images/w9_images/daynight.jpg)
 
 Studies have extended LST beyond physical temperature analysis toward practical planning applications. @determin analysed LST and UHI dynamics across Kayseri, Turkey between 2013 and 2022, finding strong negative correlations between UHI intensity and vegetation cover, and strong positive correlations with built-up density. These findings gives direct implications for resilience and sustainable land use planning and UHI mitigation. @determin found an underconstruction park within the city centre producing measurable cooling temperatures, which suggests that even partial greening of previously built-up land can produce thermal improvements on local levels. This reflects a broader shift in how LST can be used, not only to understand heat patterns, but to identify where interventions are needed and what form they should take. Overall, things made clear that LST is not a straightforward measure you can apply universally. The choice of sensor, time of acquisition, and the local urban context all shape what the data actually presents. Findings always need to be read carefully before informing any planning decision.
 
 ### Finally... Products for LST
 
-| Resolution | Products | Spatial Resolution | Temporal Resolution |
-|----|----|----|----|
-| Low | ASTER, Landsat Band 10 | 90 m, 30 m | 16 days revisit |
-| Medium | MODIS, with Aqua and Terra | 1 km | Terra: N to S morning and Aqua: S to N afternoon, 1-2 days with 2 images a day |
++----------------+----------------------------+--------------------+--------------------------------------------------------------------------------+
+| Resolution     | Products                   | Spatial Resolution | Temporal Resolution                                                            |
++================+============================+====================+================================================================================+
+| Low            | ASTER, Landsat 8 Band 10   | 90 m, 30 m         | 16 days revisit                                                                |
++----------------+----------------------------+--------------------+--------------------------------------------------------------------------------+
+| Medium         | MODIS, with Aqua and Terra | 1 km               | Terra: N to S morning and Aqua: S to N afternoon, 1-2 days with 2 images a day |
++----------------+----------------------------+--------------------+--------------------------------------------------------------------------------+
 
 : Sources: @li2023a
 
@@ -104,9 +107,9 @@ Studies have extended LST beyond physical temperature analysis toward practical 
 I am really stressing over clouds here. During my exploration in GEE, I realised how cloud coverage can really affect temperature outputs. Comparing the two cloud removing approaches has showed me how different pre-processing methods can affect temperature outputs. Using cloud cover filter still left a suspicious cool edge on the left side of the city, whereas the `QA_PIXEL` mask removed that area entirely, suggesting it was likely to be clouds instead of a real temperature pattern. But one more limitation here, it removed some values giving some empty pixels. This make me realise that filtering cloud cover is not necessarily always "the best" choice, especially in this case for temperature analysis as cloud coverage can still remain in parts of the image. Given that, pixel level masking seems to be a better option for more reliable outputs, yet it also creates a trade off in reducing the amount of usable data.
 
 ::: {layout-ncol="2"}
-![Cloud Cover Filter](images/w9_images/before_QA_PIXEL.png){alt="Landsat LST"}
+![Landsat LST](images/w9_images/before_QA_PIXEL.png)
 
-![QA Pixel](images/w9_images/QA_PIXELED.png){alt="MODIS, Aqua and Terra"}
+![MODIS, Aqua and Terra](images/w9_images/QA_PIXELED.png)
 :::
 
 Apart from atmospheric effects, LST also depends on a many other decisions, including scale, data processing methods and interpretation. Even with these limitations, it is still a useful tool for climate adaptation, environmental justice, urban planning and potentially public health, when combined with demographic or land cover data. I feel like there is still a lot more to explore with LST, such as LST with NDVI, NDWI, NDBI and NMDI, etc. I personally think LST becomes more valuable when it is linked to heat exposure and vulnerability, how they influence the quality of life, accessibility of people, etc. Some studies show that hotter surface conditions are not experienced evenly across urban populations, which makes LST relevant to climate and environmental justice, which is definitely something I would be interested in exploring further in the near future.
