@@ -2514,6 +2514,45 @@
             "title": "OBSERVER: How copernicus supports EU policies for urban climate adaptation | copernicus",
             "title-short": "OBSERVER",
             "type": ""
+        },
+        {
+            "URL": "https://ntrs.nasa.gov/citations/20210021471",
+            "author": [
+                {
+                    "family": "Holloway",
+                    "given": "W. Pierce"
+                },
+                {
+                    "family": "Eichelmann",
+                    "given": "Rose"
+                },
+                {
+                    "family": "Murer",
+                    "given": "Patricia"
+                },
+                {
+                    "family": "Newell",
+                    "given": "Ryan"
+                },
+                {
+                    "family": "O’Connell",
+                    "given": "Caden"
+                }
+            ],
+            "id": "holloway2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        8,
+                        10
+                    ]
+                ]
+            },
+            "note": "NTRS Author Affiliations: Science Systems & Applications, Inc. NTRS Document ID: 20210021471 NTRS Research Center: Langley Research Center (LaRC)",
+            "title": "Fairfax county urban development: Identifying urban heat mitigation strategies for climate adaptation planning in fairfax county, virginia",
+            "title-short": "Fairfax county urban development",
+            "type": "report"
         }
     ],
     "project_biblios": [

@@ -86,7 +86,7 @@ Temperature has been widely used in literature to study urban heat island (UHI) 
 
 I personally think LST becomes more valuable when it is linked to heat exposure and vulnerability. Some studies show that hotter surface conditions are not experienced evenly across urban populations, which makes LST relevant to climate and environmental justice.
 
-LST is not limited to academic research but also policy relevance. International organisations such as WMO and UN-Habitat framed urban heat monitoring as important for urban resilience, public services and climate adaptation. NASA and Copernicus also demonstrates how Earth observation can be used to support policy decisions on urban heat risk [@observer]. This makes LST a particularly useful measure for mitigation strategies through identifying where greening, shading, reflective materials, or improved urban layouts should be prioritised, rather than being used purely as a measure of thermal comfort.
+LST is not limited to academic research but also policy relevance. International organisations such as WMO and UN-Habitat framed urban heat monitoring as important for urban resilience, public services and climate adaptation. NASA and Copernicus also demonstrates how Earth observation can be used to support policy decisions on urban heat risk [@observer; @holloway2021]. This makes LST a particularly useful measure for mitigation strategies through identifying where greening, shading, reflective materials, or improved urban layouts should be prioritised, rather than being used purely as a measure of thermal comfort.
 
 ![Earth Observation to Policy Source: @observer](images/w9_images/EarthObservationValueChain.png)
 
@@ -102,7 +102,6 @@ Remote sensing approaches are widely recognised for improving understanding of t
 |----|----|----|----|
 | Low | ASTER, Landsat Band 10 | 90 m, 30 m | 16 days revisit |
 | Medium | MODIS, with Aqua and Terra | 1 km | Terra: N to S morning and Aqua: S to N afternoon, 1-2 days with 2 images a day |
-| High | LSA-SAF (MSG/SEVIRI), GOES-R ABI, Copernicus Global Land Service / GlobTemperature | 3–5 km, 2–10 km, 0.05° |  |
 
 : Sources: @li2023a
 
