@@ -2669,6 +2669,223 @@
             "title": "Determination of land surface temperature and urban heat island effects with remote sensing capabilities: The case of kayseri, türkiye | natural hazards | springer nature link",
             "title-short": "Determination of land surface temperature and urban heat island effects with remote sensing capabilities",
             "type": ""
+        },
+        {
+            "DOI": "https://doi.org/10.1117/1.JRS.13.016514",
+            "author": [
+                {
+                    "family": "Dimitra",
+                    "given": "Tzelidi"
+                },
+                {
+                    "family": "Stavros",
+                    "given": "Stagakis"
+                },
+                {
+                    "family": "Zina",
+                    "given": "Mitraka"
+                },
+                {
+                    "family": "Nektarios",
+                    "given": "Chrysoulakis"
+                }
+            ],
+            "id": "dimitra2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        2
+                    ]
+                ]
+            },
+            "title": "Detailed urban surface characterization using spectra from enhanced spatial resolution sentinel-2 imagery and a hierarchical multiple endmember spectral mixture analysis approach",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1007/s11069-024-06431-5",
+            "URL": "https://doi.org/10.1007/s11069-024-06431-5",
+            "author": [
+                {
+                    "family": "Cetin",
+                    "given": "Mehmet"
+                },
+                {
+                    "family": "Ozenen Kavlak",
+                    "given": "Mehtap"
+                },
+                {
+                    "family": "Senyel Kurkcuoglu",
+                    "given": "Muzeyyen Anil"
+                },
+                {
+                    "family": "Bilge Ozturk",
+                    "given": "Gulsah"
+                },
+                {
+                    "family": "Cabuk",
+                    "given": "Saye Nihan"
+                },
+                {
+                    "family": "Cabuk",
+                    "given": "Alper"
+                }
+            ],
+            "container-title": "Natural Hazards",
+            "id": "cetin2024",
+            "issue": "6",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024,
+                        4,
+                        1
+                    ]
+                ]
+            },
+            "page": "5509-5536",
+            "title": "Determination of land surface temperature and urban heat island effects with remote sensing capabilities: The case of kayseri, türkiye",
+            "title-short": "Determination of land surface temperature and urban heat island effects with remote sensing capabilities",
+            "type": "article-journal",
+            "volume": "120"
+        },
+        {
+            "author": [
+                {
+                    "family": "Green",
+                    "given": "Edmund"
+                },
+                {
+                    "family": "Clark",
+                    "given": "Christopher"
+                },
+                {
+                    "family": "Edwards",
+                    "given": "Alasdair"
+                }
+            ],
+            "id": "green2000",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000,
+                        1,
+                        1
+                    ]
+                ]
+            },
+            "page": "93-108",
+            "title": "Geometric correction of satellite and airborne imagery",
+            "type": "chapter"
+        },
+        {
+            "author": [
+                {
+                    "family": "Karpouzli",
+                    "given": "Evanthia"
+                },
+                {
+                    "family": "Malthus",
+                    "given": "Tim"
+                }
+            ],
+            "container-title": "International Journal of Remote Sensing",
+            "id": "karpouzli2003",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003,
+                        1,
+                        1
+                    ]
+                ]
+            },
+            "page": "1143-1150",
+            "title": "The empiracle line method for the atmospheric correction of IKONOS imagery",
+            "type": "article-journal",
+            "volume": "24"
+        },
+        {
+            "DOI": "10.1109/JSTARS.2010.2072984",
+            "author": [
+                {
+                    "family": "M. Shimada"
+                }
+            ],
+            "container-title": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+            "id": "m.shimada2010",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010,
+                        12
+                    ]
+                ]
+            },
+            "page": "657-671",
+            "title": "Ortho-rectification and slope correction of SAR data using DEM and its accuracy evaluation",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "URL": "https://taylorandfrancis.com/knowledge/Engineering_and_technology/Artificial_intelligence/Radiometric_calibration/",
+            "id": "radiomet",
+            "title": "Radiometric calibration  knowledge and references  taylor & francis",
+            "type": ""
+        },
+        {
+            "DOI": "10.1080/01431160802226034",
+            "author": [
+                {
+                    "family": "Wang",
+                    "given": "Lingli"
+                },
+                {
+                    "family": "Qu",
+                    "given": "John"
+                },
+                {
+                    "family": "Hao",
+                    "given": "Xianjun"
+                },
+                {
+                    "family": "Zhu",
+                    "given": "Qingping"
+                }
+            ],
+            "container-title": "International Journal of Remote Sensing",
+            "id": "wang2008",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008,
+                        12,
+                        1
+                    ]
+                ]
+            },
+            "title": "Sensitivity studies of the moisture effects on MODIS SWIR reflectance and vegetation water indices",
+            "type": "article-journal",
+            "volume": "29"
+        },
+        {
+            "URL": "https://www.hketoberlin.gov.hk/download/Green_HK.pdf",
+            "author": [
+                {
+                    "family": "Gov.hk"
+                }
+            ],
+            "id": "gov.hk2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "title": "Green hong kong",
+            "type": "report"
         }
     ],
     "project_biblios": [

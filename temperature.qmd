@@ -8,11 +8,11 @@ This section will be focused on using Google Earth Engine to explore land surfac
 
 ### Land Surface Temperature
 
-Land Surface Temperature (LST) is a parameter that reflects the interactions between Earth surface and atmosphere from regional to global scales[@li2023a]. Rapid urbanisation and increasing population have caused more land surfaces to be covered with concrete, asphalt and other impervious materials that absorb and retain heat. This raises land surface temperatures in cities, more frequent and prolonged heatwaves, and raising concerns for planning, health and sustainability.
+Land Surface Temperature (LST) is a parameter that reflects the interactions between Earth surface and atmosphere from regional to global scales[@li2023a]. Rapid urbanisation and increasing population have caused more land surfaces to be covered with concrete, asphalt and other impervious materials that absorb and retain heat. This raises land surface temperatures in cities, more frequent heatwaves, and raising concerns for planning, health and sustainability.
 
 #### LST in GEE
 
-The below compares the difference between Landsat and MODIS for temperature analysis with a temperature range between 20°C and 55°C. Landsat gave much more spatial detail, which made it easier to identify finer scale thermal variation and smaller hot and cooler patterns within urban areas. In contrast, MODIS is more coarse, useful for broader wider scale temporal monitoring. Taking it further, I have been quite curious to look at how thermal patterns vary across different climate and urban forms. So the following will inspect Bangkok, Thailand (city scale) and Arizona, USA (state scale) LST under Landsat 8 and MODIS.
+The below compares the difference between Landsat and MODIS for temperature analysis with a temperature range between 20°C and 55°C. Landsat gave much more spatial detail, which made it easier to identify finer scale thermal variation and smaller hot and cooler patterns within urban areas. In contrast, MODIS is more coarse, useful for broader temporal monitoring. Taking it further, I have been quite curious to look at how thermal patterns vary across different climate and urban forms. So the following will inspect Bangkok, Thailand (city scale) and Arizona, USA (state scale) LST under Landsat 8 and MODIS.
 
 Bangkok, with its hot, humid and rainy climate, showed a much more fragmented thermal pattern, with finer-scale variation across the urban area. Arizona, by contrast, showed more extensive and continuous high-temperature patterns, which seemed consistent with a much drier environment and fewer cooling influences.
 
@@ -30,7 +30,7 @@ Bangkok, with its hot, humid and rainy climate, showed a much more fragmented th
 
 #### Time Series
 
-Comparing the MODIS time series, Bangkok appeared more discontinuous, which I think is likely to be related to missing observations caused by cloud cover in its humid and rainy environment. Arizona, in contrast, showed denser and more continuous values, with a clearer seasonal trend and generally higher temperatures. This made me realise that temperature analysis is not only about climate differences, but also about the availability and quality of observations under different atmospheric conditions.
+Comparing the MODIS time series, Bangkok appeared more discontinuous, which I think is likely to be related to missing observations caused by cloud cover in its humid and rainy environment. Arizona, in contrast, showed denser and more continuous values, with a clearer seasonal trend and generally higher temperatures. This showed that temperature analysis is not only about climate differences, but also about the availability and quality of observations under different atmospheric conditions.
 
 ::: {layout-ncol="2"}
 ![Landsat LST](images/w9_images/LST_CHART.png)
@@ -44,9 +44,9 @@ MODIS is more useful for plotting time series due to its high observation freque
 
 **Focusing on a smaller study area ...**
 
-Zooming into Arizona, I initially wanted to compare all level 2 administrative units in one chart, but GEE returned the error message “Response size exceeds limit”, so I narrowed the analysis to Maricopa and Pima counties. I actually found this useful, because it made the comparison more manageable and also showed how GEE constraints can shape analysis choices. The chart suggested both counties remained consistently hot, with minimum temperatures around 30°C and maximum values above 55°C. Therefore, I adjusted the visualisation range to 30°C - 60°C to better reflect the actual distribution of values.
+Zooming into Arizona, I initially wanted to compare all level 2 administrative units in one chart, but GEE returned the error message “Response size exceeds limit”, so I narrowed the analysis to Maricopa and Pima counties. The chart suggested both counties remained consistently hot, with minimum temperatures around 30°C and maximum values above 55°C. Therefore, I adjusted the visualisation range to 30°C - 60°C to better reflect the actual distribution of values.
 
-This also made me think of perhaps using reducer percentile function `reducer: ee.Reducer.percentile([10, 20, 30, 40, 50, 60, 70, 80, 90]`, thermal comfort index or a categorised calculation of "Discomfort Index" based on temperature data instead may be a more appropriate choice ([CASA0023](https://andrewmaclachlan.github.io/CASA0023/))[@patel2024; @sobrino2013a]. This will allow the visualisation range to be based on the distribution of values rather than manually choosing the thresholds by hand.
+This also made me think of perhaps using reducer percentile function `reducer: ee.Reducer.percentile([10, 20, 30, 40, 50, 60, 70, 80, 90]`, thermal comfort index or a categorised calculation of "Discomfort Index" based on temperature data instead may be a more appropriate choice ([CASA0023](https://andrewmaclachlan.github.io/CASA0023/))[@patel2024; @sobrino2013a]. This will allow the visualisation range to based on distribution of values.
 
 ![Average Temperature Comparison Across Time (Maricopa and Pima)](images/w9_images/compare.png)
 
@@ -88,7 +88,7 @@ There are limitations methodologically. Satellites measure surface conditions in
 
 ![Day and Night Differences in LST](images/w9_images/daynight.jpg)
 
-Studies have extended LST beyond physical temperature analysis toward practical planning applications. @determin analysed LST and UHI dynamics across Kayseri, Turkey between 2013 and 2022, finding strong negative correlations between UHI intensity and vegetation cover, and strong positive correlations with built-up density. These findings gives direct implications for resilience and sustainable land use planning and UHI mitigation. @determin found an underconstruction park within the city centre producing measurable cooling temperatures, which suggests that even partial greening of previously built-up land can produce thermal improvements on local levels. This reflects a broader shift in how LST can be used, not only to understand heat patterns, but to identify where interventions are needed and what form they should take. Overall, things made clear that LST is not a straightforward measure you can apply universally. The choice of sensor, time of acquisition, and the local urban context all shape what the data actually presents. Findings always need to be read carefully before informing any planning decision.
+Studies have extended LST beyond physical temperature analysis toward practical planning applications. @cetin2024 analysed LST and UHI dynamics across Kayseri, Turkey between 2013 and 2022, finding strong negative correlations between UHI intensity and vegetation cover, and strong positive correlations with built-up density. These findings gives direct implications for resilience and sustainable land use planning and UHI mitigation. @cetin2024 found a national park under construction in the city centre was already showing cooler temperatures in that area, suggesting that even partial greening of can produce thermal improvements on local levels. It shows that LST is not just useful for describing where a city is hot, but can actually help planners decide where to add green space and what kind of change would have the biggest cooling impact. Overall, things made clear that LST is not a straightforward measure you can apply universally. The choice of sensor, time of acquisition, and the local urban context all shape what the data actually presents. Findings always need to be read carefully before informing any planning decision.
 
 ### Finally... Products for LST
 
