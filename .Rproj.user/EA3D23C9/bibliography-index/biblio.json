@@ -2553,6 +2553,122 @@
             "title": "Fairfax county urban development: Identifying urban heat mitigation strategies for climate adaptation planning in fairfax county, virginia",
             "title-short": "Fairfax county urban development",
             "type": "report"
+        },
+        {
+            "DOI": "10.1016/S0034-4257(03)00079-8",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S0034425703000798",
+            "author": [
+                {
+                    "family": "Voogt",
+                    "given": "J. A"
+                },
+                {
+                    "family": "Oke",
+                    "given": "T. R"
+                }
+            ],
+            "collection-title": "Urban remote sensing",
+            "container-title": "Remote Sensing of Environment",
+            "id": "voogt2003",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003,
+                        8,
+                        15
+                    ]
+                ]
+            },
+            "page": "370-384",
+            "title": "Thermal remote sensing of urban climates",
+            "type": "article-journal",
+            "volume": "86"
+        },
+        {
+            "DOI": "10.3390/environments8100105",
+            "URL": "https://www.mdpi.com/2076-3298/8/10/105",
+            "author": [
+                {
+                    "dropping-particle": "de",
+                    "family": "Almeida",
+                    "given": "Cátia Rodrigues"
+                },
+                {
+                    "family": "Teodoro",
+                    "given": "Ana Cláudia"
+                },
+                {
+                    "family": "Gonçalves",
+                    "given": "Artur"
+                }
+            ],
+            "container-title": "Environments",
+            "id": "almeida2021",
+            "issue": "10",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        10
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "105",
+            "title": "Study of the Urban Heat Island (UHI) Using Remote Sensing Data/Techniques: A Systematic Review",
+            "title-short": "Study of the Urban Heat Island (UHI) Using Remote Sensing Data/Techniques",
+            "type": "article-journal",
+            "volume": "8"
+        },
+        {
+            "DOI": "10.3390/land10080867",
+            "URL": "https://www.mdpi.com/2073-445X/10/8/867",
+            "author": [
+                {
+                    "family": "Shi",
+                    "given": "Hua"
+                },
+                {
+                    "family": "Xian",
+                    "given": "George"
+                },
+                {
+                    "family": "Auch",
+                    "given": "Roger"
+                },
+                {
+                    "family": "Gallo",
+                    "given": "Kevin"
+                },
+                {
+                    "family": "Zhou",
+                    "given": "Qiang"
+                }
+            ],
+            "container-title": "Land",
+            "id": "shi2021",
+            "issue": "8",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        8
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "867",
+            "title": "Urban Heat Island and Its Regional Impacts Using Remotely Sensed Thermal DataA Review of Recent Developments and Methodology",
+            "type": "article-journal",
+            "volume": "10"
+        },
+        {
+            "URL": "https://link.springer.com/article/10.1007/s11069-024-06431-5",
+            "id": "determin",
+            "title": "Determination of land surface temperature and urban heat island effects with remote sensing capabilities: The case of kayseri, türkiye | natural hazards | springer nature link",
+            "title-short": "Determination of land surface temperature and urban heat island effects with remote sensing capabilities",
+            "type": ""
         }
     ],
     "project_biblios": [

@@ -393,8 +393,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">8.2</span> Applications</a>
   <ul class="collapse">
-  <li><a href="#methodological-limitations" id="toc-methodological-limitations" class="nav-link" data-scroll-target="#methodological-limitations"><span class="header-section-number">8.2.1</span> Methodological Limitations</a></li>
-  <li><a href="#products-for-lst" id="toc-products-for-lst" class="nav-link" data-scroll-target="#products-for-lst"><span class="header-section-number">8.2.2</span> Products for LST</a></li>
+  <li><a href="#finally-products-for-lst" id="toc-finally-products-for-lst" class="nav-link" data-scroll-target="#finally-products-for-lst"><span class="header-section-number">8.2.1</span> Finally… Products for LST</a></li>
   </ul></li>
   <li><a href="#reflections" id="toc-reflections" class="nav-link" data-scroll-target="#reflections"><span class="header-section-number">8.3</span> Reflections</a></li>
   </ul>
@@ -563,20 +562,23 @@ div.csl-indent {
 </section>
 <section id="applications" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">8.2</span> Applications</h2>
-<p>Temperature has been widely used in literature to study urban heat island (UHI) and surface urban heat island (SUHI) to supporting planning decisions. <span class="citation" data-cites="patel2024">Patel, Indraganti, and Jawarneh (<a href="references.html#ref-patel2024" role="doc-biblioref">2024</a>)</span> conducted a literature review that look at how LULCC influences LST across different cities. What is interesting is that while all of them point in the same direction, the actual values vary. For example, a roughly 13% loss of vegetation in Agra, India led to an LST increase of nearly 9°C, whereas a similar kind of land cover change in Porto Alegre, Brazil only recorded for around a 4°C increase. What stood out was not that the values differed between cities, but that a similar type of land cover can be associated with very different temperature responses. That made me realise how context dependent these quantitative relationships are, and how hard it is to generalise findings across cities when both climate and methodology vary. <span class="citation" data-cites="patel2024">Patel, Indraganti, and Jawarneh (<a href="references.html#ref-patel2024" role="doc-biblioref">2024</a>)</span> recognised these limitations, and discussed that there is no global standard for how these indices should be applied.</p>
-<p>Similarly <span class="citation" data-cites="hu2013">Hu and Brunsell (<a href="references.html#ref-hu2013" role="doc-biblioref">2013</a>)</span> showed that changing from daily to 8 day composite MODIS data has resulted substantially different SUHI estimates from the same satellites. This showed that two studies looking at the same study area with the same satellite can end up very different conclusions just because of temporal processing decisions made before the analysis. It is not just about which technique to use, but the methodological decision that can shape our findings.</p>
-<section id="methodological-limitations" class="level3" data-number="8.2.1">
-<h3 data-number="8.2.1" class="anchored" data-anchor-id="methodological-limitations"><span class="header-section-number">8.2.1</span> Methodological Limitations</h3>
-<p>Remote sensing approaches are widely recognised for improving understanding of the spatial and temporal variability of urban climate over the long term. Yet it does have limitations, particularly in data accuracy, as satellites capture surface conditions indirectly and cloud cover can distort the reliability of thermal imagery. Most researchers use temporally composite products, typically from MODIS, to reduce missing data impacted by cloud cover. Alternatively, some studies focus on nighttime thermal imagery as higher daytime solar radiation is likely to increase boundary-layer instability and cloud formation, making observations less consistent <span class="citation" data-cites="hu2013">(<a href="references.html#ref-hu2013" role="doc-biblioref">Hu and Brunsell 2013</a>)</span>. As seen below, night time has relatively fewer black pixels of missing or masked data:</p>
+<p>Land surface temperature (LST) has been widely applied in urban climate studies to understand urban heat patterns, especially the Surface Urban Heat Island (SUHI) effect. <span class="citation" data-cites="almeida2021">Almeida, Teodoro, and Gonçalves (<a href="references.html#ref-almeida2021" role="doc-biblioref">2021</a>)</span> note that Voogt and Oke (2003) proposed SUHI as a sub-classification of UHI, specifically addressing surface temperature differences between urban and rural areas. More recent studies seem to emphasise how land cover composition drives these patterns, vegetation cools surfaces while impervious cover heats them, and this relationship appears consistently across cities in very different climates <span class="citation" data-cites="shi2021">(<a href="references.html#ref-shi2021" role="doc-biblioref">Shi et al. 2021</a>)</span>. Despite these spatial patterns, findings across studies rarely agree directly, because climate context, urban form, and sensor choice all shape what LST actually observes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/w9_images/urban_nonurban.jpg" class="img-fluid figure-img"></p>
+<figcaption>Urban and Non-urban, Source: <span class="citation" data-cites="shi2021">Shi et al. (<a href="references.html#ref-shi2021" role="doc-biblioref">2021</a>)</span></figcaption>
+</figure>
+</div>
+<p>There are limitations methodologically. Satellites measure surface conditions indirectly and most cannot penetrate cloud cover, leaving gaps in thermal time series. Satellites measure surface conditions indirectly and cannot penetrate cloud cover, leaving gaps in thermal time series. To address this, most researchers composite MODIS LST products over extended periods to reduce missing data. However, <span class="citation" data-cites="hu2013">Hu and Brunsell (<a href="references.html#ref-hu2013" role="doc-biblioref">2013</a>)</span> found that this inflates daytime SUHI values more than nighttime ones, with the effect growing the longer the compositing period. I think this explains why some studies prefer using nighttime imagery, as higher daytime solar radiation increases boundary layer instability and cloud formation, making daytime observations less stable. As seen below, nighttime imagery contains relatively fewer black pixels of missing or masked data:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w9_images/daynight.jpg" class="img-fluid figure-img"></p>
 <figcaption>Day and Night Differences in LST, Source: <span class="citation" data-cites="hu2013">Hu and Brunsell (<a href="references.html#ref-hu2013" role="doc-biblioref">2013</a>)</span></figcaption>
 </figure>
 </div>
-</section>
-<section id="products-for-lst" class="level3" data-number="8.2.2">
-<h3 data-number="8.2.2" class="anchored" data-anchor-id="products-for-lst"><span class="header-section-number">8.2.2</span> Products for LST</h3>
+<p>Studies have extended LST beyond physical temperature analysis toward practical planning applications. <span class="citation" data-cites="determin"><span>“Determination of Land Surface Temperature and Urban Heat Island Effects with Remote Sensing Capabilities: The Case of Kayseri, Türkiye | Natural Hazards | Springer Nature Link”</span> (<a href="references.html#ref-determin" role="doc-biblioref">n.d.</a>)</span> analysed LST and UHI dynamics across Kayseri, Turkey between 2013 and 2022, finding strong negative correlations between UHI intensity and vegetation cover, and strong positive correlations with built-up density. These findings gives direct implications for resilience and sustainable land use planning and UHI mitigation. <span class="citation" data-cites="determin"><span>“Determination of Land Surface Temperature and Urban Heat Island Effects with Remote Sensing Capabilities: The Case of Kayseri, Türkiye | Natural Hazards | Springer Nature Link”</span> (<a href="references.html#ref-determin" role="doc-biblioref">n.d.</a>)</span> found an underconstruction park within the city centre producing measurable cooling temperatures, which suggests that even partial greening of previously built-up land can produce thermal improvements on local levels. This reflects a broader shift in how LST can be used, not only to understand heat patterns, but to identify where interventions are needed and what form they should take. Overall, things made clear that LST is not a straightforward measure you can apply universally. The choice of sensor, time of acquisition, and the local urban context all shape what the data actually presents. Findings always need to be read carefully before informing any planning decision.</p>
+<section id="finally-products-for-lst" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="finally-products-for-lst"><span class="header-section-number">8.2.1</span> Finally… Products for LST</h3>
 <table class="caption-top table">
 <caption>Sources: <span class="citation" data-cites="li2023a">Li et al. (<a href="references.html#ref-li2023a" role="doc-biblioref">2023</a>)</span></caption>
 <colgroup>
@@ -637,6 +639,12 @@ div.csl-indent {
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-almeida2021" class="csl-entry" role="listitem">
+Almeida, Cátia Rodrigues de, Ana Cláudia Teodoro, and Artur Gonçalves. 2021. <span>“Study of the Urban Heat Island (UHI) Using Remote Sensing Data/Techniques: A Systematic Review.”</span> <em>Environments</em> 8 (10): 105. <a href="https://doi.org/10.3390/environments8100105">https://doi.org/10.3390/environments8100105</a>.
+</div>
+<div id="ref-determin" class="csl-entry" role="listitem">
+<span>“Determination of Land Surface Temperature and Urban Heat Island Effects with Remote Sensing Capabilities: The Case of Kayseri, Türkiye | Natural Hazards | Springer Nature Link.”</span> n.d. <a href="https://link.springer.com/article/10.1007/s11069-024-06431-5">https://link.springer.com/article/10.1007/s11069-024-06431-5</a>.
+</div>
 <div id="ref-hu2013" class="csl-entry" role="listitem">
 Hu, Leiqiu, and Nathaniel A. Brunsell. 2013. <span>“The Impact of Temporal Aggregation of Land Surface Temperature Data for Surface Urban Heat Island (SUHI) Monitoring.”</span> <em>Remote Sensing of Environment</em> 134 (July): 162–74. <a href="https://doi.org/10.1016/j.rse.2013.02.022">https://doi.org/10.1016/j.rse.2013.02.022</a>.
 </div>
@@ -651,6 +659,9 @@ Patel, Shikha, Madhavi Indraganti, and Rana N. Jawarneh. 2024. <span>“A Compre
 </div>
 <div id="ref-rasul2017" class="csl-entry" role="listitem">
 Rasul, Azad, Heiko Balzter, Claire Smith, John Remedios, Bashir Adamu, José A. Sobrino, Manat Srivanit, and Qihao Weng. 2017. <span>“A Review on Remote Sensing of Urban Heat and Cool Islands.”</span> <em>Land</em> 6 (2): 38. <a href="https://doi.org/10.3390/land6020038">https://doi.org/10.3390/land6020038</a>.
+</div>
+<div id="ref-shi2021" class="csl-entry" role="listitem">
+Shi, Hua, George Xian, Roger Auch, Kevin Gallo, and Qiang Zhou. 2021. <span>“Urban Heat Island and Its Regional Impacts Using Remotely Sensed Thermal Data<span></span>A Review of Recent Developments and Methodology.”</span> <em>Land</em> 10 (8): 867. <a href="https://doi.org/10.3390/land10080867">https://doi.org/10.3390/land10080867</a>.
 </div>
 <div id="ref-sobrino2013a" class="csl-entry" role="listitem">
 Sobrino, José A., Rosa Oltra-Carrió, Guillem Sòria, Juan Carlos Jiménez-Muñoz, Belén Franch, Victoria Hidalgo, Cristian Mattar, et al. 2013. <span>“Evaluation of the Surface Urban Heat Island Effect in the City of Madrid by Thermal Remote Sensing.”</span> <em>International Journal of Remote Sensing</em> 34 (9-10): 3177–92. <a href="https://doi.org/10.1080/01431161.2012.716548">https://doi.org/10.1080/01431161.2012.716548</a>.
