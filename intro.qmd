@@ -22,19 +22,19 @@ Overall, observations are shaped by the electromagnetic spectrum and its interac
 
 #### Spatial Resolution
 
-The size of the raster grid cell per pixel, where it can range from metres to kilometres. The spatial resolution scale varies depending on specific observation and reasearch suitability, ranging from highest/finest resolution at 10m for buildings to the lowest/coarse at 100km for a global scale.
+The size of the raster grid cell per pixel, where it can range from metres to kilometres. Finer spatial resolution is useful when analysing detailed urban features such as buildings as smaller pixels preserve more local variation. Coarser spatial resolution, however, can still be appropriate for regional or global analysis where broad patterns matters more than fine detail. Therefore “higher resolution” is not always better, it is depends on specific observation and reasearch suitability.
 
 #### Spectral Resolution
 
-Visible part of the electromagnetic spectrum is composed of red, green and blue wavelengths. Multi-spectral sensors measure reflection at multiple wavelength bands to create spectral signatures, which such patterns of reflectence across the spectrum helps distinguish different surface features. However, observations are often constrained to atmospheric windows (e.g. cloud cover) which absorbs radiation.
+Different materials reflect and absorb energy differently across wavelengths, creating the spectral signatures that allow vegetation, water, bare soil and built surfaces to be distinguished. Multi-spectral sensors measure reflection at multiple wavelength bands to create spectral signatures. However, observations are often constrained to atmospheric windows (e.g. cloud cover) which absorbs radiation. In practice, such reflectance patterns across the spectrum determines how remote sensing observe, distinguish land usage and identify and understand conditions.
 
 ::: {#CHUNKNAME layout-ncol="1"}
-[![Electromagnetic Spectrum and Satellite Sensor Capture Range, Source: ](images/w1_images/electromagnetic_spectrum.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)" fig-align="left"}](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/)
+[![Electromagnetic Spectrum and Satellite Sensor Capture Range, Source:](images/w1_images/electromagnetic_spectrum.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)" fig-align="left"}](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/)
 :::
 
 #### Temporal Resolution
 
-The frequency of a sensor's revisit in capturing the same observation area. The temporal resolution measurement period can vary from 1 to 16 days depending on the platform [@earthsciencedatasystems2025].
+The frequency of a sensor's revisit in capturing the same observation area. The temporal resolution measurement period can vary from 1 to 16 days depending on the platform [@earthsciencedatasystems2025]. Particularly in environmental monitoring where measurements are time sensitive.
 
 #### Radiometric Resolution
 
@@ -48,7 +48,7 @@ The ability of a sensor to identify and discriminate between subtle differences 
 
 **Study Area: Lisbon, Portugal**
 
-Satellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed with SNAP. Selecting the RGB-image it gives the **True Natural Color** combination of B4, B3 and B2. **False Colour Composite** of B8, B4 and B3 highlights healthy and unhealthy vegetation, with denser vegetation visualised as red and urban areas as white. **Atmospheric Penetration** of B12, B11 and B8A composites with no visible bands to penetrate atmospheric particles, highlighting vegetation in blue and urban areas as gray, cyan or purple. More of Sentinel 2 Bands and Combinations can be found at @gisgeography2019.
+Satellite imagery obtained from Sentinel-2 and Landsat-9 were pre-processed with SNAP to explore how different band combinations change the visibility of land-cover patterns. **True natural colour** (B4, B3, B2) provides an image of RGB, while **false colour composite** (B8, B4, B3) highlights healthy and unhealthy vegetation and its density levels using near-infrared reflectance. **Atmospheric penetration** is also useful as it reduce reliance on visible wavelengths which made it easier to distinguish surfaces under more complex atmospheric conditions. More of Sentinel 2 Bands and Combinations can be found at @gisgeogra
 
 ::: {#Sentinel_Colour layout-ncol="3"}
 ![True Natural Colour, Sentinel](images/w1_images/truenaturalcolour_sentinel.png)
@@ -58,7 +58,7 @@ Satellite imagery was obtained from Sentinel-2 and Landsat-9 and pre-processed w
 ![Atmospheric Penetration, Sentinel](images/w1_images/atmosphericpentration_sentinel.png)
 :::
 
-The scatter plots of Sentinel-2 (B4, B8) and Landsat (B4, B5) showed the spectral relationship between Red and Near-infrared spectral feature space. Both pixel distribution showed low values of NIR absorption for water , low red and high NIR values for vegetation and correlated red and NIR values increases for urban areas, characterizing the land cover composition of Lisbon.
+The scatter plots of Lisbon under Sentinel-2 (B4, B8) and Landsat (B4, B5) showed the spectral relationship between Red and Near-infrared spectral feature space. Both pixel distribution showed low values of NIR absorption for water, low red and high NIR values for vegetation and correlated red and NIR values increases for urban areas, characterising Lisbon's land cover composition .
 
 ::: {#Scatterplot layout-ncol="2"}
 ![Sentinel Band 4 and Band 8 Scatterplot](images/w1_images/b4b8_scatterplot_sentinel.png)
@@ -106,9 +106,7 @@ $$
 
 : Tasseled Cap Functions, Source: @arcgispro
 
-The below two Sentinel-2 tasseled cap transformed imagery is adjusted for brightness, greenness and wetness between August and December 2025. Although there is no obvious land cover change, the comparisons have visualized some subtle hue changes within certain areas. Blue, red and pink areas of built up urban infrastructure (road networks, airport, coastal piers) and waters remained unchanged, while brown areas depicts the built up urban features. Greenness is distinguished by lighter blue and greens, highlighting areas with higher moisture and humibidity. Overall, vegetation coverage appears equivalent in both seasons
-
-Despite Lisbon's Mediterranean climate, there is no fluctuation of seasonal vegetation coverage change. One interesting feature to look at is the Parque Florestal de Monsanto large urban forest, where the vegetation coverage has a very subtle brightness difference between August and December. With a high density of vegetation, the overlay of greenness and wetness detections also visualize moisture levels across time. Moving beyond the subtle variations in the visual interpretations, spectral reflectance across different bands will be looked at next.
+The below two Sentinel-2 tasseled cap transformed imagery is adjusted for brightness, greenness and wetness between August and December 2025. The Parque Florestal de Monsanto (urban forest) is still clearly visible in both, and the roads, built up areas do not seem to change much between the two seasons. Variations in brightness, greenness or wetness are quite subtle and difficult to identify by comparing the images. Given that, the comparison shows limitations of qualitative interpretation. The tasseled cap transformation does help transform spectral information for easier interpretation, but when two images look similar, vegetation or moisture change may require further quantitative support (maybe calculating difference between seasons?). Moving beyond visual interpretations, spectral reflectance across different bands will be looked at next.
 
 ::: {layout-ncol="2"}
 ![Lisbon in August 2025 (Sentinel, Tasseled Cap Transformed)](images/w1_images/tasseledcaps_sentinel.png)
@@ -122,7 +120,7 @@ Spectral reflectance across bands showed distinct differences for each land cove
 ![Spectral Reflectence of Sentinel (A, B) and Landsat (C, D)](images/w1_images/final_spectral_reflectance_image.png)
 :::
 
-Sentinel-2 and Landsat have very similar spectral bands, where key differences are their spatial and temporal resolution. Sentinel-2 has a comparably finer spatial resolution and higher revisit frequency, giving advantages of higher details and regular monitoring of dynamic changes. Despite, their spectral similarity allows cross-validation analysis when there are limitations of cloud coverage or data availability on one platform, enabling higher flexibility multi-temporal studies.
+Both have very similar spectral bands, where key differences are their spatial and temporal resolution. Sentinel-2 has a comparably finer spatial resolution and higher revisit frequency than Landsat, giving advantages of higher details and regular monitoring of dynamic changes. Despite, their spectral similarity allows cross-validation analysis when there are limitations of cloud coverage or data availability on one platform, enabling higher flexibility multi-temporal studies.
 
 ::: {layout-ncol="1"}
 ![Spectral Reflectence Bands of Sentinel-2 and Landsat, Source: @usgsero2018](images/w1_images/dmidS2LS7Comparison.png)
@@ -130,10 +128,10 @@ Sentinel-2 and Landsat have very similar spectral bands, where key differences a
 
 ## Reflection
 
-Beyond capturing Earth's surface imagery, this week's learning has shown me that EO data can be a powerful measurement tool. I've always been aware of satellite imagery accessed through tools like Google Maps, but never understood the underlying mechanics of how it actually works. And so, this week genuinely shifted my perspective of satellite imagery as data. Hearing the term "electromagnetic spectrum" takes me back to a song my GCSE Physics teacher used to show us, which was stuck in my head for a week:
+Beyond capturing Earth's surface imagery, this week's learning has showed me that EO data can be a powerful measurement tool. I've always been aware of satellite imagery accessed through tools like Google Maps, but never understood the underlying mechanics of how it actually works. And so, this week genuinely shifted my perspective of satellite imagery as data. Hearing the term "electromagnetic spectrum" takes me back to a song my GCSE Physics teacher used to show us, which was stuck in my head for a week:
 
 {{< video https://youtu.be/bjOGNVH3D4Y >}}
 
-Lisbon has been a interesting study area, it displays features of both an urban forest and coastal conditions, where atmospheric effects influence satellite reflectance and interpretation. Furthermore, I remember visiting the Monsanto Forest Park in my GCSE art trip doing sketches, looking at it it through spectral lenses gives a completely different perspective!!
+Lisbon has been a interesting study area, it displays features of both an urban forest and coastal conditions, where atmospheric effects influence satellite reflectance and interpretation. At the same time, this also showed me the limitations of EO, especially data quality which shape what can be extracted from the data. This is important under policy context, where EO-based evidence should not be treated as perfectly objective or policy-ready as reliability depends on data quality, timing, correction and validation.
 
 While EO data showed potential for large-scale environmental monitoring and prediction purposes, interpretation varies significantly depending on band selection, resampling methods, and processing techniques, which may require careful considerations of cloud coverage, noise, and systematic biases. As demonstrated through the analysis of urban and green space land uses above, multispectral analysis can be a very helpful tool for planning policy practices. However, it does poses limitations of data quality. Therefore, further understanding atmospheric correction and scattering effects is essential, as cloud coverage and particles redirect radiation, which weakens surface sensing and reducing data quality.
