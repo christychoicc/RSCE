@@ -92,13 +92,10 @@ Studies have extended LST beyond physical temperature analysis toward practical 
 
 ### Finally... Products for LST
 
-+------------+----------------------------+--------------------+--------------------------------------------------------------------------------+
-| Resolution | Products                   | Spatial Resolution | Temporal Resolution                                                            |
-+============+============================+====================+================================================================================+
-| Low        | ASTER, Landsat 8 Band 10   | 90 m, 30 m         | 16 days revisit                                                                |
-+------------+----------------------------+--------------------+--------------------------------------------------------------------------------+
-| Medium     | MODIS, with Aqua and Terra | 1 km               | Terra: N to S morning and Aqua: S to N afternoon, 1-2 days with 2 images a day |
-+------------+----------------------------+--------------------+--------------------------------------------------------------------------------+
+| Resolution | Products | Spatial Resolution | Temporal Resolution |
+|----|----|----|----|
+| Low | ASTER, Landsat 8 Band 10 | 90 m, 30 m | 16 days revisit |
+| Medium | MODIS, with Aqua and Terra | 1 km | Terra: N to S morning and Aqua: S to N afternoon, 1-2 days with 2 images a day |
 
 : Sources: @li2023a
 

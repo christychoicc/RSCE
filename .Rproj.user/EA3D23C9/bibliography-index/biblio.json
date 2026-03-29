@@ -2886,6 +2886,43 @@
             },
             "title": "Green hong kong",
             "type": "report"
+        },
+        {
+            "DOI": "10.1016/j.isprsjprs.2019.01.025",
+            "URL": "https://www.sciencedirect.com/science/article/pii/S0924271619300334",
+            "author": [
+                {
+                    "family": "Xu",
+                    "given": "Meng"
+                },
+                {
+                    "family": "Jia",
+                    "given": "Xiuping"
+                },
+                {
+                    "family": "Pickering",
+                    "given": "Mark"
+                },
+                {
+                    "family": "Jia",
+                    "given": "Sen"
+                }
+            ],
+            "container-title": "ISPRS Journal of Photogrammetry and Remote Sensing",
+            "id": "xu2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        3,
+                        1
+                    ]
+                ]
+            },
+            "page": "215-225",
+            "title": "Thin cloud removal from optical remote sensing images using the noise-adjusted principal components transform",
+            "type": "article-journal",
+            "volume": "149"
         }
     ],
     "project_biblios": [
