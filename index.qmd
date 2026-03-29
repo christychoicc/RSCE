@@ -13,14 +13,18 @@ I am particularly interested in how remote sensing can be used to understand pat
 Each chapter will be covering contents taught in the corresponding week:
 
 1.  Introduction
-    -   Getting started with remote sensing, this introduction will go through types of sensors, spatial resolutions and practical data pre-processing with Lisbon as the study area.
+    -   Getting started with remote sensing, this introduction will go through sensor types, spatial resolution, and image pre-processing using Lisbon as the study area.
 2.  Sensor
-    -   Looking at Sentinel-1, the slides will provide a summary of the sensor, its mission, technical specifications, key objectives and applications, benefits and limitations, and reflections
+    -   Looking at Sentinel-1, the slides will provide a summary of the sensor, its mission, technical specifications, applications, strengths, limitations, and my reflections on SAR data.
 3.  Correction
-    -   Explores preprocessing corrections and enhancements with Hong Kong as a study area, include mosaicking of Landsat 8-9 tiles, NDVI, GLCM texture, and PCA analyses.
+    -   Explores Pre-processing and image enhancement with Hong Kong as the study area, including mosaicking, NDVI, GLCM texture, and PCA.
 4.  Policy
-    -   Looking at OneNYC 2050
+    -   Exploration of OneNYC 2050 and how Earth observation data can support urban climate and heat policy.
 5.  Google Earth Engine
+    -   Introduction to Google Earth Engine for handling, processing, and analysing large remote sensing datasets on a cloud platform.
 6.  Classification I
+    -   Looking at supervised classification methods in Google Earth Engine, focusing on land cover mapping and machine learning approaches.
 7.  Classification II
+    -   Extending on Classification I, this section will look at more advanced classification concepts, including sub-pixel analysis, object-based methods, neighbourhood effects, and accuracy assessment.
 8.  Temperature
+    -   Looking at land surface temperature, urban heat patterns, and time series data.
