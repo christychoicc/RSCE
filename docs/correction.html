@@ -531,11 +531,12 @@ window.Quarto = {
 </div>
 </section><section id="normalised-difference-vegetation-index-ndvi" class="level3" data-number="3.2.2"><h3 data-number="3.2.2" class="anchored" data-anchor-id="normalised-difference-vegetation-index-ndvi">
 <span class="header-section-number">3.2.2</span> Normalised Difference Vegetation Index (NDVI)</h3>
-<p>NDVI is used to highlight healthy vegetation, the following equation is applied:</p>
+<p>Moving beyond, here will use a combination of bands for NDVI, to highlight healthy vegetation. The following equation is applied:</p>
 <p><span class="math display">\[
 NDVI = \frac{NIR - Red}{NIR + Red}
 \]</span></p>
-<p>NDVI uses Near-Infrared (NIR) and Red spectral bands to display vegetation which is not visible under visible bands. Healthy and green vegetation reflects stronger in NIR while simultaneously absorbs Red through photosynthesis, this has led NDVI to be an effective indicator for vegetation health. More on other ratios: <a href="https://www.indexdatabase.de/">Index DataBase</a>.</p>
+<p><br>
+Healthy vegetation strongly reflects NIR while absorbing Red through photosynthesis, making the NDVI ratio an effective vegetation health indicator. Atmospheric correction is important here as haze and scattering can distort red and NIR reflectance, reducing NDVI reliability. More on other ratios: <a href="https://www.indexdatabase.de/">Index DataBase</a>.</p>
 <div id="Scatterplot" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -554,10 +555,10 @@ NDVI = \frac{NIR - Red}{NIR + Red}
 </div>
 </section><section id="texture" class="level3" data-number="3.2.3"><h3 data-number="3.2.3" class="anchored" data-anchor-id="texture">
 <span class="header-section-number">3.2.3</span> Texture</h3>
-<p>Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). This approach have been widely used for land use and land cover classification. It was found that it can significantly increase classification accuracy (will be covered in later chapters), therefore, best practices often combine texture and spectral analysis for obtaining the best results <span class="citation" data-cites="kupidura2019">(<a href="references.html#ref-kupidura2019" role="doc-biblioref">Kupidura 2019</a>)</span>. Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.</p>
+<p>Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). This approach have been widely used for land use and land cover classification. It was widely used to improve classification accuracy (will be covered in later chapters), therefore, best practices often combine texture and spectral analysis for obtaining the best results <span class="citation" data-cites="kupidura2019">(<a href="references.html#ref-kupidura2019" role="doc-biblioref">Kupidura 2019</a>)</span>. Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.</p>
 <p>Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting textures:</p>
 <p><span class="math display">\[
-\rho = (\text{pixel\_value} \times 0.0000275) - 0.2
+\rho = (\text{pixel_value} \times 0.0000275) - 0.2
 \]</span></p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
@@ -572,7 +573,7 @@ NDVI = \frac{NIR - Red}{NIR + Red}
 <p>GLCM is indeed commonly used, yet it may not always be the most suitable solution. As mentioned in <span class="citation" data-cites="kupidura2019">Kupidura (<a href="references.html#ref-kupidura2019" role="doc-biblioref">2019</a>)</span> study, GLCM may distort classification when it comes into an “edge effect”, which considering granulometric analysis maybe more of a sensible alternative. Given this, GEE is valuable because it enables texture exploration, but methodological choice still remains an important consideration.</p>
 </section><section id="pca" class="level3" data-number="3.2.4"><h3 data-number="3.2.4" class="anchored" data-anchor-id="pca">
 <span class="header-section-number">3.2.4</span> PCA</h3>
-<p>PCA allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information.</p>
+<p>While PCA is often used to compress multispectral bands into fewer, uncorrelated components while retaining most of the useful information.</p>
 <p>PCA summary of 8 spectral bands and 8 texture variables shows:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -589,8 +590,8 @@ Cumulative Proportion  0.99978 0.99995 1.00000 1.000e+00</code></pre>
 </div>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 32%">
+<col style="width: 67%">
 </colgroup>
 <thead><tr class="header">
 <th>Components</th>
@@ -638,6 +639,7 @@ Cumulative Proportion  0.99978 0.99995 1.00000 1.000e+00</code></pre>
 </div>
 </div>
 </div>
+<p>PCA is useful for simplifying image data and showing main patterns, but it does not directly remove cloud contamination. <span class="citation" data-cites="xu2019">Xu et al. (<a href="references.html#ref-xu2019" role="doc-biblioref">2019</a>)</span> discussed that a noise-adjusted principal components transform could separate thin cloud effects more clearly and performed better than PCA and ICA, suggesting that specialised methods may also be used for cloud correction.</p>
 </section></section><section id="reflection" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="reflection">
 <span class="header-section-number">3.3</span> Reflection</h2>
 <p>There is a lot of contents in data correction and enhancements, yet they are fundamental to ensure reliability, accuracy and comparability within remotely sensing analysis. Luckily, there is now open acess to Level 2 data that are analysis ready data (ARD), no extensive manual correction process needed. More on Level 2 data can be found in the following, click for <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/data-processing-levels">Sentinel</a> and <a href="https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products">Landsat</a>.</p>
@@ -667,6 +669,9 @@ M. Shimada. 2010. <span>“Ortho-Rectification and Slope Correction of SAR Data 
 </div>
 <div id="ref-wang2008" class="csl-entry" role="listitem">
 Wang, Lingli, John Qu, Xianjun Hao, and Qingping Zhu. 2008. <span>“Sensitivity Studies of the Moisture Effects on MODIS SWIR Reflectance and Vegetation Water Indices.”</span> <em>International Journal of Remote Sensing</em> 29 (December). <a href="https://doi.org/10.1080/01431160802226034">https://doi.org/10.1080/01431160802226034</a>.
+</div>
+<div id="ref-xu2019" class="csl-entry" role="listitem">
+Xu, Meng, Xiuping Jia, Mark Pickering, and Sen Jia. 2019. <span>“Thin Cloud Removal from Optical Remote Sensing Images Using the Noise-Adjusted Principal Components Transform.”</span> <em>ISPRS Journal of Photogrammetry and Remote Sensing</em> 149 (March): 215–25. <a href="https://doi.org/10.1016/j.isprsjprs.2019.01.025">https://doi.org/10.1016/j.isprsjprs.2019.01.025</a>.
 </div>
 </div>
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
