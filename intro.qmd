@@ -22,7 +22,7 @@ Overall, observations are shaped by the electromagnetic spectrum and its interac
 
 #### Spatial Resolution
 
-The size of the raster grid cell per pixel, where it can range from metres to kilometres. Finer spatial resolution is useful when analysing detailed urban features such as buildings as smaller pixels preserve more local variation. Coarser spatial resolution, however, can still be appropriate for regional or global analysis where broad patterns matters more than fine detail. Therefore “higher resolution” is not always better, it is depends on specific observation and reasearch suitability.
+The size of the raster grid cell per pixel, where it can range from metres to kilometres. Finer spatial resolution is useful when analysing detailed urban features such as buildings as smaller pixels preserve more local variation. Coarser spatial resolution, however, can still be appropriate for regional or global analysis where broad patterns matters more than fine detail. Therefore “higher resolution” is not always better, it is depends on specific observation and research suitability.
 
 #### Spectral Resolution
 
@@ -34,7 +34,7 @@ Different materials reflect and absorb energy differently across wavelengths, cr
 
 #### Temporal Resolution
 
-The frequency of a sensor's revisit in capturing the same observation area. The temporal resolution measurement period can vary from 1 to 16 days depending on the platform [@earthsciencedatasystems2025]. Particularly in environmental monitoring where measurements are time sensitive.
+The frequency of a sensor's revisit in capturing the same observation area. The temporal resolution measurement period can vary from 1 to 16 days depending on the platform [@earthsciencedatasystems2025]. Particularly useful in environmental monitoring where measurements are time sensitive.
 
 #### Radiometric Resolution
 

@@ -6,7 +6,7 @@ This section will look at New York City, USA as a case study city, with their th
 
 ## Summary
 
-The OneNYC 2050: Building a Strong and Fair City is a long term strategic plan compromised of 8 goals and 30 initiatives. It frames its climate resilience goal under "A Livable Climate" recognising extreme heat as one of its major climate threats. Initiative 21 is directly relevant to the extreme heat challenge, envisioning community level interventions that aims to reduce vulnerability to climate impacts such as rising temperatures.
+The OneNYC 2050: Building a Strong and Fair City is a long term strategic plan compromised of 8 goals and 30 initiatives. It frames its climate resilience goal under "A Livable Climate" recognising extreme heat as one of its major climate threats. Initiative 21 is especially relevant because it focuses on strengthening communities, buildings and infrastructure against climate risks, including extreme heat.
 
 +------------------------------------------------------------------------------------------------------------------+
 | A Livable Climate Obejectives, OneNYC 2050                                                                       |
@@ -25,7 +25,7 @@ OneNYC has stated extreme heat to be one of its "number one cause of mortality f
 ![UHI, Source: @earth.org2020](images/w4_images/UHIfig1.jpg)
 :::
 
-"All heat deaths are preventable" [@nyc.gov2019]. The OneNYC uses the Heat Vulnerability Index to identify neighborhoods that are more at risk following extreme heat. The risks are not evenly distributed across the city, where South Bronx, Central Brooklyn and Upper Manhattan are highlighted as the city's most heat vulnerable neighborhoods.
+"All heat deaths are preventable" [@nyc.gov2019]. The OneNYC uses a Heat Vulnerability Index to identify neighborhoods that are more at risk following extreme heat. This showed heat as an urban problem to heat with unevenly distributed risk, concentrated in South Bronx, Central Brooklyn and Upper Manhattan in NYC. Therefore, policy should not only measure where surfaces are hottest, but also where people/ neighbourhoods are most exposed and vulnerable.
 
 ::: {layout-ncol="1"}
 ![HVI (Data Source: @ejnyc )](images/w4_images/NYC_HVI_Map2.png)
@@ -37,7 +37,7 @@ In action, the OneNYC strategy supports scientific based decision-making, and is
 
 ### Data
 
-Land surface temperature (LST) obtained from sensors are particularly useful for identifying the spatial pattern of surface heat across neighborhoods and for monitoring how interventions change surface temperatures over time. The following are commonly used for measuring urban heat:
+Land surface temperature (LST) derived from sensors are particularly useful for identifying the spatial pattern of surface heat across neighborhoods and for monitoring how interventions change surface temperatures over time. The following are commonly used for measuring urban heat:
 
 -   Landsat 8-9 Collection 2 Level 2 Operational Land Imager (OLI), Thematic Mapper (TM), Enhanced Thematic Mapper (ETM+), Thermal Infrared Sensor (TIRS)
 
@@ -81,7 +81,9 @@ Land surface temperature (LST) obtained from sensors are particularly useful for
     Meterological data are often unavailable in spatially continuous form (raster data)
     :::
 
--   Source: @thome2026 , @zhou2019, @solecki2015, @hantson2013, @maclachlan2021
+    Source: @thome2026 , @zhou2019, @solecki2015, @hantson2013, @maclachlan2021
+
+One key takeaway is that no dataset is “best. The right choice depends on the research aims. For hotspot mapping and intervention targeting, Landsat is more suitable. For continuous monitoring, MODIS or ECOSTRESS are more appropriate. For human thermal comfort, modelled approaches such as SOLWEIG may be most policy relevant.
 
 ### Addressing Policy Challenge
 
