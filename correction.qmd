@@ -82,7 +82,7 @@ Texture captures the spatial relationships between neighboring pixels, highlight
 Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting textures:
 
 $$
-\rho = (\text{pixel_value} \times 0.0000275) - 0.2
+\rho = (\text{pixel\_value} \times 0.0000275) - 0.2
 $$
 
 ::: {layout-ncol="1"}
@@ -93,9 +93,7 @@ GLCM is indeed commonly used, yet it may not always be the most suitable solutio
 
 ### PCA
 
-While PCA is often used to compress multispectral bands into fewer, uncorrelated components while retaining most of the useful information.
-
-PCA summary of 8 spectral bands and 8 texture variables shows:
+PCA is often used to compress multispectral bands into fewer, uncorrelated components while retaining most of the useful information. Our summary of 8 spectral bands and 8 texture variables shows:
 
 ```{r, echo=FALSE}
 cat(readLines("correction/pca_summary.txt"), sep = "\n")
@@ -121,11 +119,11 @@ In this case, PC1 to PC4 explains most of the variations. Looking at cumulative 
 ![PC1 to PC4 of Hong Kong](images/w3_images/pca_1-4.png)
 :::
 
-PCA is useful for simplifying image data and showing main patterns, but it does not directly remove cloud contamination. @xu2019 discussed that a noise-adjusted principal components transform could separate thin cloud effects more clearly and performed better than PCA and ICA, suggesting that specialised methods may also be used for cloud correction.
+PCA is useful for simplifying image data and showing main patterns, but it does not directly remove cloud contamination. @xu2019 discussed that a noise-adjusted principal components transform could separate thin cloud effects more clearly and performed better than PCA and ICA, suggesting that specialised methods may also be used alongside for cloud correction.
 
 ## Reflection
 
-There is a lot of contents in data correction and enhancements, yet they are fundamental to ensure reliability, accuracy and comparability within remotely sensing analysis. Luckily, there is now open acess to Level 2 data that are analysis ready data (ARD), no extensive manual correction process needed. More on Level 2 data can be found in the following, click for [Sentinel](https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/data-processing-levels) and [Landsat](https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products).
+There is a lot of contents in data correction and enhancements, yet they are fundamental to ensure reliability, accuracy and comparability within remotely sensing analysis. Luckily, there is now open acess to Level 2 data that are analysis ready data, no extensive manual correction process needed. More on Level 2 data can be found in the following, click for [Sentinel](https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/data-processing-levels) and [Landsat](https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products).
 
 GLCM Texture and PCA analysis were the most insightful sections in this section. It was very interesting to see visually that combinations of spectral and structural information can reveal spatial patterns that enables accurate classification of land cover rather than just relying information derived from one spectral band only. One limitations in this application workflow is that it is time consuming and computational intensive, which this will be improved using Google Earth Engine which will be covered later.
 
