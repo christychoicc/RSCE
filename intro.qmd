@@ -29,7 +29,7 @@ The size of the raster grid cell per pixel, where it can range from metres to ki
 Different materials reflect and absorb energy differently across wavelengths, creating the spectral signatures that allow vegetation, water, bare soil and built surfaces to be distinguished. Multi-spectral sensors measure reflection at multiple wavelength bands to create spectral signatures. However, observations are often constrained to atmospheric windows (e.g. cloud cover) which absorbs radiation. In practice, such reflectance patterns across the spectrum determines how remote sensing observe, distinguish land usage and identify and understand conditions.
 
 ::: {#CHUNKNAME layout-ncol="1"}
-[![Electromagnetic Spectrum and Satellite Sensor Capture Range, Source:](images/w1_images/electromagnetic_spectrum.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)" fig-align="left"}](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/)
+[![Electromagnetic Spectrum and Satellite Sensor Capture Range, Source: [ESRI](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/)](images/w1_images/electromagnetic_spectrum.png){alt="Remote Sensing Resolutions (Source: NASA EARTHDATA)" fig-align="left"}](https://learn.arcgis.com/en/projects/explore-imagery-spectral-resolution/)
 :::
 
 #### Temporal Resolution

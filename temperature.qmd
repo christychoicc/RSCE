@@ -17,15 +17,15 @@ The below compares the difference between Landsat and MODIS for temperature anal
 Bangkok, with its hot, humid and rainy climate, showed a much more fragmented thermal pattern, with finer-scale variation across the urban area. Arizona, by contrast, showed more extensive and continuous high-temperature patterns, which seemed consistent with a much drier environment and fewer cooling influences.
 
 ::: {layout-ncol="2"}
-![Landsat 8 LST](images/w9_images/before_QA_PIXEL.png)
+![Bangkok, Landsat 8 LST](images/w9_images/before_QA_PIXEL.png)
 
-![MODIS, Aqua and Terra LST](images/w9_images/MODIS_LST.png)
+![Bangkok, MODIS, Aqua and Terra LST](images/w9_images/MODIS_LST.png)
 :::
 
 ::: {layout-ncol="2"}
-![Landsat 8 LST](images/w9_images/LANDSAT_LST.png)
+![Arizona, Landsat 8 LST](images/w9_images/LANDSAT_LST.png)
 
-![MODIS, Aqua and Terra LST](images/w9_images/MODIS.png)
+![Arizona, MODIS, Aqua and Terra LST](images/w9_images/MODIS.png)
 :::
 
 #### Time Series
@@ -33,9 +33,9 @@ Bangkok, with its hot, humid and rainy climate, showed a much more fragmented th
 Comparing the MODIS time series, Bangkok appeared more discontinuous, which I think is likely to be related to missing observations caused by cloud cover in its humid and rainy environment. Arizona, in contrast, showed denser and more continuous values, with a clearer seasonal trend and generally higher temperatures. This showed that temperature analysis is not only about climate differences, but also about the availability and quality of observations under different atmospheric conditions.
 
 ::: {layout-ncol="2"}
-![Landsat LST](images/w9_images/LST_CHART.png)
+![Bangkok, Landsat LST](images/w9_images/LST_CHART.png)
 
-![MODIS, Aqua and Terra LST](images/w9_images/A_LST_CHART.png)
+![Arizona, MODIS, Aqua and Terra LST](images/w9_images/A_LST_CHART.png)
 :::
 
 ::: {style="border: 1px solid #ddd; border-left: 4px solid #e0a800; padding: 10px 15px; color: #e0a800; border-radius: 4px; margin-bottom: 15px;"}
