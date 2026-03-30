@@ -77,7 +77,7 @@ Healthy vegetation strongly reflects NIR while absorbing Red through photosynthe
 
 ### Texture
 
-Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces' distinct structural patterns (e.g. bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths. This approach have been widely used for land use and land cover classification. It was found that it can significantly increase [classification](https://christychoicc.github.io/RSCE/classification-1.html) accuracy, therefore, best practices often combine texture and spectral analysis for obtaining the best results [@kupidura2019].
+Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces' distinct structural patterns (e.g. bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths. This approach have been widely used for land use and land cover classification. It was found that it can significantly increase [classification](https://christychoicc.github.io/RSCE/classification-2.html) accuracy, therefore, best practices often combine texture and spectral analysis for obtaining the best results [@kupidura2019].
 
 Grey-level-co-occurence matrix (GLCM) measures relationships between neighbouring pixel pairs at a certain distance and is commonly used for highlighting texture:
 
