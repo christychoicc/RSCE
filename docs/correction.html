@@ -494,7 +494,7 @@ window.Quarto = {
 </section></section><section id="application" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="application">
 <span class="header-section-number">3.2</span> Application</h2>
 <p><strong>Study Area: Hong Kong</strong></p>
-<p>Landsat 8-9 OLI/TIRS Collection 2 Level-2 data were a good choice here as they come with surface reflectance, where no additional atmospheric correction is needed. The &lt;10% cloud threshold helped keep the data clean, though in a place like Hong Kong where atmospheric moisture is common, things like haze, cloud shadows, and different date acquisition between tiles could affect the mosaic. Here, two tiles were sufficient to cover the boundaries of Hong Kong.</p>
+<p>Landsat 8-9 OLI/TIRS Collection 2 Level-2 data were a good choice here as they equip surface reflectance, where no additional atmospheric correction is needed. &lt;10% cloud coverage was used, but in a place where atmospheric moisture is common, haze, cloud, and different date acquisition between tiles could still be a problem.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -507,7 +507,7 @@ window.Quarto = {
 </div>
 <section id="mosaicking-and-data-processing" class="level3" data-number="3.2.1"><h3 data-number="3.2.1" class="anchored" data-anchor-id="mosaicking-and-data-processing">
 <span class="header-section-number">3.2.1</span> Mosaicking and Data Processing</h3>
-<p>Mosaicking was necessary as Hong Kong extends across two tiles. Although the feathering brought the two scenes together, it is not completely seamless. This is likely due to acquisition differences, cloud contamination, or differing radiometric conditions, highlighting that mosaicking can improve spatial coverage but cannot fully resolve inconsistencies between tiles.</p>
+<p>Mosaicking was necessary as Hong Kong extends across two tiles. Feathering joins two images together, but not completely “seamless”. This is likely due to acquisition differences, cloud contamination, or differing radiometric conditions, highlighting that mosaicking can improve spatial coverage but cannot fully resolve inconsistencies between tiles.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -518,7 +518,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>The plot below compares spectral behaviours across different surface features. Each band operates at a different wavelength, with Bands 1–7 at 30m resolution and Band 8 at 15m. <span class="citation" data-cites="wang2008">Wang et al. (<a href="references.html#ref-wang2008" role="doc-biblioref">2008</a>)</span> noted that SWIR responds highly to both soil moisture and leaf water content, where combining NIR and SWIR are useful in detecting vegetation moisture conditions, and distinguishing land uses types. These spectral characteristics provided useful insights for understanding the study area before analysis. However, mixed urban surfaces and terrain can still produce complex spectral responses, so single-band interpretation is limited without further complementary analysis. More about Landsat bands: <a href="https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites">USGS</a>.</p>
+<p>The plot below compares spectral behaviours across different surface features. Each band operates at different wavelengths, Bands 1–7 at 30m resolution and Band 8 at 15m. However, mixed urban surfaces and terrain can produce complex spectral responses, so single-band interpretation is limited without further complementary analysis. For example, <span class="citation" data-cites="wang2008">Wang et al. (<a href="references.html#ref-wang2008" role="doc-biblioref">2008</a>)</span> noted that SWIR responds highly to both soil moisture and leaf water content, where combining NIR and SWIR are useful in detecting vegetation moisture conditions, and distinguishing land uses types. More about Landsat bands: <a href="https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites">USGS</a>.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -531,7 +531,7 @@ window.Quarto = {
 </div>
 </section><section id="normalised-difference-vegetation-index-ndvi" class="level3" data-number="3.2.2"><h3 data-number="3.2.2" class="anchored" data-anchor-id="normalised-difference-vegetation-index-ndvi">
 <span class="header-section-number">3.2.2</span> Normalised Difference Vegetation Index (NDVI)</h3>
-<p>Moving beyond, here will use a combination of bands for NDVI, to highlight healthy vegetation. The following equation is applied:</p>
+<p>Moving beyond, here will use a combination of bands for NDVI, to highlight healthy vegetation:</p>
 <p><span class="math display">\[
 NDVI = \frac{NIR - Red}{NIR + Red}
 \]</span></p>
@@ -555,8 +555,8 @@ Healthy vegetation strongly reflects NIR while absorbing Red through photosynthe
 </div>
 </section><section id="texture" class="level3" data-number="3.2.3"><h3 data-number="3.2.3" class="anchored" data-anchor-id="texture">
 <span class="header-section-number">3.2.3</span> Texture</h3>
-<p>Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths. This approach have been widely used for land use and land cover classification. It was found that it can significantly increase classification accuracy (will be covered in later chapters), therefore, best practices often combine texture and spectral analysis for obtaining the best results <span class="citation" data-cites="kupidura2019">(<a href="references.html#ref-kupidura2019" role="doc-biblioref">Kupidura 2019</a>)</span>.</p>
-<p>Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting textures:</p>
+<p>Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths. This approach have been widely used for land use and land cover classification. It was found that it can significantly increase <a href="https://christychoicc.github.io/RSCE/classification-1.html">classification</a> accuracy, therefore, best practices often combine texture and spectral analysis for obtaining the best results <span class="citation" data-cites="kupidura2019">(<a href="references.html#ref-kupidura2019" role="doc-biblioref">Kupidura 2019</a>)</span>.</p>
+<p>Grey-level-co-occurence matrix (GLCM) measures relationships between neighbouring pixel pairs at a certain distance and is commonly used for highlighting texture:</p>
 <p><span class="math display">\[
 \rho = (\text{pixel\_value} \times 0.0000275) - 0.2
 \]</span></p>
@@ -570,11 +570,10 @@ Healthy vegetation strongly reflects NIR while absorbing Red through photosynthe
 </div>
 </div>
 </div>
-<p>GLCM is indeed commonly used, yet it may not always be the most suitable solution. As mentioned in <span class="citation" data-cites="kupidura2019">Kupidura (<a href="references.html#ref-kupidura2019" role="doc-biblioref">2019</a>)</span> study, GLCM may distort classification when it comes into an “edge effect”, which considering granulometric analysis maybe more of a sensible alternative. Given this, GEE is valuable because it enables texture exploration, but methodological choice still remains an important consideration.</p>
+<p>However, it may not always be most suitable. As mentioned by <span class="citation" data-cites="kupidura2019">Kupidura (<a href="references.html#ref-kupidura2019" role="doc-biblioref">2019</a>)</span>, GLCM may distort classification when it comes into an “edge effect”. Given this, GEE is valuable because it enables texture exploration, but methodological choice still remains an important consideration.</p>
 </section><section id="pca" class="level3" data-number="3.2.4"><h3 data-number="3.2.4" class="anchored" data-anchor-id="pca">
 <span class="header-section-number">3.2.4</span> PCA</h3>
-<p>PCA allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information.</p>
-<p>PCA summary of 8 spectral bands and 8 texture variables shows:</p>
+<p>PCA allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information. Our summary of 8 spectral bands and 8 texture variables shows:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Importance of components:
@@ -612,7 +611,7 @@ Cumulative Proportion  0.99978 0.99995 1.00000 1.000e+00</code></pre>
 </tr>
 </tbody>
 </table>
-<p>In this case, PC1 to PC4 explains most of the variations. Looking at cumulative proportion, 91% of spectral variance can be identified in the first 4 principle components. This is a very helpful measure as it allows higher efficiency in analysis, including most of total variance while reducing 16 layers to 4 without loosing much information.</p>
+<p>In this case, PC1 to PC4 explains most of the variations, 91% of spectral variance can be identified in the first 4 principle components. This is very helpful as it allows higher efficiency in analysis, including most of total variance while reducing 16 layers to 4 without loosing much information.</p>
 <table class="caption-top table">
 <thead><tr class="header">
 <th>Component</th>

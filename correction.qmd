@@ -38,7 +38,7 @@ Overall, atmospheric and topographic corrections are particularly important for 
 
 **Study Area: Hong Kong**
 
-Landsat 8-9 OLI/TIRS Collection 2 Level-2 data were a good choice here as they come with surface reflectance, where no additional atmospheric correction is needed. The \<10% cloud threshold helped keep the data clean, though in a place like Hong Kong where atmospheric moisture is common, things like haze, cloud shadows, and different date acquisition between tiles could affect the mosaic. Here, two tiles were sufficient to cover the boundaries of Hong Kong.
+Landsat 8-9 OLI/TIRS Collection 2 Level-2 data were a good choice here as they equip surface reflectance, where no additional atmospheric correction is needed. \<10% cloud coverage was used, but in a place where atmospheric moisture is common, haze, cloud, and different date acquisition between tiles could still be a problem.
 
 ::: {layout-ncol="1"}
 ![Tiles Selection: draw an area of interest to search for tiles within the boundary and for tiles and data preview in EarthExplorer (Obtained from: [USGS](https://earthexplorer.usgs.gov/))](images/w3_images/aoi_landsat89.png)
@@ -46,13 +46,13 @@ Landsat 8-9 OLI/TIRS Collection 2 Level-2 data were a good choice here as they c
 
 ### Mosaicking and Data Processing
 
-Mosaicking was necessary as Hong Kong extends across two tiles. Although the feathering brought the two scenes together, it is not completely seamless. This is likely due to acquisition differences, cloud contamination, or differing radiometric conditions, highlighting that mosaicking can improve spatial coverage but cannot fully resolve inconsistencies between tiles.
+Mosaicking was necessary as Hong Kong extends across two tiles. Feathering joins two images together, but not completely "seamless". This is likely due to acquisition differences, cloud contamination, or differing radiometric conditions, highlighting that mosaicking can improve spatial coverage but cannot fully resolve inconsistencies between tiles.
 
 ::: {layout-ncol="1"}
 ![Tiles Selection (Obtained from: [USGS](https://earthexplorer.usgs.gov/))](images/w3_images/rgb_merge_comparison.png)
 :::
 
-The plot below compares spectral behaviours across different surface features. Each band operates at a different wavelength, with Bands 1–7 at 30m resolution and Band 8 at 15m. @wang2008 noted that SWIR responds highly to both soil moisture and leaf water content, where combining NIR and SWIR are useful in detecting vegetation moisture conditions, and distinguishing land uses types. These spectral characteristics provided useful insights for understanding the study area before analysis. However, mixed urban surfaces and terrain can still produce complex spectral responses, so single-band interpretation is limited without further complementary analysis. More about Landsat bands: [USGS](https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites).
+The plot below compares spectral behaviours across different surface features. Each band operates at different wavelengths, Bands 1–7 at 30m resolution and Band 8 at 15m. However, mixed urban surfaces and terrain can produce complex spectral responses, so single-band interpretation is limited without further complementary analysis. For example, @wang2008 noted that SWIR responds highly to both soil moisture and leaf water content, where combining NIR and SWIR are useful in detecting vegetation moisture conditions, and distinguishing land uses types. More about Landsat bands: [USGS](https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites).
 
 ::: {layout-ncol="1"}
 ![Landsat 8-9 Spectral Bands](images/w3_images/landsat_bands_panel3.png)
@@ -60,7 +60,7 @@ The plot below compares spectral behaviours across different surface features. E
 
 ### Normalised Difference Vegetation Index (NDVI)
 
-Moving beyond, here will use a combination of bands for NDVI, to highlight healthy vegetation. The following equation is applied:
+Moving beyond, here will use a combination of bands for NDVI, to highlight healthy vegetation:
 
 $$
 NDVI = \frac{NIR - Red}{NIR + Red}
@@ -77,9 +77,9 @@ Healthy vegetation strongly reflects NIR while absorbing Red through photosynthe
 
 ### Texture
 
-Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces' distinct structural patterns (e.g. bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths. This approach have been widely used for land use and land cover classification. It was found that it can significantly increase classification accuracy (will be covered in later chapters), therefore, best practices often combine texture and spectral analysis for obtaining the best results [@kupidura2019].
+Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces' distinct structural patterns (e.g. bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths. This approach have been widely used for land use and land cover classification. It was found that it can significantly increase [classification](https://christychoicc.github.io/RSCE/classification-1.html) accuracy, therefore, best practices often combine texture and spectral analysis for obtaining the best results [@kupidura2019].
 
-Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting textures:
+Grey-level-co-occurence matrix (GLCM) measures relationships between neighbouring pixel pairs at a certain distance and is commonly used for highlighting texture:
 
 $$
 \rho = (\text{pixel\_value} \times 0.0000275) - 0.2
@@ -89,13 +89,11 @@ $$
 ![8 GLCM Textures of Hong Kong](images/w3_images/glcm_all_metrics.png)
 :::
 
-GLCM is indeed commonly used, yet it may not always be the most suitable solution. As mentioned in @kupidura2019 study, GLCM may distort classification when it comes into an "edge effect", which considering granulometric analysis maybe more of a sensible alternative. Given this, GEE is valuable because it enables texture exploration, but methodological choice still remains an important consideration.
+However, it may not always be most suitable. As mentioned by @kupidura2019, GLCM may distort classification when it comes into an "edge effect". Given this, GEE is valuable because it enables texture exploration, but methodological choice still remains an important consideration.
 
 ### PCA
 
-PCA allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information.
-
-PCA summary of 8 spectral bands and 8 texture variables shows:
+PCA allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information. Our summary of 8 spectral bands and 8 texture variables shows:
 
 ```{r, echo=FALSE}
 cat(readLines("correction/pca_summary.txt"), sep = "\n")
@@ -111,7 +109,7 @@ cat(readLines("correction/pca_summary.txt"), sep = "\n")
 | Cumulative Proportion            | Proportion of total variance of the original data set  |
 +----------------------------------+--------------------------------------------------------+
 
-In this case, PC1 to PC4 explains most of the variations. Looking at cumulative proportion, 91% of spectral variance can be identified in the first 4 principle components. This is a very helpful measure as it allows higher efficiency in analysis, including most of total variance while reducing 16 layers to 4 without loosing much information.
+In this case, PC1 to PC4 explains most of the variations, 91% of spectral variance can be identified in the first 4 principle components. This is very helpful as it allows higher efficiency in analysis, including most of total variance while reducing 16 layers to 4 without loosing much information.
 
 | Component             |    PC1 |    PC2 |     PC3 |     PC4 |
 |-----------------------|-------:|-------:|--------:|--------:|
