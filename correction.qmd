@@ -46,7 +46,7 @@ Landsat 8-9 OLI/TIRS Collection 2 Level-2 data were a good choice here as they c
 
 ### Mosaicking and Data Processing
 
-Mosaicking was necessary as Hong Kong extends across two Landsat tiles. Although the feathering brought the two scenes together, it is not completely seamless. This is likely due to acquisition differences, cloud contamination, or differing radiometric conditions, highlighting that mosaicking can improve spatial coverage but cannot fully resolve inconsistencies between tiles.
+Mosaicking was necessary as Hong Kong extends across two tiles. Although the feathering brought the two scenes together, it is not completely seamless. This is likely due to acquisition differences, cloud contamination, or differing radiometric conditions, highlighting that mosaicking can improve spatial coverage but cannot fully resolve inconsistencies between tiles.
 
 ::: {layout-ncol="1"}
 ![Tiles Selection (Obtained from: [USGS](https://earthexplorer.usgs.gov/))](images/w3_images/rgb_merge_comparison.png)
@@ -77,7 +77,7 @@ Healthy vegetation strongly reflects NIR while absorbing Red through photosynthe
 
 ### Texture
 
-Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces' distinct structural patterns (e.g. bumpiness, smoothness, jaggedness). This approach have been widely used for land use and land cover classification. It was widely used to improve classification accuracy (will be covered in later chapters), therefore, best practices often combine texture and spectral analysis for obtaining the best results [@kupidura2019]. Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.
+Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces' distinct structural patterns (e.g. bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths. This approach have been widely used for land use and land cover classification. It was found that it can significantly increase classification accuracy (will be covered in later chapters), therefore, best practices often combine texture and spectral analysis for obtaining the best results [@kupidura2019].
 
 Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting textures:
 
@@ -93,21 +93,23 @@ GLCM is indeed commonly used, yet it may not always be the most suitable solutio
 
 ### PCA
 
-PCA is often used to compress multispectral bands into fewer, uncorrelated components while retaining most of the useful information. Our summary of 8 spectral bands and 8 texture variables shows:
+PCA allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information.
+
+PCA summary of 8 spectral bands and 8 texture variables shows:
 
 ```{r, echo=FALSE}
 cat(readLines("correction/pca_summary.txt"), sep = "\n")
 ```
 
-+--------------------------+--------------------------------------------------------+
-| Components               | Explaination                                           |
-+==========================+========================================================+
-| Standard Deviation       | Spread of data                                         |
-+--------------------------+--------------------------------------------------------+
-| Proportion of Variance   | Proportion of data retained from the original data set |
-+--------------------------+--------------------------------------------------------+
-| Cumulative Proportion    | Proportion of total variance of the original data set  |
-+--------------------------+--------------------------------------------------------+
++----------------------------------+--------------------------------------------------------+
+| Components                       | Explaination                                           |
++==================================+========================================================+
+| Standard Deviation               | Spread of data                                         |
++----------------------------------+--------------------------------------------------------+
+| Proportion of Variance           | Proportion of data retained from the original data set |
++----------------------------------+--------------------------------------------------------+
+| Cumulative Proportion            | Proportion of total variance of the original data set  |
++----------------------------------+--------------------------------------------------------+
 
 In this case, PC1 to PC4 explains most of the variations. Looking at cumulative proportion, 91% of spectral variance can be identified in the first 4 principle components. This is a very helpful measure as it allows higher efficiency in analysis, including most of total variance while reducing 16 layers to 4 without loosing much information.
 
@@ -119,11 +121,13 @@ In this case, PC1 to PC4 explains most of the variations. Looking at cumulative 
 ![PC1 to PC4 of Hong Kong](images/w3_images/pca_1-4.png)
 :::
 
-PCA is useful for simplifying image data and showing main patterns, but it does not directly remove cloud contamination. @xu2019 discussed that a noise-adjusted principal components transform could separate thin cloud effects more clearly and performed better than PCA and ICA, suggesting that specialised methods may also be used alongside for cloud correction.
+PCA is useful for simplifying image data and showing main patterns, but it does not directly remove cloud contamination. Extending on PCA, @xu2019 proposed noise-adjusted principal components transform (NAPCT) for thin cloud removal. Intrestingly, cloud-contaminated pixels actually have the highest signal-to-noise ratio due to spatial variation, where NAPCT can isolate them into the first component (NAPC1). Applying an inverse transformating of without NAPC1 will produce a cloud-free image.
+
+![NAPCT Cloud concentration, Source: @xu2019](images/w3_images/NAPCT.jpg)
 
 ## Reflection
 
-There is a lot of contents in data correction and enhancements, yet they are fundamental to ensure reliability, accuracy and comparability within remotely sensing analysis. Luckily, there is now open acess to Level 2 data that are analysis ready data, no extensive manual correction process needed. More on Level 2 data can be found in the following, click for [Sentinel](https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/data-processing-levels) and [Landsat](https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products).
+There is a lot of contents in data correction and enhancements, yet they are fundamental to ensure reliability, accuracy and comparability within remotely sensing analysis. Luckily, there is now open acess to Level 2 data that are analysis ready data (ARD), no extensive manual correction process needed. More on Level 2 data can be found in the following, click for [Sentinel](https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/data-processing-levels) and [Landsat](https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products).
 
 GLCM Texture and PCA analysis were the most insightful sections in this section. It was very interesting to see visually that combinations of spectral and structural information can reveal spatial patterns that enables accurate classification of land cover rather than just relying information derived from one spectral band only. One limitations in this application workflow is that it is time consuming and computational intensive, which this will be improved using Google Earth Engine which will be covered later.
 

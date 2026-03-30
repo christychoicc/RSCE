@@ -507,7 +507,7 @@ window.Quarto = {
 </div>
 <section id="mosaicking-and-data-processing" class="level3" data-number="3.2.1"><h3 data-number="3.2.1" class="anchored" data-anchor-id="mosaicking-and-data-processing">
 <span class="header-section-number">3.2.1</span> Mosaicking and Data Processing</h3>
-<p>Mosaicking was necessary as Hong Kong extends across two Landsat tiles. Although the feathering brought the two scenes together, it is not completely seamless. This is likely due to acquisition differences, cloud contamination, or differing radiometric conditions, highlighting that mosaicking can improve spatial coverage but cannot fully resolve inconsistencies between tiles.</p>
+<p>Mosaicking was necessary as Hong Kong extends across two tiles. Although the feathering brought the two scenes together, it is not completely seamless. This is likely due to acquisition differences, cloud contamination, or differing radiometric conditions, highlighting that mosaicking can improve spatial coverage but cannot fully resolve inconsistencies between tiles.</p>
 <div class="quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -555,7 +555,7 @@ Healthy vegetation strongly reflects NIR while absorbing Red through photosynthe
 </div>
 </section><section id="texture" class="level3" data-number="3.2.3"><h3 data-number="3.2.3" class="anchored" data-anchor-id="texture">
 <span class="header-section-number">3.2.3</span> Texture</h3>
-<p>Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). This approach have been widely used for land use and land cover classification. It was widely used to improve classification accuracy (will be covered in later chapters), therefore, best practices often combine texture and spectral analysis for obtaining the best results <span class="citation" data-cites="kupidura2019">(<a href="references.html#ref-kupidura2019" role="doc-biblioref">Kupidura 2019</a>)</span>. Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths.</p>
+<p>Texture captures the spatial relationships between neighboring pixels, highlighting different land surfaces’ distinct structural patterns (e.g.&nbsp;bumpiness, smoothness, jaggedness). Band 4 Red is often used for texture analysis as urban surfaces and vegetation respond very differently to Red wavelengths. This approach have been widely used for land use and land cover classification. It was found that it can significantly increase classification accuracy (will be covered in later chapters), therefore, best practices often combine texture and spectral analysis for obtaining the best results <span class="citation" data-cites="kupidura2019">(<a href="references.html#ref-kupidura2019" role="doc-biblioref">Kupidura 2019</a>)</span>.</p>
 <p>Grey-level-co-occurence matrix (GLCM) measures the relationship between neighboring pixel pairs at a certain distance. The following equation is used to convert the stored DN values to true surface reflectance value for highlighting textures:</p>
 <p><span class="math display">\[
 \rho = (\text{pixel\_value} \times 0.0000275) - 0.2
@@ -573,7 +573,8 @@ Healthy vegetation strongly reflects NIR while absorbing Red through photosynthe
 <p>GLCM is indeed commonly used, yet it may not always be the most suitable solution. As mentioned in <span class="citation" data-cites="kupidura2019">Kupidura (<a href="references.html#ref-kupidura2019" role="doc-biblioref">2019</a>)</span> study, GLCM may distort classification when it comes into an “edge effect”, which considering granulometric analysis maybe more of a sensible alternative. Given this, GEE is valuable because it enables texture exploration, but methodological choice still remains an important consideration.</p>
 </section><section id="pca" class="level3" data-number="3.2.4"><h3 data-number="3.2.4" class="anchored" data-anchor-id="pca">
 <span class="header-section-number">3.2.4</span> PCA</h3>
-<p>PCA is often used to compress multispectral bands into fewer, uncorrelated components while retaining most of the useful information. Our summary of 8 spectral bands and 8 texture variables shows:</p>
+<p>PCA allows reduction of multi-spectral data into uncorrelated, smaller dimensions while retaining most of the imagery information.</p>
+<p>PCA summary of 8 spectral bands and 8 texture variables shows:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>Importance of components:
@@ -589,8 +590,8 @@ Cumulative Proportion  0.99978 0.99995 1.00000 1.000e+00</code></pre>
 </div>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 32%">
-<col style="width: 67%">
+<col style="width: 38%">
+<col style="width: 61%">
 </colgroup>
 <thead><tr class="header">
 <th>Components</th>
@@ -638,10 +639,14 @@ Cumulative Proportion  0.99978 0.99995 1.00000 1.000e+00</code></pre>
 </div>
 </div>
 </div>
-<p>PCA is useful for simplifying image data and showing main patterns, but it does not directly remove cloud contamination. <span class="citation" data-cites="xu2019">Xu et al. (<a href="references.html#ref-xu2019" role="doc-biblioref">2019</a>)</span> discussed that a noise-adjusted principal components transform could separate thin cloud effects more clearly and performed better than PCA and ICA, suggesting that specialised methods may also be used alongside for cloud correction.</p>
+<p>PCA is useful for simplifying image data and showing main patterns, but it does not directly remove cloud contamination. Extending on PCA, <span class="citation" data-cites="xu2019">Xu et al. (<a href="references.html#ref-xu2019" role="doc-biblioref">2019</a>)</span> proposed noise-adjusted principal components transform (NAPCT) for thin cloud removal. Intrestingly, cloud-contaminated pixels actually have the highest signal-to-noise ratio due to spatial variation, where NAPCT can isolate them into the first component (NAPC1). Applying an inverse transformating of without NAPC1 will produce a cloud-free image.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/w3_images/NAPCT.jpg" class="img-fluid figure-img"></p>
+<figcaption>NAPCT Cloud concentration, Source: <span class="citation" data-cites="xu2019">Xu et al. (<a href="references.html#ref-xu2019" role="doc-biblioref">2019</a>)</span></figcaption></figure>
+</div>
 </section></section><section id="reflection" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="reflection">
 <span class="header-section-number">3.3</span> Reflection</h2>
-<p>There is a lot of contents in data correction and enhancements, yet they are fundamental to ensure reliability, accuracy and comparability within remotely sensing analysis. Luckily, there is now open acess to Level 2 data that are analysis ready data, no extensive manual correction process needed. More on Level 2 data can be found in the following, click for <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/data-processing-levels">Sentinel</a> and <a href="https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products">Landsat</a>.</p>
+<p>There is a lot of contents in data correction and enhancements, yet they are fundamental to ensure reliability, accuracy and comparability within remotely sensing analysis. Luckily, there is now open acess to Level 2 data that are analysis ready data (ARD), no extensive manual correction process needed. More on Level 2 data can be found in the following, click for <a href="https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/data-processing-levels">Sentinel</a> and <a href="https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products">Landsat</a>.</p>
 <p>GLCM Texture and PCA analysis were the most insightful sections in this section. It was very interesting to see visually that combinations of spectral and structural information can reveal spatial patterns that enables accurate classification of land cover rather than just relying information derived from one spectral band only. One limitations in this application workflow is that it is time consuming and computational intensive, which this will be improved using Google Earth Engine which will be covered later.</p>
 <p>I have always choose <a href="https://gadm.org/">GADM</a> for obtaining adminstrative boundaries, however it lacks coverage for special administrative regions like Hong Kong. This has given me opportunities to explore on broader range of reliable alternative boundary sources, in Hong Kong’s case, <a href="https://opendata.esrichina.hk/maps/7b854e8c055d448a8385f4e693c828d1/explore?location=22.385925%2C114.110150%2C11">Esri China (Hong Kong)</a>.</p>
 <p>Having lived in Hong Kong for many years, I have never looked at the city through a remote sensing perspective. This has been a very interesting study area both personally and scientifically. It is comprised of one of the world’s most dense urban form while having about three quarters of land covered in vegetation, offering a unique juxtaposition of dense urban form with natural landscape packed within a small land area <span class="citation" data-cites="gov.hk2013">(<a href="references.html#ref-gov.hk2013" role="doc-biblioref">Gov.hk 2013</a>)</span>. Furthermore, there is presence of a mixed range of green infrastructure within the densely built city, and there are growing trends of vertical greenery systems on building facades. This has questioned whether nadir imagery from conventional EO data may undermine full vegetation coverage. For such complex environments, the approaches above may not be the most suitable approach for precision, but it has provided a reliable indicator of overall vegetation coverage and identifying terrain structures despite finer-scale green infrastructure to be harder to capture. Overall, the workflow covered in this section is strongly transferable and applicable across a range of study contexts, it is important to note that choosing the right sensor that suits the specific application remains critical for producing meaningful results.</p>
