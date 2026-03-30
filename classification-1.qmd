@@ -39,7 +39,7 @@ Sentinel-2 Surface Reflectance Harmonized data was loaded for minimal cloud cove
 
 The practical first applied Classification and Regression Tree (CART), which produced an initial classification result. Moving to Random Forest (RF), data were split into training and testing sets for 70% and 30% respectively. The pixel-based RF approach produced a more reliable classification as it used more pixels data within polygons which improved model performance.
 
-![Classification Decision Tree, Source @f2-ear](images/w7_images/Screenshot%202026-03-15%20181703.png)
+![Classification Decision Tree, Source: @f2-ear](images/w7_images/Screenshot%202026-03-15%20181703.png)
 
 ::: {#CHUNKNAME layout-ncol="2"}
 ![CART](images/w7_images/CART.png)
@@ -79,7 +79,7 @@ Studies also show that classification accuracy depends not only on the classifie
 
 Although more advanced machine-learning methods can sometimes achieve higher accuracy (e.g. deep learning algorithms), they often involve a trade-off in lower interpretability. @campos-taberner2020 indicated that this can pose shortcomings under policy or operational contexts where results need to be transparent and accountable. Therefore, supervised decision trees such as CART, Random Forest, and SVM remain widely used in remote sensing analysis as they are easier to apply, able to work with smaller training datasets, and able to achieve decent classification accuracy. Overall, the "best" classification method depends on the purpose, data availability, as well as achieving a balance between accuracy and interpretability.
 
-![Accuracy Trade-off in Machine Learning Classification Algorithms](images/w7_images/ml_algorithm_tradeoff.png)
+![Accuracy Trade-off in Machine Learning Classification Algorithms Source: @sheykhmousa2020](images/w7_images/ml_algorithm_tradeoff.png)
 
 ## Reflection
 

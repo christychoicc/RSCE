@@ -30,7 +30,7 @@ Beyond atmospheric correction, remotely sensing data may also require geometric,
 | Radiometric Calibration                     | Convert Digital Numbers (DN) to spectral radiance                                                                                                                                               | Allow comparison across sensors across different acquisition dates                                           |                                                                                                                     | To convert the output signal into physical magnitudes (e.g. radiance, reflectivity, temperature)                                    |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
-Sources: @green2000, @karpouzli2003, @m.shimada2010, @radiomet, [CASA0023](https://andrewmaclachlan.github.io/CASA0023/)
+: Sources: @green2000, @karpouzli2003, @m.shimada2010, @radiomet, [CASA0023](https://andrewmaclachlan.github.io/CASA0023/)
 
 Overall, atmospheric and topographic corrections are particularly important for study areas with complex conditions and morphology, yet the most suitable correction method depends on data availability and the purpose of analysis.
 

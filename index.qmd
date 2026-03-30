@@ -28,3 +28,14 @@ Each chapter will be covering contents taught in the corresponding week:
     -   Extending on Classification I, this section will look at more advanced classification concepts, including sub-pixel analysis, object-based methods, neighbourhood effects, and accuracy assessment.
 8.  Temperature
     -   Looking at land surface temperature, urban heat patterns, and time series data.
+
+## Navigation
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+How to navigate through this learning diary? The navbar in the top of the page provides the following tools to help you explore through the content:
+
+- <i class="fa-solid fa-bars"></i> Menu — Toggle the sidebar to browse chapters
+- <i class="fa-brands fa-github"></i> GitHub — view my GitHub
+- <i class="fa-solid fa-toggle-off"></i> Theme — Switch between light and dark mode
+- <i class="fa-solid fa-magnifying-glass"></i> Search — Search within this learning diary
+
