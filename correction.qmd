@@ -32,7 +32,7 @@ Beyond atmospheric correction, remotely sensing data may also require geometric,
 
 : Sources: @green2000, @karpouzli2003, @m.shimada2010, @radiomet, [CASA0023](https://andrewmaclachlan.github.io/CASA0023/)
 
-Overall, atmospheric and topographic corrections are particularly important for study areas with complex conditions and morphology, yet the most suitable correction method depends on data availability and the purpose of analysis.
+Overall, atmospheric and topographic corrections are important for study areas with complex conditions and morphology, yet the most suitable correction method depends on data availability and the purpose of analysis.
 
 ## Application
 
@@ -99,15 +99,15 @@ PCA allows reduction of multi-spectral data into uncorrelated, smaller dimension
 cat(readLines("correction/pca_summary.txt"), sep = "\n")
 ```
 
-+----------------------------------+--------------------------------------------------------+
-| Components                       | Explaination                                           |
-+==================================+========================================================+
-| Standard Deviation               | Spread of data                                         |
-+----------------------------------+--------------------------------------------------------+
-| Proportion of Variance           | Proportion of data retained from the original data set |
-+----------------------------------+--------------------------------------------------------+
-| Cumulative Proportion            | Proportion of total variance of the original data set  |
-+----------------------------------+--------------------------------------------------------+
++--------------------------+--------------------------------------------------------+
+| Components               | Explaination                                           |
++==========================+========================================================+
+| Standard Deviation       | Spread of data                                         |
++--------------------------+--------------------------------------------------------+
+| Proportion of Variance   | Proportion of data retained from the original data set |
++--------------------------+--------------------------------------------------------+
+| Cumulative Proportion    | Proportion of total variance of the original data set  |
++--------------------------+--------------------------------------------------------+
 
 In this case, PC1 to PC4 explains most of the variations, 91% of spectral variance can be identified in the first 4 principle components. This is very helpful as it allows higher efficiency in analysis, including most of total variance while reducing 16 layers to 4 without loosing much information.
 

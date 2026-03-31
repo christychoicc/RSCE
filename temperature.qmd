@@ -46,7 +46,7 @@ MODIS is more useful for plotting time series due to its high observation freque
 
 Zooming into Arizona, I initially wanted to compare all level 2 administrative units in one chart, but GEE returned the error message “Response size exceeds limit”, so I narrowed the analysis to Maricopa and Pima counties. The chart suggested both counties remained consistently hot, with minimum temperatures around 30°C and maximum values above 55°C. Therefore, I adjusted the visualisation range to 30°C - 60°C to better reflect the actual distribution of values.
 
-This also made me think of perhaps using reducer percentile function `reducer: ee.Reducer.percentile([10, 20, 30, 40, 50, 60, 70, 80, 90]`, thermal comfort index or a categorised calculation of "Discomfort Index" based on temperature data instead may be a more appropriate choice ([CASA0023](https://andrewmaclachlan.github.io/CASA0023/))[@patel2024; @sobrino2013a]. This will allow the visualisation range to based on distribution of values.
+This also made me think of perhaps using reducer percentile function `reducer: ee.Reducer.percentile([10, 20, 30, 40, 50, 60, 70, 80, 90]`, thermal comfort index or a categorised calculation of "Discomfort Index" based on temperature data instead may be a more appropriate choice ([CASA0023](https://andrewmaclachlan.github.io/CASA0023/))[@patel2024; @sobrino2013a]. This will allow the visualisation range to based on distribution of values, instead of a set range.
 
 ![Average Temperature Comparison Across Time (Maricopa and Pima)](images/w9_images/compare.png)
 
@@ -92,13 +92,13 @@ Studies have extended LST beyond physical temperature analysis toward practical 
 
 ### Finally... Products for LST
 
-+----------------+----------------------------+--------------------+--------------------------------------------------------------------------------+
-| Resolution     | Products                   | Spatial Resolution | Temporal Resolution                                                            |
-+================+============================+====================+================================================================================+
-| Low            | ASTER, Landsat 8 Band 10   | 90 m, 30 m         | 16 days revisit                                                                |
-+----------------+----------------------------+--------------------+--------------------------------------------------------------------------------+
-| Medium         | MODIS, with Aqua and Terra | 1 km               | Terra: N to S morning and Aqua: S to N afternoon, 1-2 days with 2 images a day |
-+----------------+----------------------------+--------------------+--------------------------------------------------------------------------------+
++------------+----------------------------+--------------------+--------------------------------------------------------------------------------+
+| Resolution | Products                   | Spatial Resolution | Temporal Resolution                                                            |
++============+============================+====================+================================================================================+
+| Low        | ASTER, Landsat 8 Band 10   | 90 m, 30 m         | 16 days revisit                                                                |
++------------+----------------------------+--------------------+--------------------------------------------------------------------------------+
+| Medium     | MODIS, with Aqua and Terra | 1 km               | Terra: N to S morning and Aqua: S to N afternoon, 1-2 days with 2 images a day |
++------------+----------------------------+--------------------+--------------------------------------------------------------------------------+
 
 : Sources: @li2023a
 

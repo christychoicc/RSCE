@@ -501,7 +501,7 @@ div.csl-indent {
 </div>
 <p><strong>Focusing on a smaller study area …</strong></p>
 <p>Zooming into Arizona, I initially wanted to compare all level 2 administrative units in one chart, but GEE returned the error message “Response size exceeds limit”, so I narrowed the analysis to Maricopa and Pima counties. The chart suggested both counties remained consistently hot, with minimum temperatures around 30°C and maximum values above 55°C. Therefore, I adjusted the visualisation range to 30°C - 60°C to better reflect the actual distribution of values.</p>
-<p>This also made me think of perhaps using reducer percentile function <code>reducer: ee.Reducer.percentile([10, 20, 30, 40, 50, 60, 70, 80, 90]</code>, thermal comfort index or a categorised calculation of “Discomfort Index” based on temperature data instead may be a more appropriate choice (<a href="https://andrewmaclachlan.github.io/CASA0023/">CASA0023</a>)<span class="citation" data-cites="patel2024 sobrino2013a">(<a href="references.html#ref-patel2024" role="doc-biblioref">Patel, Indraganti, and Jawarneh 2024</a>; <a href="references.html#ref-sobrino2013a" role="doc-biblioref">Sobrino et al. 2013</a>)</span>. This will allow the visualisation range to based on distribution of values.</p>
+<p>This also made me think of perhaps using reducer percentile function <code>reducer: ee.Reducer.percentile([10, 20, 30, 40, 50, 60, 70, 80, 90]</code>, thermal comfort index or a categorised calculation of “Discomfort Index” based on temperature data instead may be a more appropriate choice (<a href="https://andrewmaclachlan.github.io/CASA0023/">CASA0023</a>)<span class="citation" data-cites="patel2024 sobrino2013a">(<a href="references.html#ref-patel2024" role="doc-biblioref">Patel, Indraganti, and Jawarneh 2024</a>; <a href="references.html#ref-sobrino2013a" role="doc-biblioref">Sobrino et al. 2013</a>)</span>. This will allow the visualisation range to based on distribution of values, instead of a set range.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/w9_images/compare.png" class="img-fluid figure-img"></p>
@@ -582,10 +582,10 @@ div.csl-indent {
 <table class="caption-top table">
 <caption>Sources: <span class="citation" data-cites="li2023a">Li et al. (<a href="references.html#ref-li2023a" role="doc-biblioref">2023</a>)</span></caption>
 <colgroup>
-<col style="width: 11%">
+<col style="width: 8%">
 <col style="width: 19%">
 <col style="width: 14%">
-<col style="width: 54%">
+<col style="width: 55%">
 </colgroup>
 <thead>
 <tr class="header">
