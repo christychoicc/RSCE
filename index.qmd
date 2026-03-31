@@ -40,6 +40,6 @@ Each chapter will be covering contents taught in the corresponding week:
 How to navigate through this learning diary? The navbar in the top of the page provides the following tools to help you explore through the content:
 
 -   <i class="fa-solid fa-bars"></i> Menu — Toggle the sidebar to browse chapters
--   <i class="fa-brands fa-github"></i> GitHub — view my GitHub
+-   <i class="fa-brands fa-github"></i> GitHub — View my GitHub
 -   <i class="fa-solid fa-toggle-off"></i> Theme — Switch between light and dark mode
 -   <i class="fa-solid fa-magnifying-glass"></i> Search — Search within this learning diary
